@@ -1,0 +1,13 @@
+{
+  "startingCashEgp": 100000,
+  "maxPositionPct": 0.15,
+  "maxSectorPct": 0.35,
+  "minHoldingDays": 5,
+  "maxTradesPerCycle": 2,
+  "minCashBufferPct": 0.05,
+  "costs": {
+    "commissionPct": 0.0005,
+    "levyPct": 0.0005
+  },
+  "_comment": "Guardrail config enforced in code (bot/policy.ts). costs.* are fractions of trade value applied to every fill (buy and sell). commission 0.05% + levy 0.05% = 0.10% combined, within the spec's 0.05-0.15% suggested band. minHoldingDays counts Cairo trading days (Sun-Thu)."
+}

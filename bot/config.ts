@@ -1,0 +1,74 @@
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+import type { Policy, Universe } from "./types.js";
+
+const here = dirname(fileURLToPath(import.meta.url));
+export const REPO_ROOT = join(here, "..");
+export const STATE_DIR = join(REPO_ROOT, "state");
+
+/** Load a tiny .env file if present (no dependency on dotenv). */
+function loadDotEnv(): void {
+  try {
+    const raw = readFileSync(join(REPO_ROOT, ".env"), "utf8");
+    for (const line of raw.split(/\r?\n/)) {
+      const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+      if (!m) continue;
+      const key = m[1]!;
+      let val = m[2]!;
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      if (process.env[key] === undefined) process.env[key] = val;
+    }
+  } catch {
+    // no .env, fine
+  }
+}
+loadDotEnv();
+
+const flag = (name: string): boolean => {
+  const v = process.env[name];
+  return v === "1" || v === "true" || v === "yes";
+};
+
+export const config = {
+  dryRun: flag("DRY_RUN"),
+  forceSession: flag("FORCE_SESSION"),
+  mockLlm: flag("MOCK_LLM"),
+  mockMarket: flag("MOCK_MARKET"),
+  mode: (process.env.MODE === "eod" ? "eod" : "trade") as "eod" | "trade",
+
+  gemini: {
+    apiKey: process.env.GEMINI_API_KEY ?? "",
+    model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+  },
+  twelveData: {
+    apiKey: process.env.TWELVEDATA_API_KEY ?? "",
+  },
+
+  /** How much daily history to request per ticker for the LLM to reason about. */
+  historyDays: 60,
+  /** How many prior decision entries to feed back to the LLM for continuity. */
+  decisionContextWindow: 5,
+} as const;
+
+export function loadPolicy(): Policy {
+  const raw = JSON.parse(readFileSync(join(REPO_ROOT, "policy.json"), "utf8")) as Policy & {
+    _comment?: string;
+  };
+  return {
+    startingCashEgp: raw.startingCashEgp,
+    maxPositionPct: raw.maxPositionPct,
+    maxSectorPct: raw.maxSectorPct,
+    minHoldingDays: raw.minHoldingDays,
+    maxTradesPerCycle: raw.maxTradesPerCycle,
+    minCashBufferPct: raw.minCashBufferPct,
+    costs: raw.costs,
+  };
+}
+
+export function loadUniverse(): Universe {
+  const raw = JSON.parse(readFileSync(join(STATE_DIR, "universe.json"), "utf8")) as Universe;
+  return raw;
+}

@@ -1,0 +1,71 @@
+name: trade-cycle
+
+on:
+  schedule:
+    # Every 30 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
+    # session (Sun-Thu 10:00-14:15 Cairo) under either GMT+2 or GMT+3. The bot
+    # script itself decides whether the market is actually open.
+    - cron: "0,30 6-12 * * *"
+    # One extra fire ~14:30 Cairo for the end-of-day mark-to-market wrap-up.
+    - cron: "30 12 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "trade | eod"
+        required: false
+        default: "trade"
+      force_session:
+        description: "bypass the Cairo session-hours gate (for testing)"
+        required: false
+        default: "false"
+
+concurrency:
+  group: trade-cycle
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Run trade cycle
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          EGXAPI_API_KEY: ${{ secrets.EGXAPI_API_KEY }}
+          # The 12:30-UTC cron ('30 12 * * *') is the end-of-day wrap-up; every
+          # other schedule is a normal trade cycle (the bot no-ops itself outside
+          # session hours). workflow_dispatch can override via the `mode` input.
+          MODE: ${{ github.event.inputs.mode || (github.event.schedule == '30 12 * * *' && 'eod' || 'trade') }}
+          FORCE_SESSION: ${{ github.event.inputs.force_session == 'true' && '1' || '' }}
+        run: npm run cycle
+
+      - name: Commit updated state
+        run: |
+          git config user.name  "llm-trader-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain state/)" ]; then
+            git add state/
+            git commit -m "cycle: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            # Rebase-safe push in case another run committed meanwhile.
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
+              echo "push retry $i"; sleep 5
+            done
+          else
+            echo "no state changes this cycle"
+          fi
