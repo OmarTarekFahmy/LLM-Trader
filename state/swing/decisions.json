@@ -1,1 +1,88 @@
-{ "decisions": [] }
+{
+  "decisions": [
+    {
+      "cycleId": "20260909T1558-swing-trade",
+      "timestamp": "2026-09-09T15:58:08.799+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "91 quoted; 62/91 up over 5d; EGX30 56501 (5d 2.8%)",
+      "llmProvider": "gemini",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is showing strong bullish momentum, up 2.8% over the past 5 days and 10.0% over 20 days. Basic Materials and Energy sectors are leading the recent surge with high volatility and strong multi-day momentum, presenting attractive swing trade entries. We deploy initial capital into AMOC, ABUK, and EGAL to capture ongoing sector strength.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 is showing strong bullish momentum, up 2.8% over the past 5 days and 10.0% over 20 days. Basic Materials and Energy sectors are leading the recent surge with high volatility and strong multi-day momentum, presenting attractive swing trade entries. We deploy initial capital into AMOC, ABUK, and EGAL to capture ongoing sector strength.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"buy\",\n      \"quantity\": 1000,\n      \"rationale\": \"Leading the energy sector with extreme relative strength (+27.9% 10d, +56.0% 20d) and touching 20d highs. High volatility and strong volume support swing continuation.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"buy\",\n      \"quantity\": 1500,\n      \"rationale\": \"Part of the robust Basic Materials sector run. Recent 4.5% daily gain following a brief consolidation signals continuation toward 20-day highs.\"\n    },\n    {\n      \"ticker\": \"EGAL\",\n      \"action\": \"buy\",\n      \"quantity\": 300,\n      \"rationale\": \"Strong constituent in Basic Materials with consistent upward trend. Pullback from 20d highs provides a favorable risk-reward setup for a swing entry.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Leading the energy sector with extreme relative strength (+27.9% 10d, +56.0% 20d) and touching 20d highs. High volatility and strong volume support swing continuation."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "quantity": 1500,
+          "rationale": "Part of the robust Basic Materials sector run. Recent 4.5% daily gain following a brief consolidation signals continuation toward 20-day highs."
+        },
+        {
+          "ticker": "EGAL",
+          "action": "buy",
+          "quantity": 300,
+          "rationale": "Strong constituent in Basic Materials with consistent upward trend. Pullback from 20d highs provides a favorable risk-reward setup for a swing entry."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "proposedQty": 1500,
+          "finalQty": 163,
+          "kind": "clamped",
+          "reason": "clamped 1500 -> 163 to respect maxPositionPct 15%"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "buy",
+          "proposedQty": 300,
+          "finalQty": 39,
+          "kind": "clamped",
+          "reason": "clamped 300 -> 39 to respect maxPositionPct 15%"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 14.199999809265137,
+          "fees": 14.2
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "qty": 163,
+          "price": 92,
+          "fees": 15
+        },
+        {
+          "ticker": "EGAL",
+          "action": "buy",
+          "qty": 39,
+          "price": 374.989990234375,
+          "fees": 14.62
+        }
+      ],
+      "navBefore": 100000,
+      "navAfter": 99956.18,
+      "cash": 56135.57,
+      "error": null
+    }
+  ]
+}

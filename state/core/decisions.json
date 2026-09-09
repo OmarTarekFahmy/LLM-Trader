@@ -93,6 +93,40 @@
       "navAfter": 99985.8,
       "cash": 85785.8,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1558-core-trade",
+      "timestamp": "2026-09-09T15:58:08.799+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "30 quoted; 24/30 up over 5d; EGX30 56501 (5d 3.8%)",
+      "llmProvider": "gemini",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 continues its solid upward trajectory, supported by strong momentum across Basic Materials, Energy, and Industrials sectors. Our current holding in AMOC is only 0 trading days old, and in line with our semi-long-term philosophy and minimum holding period policy, we are maintaining our position and keeping our cash buffer intact.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 continues its solid upward trajectory, supported by strong momentum across Basic Materials, Energy, and Industrials sectors. Our current holding in AMOC is only 0 trading days old, and in line with our semi-long-term philosophy and minimum holding period policy, we are maintaining our position and keeping our cash buffer intact.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is newly established and must be held for at least 5 trading days per policy. Underlying energy momentum remains robust.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is newly established and must be held for at least 5 trading days per policy. Underlying energy momentum remains robust."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99985.8,
+      "navAfter": 99985.8,
+      "cash": 85785.8,
+      "error": null
     }
   ]
 }

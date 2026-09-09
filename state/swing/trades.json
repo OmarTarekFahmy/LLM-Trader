@@ -1,1 +1,43 @@
-{ "trades": [] }
+{
+  "trades": [
+    {
+      "timestamp": "2026-09-09T15:58:08.799+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 14.199999809265137,
+      "fees": 14.2,
+      "grossValue": 14200,
+      "netCashDelta": -14214.2,
+      "resultingCash": 85785.8,
+      "resultingNav": 99985.8,
+      "cycleId": "20260909T1558-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-09T15:58:08.799+03:00",
+      "ticker": "ABUK",
+      "action": "buy",
+      "qty": 163,
+      "price": 92,
+      "fees": 15,
+      "grossValue": 14996,
+      "netCashDelta": -15011,
+      "resultingCash": 70774.8,
+      "resultingNav": 99970.8,
+      "cycleId": "20260909T1558-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-09T15:58:08.799+03:00",
+      "ticker": "EGAL",
+      "action": "buy",
+      "qty": 39,
+      "price": 374.989990234375,
+      "fees": 14.62,
+      "grossValue": 14624.61,
+      "netCashDelta": -14639.23,
+      "resultingCash": 56135.57,
+      "resultingNav": 99956.18,
+      "cycleId": "20260909T1558-swing-trade"
+    }
+  ]
+}
