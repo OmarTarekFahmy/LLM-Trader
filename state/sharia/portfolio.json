@@ -1,8 +1,27 @@
 {
-  "cash": 100000,
-  "holdings": [],
-  "nav": 100000,
-  "inceptionDate": null,
-  "inceptionBenchmarkIndexLevel": null,
-  "lastUpdated": null
+  "cash": 58023.19,
+  "holdings": [
+    {
+      "ticker": "AMOC",
+      "qty": 1000,
+      "avgCost": 14.21,
+      "openedAt": "2026-09-09T17:11:57.910+03:00"
+    },
+    {
+      "ticker": "ETEL",
+      "qty": 124,
+      "avgCost": 120.24,
+      "openedAt": "2026-09-09T17:11:57.910+03:00"
+    },
+    {
+      "ticker": "RMDA",
+      "qty": 2000,
+      "avgCost": 6.43,
+      "openedAt": "2026-09-09T17:11:57.910+03:00"
+    }
+  ],
+  "nav": 99958.07,
+  "inceptionDate": "2026-09-09T17:11:57.910+03:00",
+  "inceptionBenchmarkIndexLevel": 56500.69921875,
+  "lastUpdated": "2026-09-09T17:11:57.910+03:00"
 }

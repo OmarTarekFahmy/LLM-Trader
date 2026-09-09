@@ -1,1 +1,88 @@
-{ "decisions": [] }
+{
+  "decisions": [
+    {
+      "cycleId": "20260909T1711-sharia-trade",
+      "timestamp": "2026-09-09T17:11:57.910+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "25 quoted; 20/25 up over 5d; EGX30 56501 (5d 3.7%)",
+      "llmProvider": "gemini",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 index is showing robust strength, up 3.7% over 5 days and 10.5% over 20 days, driven by strong momentum in Basic Materials, Energy, and Communications. We are putting capital to work in leading high-momentum names such as AMOC, ETEL, and RMDA to capture short-term swing gains while maintaining a healthy cash buffer.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 index is showing robust strength, up 3.7% over 5 days and 10.5% over 20 days, driven by strong momentum in Basic Materials, Energy, and Communications. We are putting capital to work in leading high-momentum names such as AMOC, ETEL, and RMDA to capture short-term swing gains while maintaining a healthy cash buffer.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"buy\",\n      \"quantity\": 1000,\n      \"rationale\": \"Leading the Energy sector with exceptional multi-day and 20-day momentum (up 27.9% over 10 days and 56% over 20 days), displaying strong continuation near its 20-day high.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"buy\",\n      \"quantity\": 800,\n      \"rationale\": \"Strong steady uptrend in the Communications sector, touching its 20-day high with solid 3-day and 10-day gains, presenting a clean swing setup.\"\n    },\n    {\n      \"ticker\": \"RMDA\",\n      \"action\": \"buy\",\n      \"quantity\": 2000,\n      \"rationale\": \"Health Care name exhibiting a strong 1-day pop (+5.2%) and solid 3-day momentum (+8.6%) following a pullback, offering a good momentum entry.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Leading the Energy sector with exceptional multi-day and 20-day momentum (up 27.9% over 10 days and 56% over 20 days), displaying strong continuation near its 20-day high."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 800,
+          "rationale": "Strong steady uptrend in the Communications sector, touching its 20-day high with solid 3-day and 10-day gains, presenting a clean swing setup."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "buy",
+          "quantity": 2000,
+          "rationale": "Health Care name exhibiting a strong 1-day pop (+5.2%) and solid 3-day momentum (+8.6%) following a pullback, offering a good momentum entry."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 800,
+          "finalQty": 124,
+          "kind": "clamped",
+          "reason": "clamped 800 -> 124 to respect maxPositionPct 15%"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "buy",
+          "proposedQty": 2000,
+          "finalQty": 2000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 14.199999809265137,
+          "fees": 14.2
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 124,
+          "price": 120.12000274658203,
+          "fees": 14.89
+        },
+        {
+          "ticker": "RMDA",
+          "action": "buy",
+          "qty": 2000,
+          "price": 6.420000076293945,
+          "fees": 12.84
+        }
+      ],
+      "navBefore": 100000,
+      "navAfter": 99958.07,
+      "cash": 58023.19,
+      "error": null
+    }
+  ]
+}

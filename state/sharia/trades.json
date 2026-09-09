@@ -1,1 +1,43 @@
-{ "trades": [] }
+{
+  "trades": [
+    {
+      "timestamp": "2026-09-09T17:11:57.910+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 14.199999809265137,
+      "fees": 14.2,
+      "grossValue": 14200,
+      "netCashDelta": -14214.2,
+      "resultingCash": 85785.8,
+      "resultingNav": 99985.8,
+      "cycleId": "20260909T1711-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-09T17:11:57.910+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 124,
+      "price": 120.12000274658203,
+      "fees": 14.89,
+      "grossValue": 14894.88,
+      "netCashDelta": -14909.77,
+      "resultingCash": 70876.03,
+      "resultingNav": 99970.91,
+      "cycleId": "20260909T1711-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-09T17:11:57.910+03:00",
+      "ticker": "RMDA",
+      "action": "buy",
+      "qty": 2000,
+      "price": 6.420000076293945,
+      "fees": 12.84,
+      "grossValue": 12840,
+      "netCashDelta": -12852.84,
+      "resultingCash": 58023.19,
+      "resultingNav": 99958.07,
+      "cycleId": "20260909T1711-sharia-trade"
+    }
+  ]
+}
