@@ -38,6 +38,19 @@
       "resultingCash": 56135.57,
       "resultingNav": 99956.18,
       "cycleId": "20260909T1558-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-09T18:56:46.967+03:00",
+      "ticker": "SDTI",
+      "action": "buy",
+      "qty": 194,
+      "price": 75.69999694824219,
+      "fees": 14.69,
+      "grossValue": 14685.8,
+      "netCashDelta": -14700.49,
+      "resultingCash": 41435.08,
+      "resultingNav": 99941.49,
+      "cycleId": "20260909T1856-swing-trade"
     }
   ]
 }

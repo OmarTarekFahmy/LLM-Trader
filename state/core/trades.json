@@ -12,6 +12,19 @@
       "resultingCash": 85785.8,
       "resultingNav": 99985.8,
       "cycleId": "20260909T1507-trade"
+    },
+    {
+      "timestamp": "2026-09-09T18:56:46.967+03:00",
+      "ticker": "ABUK",
+      "action": "buy",
+      "qty": 160,
+      "price": 92,
+      "fees": 14.72,
+      "grossValue": 14720,
+      "netCashDelta": -14734.72,
+      "resultingCash": 71051.08,
+      "resultingNav": 99971.08,
+      "cycleId": "20260909T1856-core-trade"
     }
   ]
 }

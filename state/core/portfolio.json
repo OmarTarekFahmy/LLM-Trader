@@ -1,15 +1,21 @@
 {
-  "cash": 85785.8,
+  "cash": 71051.08,
   "holdings": [
     {
       "ticker": "AMOC",
       "qty": 1000,
       "avgCost": 14.21,
       "openedAt": "2026-09-09T15:07:08.398+03:00"
+    },
+    {
+      "ticker": "ABUK",
+      "qty": 160,
+      "avgCost": 92.09,
+      "openedAt": "2026-09-09T18:56:46.967+03:00"
     }
   ],
-  "nav": 99985.8,
+  "nav": 99971.08,
   "inceptionDate": "2026-09-09T15:07:08.398+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-09T17:11:57.910+03:00"
+  "lastUpdated": "2026-09-09T18:56:46.967+03:00"
 }

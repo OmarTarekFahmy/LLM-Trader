@@ -83,6 +83,68 @@
       "navAfter": 99958.07,
       "cash": 58023.19,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1856-sharia-trade",
+      "timestamp": "2026-09-09T18:56:46.967+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "25 quoted; 20/25 up over 5d; EGX30 56501 (5d 3.7%)",
+      "llmProvider": "openrouter",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains in a strong uptrend (+10.5% over 20d), characterized by high momentum in Basic Materials and Energy. Current portfolio positions (AMOC, ETEL, RMDA) are showing neutral to slightly positive momentum. I will maintain current positions to allow the swing trades to develop toward the +2.5% target, as no immediate reversal signals or significant volatility spikes suggest a need to exit or rotate yet.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 remains in a strong uptrend (+10.5% over 20d), characterized by high momentum in Basic Materials and Energy. Current portfolio positions (AMOC, ETEL, RMDA) are showing neutral to slightly positive momentum. I will maintain current positions to allow the swing trades to develop toward the +2.5% target, as no immediate reversal signals or significant volatility spikes suggest a need to exit or rotate yet.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding for momentum continuation; stock is up 4.9% today and shows strong 20d trend (+56%).\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding; stock is showing steady upward momentum (+1.6% today) and is trading near 20d highs.\"\n    },\n    {\n      \"ticker\": \"RMDA\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding; strong momentum (+5.2% today) with a significant 10d bounce (+5.8%).\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding for momentum continuation; stock is up 4.9% today and shows strong 20d trend (+56%)."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding; stock is showing steady upward momentum (+1.6% today) and is trading near 20d highs."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding; strong momentum (+5.2% today) with a significant 10d bounce (+5.8%)."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99958.07,
+      "navAfter": 99958.07,
+      "cash": 58023.19,
+      "error": null
     }
   ]
 }
