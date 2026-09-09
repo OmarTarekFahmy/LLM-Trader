@@ -9,6 +9,10 @@ included — as JSON to this repo, and a Next.js dashboard on Vercel renders it.
 **No brokerage, no execution, no real funds, ever.** See [the spec](./egx-llm-paper-trader-spec.md)
 if present, or the section headers below.
 
+**Live:** the `trade-cycle` workflow runs on schedule and commits `state/*.json` here. The
+dashboard reads those files; deploy it to Vercel (Root Directory `dashboard`, env var
+`STATE_BASE_URL=https://raw.githubusercontent.com/OmarTarekFahmy/LLM-Trader/main/state`).
+
 ---
 
 ## Status — MVP + LLM resilience done
