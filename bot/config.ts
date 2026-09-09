@@ -41,11 +41,16 @@ export const config = {
 
   gemini: {
     apiKey: process.env.GEMINI_API_KEY ?? "",
-    model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+    model: process.env.GEMINI_MODEL || "gemini-flash-latest",
+  },
+  groq: {
+    apiKey: process.env.GROQ_API_KEY ?? "",
+    model: process.env.GROQ_MODEL || "openai/gpt-oss-120b",
   },
   twelveData: {
     apiKey: process.env.TWELVEDATA_API_KEY ?? "",
   },
+  useTwelveData: flag("USE_TWELVEDATA"),
 
   /** How much daily history to request per ticker for the LLM to reason about. */
   historyDays: 60,
