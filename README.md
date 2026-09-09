@@ -31,7 +31,7 @@ dashboard to Vercel (Root Directory `dashboard`, env var
 | Two independent strategies (core + swing), shared market fetch | ✅ `state/strategies.json`, `bot/index.ts` |
 | Hardcoded universes + sectors | ✅ `state/universes/egx30.json`, `egx100.json` |
 | Deterministic guardrail + ledger layer | ✅ `bot/policy.ts`, `bot/ledger.ts` (unit-tested) |
-| LLM: Gemini primary + Groq fallback | ✅ fallback verified in a live run |
+| LLM: OpenRouter primary, Gemini + Groq fallback | ✅ chain, per-provider fallback |
 | Market data: Yahoo Finance (no key) | ✅ `bot/providers/market/yahoo.ts` |
 | GitHub Actions cron every 10 min + EOD wrap-up | ✅ `.github/workflows/trade-cycle.yml` |
 | Dashboard with a strategy switcher | ✅ `dashboard/` |
@@ -63,9 +63,10 @@ backtest mode, a second market-data provider.
    only for the concentration cap.
 4. **Swing exits are LLM-only** (user's choice). `minHoldingDays: 0`; the `targetGainPct` /
    `softStopPct` in the swing policy are surfaced in the prompt as guidance, never auto-executed.
-5. **LLM models updated from the spec's names.** `gemini-flash-latest` → `gemini-flash-lite-latest`
-   → Groq `openai/gpt-oss-120b` (the spec's `gemini-2.5-flash` / `llama-3.3-70b-versatile` are
-   retired).
+5. **LLM: OpenRouter primary** (`google/gemma-4-26b-a4b-it:free` by default), then Gemini
+   (`gemini-flash-latest` → `gemini-flash-lite-latest`), then Groq (`openai/gpt-oss-120b`). Each
+   is used only if its key is set; the spec's `gemini-2.5-flash` / `llama-3.3-70b-versatile` are
+   retired.
 6. **`git commit` happens in the workflow, not the bot.** Keeps local/dry runs commit-free.
 7. **Added `state/<id>/prices.json`** — a per-cycle quote+index snapshot so the dashboard values
    holdings without its own API calls.
@@ -95,7 +96,7 @@ bot/                     TypeScript bot (GitHub Actions via tsx, no build step)
   prompt.ts              per-profile prompt assembly + response schema + tolerant parser
   policy.ts              guardrail validation / clamping / rejection
   ledger.ts              deterministic fill + fee + NAV math
-  providers/llm/         gemini.ts, groq.ts, mock.ts, index.ts (chain + fallback)
+  providers/llm/         openrouter.ts, gemini.ts, groq.ts, mock.ts, index.ts (chain + fallback)
   providers/market/      yahoo.ts (primary), twelvedata.ts + egxapi.ts (unusable free), mock.ts
   cycle.test.ts          unit tests (node --test)
 state/
@@ -113,11 +114,13 @@ scripts/bootstrap-github.sh
 
 1. **Public repo** (`gh repo create LLM-Trader --public --source . --remote origin --push`) —
    public = unlimited free Actions minutes.
-2. **API keys** (free, no card): `GEMINI_API_KEY` ([aistudio.google.com/apikey](https://aistudio.google.com/apikey)),
-   `GROQ_API_KEY` ([console.groq.com/keys](https://console.groq.com/keys), recommended fallback).
-   Market data needs no key.
-3. **Repo secrets:** Settings → Secrets and variables → Actions. Optional variables `GEMINI_MODEL`,
-   `GROQ_MODEL`.
+2. **API keys** (free): `OPENROUTER_API_KEY` ([openrouter.ai/keys](https://openrouter.ai/keys)) is
+   the primary LLM. `GEMINI_API_KEY` ([aistudio.google.com/apikey](https://aistudio.google.com/apikey))
+   and `GROQ_API_KEY` ([console.groq.com/keys](https://console.groq.com/keys)) are optional
+   fallbacks (worth keeping — OpenRouter caps `:free` models around 50 requests/day under $10 of
+   lifetime credit, and three strategies on a 10-min cadence run ~80/day). Market data needs no key.
+3. **Repo secrets:** Settings → Secrets and variables → Actions. Optional variables
+   `OPENROUTER_MODEL` (default `google/gemma-4-26b-a4b-it:free`), `GEMINI_MODEL`, `GROQ_MODEL`.
 4. **Settings → Actions → General → Workflow permissions → Read and write.**
 5. **First run:** Actions → trade-cycle → Run workflow, `force_session: true`.
 6. **Vercel:** import repo, Root Directory `dashboard`, env var
@@ -158,7 +161,7 @@ Switches: `DRY_RUN` `FORCE_SESSION` `MOCK_LLM` `MOCK_MARKET` `MODE=eod` `STRATEG
    <50% of the universe is quoted, record a no-trade cycle and skip.
 4. Build the profile-specific prompt (core = "don't churn"; swing = "trade the moves, target
    +2–3%, cut losers") with portfolio state, policy limits, per-ticker signals, and the last 5
-   cycles' decisions. Call Gemini (→ Groq on failure).
+   cycles' decisions. Call OpenRouter, then Gemini, then Groq on failure.
 5. `applyGuardrails`: sells before buys; reject sells inside `minHoldingDays`; clamp buys to
    `maxPositionPct` / `maxSectorPct` / `minCashBufferPct`; cap at `maxTradesPerCycle`. Every
    proposal logged as accepted / clamped / rejected with a reason.

@@ -50,6 +50,10 @@ export const config = {
   /** Optional: run only this strategy id (comma-separated ok). Empty = all. */
   strategyFilter: (process.env.STRATEGY ?? "").split(",").map((s) => s.trim()).filter(Boolean),
 
+  openrouter: {
+    apiKey: process.env.OPENROUTER_API_KEY ?? "",
+    model: process.env.OPENROUTER_MODEL || "google/gemma-4-26b-a4b-it:free",
+  },
   gemini: {
     apiKey: process.env.GEMINI_API_KEY ?? "",
     model: process.env.GEMINI_MODEL || "gemini-flash-latest",
