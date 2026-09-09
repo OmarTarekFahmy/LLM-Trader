@@ -2,7 +2,7 @@
   "cash": 100000,
   "holdings": [],
   "nav": 100000,
-  "inceptionDate": null,
-  "inceptionBenchmarkIndexLevel": null,
-  "lastUpdated": null
+  "inceptionDate": "2026-09-09T15:02:50.792+03:00",
+  "inceptionBenchmarkIndexLevel": 56500.69921875,
+  "lastUpdated": "2026-09-09T15:02:50.792+03:00"
 }

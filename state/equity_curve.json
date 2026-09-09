@@ -1,1 +1,12 @@
-{ "points": [] }
+{
+  "points": [
+    {
+      "timestamp": "2026-09-09T15:02:50.792+03:00",
+      "cycleId": "20260909T1502-trade",
+      "nav": 100000,
+      "cash": 100000,
+      "benchmarkNav": 100000,
+      "indexLevel": 56500.69921875
+    }
+  ]
+}

@@ -1,1 +1,22 @@
-{ "decisions": [] }
+{
+  "decisions": [
+    {
+      "cycleId": "20260909T1502-trade",
+      "timestamp": "2026-09-09T15:02:50.792+03:00",
+      "mode": "trade",
+      "session": "end-of-day window",
+      "marketSummary": "30 quoted; 24/30 up over 5d; EGX30 56501 (5d 3.8%)",
+      "llmProvider": null,
+      "dataProvider": "yahoo",
+      "marketRead": "No trade decision this cycle — LLM unavailable: gemini: gemini: API key not valid. Please pass a valid API key. | groq: groq: Invalid API Key.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 100000,
+      "navAfter": 100000,
+      "cash": 100000,
+      "error": "LLM unavailable: gemini: gemini: API key not valid. Please pass a valid API key. | groq: groq: Invalid API Key"
+    }
+  ]
+}
