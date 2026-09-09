@@ -1,21 +1,8 @@
 {
-  "cash": 70777.81,
-  "holdings": [
-    {
-      "ticker": "AMOC",
-      "qty": 1000,
-      "avgCost": 14.21,
-      "openedAt": "2026-09-09T15:04:47.331+03:00"
-    },
-    {
-      "ticker": "MFPC",
-      "qty": 319,
-      "avgCost": 47.05,
-      "openedAt": "2026-09-09T15:04:47.331+03:00"
-    }
-  ],
-  "nav": 99970.81,
-  "inceptionDate": "2026-09-09T15:02:50.792+03:00",
-  "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-09T15:04:47.331+03:00"
+  "cash": 100000,
+  "holdings": [],
+  "nav": 100000,
+  "inceptionDate": null,
+  "inceptionBenchmarkIndexLevel": null,
+  "lastUpdated": null
 }
