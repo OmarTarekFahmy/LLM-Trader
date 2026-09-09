@@ -314,6 +314,7 @@ async function runCycle(
     session: sessionLabel,
     marketSummary: marketSummary(snapshot),
     llmProvider: llm.provider,
+    llmModel: llm.model,
     dataProvider: snapshot.provider,
     marketRead: llm.marketRead,
     llmRaw: llm.raw,
@@ -367,6 +368,7 @@ async function runEod(
     session: "end-of-day wrap-up",
     marketSummary: marketSummary(snapshot),
     llmProvider: null,
+    llmModel: null,
     dataProvider: snapshot.provider,
     marketRead:
       `End of day. NAV ${portfolio.nav.toFixed(0)} EGP (${totalReturnPct >= 0 ? "+" : ""}${totalReturnPct.toFixed(2)}% since inception), ` +
@@ -405,6 +407,7 @@ function skipEntry(
     session,
     marketSummary: marketSummary(snapshot),
     llmProvider: null,
+    llmModel: null,
     dataProvider: snapshot.provider,
     marketRead: `No trade decision this cycle — ${reason}.`,
     llmRaw: null,

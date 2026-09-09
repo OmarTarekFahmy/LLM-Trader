@@ -190,6 +190,7 @@ export interface DecisionEntry {
   session: string;
   marketSummary: string;
   llmProvider: string | null;
+  llmModel: string | null;
   dataProvider: string;
   marketRead: string;
   llmRaw: string | null;

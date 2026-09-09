@@ -33,8 +33,8 @@ function Entry({ d }: { d: DecisionEntry }) {
       <div className="e-meta">
         <span>{fmtTime(d.timestamp)}</span>
         <span>{d.session}</span>
-        <span>{d.dataProvider}</span>
-        <span>{d.llmProvider ?? "no model"}</span>
+        <span>data: {d.dataProvider}</span>
+        <span>{d.llmProvider ? `${d.llmProvider}${d.llmModel ? ` (${d.llmModel})` : ""}` : "no model"}</span>
         <span>
           {nf0.format(d.navBefore)} → {nf0.format(d.navAfter)}
         </span>
@@ -256,7 +256,11 @@ export default function StrategyView({ data }: { data: StrategyData }) {
             <span className="k">data feed</span> {prices.provider ?? "n/a"}
           </div>
           <div>
-            <span className="k">model</span> {feed[0]?.llmProvider ?? "n/a"}
+            <span className="k">llm (last trade cycle)</span>{" "}
+            {(() => {
+              const t = feed.find((d) => d.llmProvider);
+              return t ? `${t.llmProvider}${t.llmModel ? ` (${t.llmModel})` : ""}` : "n/a";
+            })()}
           </div>
           <div>
             <span className="k">EGX30 level</span>{" "}
