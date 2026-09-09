@@ -9,3 +9,4 @@ dashboard/out/
 .vercel
 .agents/
 skills-lock.json
+.claude/skills/

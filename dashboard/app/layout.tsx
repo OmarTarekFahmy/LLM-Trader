@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "EGX LLM Paper Trader",
-  description: "A hands-off LLM-driven paper trading experiment on the Egyptian Exchange. Fake money, real prices.",
+  description:
+    "A hands-off LLM-driven paper trading experiment on the Egyptian Exchange. Fake money, real delayed prices.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>{children}</body>
     </html>
   );

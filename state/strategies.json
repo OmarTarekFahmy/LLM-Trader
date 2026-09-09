@@ -4,8 +4,8 @@
   "strategies": [
     {
       "id": "core",
-      "label": "Core — semi-long-term",
-      "blurb": "EGX30 only. Minimum 5 trading-day holds, ≤2 trades per cycle, low turnover, a few higher-conviction positions. The original strategy.",
+      "label": "Core",
+      "blurb": "Semi-long-term. EGX30 only, minimum 5 trading-day holds, at most 2 trades per cycle, low turnover and a few higher-conviction positions.",
       "universe": "egx30",
       "profile": "core",
       "startingCashEgp": 100000,
@@ -20,8 +20,8 @@
     },
     {
       "id": "swing",
-      "label": "Swing — active",
-      "blurb": "Broad EGX100 universe (~91 liquid names). No minimum hold, ≤3 trades per cycle. Aims for ~+2-3% per position over 1-2 weeks and cuts losers around -3-4%. All exits are the model's call.",
+      "label": "Swing",
+      "blurb": "Active. Around 91 liquid EGX names, no minimum hold, up to 3 trades per cycle. Aims for roughly +2 to 3% per position over one to two weeks and cuts losers near -3 to 4%. Every exit is the model's call.",
       "universe": "egx100",
       "profile": "swing",
       "startingCashEgp": 100000,
