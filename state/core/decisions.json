@@ -386,6 +386,25 @@
       "navAfter": 99946.8,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1933-core-trade",
+      "timestamp": "2026-09-09T19:33:05.272+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "30 quoted; 24/30 up over 5d; EGX30 56501 (5d 3.8%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains bullish after 5d and 20d gains of 3.8% and 7.4%, led by extended Basic Materials, Energy, and Industrials momentum. I will stand pat: all four positions are new, Basic Materials already represents about 24.6% of NAV, AMOC is near the 15% single-position limit, and the substantial cash buffer argues against adding to stretched leaders.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains bullish after 5d and 20d gains of 3.8% and 7.4%, led by extended Basic Materials, Energy, and Industrials momentum. I will stand pat: all four positions are new, Basic Materials already represents about 24.6% of NAV, AMOC is near the 15% single-position limit, and the substantial cash buffer argues against adding to stretched leaders.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 99946.8,
+      "navAfter": 99946.8,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

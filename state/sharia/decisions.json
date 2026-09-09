@@ -271,6 +271,69 @@
       "navAfter": 99958.07,
       "cash": 58023.19,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1933-sharia-trade",
+      "timestamp": "2026-09-09T19:33:05.272+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "25 quoted; 20/25 up over 5d; EGX30 56501 (5d 3.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains strongly bullish over 5d and 20d, with momentum led by Energy, Basic Materials, and Communications. Several holdings are extended near 20-day highs, so I am preserving the newly opened positions rather than adding exposure or forcing an exit.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains strongly bullish over 5d and 20d, with momentum led by Energy, Basic Materials, and Communications. Several holdings are extended near 20-day highs, so I am preserving the newly opened positions rather than adding exposure or forcing an exit.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Held 0 days and near break-even; the strong 20d trend and current 20-day high justify monitoring rather than an immediate sale.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Held 0 days and near break-even; momentum remains positive at the 20-day high, with no fresh stop or profit signal.\"},{\"ticker\":\"RMDA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Held 0 days and near break-even; strong recent gains support the momentum setup, but an immediate exit is not warranted.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Held 0 days and near break-even; the strong 20d trend and current 20-day high justify monitoring rather than an immediate sale."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Held 0 days and near break-even; momentum remains positive at the 20-day high, with no fresh stop or profit signal."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Held 0 days and near break-even; strong recent gains support the momentum setup, but an immediate exit is not warranted."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99958.07,
+      "navAfter": 99958.07,
+      "cash": 58023.19,
+      "error": null
     }
   ]
 }

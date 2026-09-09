@@ -419,6 +419,97 @@
       "navAfter": 99926.6,
       "cash": 26525.31,
       "error": "openrouter: openrouter: empty response"
+    },
+    {
+      "cycleId": "20260909T1933-swing-trade",
+      "timestamp": "2026-09-09T19:33:05.272+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "91 quoted; 62/91 up over 5d; EGX30 56501 (5d 2.8%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains strongly bullish, but several leaders are extended and trading near 20-day highs. All five holdings were opened this cycle, remain within roughly 0.1% of cost, and have not reached either the +2.5% profit target or the -3.5% loss cut; sector concentration and the 26.5% cash buffer also remain within policy. I will hold and reassess rather than chase additional extended momentum.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains strongly bullish, but several leaders are extended and trading near 20-day highs. All five holdings were opened this cycle, remain within roughly 0.1% of cost, and have not reached either the +2.5% profit target or the -3.5% loss cut; sector concentration and the 26.5% cash buffer also remain within policy. I will hold and reassess rather than chase additional extended momentum.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Momentum remains exceptionally strong (+56.0% over 20 days) and price is at its 20-day high, but the position is only about 0.1% underwater and no profit or stop threshold has been reached.\"},{\"ticker\":\"ABUK\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock retains strong 10-day and 20-day momentum despite the latest pullback; it is near its 20-day high and remains within 0.1% of cost, so neither the profit target nor loss cut is triggered.\"},{\"ticker\":\"EGAL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 20-day trend remains strongly positive and price is close to its recent high after a modest three-day pullback. The position is only about 0.1% underwater and does not yet warrant a stop or profit-taking.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong positive momentum is intact, including a 7.4% one-day gain and price at the 20-day high. Because the trade is still flat and the bullish setup has not broken, holding avoids locking in a loss before a swing target develops.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"ETEL shows steady upward momentum across 3, 10, and 20 days with relatively low volatility and is at its 20-day high. The position remains flat, so there is no target or stop signal yet.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Momentum remains exceptionally strong (+56.0% over 20 days) and price is at its 20-day high, but the position is only about 0.1% underwater and no profit or stop threshold has been reached."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock retains strong 10-day and 20-day momentum despite the latest pullback; it is near its 20-day high and remains within 0.1% of cost, so neither the profit target nor loss cut is triggered."
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 20-day trend remains strongly positive and price is close to its recent high after a modest three-day pullback. The position is only about 0.1% underwater and does not yet warrant a stop or profit-taking."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong positive momentum is intact, including a 7.4% one-day gain and price at the 20-day high. Because the trade is still flat and the bullish setup has not broken, holding avoids locking in a loss before a swing target develops."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "ETEL shows steady upward momentum across 3, 10, and 20 days with relatively low volatility and is at its 20-day high. The position remains flat, so there is no target or stop signal yet."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99926.6,
+      "navAfter": 99926.6,
+      "cash": 26525.31,
+      "error": null
     }
   ]
 }
