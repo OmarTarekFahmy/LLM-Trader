@@ -328,6 +328,97 @@
       "navAfter": 99926.6,
       "cash": 26525.31,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1921-swing-trade",
+      "timestamp": "2026-09-09T19:21:47.019+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "91 quoted; 62/91 up over 5d; EGX30 56501 (5d 2.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 index continues its robust upward trajectory, supported by strong short-term and medium-term momentum. Sectors like Basic Materials and Energy remain exceptional leaders, while Communications and other defensive sectors offer steady diversification. We are maintaining our current high-momentum positions while keeping a watchful eye on risk management limits.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 index continues its robust upward trajectory, supported by strong short-term and medium-term momentum. Sectors like Basic Materials and Energy remain exceptional leaders, while Communications and other defensive sectors offer steady diversification. We are maintaining our current high-momentum positions while keeping a watchful eye on risk management limits.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position recently established in the leading Energy sector; holding to capture further upside momentum.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Strong Basic Materials name with recent robust gains; holding within our swing timeframe.\"\n    },\n    {\n      \"ticker\": \"EGAL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Solid momentum within Basic Materials, holding for further appreciation towards profit targets.\"\n    },\n    {\n      \"ticker\": \"SDTI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Freshly added Consumer Discretionary position showing solid relative strength and breakout behavior; holding.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Recently added Communications name providing sector diversification and continuing positive trend; holding.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position recently established in the leading Energy sector; holding to capture further upside momentum."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong Basic Materials name with recent robust gains; holding within our swing timeframe."
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Solid momentum within Basic Materials, holding for further appreciation towards profit targets."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Freshly added Consumer Discretionary position showing solid relative strength and breakout behavior; holding."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recently added Communications name providing sector diversification and continuing positive trend; holding."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99926.6,
+      "navAfter": 99926.6,
+      "cash": 26525.31,
+      "error": "openrouter: openrouter: empty response"
     }
   ]
 }

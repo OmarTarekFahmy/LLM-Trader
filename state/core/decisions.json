@@ -309,6 +309,83 @@
       "navAfter": 99946.8,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1921-core-trade",
+      "timestamp": "2026-09-09T19:21:47.019+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "30 quoted; 24/30 up over 5d; EGX30 56501 (5d 3.8%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains in a strong bullish trend, led by Basic Materials, Energy, and Industrials, but several leaders are extended after sharp 5-day and 20-day gains. The portfolio was recently diversified into three high-conviction momentum names and retains substantial cash; with all holdings at zero trading days held and no fresh thesis or risk trigger, the disciplined action is to stand pat and avoid same-cycle churn.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains in a strong bullish trend, led by Basic Materials, Energy, and Industrials, but several leaders are extended after sharp 5-day and 20-day gains. The portfolio was recently diversified into three high-conviction momentum names and retains substantial cash; with all holdings at zero trading days held and no fresh thesis or risk trigger, the disciplined action is to stand pat and avoid same-cycle churn.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Large recent gain and stretched momentum warrant patience; the position is also below the five-trading-day minimum for any potential sale.\"},{\"ticker\":\"ABUK\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong sector momentum supports the recent purchase, but the gain is extended and the position is newly opened, so no trade is warranted.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position benefits from strong Basic Materials momentum, but rapid appreciation raises near-term pullback risk; it remains below the five-trading-day minimum for sale.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 20-day momentum and sector concentration support retaining the newly added position, while avoiding additional same-cycle turnover.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Large recent gain and stretched momentum warrant patience; the position is also below the five-trading-day minimum for any potential sale."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong sector momentum supports the recent purchase, but the gain is extended and the position is newly opened, so no trade is warranted."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position benefits from strong Basic Materials momentum, but rapid appreciation raises near-term pullback risk; it remains below the five-trading-day minimum for sale."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 20-day momentum and sector concentration support retaining the newly added position, while avoiding additional same-cycle turnover."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99946.8,
+      "navAfter": 99946.8,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }
