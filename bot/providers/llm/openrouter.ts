@@ -3,8 +3,17 @@ import { parseLlmJson } from "../../prompt.js";
 
 const URL = "https://openrouter.ai/api/v1/chat/completions";
 
+interface OrMessage {
+  content?: string;
+  reasoning?: string;
+}
 interface OpenRouterResponse {
-  choices?: { message?: { content?: string }; finish_reason?: string; error?: { message?: string } }[];
+  choices?: {
+    message?: OrMessage;
+    finish_reason?: string;
+    native_finish_reason?: string;
+    error?: { message?: string };
+  }[];
   error?: { message?: string; code?: number | string };
 }
 
@@ -13,10 +22,15 @@ interface OpenRouterResponse {
  * `google/gemma-4-26b-a4b-it:free`. No strict `response_format` — we prompt hard
  * for JSON and lean on the tolerant parser, which keeps model swaps painless.
  *
- * Note on free models: OpenRouter caps `:free` models at ~50 requests/day for
- * accounts with under $10 of lifetime credit (~1000/day above that). Three
- * strategies on the 10-minute cadence is ~80 calls/day, so the Gemini/Groq
- * fallback in providers/llm/index.ts will carry cycles once the daily cap hits.
+ * Robustness notes:
+ *  - `max_tokens` is generous (8k) because reasoning/"thinking" models burn a
+ *    lot of the budget before emitting the answer. With 2k they hit the length
+ *    limit mid-thought and return empty `content`.
+ *  - If `content` is empty we try `message.reasoning` (some reasoning models put
+ *    the final JSON only in their trace).
+ *  - Free models: OpenRouter caps `:free` at ~50 req/day under $10 lifetime
+ *    credit (~1000/day above). ~80 calls/day across three strategies, so the
+ *    Gemini/Groq fallback in providers/llm/index.ts carries the overflow.
  */
 export class OpenRouterProvider implements LlmProvider {
   readonly name = "openrouter";
@@ -33,7 +47,7 @@ export class OpenRouterProvider implements LlmProvider {
     const payload = {
       model: this.model,
       temperature: 0.35,
-      max_tokens: 2048,
+      max_tokens: 8192,
       messages: [
         {
           role: "system",
@@ -57,17 +71,16 @@ export class OpenRouterProvider implements LlmProvider {
             "X-Title": "EGX LLM Paper Trader",
           },
           body: JSON.stringify(payload),
-          signal: AbortSignal.timeout(60_000),
+          signal: AbortSignal.timeout(90_000),
         });
         const body = (await res.json()) as OpenRouterResponse;
 
-        const rawMeta = JSON.stringify(body.error ?? {});
         const errMsg = body.error?.message ?? body.choices?.[0]?.error?.message;
         if (!res.ok || errMsg) {
           const msg = errMsg ?? `HTTP ${res.status}`;
           // A saturated free/shared upstream pool won't clear in seconds — fail
           // fast so the provider chain can move on to Gemini/Groq.
-          const sharedPoolExhausted = /shared[_ ]pool|rate-limited upstream/i.test(rawMeta + msg);
+          const sharedPoolExhausted = /shared[_ ]pool|rate-limited upstream/i.test(msg);
           if (!sharedPoolExhausted && (res.status === 429 || res.status >= 500) && attempt < 2) {
             await new Promise((r) => setTimeout(r, 6_000 * (attempt + 1)));
             lastErr = new Error(msg);
@@ -76,10 +89,21 @@ export class OpenRouterProvider implements LlmProvider {
           throw new Error(`openrouter: ${msg}`);
         }
 
-        const text = body.choices?.[0]?.message?.content ?? "";
-        if (!text.trim()) throw new Error("openrouter: empty response");
+        const choice = body.choices?.[0];
+        const msg = choice?.message ?? {};
+        const finish = choice?.finish_reason ?? choice?.native_finish_reason ?? "?";
+        const text = (msg.content ?? "").trim() || (msg.reasoning ?? "").trim();
+
+        if (!text) {
+          const hint =
+            finish === "length"
+              ? " (finish_reason: length — model likely ran out of tokens while reasoning; raise max_tokens or pick a non-reasoning model)"
+              : ` (finish_reason: ${finish})`;
+          throw new Error(`openrouter: empty response${hint}`);
+        }
+
         const decision = parseLlmJson(text);
-        return { ...decision, provider: this.name, model: this.model, raw: text };
+        return { ...decision, provider: this.name, model: this.model, raw: msg.content?.trim() || text };
       } catch (err) {
         lastErr = err;
         if (attempt >= 2) break;
