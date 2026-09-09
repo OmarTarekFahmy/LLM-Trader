@@ -100,3 +100,29 @@ export interface Universe {
   indexSymbol: string;
   constituents: UniverseEntry[];
 }
+
+export interface StrategyDef {
+  id: string;
+  label: string;
+  blurb: string;
+  universe: string;
+  profile: "core" | "swing";
+  startingCashEgp: number;
+  policy: Record<string, unknown>;
+}
+
+export interface StrategyRegistry {
+  cadenceMinutes: number;
+  strategies: StrategyDef[];
+}
+
+/** Everything the dashboard needs to render one strategy tab. */
+export interface StrategyData {
+  def: StrategyDef;
+  portfolio: Portfolio;
+  trades: TradeRecord[];
+  decisions: DecisionEntry[];
+  equity: EquityPoint[];
+  prices: PriceSnapshot;
+  universeCount: number;
+}

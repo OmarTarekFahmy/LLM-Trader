@@ -2,10 +2,11 @@ name: trade-cycle
 
 on:
   schedule:
-    # Every 30 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
+    # Every 10 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
     # session (Sun-Thu 10:00-14:15 Cairo) under either GMT+2 or GMT+3. The bot
-    # script itself decides whether the market is actually open.
-    - cron: "0,30 6-12 * * *"
+    # script itself decides whether the market is actually open and runs every
+    # strategy in state/strategies.json each fire.
+    - cron: "*/10 6-12 * * *"
     # One extra fire ~14:30 Cairo for the end-of-day mark-to-market wrap-up.
     - cron: "30 12 * * *"
   workflow_dispatch:
@@ -18,6 +19,10 @@ on:
         description: "bypass the Cairo session-hours gate (for testing)"
         required: false
         default: "false"
+      strategy:
+        description: "run only this strategy id (e.g. core, swing). blank = all"
+        required: false
+        default: ""
 
 concurrency:
   group: trade-cycle
@@ -29,7 +34,7 @@ permissions:
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
 
@@ -54,6 +59,7 @@ jobs:
           # session hours). workflow_dispatch can override via the `mode` input.
           MODE: ${{ github.event.inputs.mode || (github.event.schedule == '30 12 * * *' && 'eod' || 'trade') }}
           FORCE_SESSION: ${{ github.event.inputs.force_session == 'true' && '1' || '' }}
+          STRATEGY: ${{ github.event.inputs.strategy }}
         run: npm run cycle
 
       - name: Commit updated state

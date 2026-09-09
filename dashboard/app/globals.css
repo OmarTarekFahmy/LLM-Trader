@@ -192,3 +192,59 @@ th {
 .small {
   font-size: 12px;
 }
+
+.topbar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  min-width: 180px;
+}
+
+.tab:hover {
+  border-color: var(--muted);
+}
+
+.tab.active {
+  border-color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.tab-label {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.tab-sub {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+code {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 12px;
+}

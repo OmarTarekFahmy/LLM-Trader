@@ -4,6 +4,8 @@ import type {
   MarketSnapshot,
   Policy,
   Portfolio,
+  StrategyProfile,
+  TickerData,
 } from "./types.js";
 
 /** JSON schema handed to the LLM for structured output (Gemini responseSchema / Groq json mode hint). */
@@ -35,38 +37,76 @@ export const RESPONSE_SCHEMA = {
   required: ["marketRead", "actions"],
 } as const;
 
-const POLICY_BLURB = (p: Policy): string =>
-  [
+const POLICY_BLURB = (p: Policy): string => {
+  const lines = [
     `- Starting capital: ${p.startingCashEgp.toLocaleString()} EGP (paper).`,
     `- Max single position: ${(p.maxPositionPct * 100).toFixed(0)}% of NAV after a buy.`,
     `- Max sector exposure: ${(p.maxSectorPct * 100).toFixed(0)}% of NAV.`,
-    `- Minimum holding period: ${p.minHoldingDays} trading days (you cannot sell a position younger than this; the guardrail will reject such sells).`,
+    p.minHoldingDays > 0
+      ? `- Minimum holding period: ${p.minHoldingDays} trading days (you cannot sell a position younger than this; the guardrail will reject such sells).`
+      : `- No minimum holding period — you may exit a position any cycle, including the one you opened it.`,
     `- Max ${p.maxTradesPerCycle} executed trades per cycle.`,
     `- Always keep >= ${(p.minCashBufferPct * 100).toFixed(0)}% of NAV in cash.`,
-    `- Transaction cost ~${((p.costs.commissionPct + p.costs.levyPct) * 100).toFixed(2)}% per fill (both sides).`,
-  ].join("\n");
+    `- Transaction cost ~${((p.costs.commissionPct + p.costs.levyPct) * 100).toFixed(2)}% per fill (both sides), so a round trip costs ~${(
+      (p.costs.commissionPct + p.costs.levyPct) *
+      200
+    ).toFixed(2)}%.`,
+  ];
+  return lines.join("\n");
+};
 
-function fmtHoldings(portfolio: Portfolio, snapshot: MarketSnapshot): string {
+const PHILOSOPHY: Record<StrategyProfile, string> = {
+  core: [
+    "PHILOSOPHY — semi-long-term",
+    '- Do not churn. Most cycles should be mostly "hold". Only act on a real, stated thesis.',
+    "- Frequent polling is NOT a reason to trade frequently.",
+    "- Diversify. Respect the concentration limits. Keep a cash buffer.",
+    "- Prefer a small number of higher-conviction positions over many tiny ones.",
+  ].join("\n"),
+  swing: [
+    "PHILOSOPHY — active swing trading",
+    "- Goal: capture short moves. Aim for roughly +2-3% on a position, typically held a few days to ~2 weeks, then take the profit.",
+    "- Cut losers fast — around -3% to -4%, or immediately if the reason you bought no longer holds.",
+    "- Trading often is fine here. It is normal for most cycles to do something: enter a fresh setup, take a profit, or stop out.",
+    "- Look for names that actually move: elevated volatility, a sharp multi-day run or drop, a bounce off a recent low, a break above a recent high, a pullback in an uptrend.",
+    "- Still diversify across a handful of names and respect every hard limit below. Keep the cash buffer.",
+    "- You manage exits yourself — there is no automatic take-profit or stop-loss. Re-check every holding's unrealized P&L and days held each cycle and act.",
+  ].join("\n"),
+};
+
+const sd = (n: number | null, digits = 1): string =>
+  n === null ? "n/a" : `${n >= 0 ? "+" : ""}${n.toFixed(digits)}%`;
+
+function fmtHoldings(portfolio: Portfolio, snapshot: MarketSnapshot, daysHeld: (openedAt: string) => number): string {
   if (portfolio.holdings.length === 0) return "  (none — all cash)";
   return portfolio.holdings
     .map((h) => {
-      const px = snapshot.tickers.find((t) => t.ticker === h.ticker)?.quote?.price;
-      const mv = px ? px * h.qty : null;
-      return `  ${h.ticker}: qty ${h.qty}, avgCost ${h.avgCost.toFixed(3)}, opened ${h.openedAt.slice(0, 10)}${
-        mv !== null ? `, mkt value ~${mv.toFixed(0)} EGP` : ""
-      }`;
+      const px = snapshot.tickers.find((t) => t.ticker === h.ticker)?.quote?.price ?? null;
+      const mv = px !== null ? px * h.qty : null;
+      const pnlPct = px !== null ? ((px - h.avgCost) / h.avgCost) * 100 : null;
+      return (
+        `  ${h.ticker}: qty ${h.qty}, avgCost ${h.avgCost.toFixed(3)}, ` +
+        `now ${px !== null ? px.toFixed(3) : "?"} EGP, unrealized ${sd(pnlPct)}, ` +
+        `held ${daysHeld(h.openedAt)} trading day(s)${mv !== null ? `, mkt value ~${mv.toFixed(0)} EGP` : ""}`
+      );
     })
     .join("\n");
 }
 
-function fmtTickers(snapshot: MarketSnapshot): string {
+function fmtTickers(snapshot: MarketSnapshot, profile: StrategyProfile): string {
   return snapshot.tickers
     .map((t) => {
-      const q = t.quote ? `${t.quote.price.toFixed(3)} EGP` : "no quote";
-      const closes = t.history.slice(-10).map((b) => b.close.toFixed(2)).join(", ");
-      const ch5 = t.change5dPct === null ? "n/a" : `${t.change5dPct >= 0 ? "+" : ""}${t.change5dPct.toFixed(1)}%`;
-      const ch20 = t.change20dPct === null ? "n/a" : `${t.change20dPct >= 0 ? "+" : ""}${t.change20dPct.toFixed(1)}%`;
-      return `  ${t.ticker} (${t.sector}) — ${q} | 5d ${ch5}, 20d ${ch20} | last closes: ${closes}`;
+      const q = t.quote ? `${t.quote.price.toFixed(3)}` : "no quote";
+      const closes = t.history.slice(-8).map((b) => b.close.toFixed(2)).join(",");
+      if (profile === "swing") {
+        return (
+          `  ${t.ticker} (${t.sector}) ${q} | 1d ${sd(t.change1dPct)} 3d ${sd(t.change3dPct)} ` +
+          `10d ${sd(t.change10dPct)} 20d ${sd(t.change20dPct)} | vol10 ${
+            t.volatility10dPct === null ? "n/a" : t.volatility10dPct.toFixed(1) + "%"
+          } | vs20dHi ${sd(t.pctFrom20dHigh)} vs20dLo ${sd(t.pctFrom20dLow)} | closes ${closes}`
+        );
+      }
+      return `  ${t.ticker} (${t.sector}) — ${q} EGP | 5d ${sd(t.change5dPct)}, 20d ${sd(t.change20dPct)} | last closes: ${closes}`;
     })
     .join("\n");
 }
@@ -94,23 +134,33 @@ function fmtHistory(recent: DecisionEntry[]): string {
 }
 
 export function buildPrompt(args: {
+  profile: StrategyProfile;
+  universeLabel: string;
   policy: Policy;
   portfolio: Portfolio;
   snapshot: MarketSnapshot;
   recentDecisions: DecisionEntry[];
+  daysHeld: (openedAt: string) => number;
 }): string {
-  const { policy, portfolio, snapshot, recentDecisions } = args;
+  const { profile, universeLabel, policy, portfolio, snapshot, recentDecisions, daysHeld } = args;
   const totalReturnPct = ((portfolio.nav - policy.startingCashEgp) / policy.startingCashEgp) * 100;
 
-  return `You are a disciplined portfolio manager running a SEMI-LONG-TERM paper strategy on the Egyptian Exchange (EGX). You trade a fixed universe of EGX30 common stocks. Real money is never involved. Prices are delayed (~15 min) and that is acceptable.
+  const intro =
+    profile === "swing"
+      ? `You are an active swing trader running a paper book on the Egyptian Exchange (EGX). Your universe is ${universeLabel} (~${snapshot.tickers.length} liquid names). Real money is never involved. Prices are delayed (~15 min); that is fine for this horizon.`
+      : `You are a disciplined portfolio manager running a SEMI-LONG-TERM paper strategy on the Egyptian Exchange (EGX). Your universe is ${universeLabel} common stocks. Real money is never involved. Prices are delayed (~15 min) and that is acceptable.`;
 
-Your job each cycle: read the state below and return structured JSON with an overall market read and a list of proposed actions. A deterministic code layer prices, validates and books every fill — you never do the money math. Propose intent; the guardrail clamps or rejects anything that breaks policy, so stay well inside the limits.
+  const targetLine =
+    profile === "swing" && policy.targetGainPct
+      ? `\nSOFT TARGETS (guidance only — NOT auto-executed): take profit near +${(policy.targetGainPct * 100).toFixed(1)}%, cut losses near -${((policy.softStopPct ?? 0.035) * 100).toFixed(1)}%. You must place every buy and sell yourself.`
+      : "";
 
-PHILOSOPHY
-- Semi-long-term. Do not churn. Most cycles should be mostly "hold". Only act on a real, stated thesis.
-- You are polled roughly every 30 minutes during market hours. Frequent polling is NOT a reason to trade frequently.
-- Diversify. Respect the concentration limits. Keep a cash buffer.
-- Prefer a small number of higher-conviction positions over many tiny ones.
+  return `${intro}
+
+Your job each cycle: read the state below and return structured JSON with an overall market read and a list of proposed actions. A deterministic code layer prices, validates and books every fill — you never do the money math. Propose intent; the guardrail clamps or rejects anything that breaks policy, so stay inside the limits.
+
+${PHILOSOPHY[profile]}
+${targetLine}
 
 INVESTMENT POLICY (enforced in code — proposals that violate get clamped/rejected)
 ${POLICY_BLURB(policy)}
@@ -120,15 +170,15 @@ PORTFOLIO STATE
   NAV: ${portfolio.nav.toFixed(0)} EGP
   Total return since inception: ${totalReturnPct >= 0 ? "+" : ""}${totalReturnPct.toFixed(2)}%
   Holdings:
-${fmtHoldings(portfolio, snapshot)}
+${fmtHoldings(portfolio, snapshot, daysHeld)}
 
 MARKET SNAPSHOT (as of ${snapshot.asOf}, data provider: ${snapshot.provider})
   EGX30 index: ${snapshot.index ? snapshot.index.level.toFixed(0) : "n/a"}${
     snapshot.index?.synthetic ? " (synthetic proxy)" : ""
   } | 5d ${snapshot.indexChange5dPct?.toFixed(1) ?? "n/a"}%, 20d ${snapshot.indexChange20dPct?.toFixed(1) ?? "n/a"}%
 
-  Per ticker (price | trailing returns | recent daily closes):
-${fmtTickers(snapshot)}
+  Per ticker:
+${fmtTickers(snapshot, profile)}
 
   Sector aggregates (equal-weight across tracked names):
 ${fmtSectors(snapshot)}

@@ -4,7 +4,7 @@ import { bookFill, computeNav, feeFor } from "./ledger.js";
 import { applyGuardrails } from "./policy.js";
 import { tradingDaysBetween } from "./session.js";
 import { parseLlmJson } from "./prompt.js";
-import type { MarketSnapshot, Policy, Portfolio } from "./types.js";
+import type { MarketSnapshot, Policy, Portfolio, TickerData } from "./types.js";
 
 const policy: Policy = {
   startingCashEgp: 100000,
@@ -16,6 +16,22 @@ const policy: Policy = {
   costs: { commissionPct: 0.0005, levyPct: 0.0005 },
 };
 
+const mkTicker = (ticker: string, sector: string, price: number, ch5: number, ch20: number): TickerData => ({
+  ticker,
+  name: ticker,
+  sector,
+  quote: { ticker, price, asOf: "x" },
+  history: [],
+  change1dPct: 0,
+  change3dPct: 0,
+  change5dPct: ch5,
+  change10dPct: ch20 / 2,
+  change20dPct: ch20,
+  volatility10dPct: 2,
+  pctFrom20dHigh: -3,
+  pctFrom20dLow: 8,
+});
+
 const snapshot = (over: Partial<MarketSnapshot> = {}): MarketSnapshot => ({
   asOf: "2026-09-09T10:00:00+03:00",
   provider: "test",
@@ -24,9 +40,9 @@ const snapshot = (over: Partial<MarketSnapshot> = {}): MarketSnapshot => ({
   indexChange20dPct: 2,
   sectors: [],
   tickers: [
-    { ticker: "COMI", name: "CIB", sector: "Financials", quote: { ticker: "COMI", price: 100, asOf: "x" }, history: [], change5dPct: 1, change20dPct: 5 },
-    { ticker: "HRHO", name: "EFG", sector: "Financials", quote: { ticker: "HRHO", price: 25, asOf: "x" }, history: [], change5dPct: -1, change20dPct: -3 },
-    { ticker: "TMGH", name: "TMG", sector: "Real Estate", quote: { ticker: "TMGH", price: 50, asOf: "x" }, history: [], change5dPct: 2, change20dPct: 4 },
+    mkTicker("COMI", "Financials", 100, 1, 5),
+    mkTicker("HRHO", "Financials", 25, -1, -3),
+    mkTicker("TMGH", "Real Estate", 50, 2, 4),
   ],
   ...over,
 });

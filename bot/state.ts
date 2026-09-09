@@ -1,6 +1,5 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { STATE_DIR } from "./config.js";
 import type {
   DecisionEntry,
   EquityPoint,
@@ -9,37 +8,50 @@ import type {
   TradeRecord,
 } from "./types.js";
 
-function readJson<T>(file: string): T {
-  return JSON.parse(readFileSync(join(STATE_DIR, file), "utf8")) as T;
+function readJson<T>(dir: string, file: string): T {
+  return JSON.parse(readFileSync(join(dir, file), "utf8")) as T;
 }
 
-function writeJson(file: string, data: unknown): void {
-  writeFileSync(join(STATE_DIR, file), JSON.stringify(data, null, 2) + "\n", "utf8");
+function writeJson(dir: string, file: string, data: unknown): void {
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(join(dir, file), JSON.stringify(data, null, 2) + "\n", "utf8");
 }
 
-export const readPortfolio = (): Portfolio => readJson<Portfolio>("portfolio.json");
-export const writePortfolio = (p: Portfolio): void => writeJson("portfolio.json", p);
+export const EMPTY_PORTFOLIO = (): Portfolio => ({
+  cash: 0,
+  holdings: [],
+  nav: 0,
+  inceptionDate: null,
+  inceptionBenchmarkIndexLevel: null,
+  lastUpdated: null,
+});
 
-export const readTrades = (): { trades: TradeRecord[] } => readJson("trades.json");
-export const appendTrades = (records: TradeRecord[]): void => {
-  const cur = readTrades();
-  writeJson("trades.json", { trades: [...cur.trades, ...records] });
+export const readPortfolio = (dir: string): Portfolio => readJson<Portfolio>(dir, "portfolio.json");
+export const writePortfolio = (dir: string, p: Portfolio): void => writeJson(dir, "portfolio.json", p);
+
+export const readTrades = (dir: string): { trades: TradeRecord[] } => readJson(dir, "trades.json");
+export const appendTrades = (dir: string, records: TradeRecord[]): void => {
+  const cur = readTrades(dir);
+  writeJson(dir, "trades.json", { trades: [...cur.trades, ...records] });
 };
 
-export const readDecisions = (): { decisions: DecisionEntry[] } => readJson("decisions.json");
-export const appendDecision = (entry: DecisionEntry): void => {
-  const cur = readDecisions();
-  writeJson("decisions.json", { decisions: [...cur.decisions, entry] });
+export const readDecisions = (dir: string): { decisions: DecisionEntry[] } =>
+  readJson(dir, "decisions.json");
+export const appendDecision = (dir: string, entry: DecisionEntry): void => {
+  const cur = readDecisions(dir);
+  writeJson(dir, "decisions.json", { decisions: [...cur.decisions, entry] });
 };
-export const recentDecisions = (n: number): DecisionEntry[] => {
-  const all = readDecisions().decisions;
+export const recentDecisions = (dir: string, n: number): DecisionEntry[] => {
+  const all = readDecisions(dir).decisions;
   return all.slice(Math.max(0, all.length - n));
 };
 
-export const writePrices = (snap: PriceSnapshot): void => writeJson("prices.json", snap);
+export const writePrices = (dir: string, snap: PriceSnapshot): void =>
+  writeJson(dir, "prices.json", snap);
 
-export const readEquityCurve = (): { points: EquityPoint[] } => readJson("equity_curve.json");
-export const appendEquityPoint = (point: EquityPoint): void => {
-  const cur = readEquityCurve();
-  writeJson("equity_curve.json", { points: [...cur.points, point] });
+export const readEquityCurve = (dir: string): { points: EquityPoint[] } =>
+  readJson(dir, "equity_curve.json");
+export const appendEquityPoint = (dir: string, point: EquityPoint): void => {
+  const cur = readEquityCurve(dir);
+  writeJson(dir, "equity_curve.json", { points: [...cur.points, point] });
 };

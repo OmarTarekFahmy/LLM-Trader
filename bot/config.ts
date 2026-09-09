@@ -1,11 +1,14 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import type { Policy, Universe } from "./types.js";
+import type { Policy, StrategyDef, StrategyRegistry, Universe } from "./types.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = join(here, "..");
 export const STATE_DIR = join(REPO_ROOT, "state");
+
+/** Absolute path to one strategy's state directory. */
+export const strategyDir = (id: string): string => join(STATE_DIR, id);
 
 /** Load a tiny .env file if present (no dependency on dotenv). */
 function loadDotEnv(): void {
@@ -38,6 +41,8 @@ export const config = {
   mockLlm: flag("MOCK_LLM"),
   mockMarket: flag("MOCK_MARKET"),
   mode: (process.env.MODE === "eod" ? "eod" : "trade") as "eod" | "trade",
+  /** Optional: run only this strategy id (comma-separated ok). Empty = all. */
+  strategyFilter: (process.env.STRATEGY ?? "").split(",").map((s) => s.trim()).filter(Boolean),
 
   gemini: {
     apiKey: process.env.GEMINI_API_KEY ?? "",
@@ -58,22 +63,25 @@ export const config = {
   decisionContextWindow: 5,
 } as const;
 
-export function loadPolicy(): Policy {
-  const raw = JSON.parse(readFileSync(join(REPO_ROOT, "policy.json"), "utf8")) as Policy & {
-    _comment?: string;
-  };
-  return {
-    startingCashEgp: raw.startingCashEgp,
-    maxPositionPct: raw.maxPositionPct,
-    maxSectorPct: raw.maxSectorPct,
-    minHoldingDays: raw.minHoldingDays,
-    maxTradesPerCycle: raw.maxTradesPerCycle,
-    minCashBufferPct: raw.minCashBufferPct,
-    costs: raw.costs,
-  };
+export function loadStrategies(): StrategyRegistry {
+  const raw = JSON.parse(
+    readFileSync(join(STATE_DIR, "strategies.json"), "utf8"),
+  ) as StrategyRegistry & { _comment?: string };
+  let strategies = raw.strategies;
+  if (config.strategyFilter.length > 0) {
+    strategies = strategies.filter((s) => config.strategyFilter.includes(s.id));
+  }
+  return { cadenceMinutes: raw.cadenceMinutes, strategies };
 }
 
-export function loadUniverse(): Universe {
-  const raw = JSON.parse(readFileSync(join(STATE_DIR, "universe.json"), "utf8")) as Universe;
+/** Full runtime policy for a strategy (its per-strategy policy + starting cash). */
+export function policyFor(def: StrategyDef): Policy {
+  return { startingCashEgp: def.startingCashEgp, ...def.policy };
+}
+
+export function loadUniverse(name: string): Universe {
+  const raw = JSON.parse(
+    readFileSync(join(STATE_DIR, "universes", `${name}.json`), "utf8"),
+  ) as Universe;
   return raw;
 }

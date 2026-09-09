@@ -1,36 +1,44 @@
 # EGX LLM Paper Trader
 
-A hands-off experiment: on a schedule during Egyptian Exchange (EGX) hours, a bot feeds an
-LLM the current paper portfolio plus recent price/sector/market history for a fixed universe
-of EGX30 stocks, asks it to buy/sell/hold under a written policy, books the surviving actions
-into a **paper** ledger (fake money, real delayed prices), commits everything — reasoning
-included — as JSON to this repo, and a Next.js dashboard on Vercel renders it.
+A hands-off experiment: on a schedule during Egyptian Exchange (EGX) hours, a bot feeds an LLM
+the current paper portfolio plus recent price/volatility/sector history, asks it to buy/sell/hold
+under a written policy, books the surviving actions into a **paper** ledger (fake money, real
+delayed prices), commits everything — reasoning included — as JSON to this repo, and a Next.js
+dashboard on Vercel renders it.
 
-**No brokerage, no execution, no real funds, ever.** See [the spec](./egx-llm-paper-trader-spec.md)
-if present, or the section headers below.
+It now runs **two independent simulations side by side**, switchable in the dashboard:
 
-**Live:** the `trade-cycle` workflow runs on schedule and commits `state/*.json` here. The
-dashboard reads those files; deploy it to Vercel (Root Directory `dashboard`, env var
+| Strategy | Universe | Style |
+|---|---|---|
+| **Core** | EGX30 (30 names) | Semi-long-term. Min 5 trading-day holds, ≤2 trades/cycle, low turnover. |
+| **Swing** | ~EGX100 (91 liquid names) | Active. No minimum hold, ≤3 trades/cycle. Aims for ~+2–3% per position over 1–2 weeks, cuts losers around −3–4%. All exits are the model's call. |
+
+Each has its own cash, ledger, decision log and equity curve under `state/<id>/`. Both are polled
+every ~10 minutes during the session.
+
+**No brokerage, no execution, no real funds, ever.** See [the spec](./egx-llm-paper-trader-spec.md).
+
+**Live:** the `trade-cycle` workflow runs on schedule and commits `state/` here. Deploy the
+dashboard to Vercel (Root Directory `dashboard`, env var
 `STATE_BASE_URL=https://raw.githubusercontent.com/OmarTarekFahmy/LLM-Trader/main/state`).
 
 ---
 
-## Status — MVP + LLM resilience done
+## Status
 
 | Piece | State |
 |---|---|
-| Hardcoded EGX30 universe + sectors | ✅ `state/universe.json` |
+| Two independent strategies (core + swing), shared market fetch | ✅ `state/strategies.json`, `bot/index.ts` |
+| Hardcoded universes + sectors | ✅ `state/universes/egx30.json`, `egx100.json` |
 | Deterministic guardrail + ledger layer | ✅ `bot/policy.ts`, `bot/ledger.ts` (unit-tested) |
-| LLM: Gemini primary + Groq fallback | ✅ `bot/providers/llm/` (fallback verified in a live run) |
-| Market data: Yahoo Finance | ✅ `bot/providers/market/yahoo.ts` — see decision below |
-| JSON state files in git | ✅ `state/*.json` |
-| GitHub Actions cron | ✅ `.github/workflows/trade-cycle.yml` |
-| Bare-bones dashboard | ✅ `dashboard/` (numbers, holdings, reasoning feed, trade log, health) |
-| Full cycle runs end to end & commits | ✅ verified live: Yahoo → Gemini → guardrails/clamp → ledger → state |
+| LLM: Gemini primary + Groq fallback | ✅ fallback verified in a live run |
+| Market data: Yahoo Finance (no key) | ✅ `bot/providers/market/yahoo.ts` |
+| GitHub Actions cron every 10 min + EOD wrap-up | ✅ `.github/workflows/trade-cycle.yml` |
+| Dashboard with a strategy switcher | ✅ `dashboard/` |
+| Full cycle end to end & committing | ✅ verified live for both strategies |
 
-Not yet built (later phases): NAV chart with benchmark overlay, EGX holiday calendar,
-constituent auto-refresh, backtest mode, a second *market-data* provider (Yahoo is solo — the
-two spec-named providers are unusable on free tiers).
+Not yet built: NAV chart with benchmark overlay, EGX holiday calendar, constituent auto-refresh,
+backtest mode, a second market-data provider.
 
 ---
 
@@ -38,112 +46,84 @@ two spec-named providers are unusable on free tiers).
 
 1. **Market data: Yahoo Finance, not EGXAPI or Twelve Data.** Build-time checks (2026-09-09):
    - **EGXAPI** — `api.egxapi.com` returns Cloudflare error 1033 (no origin) on every endpoint;
-     the product is also an *order-execution* API, not a price feed. Unusable. Kept as a stub
-     (`bot/providers/market/egxapi.ts`).
-   - **Twelve Data** — the free (Basic) plan returns *"This symbol is available starting with
-     the Pro plan"* for every EGX symbol. Pro is paid → breaks the zero-cost constraint. Kept
-     wired as an optional fallback that only does anything on a paid plan.
-   - **Yahoo Finance** — serves EGX equities as `<TICKER>.CA` and the index as `^CASE30`, in
-     EGP, no API key, prices matching the live market. This is the primary provider. Caveat:
-     unofficial API (can rate-limit; we throttle + retry) and its `meta.regularMarketPrice` /
-     `instrumentType` fields are unreliable for EGX, so we use the last daily close as the
-     (delayed, spec-approved) quote and trust our curated universe over its labels.
-2. **LLM models updated from the spec's names.** `gemini-flash-latest` (a stable alias that
-   tracks the current free flash model — the spec's `gemini-2.5-flash`/`2.0-flash` are old/
-   retired now), with an in-provider fall to `gemini-flash-lite-latest`, then Groq
-   `openai/gpt-oss-120b` (the spec's `llama-3.3-70b-versatile` was removed from Groq).
-3. **`git commit` happens in the workflow, not the bot script.** The bot writes `state/*.json`;
-   the `Commit updated state` step in the workflow adds/commits/pushes (rebase-safe). Keeps
-   local/dry runs from ever creating commits. (Spec §12 sketched it inside `index.ts`.)
-4. **Added `state/prices.json`.** A per-cycle snapshot of every universe quote + index level so
-   the dashboard can value holdings and show prices without calling a data API itself. Not in
-   the spec's file list; it's the cheapest way to satisfy the §10 holdings table.
-5. **Universe 30th name.** Investing.com's EGX30 components list showed an ambiguous
-   "Valmore Holding" pair (it's EK Holding / `EKHO`, which trades in USD — awkward for an EGP
-   ledger); used `SWDY` (Elsewedy Electric), a long-time EGX30 heavyweight, instead. Refresh
-   the whole list from the EGX factsheet after each index review (Feb / Aug) — see the comment
-   in `state/universe.json`.
-6. **Transaction costs:** `commissionPct 0.05% + levyPct 0.05% = 0.10%` per fill, both sides,
-   inside the spec's 0.05–0.15% band. Editable in `policy.json`.
-7. **EGX30 index level:** Yahoo `^CASE30` (real). If it's ever unavailable the bot synthesizes
-   an equal-weight proxy from the tracked universe and flags it `synthetic: true` everywhere it
-   surfaces. The buy-and-hold benchmark uses whatever series is available, consistently, from
-   inception.
-8. **End-of-day cycle** (spec §5) is included: the `30 12 * * *` cron runs `MODE=eod` — a
-   mark-to-market snapshot + an LLM-free wrap-up entry.
-9. **Offline mock providers** (`MOCK_LLM`, `MOCK_MARKET`) exist so the full cycle — guardrails,
-   ledger, state writes, dashboard — can be exercised with zero network / keys. This is how the
-   MVP end-to-end run was verified.
+     it's also an *order* API, not a price feed. Unusable. Kept as a stub.
+   - **Twelve Data** — the free plan returns *"available starting with the Pro plan"* for every
+     EGX symbol (verified with a real key). Pro is paid → breaks the zero-cost constraint. Wired
+     as an opt-in fallback (`USE_TWELVEDATA=1`) that only helps on a paid plan.
+   - **Yahoo Finance** — EGX equities as `<TICKER>.CA`, index as `^CASE30`, EGP, no key, prices
+     matching the live market. Primary provider. Its `meta.regularMarketPrice`/`instrumentType`
+     are unreliable for EGX, so we take the last daily close as the (delayed, spec-approved)
+     quote and trust the curated universe over its labels.
+2. **Two concurrent strategies.** The user asked to keep the original strategy and fork a second,
+   more active one alongside it. `state/strategies.json` is the registry; each strategy carries
+   its own `policy` and `universe` there. One shared market snapshot per cycle (union of both
+   universes) feeds both, so Yahoo is hit once, not twice.
+3. **Swing universe ≈ EGX100.** = EGX30 + EGX70-EWI components (investing.com, 2026-09-09), minus
+   8 names with no usable Yahoo history → 91 names. Sector tags are coarse hand assignments used
+   only for the concentration cap.
+4. **Swing exits are LLM-only** (user's choice). `minHoldingDays: 0`; the `targetGainPct` /
+   `softStopPct` in the swing policy are surfaced in the prompt as guidance, never auto-executed.
+5. **LLM models updated from the spec's names.** `gemini-flash-latest` → `gemini-flash-lite-latest`
+   → Groq `openai/gpt-oss-120b` (the spec's `gemini-2.5-flash` / `llama-3.3-70b-versatile` are
+   retired).
+6. **`git commit` happens in the workflow, not the bot.** Keeps local/dry runs commit-free.
+7. **Added `state/<id>/prices.json`** — a per-cycle quote+index snapshot so the dashboard values
+   holdings without its own API calls.
+8. **Transaction costs:** 0.05% commission + 0.05% levy = 0.10% per fill, both sides (0.20% round
+   trip), inside the spec's band. Per-strategy in `state/strategies.json`.
+9. **EGX30 index level:** Yahoo `^CASE30`; a synthetic equal-weight proxy (flagged
+   `synthetic: true`) if it's ever unavailable. The buy-and-hold benchmark uses whatever series
+   is available, consistently, from each strategy's inception.
+10. **End-of-day cycle** (spec §5): the `30 12 * * *` cron runs `MODE=eod` — a mark-to-market
+    snapshot + LLM-free wrap-up per strategy.
+11. **Offline mock providers** (`MOCK_LLM`, `MOCK_MARKET`) for keyless end-to-end testing.
 
-Anything touching spec §1–§2 hard constraints (100,000 EGP start, EGX30 universe, paper-only,
-free-tier-only) was **not** changed.
+Spec §1–§2 hard constraints not touched *except* where the user directed it: the swing strategy's
+universe (EGX100) and cadence (10 min) were explicit requests; the 100,000 EGP start, paper-only
+and free-tier-only rules are unchanged, and Core still tracks EGX30.
 
 ---
 
 ## Repo layout
 
 ```
-bot/                     TypeScript bot (runs in GitHub Actions via tsx, no build step)
-  index.ts               entrypoint: session gate -> gather data -> LLM -> guardrails -> write state
-  session.ts             Africa/Cairo timezone-aware session check (luxon)
-  marketData.ts          per-cycle data gather + sector aggregates + synthetic index
-  prompt.ts              prompt assembly + LLM JSON response schema + tolerant parser
+bot/                     TypeScript bot (GitHub Actions via tsx, no build step)
+  index.ts               entrypoint: session gate -> shared market fetch -> per-strategy cycle
+  config.ts              loads strategies.json + universes
+  session.ts             Africa/Cairo session check + trading-day counting (luxon)
+  marketData.ts          shared snapshot, short-term signals, sector aggregates, filterSnapshot
+  prompt.ts              per-profile prompt assembly + response schema + tolerant parser
   policy.ts              guardrail validation / clamping / rejection
   ledger.ts              deterministic fill + fee + NAV math
-  providers/llm/         gemini.ts, mock.ts, index.ts (chain + fallback)
-  providers/market/      yahoo.ts (primary), twelvedata.ts + egxapi.ts (unusable free), mock.ts, index.ts
+  providers/llm/         gemini.ts, groq.ts, mock.ts, index.ts (chain + fallback)
+  providers/market/      yahoo.ts (primary), twelvedata.ts + egxapi.ts (unusable free), mock.ts
   cycle.test.ts          unit tests (node --test)
-state/                   committed JSON "database"
-  universe.json portfolio.json trades.json decisions.json equity_curve.json prices.json
-policy.json              guardrail config
+state/
+  strategies.json        registry: cadence + [{id,label,universe,profile,policy}]
+  universes/             egx30.json, egx100.json
+  core/  swing/           portfolio / trades / decisions / equity_curve / prices  (per strategy)
 .github/workflows/trade-cycle.yml
-dashboard/               Next.js App Router app for Vercel
+dashboard/               Next.js App Router app for Vercel (strategy switcher)
+scripts/bootstrap-github.sh
 ```
 
 ---
 
 ## Setup
 
-### 1. Push this to a **public** GitHub repo named `LLM-Trader`
+1. **Public repo** (`gh repo create LLM-Trader --public --source . --remote origin --push`) —
+   public = unlimited free Actions minutes.
+2. **API keys** (free, no card): `GEMINI_API_KEY` ([aistudio.google.com/apikey](https://aistudio.google.com/apikey)),
+   `GROQ_API_KEY` ([console.groq.com/keys](https://console.groq.com/keys), recommended fallback).
+   Market data needs no key.
+3. **Repo secrets:** Settings → Secrets and variables → Actions. Optional variables `GEMINI_MODEL`,
+   `GROQ_MODEL`.
+4. **Settings → Actions → General → Workflow permissions → Read and write.**
+5. **First run:** Actions → trade-cycle → Run workflow, `force_session: true`.
+6. **Vercel:** import repo, Root Directory `dashboard`, env var
+   `STATE_BASE_URL=https://raw.githubusercontent.com/<user>/LLM-Trader/main/state`, deploy.
 
-Public = unlimited free Actions minutes. Nothing secret is in the code.
-
-```bash
-gh repo create LLM-Trader --public --source . --remote origin --push
-```
-
-### 2. Get the API keys (all free, no card)
-
-| Key | Where | Secret name | Needed? |
-|---|---|---|---|
-| Gemini | https://aistudio.google.com/apikey | `GEMINI_API_KEY` | **yes** |
-| Groq (fallback LLM) | https://console.groq.com/keys | `GROQ_API_KEY` | recommended |
-| Twelve Data | https://twelvedata.com/ | `TWELVEDATA_API_KEY` | no (only if you pay for Pro) |
-
-Market data (Yahoo Finance) needs **no key**.
-
-### 3. Add them as repo secrets
-
-**Settings → Secrets and variables → Actions → New repository secret** for each.
-Model overrides are optional **variables**: `GEMINI_MODEL` (default `gemini-flash-latest`), `GROQ_MODEL` (default `openai/gpt-oss-120b`).
-
-### 4. Allow the workflow to commit
-
-**Settings → Actions → General → Workflow permissions → "Read and write permissions"**.
-
-### 5. First run
-
-**Actions → trade-cycle → Run workflow** with `force_session: true` to prove a full cycle
-end to end regardless of the current time. Then run it again with defaults to confirm it
-no-ops correctly outside session hours. Check that `state/*.json` got a new commit.
-
-### 6. Deploy the dashboard to Vercel
-
-- Import the repo at https://vercel.com/new
-- **Root Directory: `dashboard`**
-- Add one env var: `STATE_BASE_URL` =
-  `https://raw.githubusercontent.com/<your-user>/LLM-Trader/main/state`
-- Deploy. The page is static + ISR (revalidates every 60s) — no backend, no keys on Vercel.
+`scripts/bootstrap-github.sh` does 1–5 from your `.env`.
 
 ---
 
@@ -151,48 +131,46 @@ no-ops correctly outside session hours. Check that `state/*.json` got a new comm
 
 ```bash
 npm install
-cp .env.example .env          # fill in GEMINI_API_KEY (+ GROQ_API_KEY) for a real run
+cp .env.example .env          # GEMINI_API_KEY (+ GROQ_API_KEY) for a real run
 
-npm run cycle:mock            # full cycle, offline deterministic mocks, no writes (DRY_RUN)
-npm run test                  # unit tests for ledger + guardrails
+npm run cycle:mock            # both strategies, offline deterministic mocks, no writes
+npm run test                  # ledger + guardrail unit tests
 npm run typecheck
 
-# real providers, but don't require the market to be open and don't commit:
-DRY_RUN=1 FORCE_SESSION=1 npm run cycle
+DRY_RUN=1 FORCE_SESSION=1 npm run cycle           # real providers, no writes, ignores session
+DRY_RUN=1 FORCE_SESSION=1 STRATEGY=swing npm run cycle   # one strategy only
 
-cd dashboard && npm install && npm run dev   # http://localhost:3000, reads ../state from disk
+cd dashboard && npm install && npm run dev        # localhost:3000, reads ../state from disk
 ```
 
-### Env / switches
-
-`GEMINI_API_KEY`, `GROQ_API_KEY` — LLM providers (Yahoo market data needs no key).
-`DRY_RUN=1` skip all state writes · `FORCE_SESSION=1` bypass the Cairo session gate ·
-`MOCK_LLM=1` / `MOCK_MARKET=1` deterministic offline providers · `MODE=eod` mark-to-market run.
+Switches: `DRY_RUN` `FORCE_SESSION` `MOCK_LLM` `MOCK_MARKET` `MODE=eod` `STRATEGY=<id>`.
 
 ---
 
 ## How a cycle works
 
-1. Compute Cairo time. Weekend or outside 10:00–14:15 → log and exit cheaply (unless in the
-   14:20–15:30 EOD window → mark-to-market instead).
-2. Fetch ~60 daily closes per universe ticker from Yahoo Finance; use the latest close as the
-   delayed quote; compute 5d/20d per-ticker and per-sector changes and the EGX30 level
-   (`^CASE30`, or a synthetic proxy if unavailable). Snapshot written to `state/prices.json`.
-3. If fewer than half the universe has quotes (holiday / outage) → record a no-trade cycle and
-   exit without trading on stale data.
-4. Build the prompt (portfolio, policy limits, per-ticker data, sector aggregates, last 5
-   cycles' decisions) and call Gemini with a JSON response schema.
+1. Compute Cairo time. Weekend / outside 10:00–14:15 → exit cheaply (unless in the 14:20–15:30
+   EOD window → mark-to-market instead).
+2. Fetch ~60 daily closes for the **union** of every strategy's universe from Yahoo (one pass,
+   throttled). Derive the delayed quote from the latest close; compute 1d/3d/5d/10d/20d changes,
+   10-day volatility, distance from 20-day high/low, sector aggregates, and the EGX30 level.
+3. For each strategy: narrow the snapshot to its universe; write `state/<id>/prices.json`; if
+   <50% of the universe is quoted, record a no-trade cycle and skip.
+4. Build the profile-specific prompt (core = "don't churn"; swing = "trade the moves, target
+   +2–3%, cut losers") with portfolio state, policy limits, per-ticker signals, and the last 5
+   cycles' decisions. Call Gemini (→ Groq on failure).
 5. `applyGuardrails`: sells before buys; reject sells inside `minHoldingDays`; clamp buys to
    `maxPositionPct` / `maxSectorPct` / `minCashBufferPct`; cap at `maxTradesPerCycle`. Every
-   proposal ends up logged as accepted / clamped / rejected with a reason.
-6. Book surviving fills at the delayed price + costs into the ledger; recompute NAV.
-7. Write `portfolio.json`, append `trades.json` / `decisions.json` / `equity_curve.json`.
-8. The workflow commits `state/` back to the repo.
+   proposal logged as accepted / clamped / rejected with a reason.
+6. Book surviving fills at the delayed price + costs; recompute NAV; append
+   `trades` / `decisions` / `equity_curve`.
+7. The workflow commits `state/` back to the repo.
 
 ---
 
 ## Known limitations (by design)
 
-Paper fills use delayed quotes as the fill price (no slippage/spread modelling). Free LLM/data
-tiers can rate-limit or degrade without notice. This is a research/learning project — nothing
-here is a validated strategy or investment advice.
+Paper fills use delayed quotes as the fill price (no slippage/spread). Free LLM/data tiers can
+rate-limit or degrade without notice. Yahoo is an unofficial API and the sole market source.
+"~+2–3% per 1–2 weeks" is an aspiration the bot chases, not a projection. This is a
+research/learning project — nothing here is a validated strategy or investment advice.

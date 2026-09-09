@@ -26,6 +26,26 @@ export interface Policy {
     commissionPct: number;
     levyPct: number;
   };
+  /** Swing profile only: soft targets surfaced to the LLM (never auto-executed). */
+  targetGainPct?: number;
+  softStopPct?: number;
+}
+
+export type StrategyProfile = "core" | "swing";
+
+export interface StrategyDef {
+  id: string;
+  label: string;
+  blurb: string;
+  universe: string;
+  profile: StrategyProfile;
+  startingCashEgp: number;
+  policy: Omit<Policy, "startingCashEgp">;
+}
+
+export interface StrategyRegistry {
+  cadenceMinutes: number;
+  strategies: StrategyDef[];
 }
 
 export interface Holding {
@@ -88,8 +108,16 @@ export interface TickerData {
   quote: Quote | null;
   history: DailyBar[];
   /** % change over the trailing window, computed from history. */
+  change1dPct: number | null;
+  change3dPct: number | null;
   change5dPct: number | null;
+  change10dPct: number | null;
   change20dPct: number | null;
+  /** stdev of daily % returns over the last ~10 sessions (a rough swing/volatility gauge). */
+  volatility10dPct: number | null;
+  /** where the latest price sits vs the trailing 20-session high / low, in %. */
+  pctFrom20dHigh: number | null;
+  pctFrom20dLow: number | null;
 }
 
 export interface SectorAggregate {

@@ -5,7 +5,7 @@ import type {
   MarketSnapshot,
   SectorAggregate,
   TickerData,
-  Universe,
+  UniverseEntry,
 } from "./types.js";
 
 function pctChange(bars: DailyBar[], lookback: number): number | null {
@@ -14,6 +14,31 @@ function pctChange(bars: DailyBar[], lookback: number): number | null {
   const past = bars[bars.length - 1 - lookback]!.close;
   if (!past) return null;
   return ((latest - past) / past) * 100;
+}
+
+/** stdev of daily % returns over the last `n` sessions. */
+function volatilityPct(bars: DailyBar[], n: number): number | null {
+  if (bars.length < n + 1) return null;
+  const rets: number[] = [];
+  for (let i = bars.length - n; i < bars.length; i++) {
+    const prev = bars[i - 1]!.close;
+    const cur = bars[i]!.close;
+    if (prev > 0) rets.push(((cur - prev) / prev) * 100);
+  }
+  if (rets.length < 2) return null;
+  const mean = rets.reduce((a, b) => a + b, 0) / rets.length;
+  const variance = rets.reduce((a, b) => a + (b - mean) ** 2, 0) / rets.length;
+  return Math.sqrt(variance);
+}
+
+function pctFromExtreme(bars: DailyBar[], n: number, kind: "high" | "low"): number | null {
+  if (bars.length < 2) return null;
+  const window = bars.slice(-n).map((b) => b.close);
+  if (window.length === 0) return null;
+  const latest = window[window.length - 1]!;
+  const ref = kind === "high" ? Math.max(...window) : Math.min(...window);
+  if (ref <= 0) return null;
+  return ((latest - ref) / ref) * 100;
 }
 
 /** Try each provider in order for a single call; return the first success. */
@@ -40,8 +65,13 @@ export interface GatherResult {
   missing: string[];
 }
 
+/**
+ * Fetch one shared snapshot for the union of every strategy's universe. Each
+ * strategy then narrows it with `filterSnapshot`.
+ */
 export async function gatherMarketData(
-  universe: Universe,
+  constituents: UniverseEntry[],
+  indexSymbol: string,
   chain: MarketDataProvider[],
   historyDays: number,
 ): Promise<GatherResult> {
@@ -54,7 +84,7 @@ export async function gatherMarketData(
   const providerName = chain[0]?.name ?? "none";
   const tickers: TickerData[] = [];
 
-  for (const c of universe.constituents) {
+  for (const c of constituents) {
     const histRes = await withFallback(chain, (p) => p.getHistoricalDaily(c.ticker, historyDays), logErr);
     const history = histRes?.value ?? [];
 
@@ -66,46 +96,68 @@ export async function gatherMarketData(
       const qRes = await withFallback(chain, (p) => p.getQuote(c.ticker), logErr);
       quote = qRes?.value ?? null;
     }
-
     if (!quote) missing.push(c.ticker);
 
-    tickers.push({
-      ticker: c.ticker,
-      name: c.name,
-      sector: c.sector,
-      quote,
-      history,
-      change5dPct: pctChange(history, 5),
-      change20dPct: pctChange(history, 20),
-    });
+    tickers.push(buildTickerData(c, quote, history));
   }
 
-  // Index level: try providers, else synthesize an equal-weight proxy from the universe.
   let index: IndexLevel | null = null;
-  const idxRes = await withFallback(chain, (p) => p.getIndexLevel(universe.indexSymbol), logErr);
-  if (idxRes) {
-    index = idxRes.value;
-  } else {
-    const synth = syntheticIndex(tickers);
-    if (synth) index = synth;
-  }
+  const idxRes = await withFallback(chain, (p) => p.getIndexLevel(indexSymbol), logErr);
+  if (idxRes) index = idxRes.value;
+  else index = syntheticIndex(tickers);
 
-  const { index5d, index20d } = indexTrend(tickers, index);
+  const snapshot = assembleSnapshot(tickers, index, providerName);
+  return { snapshot, errors, missing };
+}
 
-  const snapshot: MarketSnapshot = {
-    asOf: new Date().toISOString(),
+function buildTickerData(
+  c: UniverseEntry,
+  quote: TickerData["quote"],
+  history: DailyBar[],
+): TickerData {
+  return {
+    ticker: c.ticker,
+    name: c.name,
+    sector: c.sector,
+    quote,
+    history,
+    change1dPct: pctChange(history, 1),
+    change3dPct: pctChange(history, 3),
+    change5dPct: pctChange(history, 5),
+    change10dPct: pctChange(history, 10),
+    change20dPct: pctChange(history, 20),
+    volatility10dPct: volatilityPct(history, 10),
+    pctFrom20dHigh: pctFromExtreme(history, 20, "high"),
+    pctFrom20dLow: pctFromExtreme(history, 20, "low"),
+  };
+}
+
+/** Narrow a shared snapshot to one strategy's universe, recomputing aggregates. */
+export function filterSnapshot(snapshot: MarketSnapshot, tickers: Set<string>): MarketSnapshot {
+  const subset = snapshot.tickers.filter((t) => tickers.has(t.ticker));
+  const index = snapshot.index?.synthetic ? syntheticIndex(subset) : snapshot.index;
+  return assembleSnapshot(subset, index ?? snapshot.index, snapshot.provider, snapshot.asOf);
+}
+
+function assembleSnapshot(
+  tickers: TickerData[],
+  index: IndexLevel | null,
+  provider: string,
+  asOf?: string,
+): MarketSnapshot {
+  const { index5d, index20d } = universeAvgTrend(tickers);
+  return {
+    asOf: asOf ?? new Date().toISOString(),
     tickers,
     index,
     indexChange5dPct: index5d,
     indexChange20dPct: index20d,
     sectors: sectorAggregates(tickers),
-    provider: providerName,
+    provider,
   };
-
-  return { snapshot, errors, missing };
 }
 
-/** Equal-weight normalized proxy: average of each ticker's close / its 60-bar-ago close, x 10000. */
+/** Equal-weight normalized proxy: average of each ticker's close / its first close, x 10000. */
 function syntheticIndex(tickers: TickerData[]): IndexLevel | null {
   const ratios: number[] = [];
   for (const t of tickers) {
@@ -120,28 +172,13 @@ function syntheticIndex(tickers: TickerData[]): IndexLevel | null {
   return { level: Number((avg * 10000).toFixed(2)), asOf: new Date().toISOString(), synthetic: true };
 }
 
-function indexTrend(
-  tickers: TickerData[],
-  index: IndexLevel | null,
-): { index5d: number | null; index20d: number | null } {
-  // If we only have a synthetic proxy we approximate its trend from the universe's average trailing return.
-  if (index?.synthetic || !index) {
-    const avg = (lb: 5 | 20): number | null => {
-      const vals = tickers
-        .map((t) => (lb === 5 ? t.change5dPct : t.change20dPct))
-        .filter((v): v is number => v !== null);
-      return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
-    };
-    return { index5d: avg(5), index20d: avg(20) };
-  }
-  // Real index without its own history series here — approximate with universe average too.
-  const avg = (lb: 5 | 20): number | null => {
-    const vals = tickers
-      .map((t) => (lb === 5 ? t.change5dPct : t.change20dPct))
-      .filter((v): v is number => v !== null);
+/** Approximate index trend from the universe's average trailing return (we lack an index series). */
+function universeAvgTrend(tickers: TickerData[]): { index5d: number | null; index20d: number | null } {
+  const avg = (pick: (t: TickerData) => number | null): number | null => {
+    const vals = tickers.map(pick).filter((v): v is number => v !== null);
     return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
   };
-  return { index5d: avg(5), index20d: avg(20) };
+  return { index5d: avg((t) => t.change5dPct), index20d: avg((t) => t.change20dPct) };
 }
 
 function sectorAggregates(tickers: TickerData[]): SectorAggregate[] {

@@ -1,12 +1,12 @@
 import { DateTime } from "luxon";
-import { config, loadPolicy, loadUniverse } from "./config.js";
-import { gatherMarketData } from "./marketData.js";
+import { config, loadStrategies, loadUniverse, policyFor, strategyDir } from "./config.js";
+import { filterSnapshot, gatherMarketData } from "./marketData.js";
 import { applyGuardrails } from "./policy.js";
 import { computeNav, type PriceLookup } from "./ledger.js";
 import { buildPrompt } from "./prompt.js";
 import { getLlmProviderChain } from "./providers/llm/index.js";
 import { getMarketProviderChain } from "./providers/market/index.js";
-import { CAIRO_TZ, checkSession } from "./session.js";
+import { CAIRO_TZ, checkSession, tradingDaysBetween } from "./session.js";
 import {
   appendDecision,
   appendEquityPoint,
@@ -21,45 +21,50 @@ import type {
   EquityPoint,
   LlmResult,
   MarketSnapshot,
+  Policy,
   Portfolio,
   PriceSnapshot,
+  StrategyDef,
+  UniverseEntry,
 } from "./types.js";
 
 const log = (msg: string): void => console.log(`[${new Date().toISOString()}] ${msg}`);
 const ghError = (msg: string): void => console.log(`::error::${msg}`);
 
-function cycleId(now: DateTime, mode: string): string {
-  return `${now.toFormat("yyyyLLdd'T'HHmm")}-${mode}`;
+function cycleId(now: DateTime, id: string, mode: string): string {
+  return `${now.toFormat("yyyyLLdd'T'HHmm")}-${id}-${mode}`;
 }
 
-function benchmarkNav(portfolio: Portfolio, snapshot: MarketSnapshot, startingCash: number): number | null {
-  if (!snapshot.index || !portfolio.inceptionBenchmarkIndexLevel) return null;
-  return Number(
-    ((snapshot.index.level / portfolio.inceptionBenchmarkIndexLevel) * startingCash).toFixed(2),
-  );
+function nowIso(now: DateTime): string {
+  return now.toISO() ?? new Date().toISOString();
 }
 
 async function main(): Promise<void> {
-  const policy = loadPolicy();
-  const universe = loadUniverse();
+  const registry = loadStrategies();
+  if (registry.strategies.length === 0) {
+    ghError("no strategies to run (check state/strategies.json / STRATEGY filter)");
+    return;
+  }
+
   const nowCairo = DateTime.now().setZone(CAIRO_TZ);
   const session = checkSession(nowCairo);
+  const mode: "trade" | "eod" = config.mode;
 
-  const wantEod = config.mode === "eod";
-  const mode: "trade" | "eod" = wantEod ? "eod" : "trade";
-  const id = cycleId(nowCairo, mode);
+  log(
+    `run — Cairo ${nowCairo.toFormat("ccc yyyy-LL-dd HH:mm")} — ${session.label} — ` +
+      `strategies: ${registry.strategies.map((s) => s.id).join(", ")} — mode ${mode}`,
+  );
 
-  log(`cycle ${id} — Cairo ${nowCairo.toFormat("ccc yyyy-LL-dd HH:mm")} — ${session.label}`);
-
-  // Session gate (skippable with FORCE_SESSION for testing).
+  let effectiveMode: "trade" | "eod" = mode;
   if (!config.forceSession) {
     if (mode === "trade" && !session.isOpen) {
       if (session.isEodWindow) {
-        log("outside trade session but in EOD window — running mark-to-market instead");
-        return runEod(id, nowCairo, policy.startingCashEgp, universe);
+        log("outside trade session but in EOD window — switching to mark-to-market");
+        effectiveMode = "eod";
+      } else {
+        log(`no-op: ${session.label}`);
+        return;
       }
-      log(`no-op: ${session.label}`);
-      return;
     }
     if (mode === "eod" && !session.isTradingDay) {
       log(`no-op: ${session.label} (EOD)`);
@@ -67,157 +72,69 @@ async function main(): Promise<void> {
     }
   }
 
-  if (mode === "eod") {
-    return runEod(id, nowCairo, policy.startingCashEgp, universe);
+  // ---- one shared market snapshot for the union of all strategy universes ----
+  const universes = new Map(registry.strategies.map((s) => [s.universe, loadUniverse(s.universe)]));
+  const unionByTicker = new Map<string, UniverseEntry>();
+  for (const u of universes.values()) {
+    for (const c of u.constituents) if (!unionByTicker.has(c.ticker)) unionByTicker.set(c.ticker, c);
   }
+  const indexSymbol = [...universes.values()][0]?.indexSymbol ?? "EGX30";
 
-  // ---- full trade cycle ----
   const marketChain = getMarketProviderChain();
-  log(`market data providers: ${marketChain.map((p) => p.name).join(" -> ")}`);
-  const { snapshot, errors: dataErrors, missing } = await gatherMarketData(
-    universe,
+  log(
+    `market providers: ${marketChain.map((p) => p.name).join(" -> ")} — fetching ${unionByTicker.size} tickers`,
+  );
+  const { snapshot: unionSnapshot, errors: dataErrors, missing } = await gatherMarketData(
+    [...unionByTicker.values()],
+    indexSymbol,
     marketChain,
     config.historyDays,
   );
-  if (dataErrors.length) log(`market data warnings (${dataErrors.length}): ${dataErrors.slice(0, 5).join(" | ")}`);
+  if (dataErrors.length) log(`market data warnings (${dataErrors.length}): ${dataErrors.slice(0, 4).join(" | ")}`);
   log(
-    `snapshot: ${snapshot.tickers.filter((t) => t.quote).length}/${universe.constituents.length} quoted, ` +
-      `index ${snapshot.index ? snapshot.index.level.toFixed(0) + (snapshot.index.synthetic ? " (synthetic)" : "") : "n/a"}`,
+    `snapshot: ${unionSnapshot.tickers.filter((t) => t.quote).length}/${unionByTicker.size} quoted, ` +
+      `index ${unionSnapshot.index ? unionSnapshot.index.level.toFixed(0) + (unionSnapshot.index.synthetic ? " (synthetic)" : "") : "n/a"}` +
+      (missing.length ? `, missing: ${missing.slice(0, 8).join(",")}${missing.length > 8 ? "…" : ""}` : ""),
   );
 
-  const priceOf: PriceLookup = (tk) => snapshot.tickers.find((t) => t.ticker === tk)?.quote?.price ?? null;
-  persistPrices(snapshot);
-
-  let portfolio = readPortfolio();
-
-  // First-ever cycle: stamp inception + benchmark baseline.
-  if (!portfolio.inceptionDate) {
-    portfolio.inceptionDate = nowCairo.toISO();
-    portfolio.inceptionBenchmarkIndexLevel = snapshot.index?.level ?? null;
-    log(`inception stamped: ${portfolio.inceptionDate}, benchmark index ${portfolio.inceptionBenchmarkIndexLevel ?? "n/a"}`);
-  }
-
-  // Holiday / outage guard: too little data to trade on.
-  const quoted = snapshot.tickers.filter((t) => t.quote).length;
-  if (quoted < Math.ceil(universe.constituents.length * 0.5)) {
-    ghError(`only ${quoted} quotes — treating as market-closed/outage, skipping trade decision`);
-    portfolio.nav = computeNav(portfolio, priceOf);
-    portfolio.lastUpdated = nowCairo.toISO();
-    writePortfolio(portfolio);
-    writeSkipDecision(id, nowCairo, mode, session.label, snapshot, portfolio, `insufficient data (${quoted} quotes)`);
-    writeEquity(id, nowCairo, portfolio, snapshot, policy.startingCashEgp);
-    return;
-  }
-
-  const navBefore = computeNav(portfolio, priceOf);
-  portfolio.nav = navBefore;
-
-  // ---- LLM ----
-  let mockCtx = { portfolio, snapshot };
-  const llmChain = getLlmProviderChain(() => mockCtx);
-  const promptText = buildPrompt({
-    policy,
-    portfolio,
-    snapshot,
-    recentDecisions: recentDecisions(config.decisionContextWindow),
-  });
-
-  let llm: LlmResult | null = null;
-  const llmErrors: string[] = [];
-  for (const provider of llmChain) {
+  for (const def of registry.strategies) {
+    const uni = universes.get(def.universe)!;
     try {
-      log(`calling LLM: ${provider.name} (${provider.model})`);
-      llm = await provider.decide(promptText);
-      log(`LLM ${provider.name} returned ${llm.actions.length} proposed action(s)`);
-      break;
+      if (effectiveMode === "eod") {
+        await runEod(def, uni.constituents, unionSnapshot, nowCairo, dataErrors);
+      } else {
+        await runCycle(def, uni.constituents, unionSnapshot, nowCairo, session.label, dataErrors);
+      }
     } catch (err) {
-      const m = err instanceof Error ? err.message : String(err);
-      llmErrors.push(`${provider.name}: ${m}`);
-      ghError(`LLM ${provider.name} failed: ${m}`);
+      ghError(`strategy ${def.id} failed: ${err instanceof Error ? err.stack ?? err.message : String(err)}`);
     }
   }
 
-  if (!llm) {
-    ghError("all LLM providers failed — recording a no-trade cycle");
-    portfolio.lastUpdated = nowCairo.toISO();
-    writePortfolio(portfolio);
-    writeSkipDecision(
-      id,
-      nowCairo,
-      mode,
-      session.label,
-      snapshot,
-      portfolio,
-      `LLM unavailable: ${llmErrors.join(" | ")}`,
-    );
-    writeEquity(id, nowCairo, portfolio, snapshot, policy.startingCashEgp);
-    return;
-  }
-
-  // ---- guardrails + ledger ----
-  const outcome = applyGuardrails({
-    portfolio,
-    proposals: llm.actions,
-    snapshot,
-    policy,
-    nowIso: nowCairo.toISO() ?? new Date().toISOString(),
-    cycleId: id,
-  });
-  portfolio = outcome.finalPortfolio;
-  mockCtx = { portfolio, snapshot };
-
-  const executed = outcome.trades.map((t) => ({
-    ticker: t.ticker,
-    action: t.action,
-    qty: t.qty,
-    price: t.price,
-    fees: t.fees,
-  }));
-  log(
-    `guardrails: ${outcome.adjustments.filter((a) => a.kind === "accepted").length} accepted, ` +
-      `${outcome.adjustments.filter((a) => a.kind === "clamped").length} clamped, ` +
-      `${outcome.adjustments.filter((a) => a.kind === "rejected").length} rejected — ${executed.length} fill(s) booked`,
-  );
-
-  const navAfter = computeNav(portfolio, priceOf);
-  portfolio.nav = navAfter;
-  portfolio.lastUpdated = nowCairo.toISO();
-
-  const entry: DecisionEntry = {
-    cycleId: id,
-    timestamp: nowCairo.toISO() ?? new Date().toISOString(),
-    mode,
-    session: session.label,
-    marketSummary: marketSummary(snapshot),
-    llmProvider: llm.provider,
-    dataProvider: snapshot.provider,
-    marketRead: llm.marketRead,
-    llmRaw: llm.raw,
-    proposedActions: llm.actions,
-    guardrailAdjustments: outcome.adjustments,
-    executedActions: executed,
-    navBefore,
-    navAfter,
-    cash: portfolio.cash,
-    error: [...dataErrors.slice(0, 3), ...llmErrors].join(" | ") || null,
-  };
-
-  if (!config.dryRun) {
-    writePortfolio(portfolio);
-    if (outcome.trades.length) appendTrades(outcome.trades);
-    appendDecision(entry);
-    writeEquity(id, nowCairo, portfolio, snapshot, policy.startingCashEgp);
-  } else {
-    log("DRY_RUN — not writing state files");
-  }
-
-  log(
-    `done. NAV ${navBefore.toFixed(0)} -> ${navAfter.toFixed(0)} EGP, cash ${portfolio.cash.toFixed(0)}, ` +
-      `${portfolio.holdings.length} holding(s), missing quotes: ${missing.join(",") || "none"}`,
-  );
+  log("run complete");
 }
 
-function persistPrices(s: MarketSnapshot): void {
+interface StrategyCtx {
+  def: StrategyDef;
+  dir: string;
+  policy: Policy;
+  snapshot: MarketSnapshot;
+  priceOf: PriceLookup;
+  now: DateTime;
+}
+
+function prepare(
+  def: StrategyDef,
+  constituents: UniverseEntry[],
+  unionSnapshot: MarketSnapshot,
+  now: DateTime,
+): StrategyCtx {
+  const tickerSet = new Set(constituents.map((c) => c.ticker));
+  const snapshot = filterSnapshot(unionSnapshot, tickerSet);
+  const priceOf: PriceLookup = (tk) => snapshot.tickers.find((t) => t.ticker === tk)?.quote?.price ?? null;
+  return { def, dir: strategyDir(def.id), policy: policyFor(def), snapshot, priceOf, now };
+}
+
+function persistPrices(dir: string, s: MarketSnapshot): void {
   if (config.dryRun) return;
   const snap: PriceSnapshot = {
     asOf: s.asOf,
@@ -237,7 +154,7 @@ function persistPrices(s: MarketSnapshot): void {
       };
     }
   }
-  writePrices(snap);
+  writePrices(dir, snap);
 }
 
 function marketSummary(s: MarketSnapshot): string {
@@ -247,80 +164,190 @@ function marketSummary(s: MarketSnapshot): string {
   } (5d ${s.indexChange5dPct?.toFixed(1) ?? "n/a"}%)`;
 }
 
-function writeEquity(
-  id: string,
-  now: DateTime,
-  portfolio: Portfolio,
-  snapshot: MarketSnapshot,
-  startingCash: number,
-): void {
+function benchmarkNav(portfolio: Portfolio, s: MarketSnapshot, startingCash: number): number | null {
+  if (!s.index || !portfolio.inceptionBenchmarkIndexLevel) return null;
+  return Number(((s.index.level / portfolio.inceptionBenchmarkIndexLevel) * startingCash).toFixed(2));
+}
+
+function writeEquity(ctx: StrategyCtx, id: string, portfolio: Portfolio): void {
   if (config.dryRun) return;
   const point: EquityPoint = {
-    timestamp: now.toISO() ?? new Date().toISOString(),
+    timestamp: nowIso(ctx.now),
     cycleId: id,
     nav: portfolio.nav,
     cash: portfolio.cash,
-    benchmarkNav: benchmarkNav(portfolio, snapshot, startingCash),
-    indexLevel: snapshot.index?.level ?? null,
+    benchmarkNav: benchmarkNav(portfolio, ctx.snapshot, ctx.def.startingCashEgp),
+    indexLevel: ctx.snapshot.index?.level ?? null,
   };
-  appendEquityPoint(point);
+  appendEquityPoint(ctx.dir, point);
 }
 
-function writeSkipDecision(
-  id: string,
+function stampInception(portfolio: Portfolio, ctx: StrategyCtx): void {
+  if (portfolio.inceptionDate) return;
+  portfolio.inceptionDate = nowIso(ctx.now);
+  portfolio.inceptionBenchmarkIndexLevel = ctx.snapshot.index?.level ?? null;
+  log(
+    `[${ctx.def.id}] inception stamped ${portfolio.inceptionDate}, benchmark index ${
+      portfolio.inceptionBenchmarkIndexLevel ?? "n/a"
+    }`,
+  );
+}
+
+async function runCycle(
+  def: StrategyDef,
+  constituents: UniverseEntry[],
+  unionSnapshot: MarketSnapshot,
   now: DateTime,
-  mode: "trade" | "eod",
-  session: string,
-  snapshot: MarketSnapshot,
-  portfolio: Portfolio,
-  reason: string,
-): void {
-  if (config.dryRun) return;
+  sessionLabel: string,
+  dataErrors: string[],
+): Promise<void> {
+  const ctx = prepare(def, constituents, unionSnapshot, now);
+  const { dir, policy, snapshot, priceOf } = ctx;
+  const id = cycleId(now, def.id, "trade");
+
+  let portfolio = readPortfolio(dir);
+  stampInception(portfolio, ctx);
+
+  const quoted = snapshot.tickers.filter((t) => t.quote).length;
+  if (quoted < Math.ceil(constituents.length * 0.5)) {
+    ghError(`[${def.id}] only ${quoted}/${constituents.length} quotes — skipping trade decision`);
+    portfolio.nav = computeNav(portfolio, priceOf);
+    portfolio.lastUpdated = nowIso(now);
+    if (!config.dryRun) {
+      persistPrices(dir, snapshot);
+      writePortfolio(dir, portfolio);
+      appendDecision(dir, skipEntry(id, now, sessionLabel, snapshot, portfolio, `insufficient data (${quoted} quotes)`));
+      writeEquity(ctx, id, portfolio);
+    }
+    return;
+  }
+
+  persistPrices(dir, snapshot);
+  const navBefore = computeNav(portfolio, priceOf);
+  portfolio.nav = navBefore;
+
+  let mockCtx = { portfolio, snapshot };
+  const llmChain = getLlmProviderChain(() => mockCtx);
+  const promptText = buildPrompt({
+    profile: def.profile,
+    universeLabel: def.universe.toUpperCase(),
+    policy,
+    portfolio,
+    snapshot,
+    recentDecisions: recentDecisions(dir, config.decisionContextWindow),
+    daysHeld: (openedAt) => tradingDaysBetween(openedAt, nowIso(now)),
+  });
+
+  let llm: LlmResult | null = null;
+  const llmErrors: string[] = [];
+  for (const provider of llmChain) {
+    try {
+      log(`[${def.id}] calling LLM: ${provider.name} (${provider.model})`);
+      llm = await provider.decide(promptText);
+      log(`[${def.id}] LLM ${provider.name} → ${llm.actions.length} proposed action(s)`);
+      break;
+    } catch (err) {
+      const m = err instanceof Error ? err.message : String(err);
+      llmErrors.push(`${provider.name}: ${m}`);
+      ghError(`[${def.id}] LLM ${provider.name} failed: ${m}`);
+    }
+  }
+
+  if (!llm) {
+    ghError(`[${def.id}] all LLM providers failed — no-trade cycle`);
+    portfolio.lastUpdated = nowIso(now);
+    if (!config.dryRun) {
+      writePortfolio(dir, portfolio);
+      appendDecision(dir, skipEntry(id, now, sessionLabel, snapshot, portfolio, `LLM unavailable: ${llmErrors.join(" | ")}`));
+      writeEquity(ctx, id, portfolio);
+    }
+    return;
+  }
+
+  const outcome = applyGuardrails({
+    portfolio,
+    proposals: llm.actions,
+    snapshot,
+    policy,
+    nowIso: nowIso(now),
+    cycleId: id,
+  });
+  portfolio = outcome.finalPortfolio;
+  mockCtx = { portfolio, snapshot };
+
+  const executed = outcome.trades.map((t) => ({
+    ticker: t.ticker,
+    action: t.action,
+    qty: t.qty,
+    price: t.price,
+    fees: t.fees,
+  }));
+  log(
+    `[${def.id}] guardrails: ${outcome.adjustments.filter((a) => a.kind === "accepted").length} ok, ` +
+      `${outcome.adjustments.filter((a) => a.kind === "clamped").length} clamped, ` +
+      `${outcome.adjustments.filter((a) => a.kind === "rejected").length} rejected — ${executed.length} fill(s)`,
+  );
+
+  const navAfter = computeNav(portfolio, priceOf);
+  portfolio.nav = navAfter;
+  portfolio.lastUpdated = nowIso(now);
+
   const entry: DecisionEntry = {
     cycleId: id,
-    timestamp: now.toISO() ?? new Date().toISOString(),
-    mode,
-    session,
+    timestamp: nowIso(now),
+    mode: "trade",
+    session: sessionLabel,
     marketSummary: marketSummary(snapshot),
-    llmProvider: null,
+    llmProvider: llm.provider,
     dataProvider: snapshot.provider,
-    marketRead: `No trade decision this cycle — ${reason}.`,
-    llmRaw: null,
-    proposedActions: [],
-    guardrailAdjustments: [],
-    executedActions: [],
-    navBefore: portfolio.nav,
-    navAfter: portfolio.nav,
+    marketRead: llm.marketRead,
+    llmRaw: llm.raw,
+    proposedActions: llm.actions,
+    guardrailAdjustments: outcome.adjustments,
+    executedActions: executed,
+    navBefore,
+    navAfter,
     cash: portfolio.cash,
-    error: reason,
+    error: [...dataErrors.slice(0, 2), ...llmErrors].join(" | ") || null,
   };
-  appendDecision(entry);
+
+  if (!config.dryRun) {
+    writePortfolio(dir, portfolio);
+    if (outcome.trades.length) appendTrades(dir, outcome.trades);
+    appendDecision(dir, entry);
+    writeEquity(ctx, id, portfolio);
+  } else {
+    log(`[${def.id}] DRY_RUN — not writing state`);
+  }
+
+  log(
+    `[${def.id}] done. NAV ${navBefore.toFixed(0)} → ${navAfter.toFixed(0)} EGP, cash ${portfolio.cash.toFixed(0)}, ${portfolio.holdings.length} holding(s)`,
+  );
 }
 
 async function runEod(
-  id: string,
+  def: StrategyDef,
+  constituents: UniverseEntry[],
+  unionSnapshot: MarketSnapshot,
   now: DateTime,
-  startingCash: number,
-  universe: ReturnType<typeof loadUniverse>,
+  _dataErrors: string[],
 ): Promise<void> {
-  log("EOD mark-to-market snapshot");
-  const marketChain = getMarketProviderChain();
-  const { snapshot } = await gatherMarketData(universe, marketChain, config.historyDays);
-  const priceOf: PriceLookup = (tk) => snapshot.tickers.find((t) => t.ticker === tk)?.quote?.price ?? null;
-  persistPrices(snapshot);
+  const ctx = prepare(def, constituents, unionSnapshot, now);
+  const { dir, snapshot, priceOf } = ctx;
+  const id = cycleId(now, def.id, "eod");
 
-  let portfolio = readPortfolio();
+  const portfolio = readPortfolio(dir);
   if (!portfolio.inceptionDate) {
-    log("no inception yet — nothing to mark. exiting.");
+    log(`[${def.id}] EOD: no inception yet — skipping`);
     return;
   }
   portfolio.nav = computeNav(portfolio, priceOf);
-  portfolio.lastUpdated = now.toISO();
+  portfolio.lastUpdated = nowIso(now);
 
-  const totalReturnPct = ((portfolio.nav - startingCash) / startingCash) * 100;
+  const totalReturnPct = ((portfolio.nav - def.startingCashEgp) / def.startingCashEgp) * 100;
   const entry: DecisionEntry = {
     cycleId: id,
-    timestamp: now.toISO() ?? new Date().toISOString(),
+    timestamp: nowIso(now),
     mode: "eod",
     session: "end-of-day wrap-up",
     marketSummary: marketSummary(snapshot),
@@ -340,11 +367,40 @@ async function runEod(
   };
 
   if (!config.dryRun) {
-    writePortfolio(portfolio);
-    appendDecision(entry);
-    writeEquity(id, now, portfolio, snapshot, startingCash);
+    persistPrices(dir, snapshot);
+    writePortfolio(dir, portfolio);
+    appendDecision(dir, entry);
+    writeEquity(ctx, id, portfolio);
   }
-  log(`EOD done. NAV ${portfolio.nav.toFixed(0)} EGP, ${totalReturnPct >= 0 ? "+" : ""}${totalReturnPct.toFixed(2)}%`);
+  log(`[${def.id}] EOD done. NAV ${portfolio.nav.toFixed(0)} EGP (${totalReturnPct >= 0 ? "+" : ""}${totalReturnPct.toFixed(2)}%)`);
+}
+
+function skipEntry(
+  id: string,
+  now: DateTime,
+  session: string,
+  snapshot: MarketSnapshot,
+  portfolio: Portfolio,
+  reason: string,
+): DecisionEntry {
+  return {
+    cycleId: id,
+    timestamp: nowIso(now),
+    mode: "trade",
+    session,
+    marketSummary: marketSummary(snapshot),
+    llmProvider: null,
+    dataProvider: snapshot.provider,
+    marketRead: `No trade decision this cycle — ${reason}.`,
+    llmRaw: null,
+    proposedActions: [],
+    guardrailAdjustments: [],
+    executedActions: [],
+    navBefore: portfolio.nav,
+    navAfter: portfolio.nav,
+    cash: portfolio.cash,
+    error: reason,
+  };
 }
 
 main().catch((err) => {

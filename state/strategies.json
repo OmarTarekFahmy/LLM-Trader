@@ -1,0 +1,40 @@
+{
+  "_comment": "Registry of independent paper-trading simulations. Each runs its own portfolio/ledger/decision history under state/<id>/. The bot runs every strategy each cycle against one shared market snapshot. cadenceMinutes is documentation of the workflow cron.",
+  "cadenceMinutes": 10,
+  "strategies": [
+    {
+      "id": "core",
+      "label": "Core — semi-long-term",
+      "blurb": "EGX30 only. Minimum 5 trading-day holds, ≤2 trades per cycle, low turnover, a few higher-conviction positions. The original strategy.",
+      "universe": "egx30",
+      "profile": "core",
+      "startingCashEgp": 100000,
+      "policy": {
+        "maxPositionPct": 0.15,
+        "maxSectorPct": 0.35,
+        "minHoldingDays": 5,
+        "maxTradesPerCycle": 2,
+        "minCashBufferPct": 0.05,
+        "costs": { "commissionPct": 0.0005, "levyPct": 0.0005 }
+      }
+    },
+    {
+      "id": "swing",
+      "label": "Swing — active",
+      "blurb": "Broad EGX100 universe (~91 liquid names). No minimum hold, ≤3 trades per cycle. Aims for ~+2-3% per position over 1-2 weeks and cuts losers around -3-4%. All exits are the model's call.",
+      "universe": "egx100",
+      "profile": "swing",
+      "startingCashEgp": 100000,
+      "policy": {
+        "maxPositionPct": 0.15,
+        "maxSectorPct": 0.40,
+        "minHoldingDays": 0,
+        "maxTradesPerCycle": 3,
+        "minCashBufferPct": 0.05,
+        "costs": { "commissionPct": 0.0005, "levyPct": 0.0005 },
+        "targetGainPct": 0.025,
+        "softStopPct": 0.035
+      }
+    }
+  ]
+}
