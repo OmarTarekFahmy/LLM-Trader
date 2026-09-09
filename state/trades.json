@@ -1,1 +1,30 @@
-{ "trades": [] }
+{
+  "trades": [
+    {
+      "timestamp": "2026-09-09T15:04:47.331+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 14.199999809265137,
+      "fees": 14.2,
+      "grossValue": 14200,
+      "netCashDelta": -14214.2,
+      "resultingCash": 85785.8,
+      "resultingNav": 99985.8,
+      "cycleId": "20260909T1504-trade"
+    },
+    {
+      "timestamp": "2026-09-09T15:04:47.331+03:00",
+      "ticker": "MFPC",
+      "action": "buy",
+      "qty": 319,
+      "price": 47,
+      "fees": 14.99,
+      "grossValue": 14993,
+      "netCashDelta": -15007.99,
+      "resultingCash": 70777.81,
+      "resultingNav": 99970.81,
+      "cycleId": "20260909T1504-trade"
+    }
+  ]
+}
