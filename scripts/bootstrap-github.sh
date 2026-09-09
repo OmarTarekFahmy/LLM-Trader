@@ -36,7 +36,7 @@ set -a; [ -f .env ] && . ./.env; set +a
 for name in GEMINI_API_KEY GROQ_API_KEY TWELVEDATA_API_KEY; do
   val="${!name:-}"
   if [ -n "$val" ]; then
-    printf '%s' "$val" | gh secret set "$name" --repo "$SLUG" --body -
+    printf '%s' "$val" | gh secret set "$name" --repo "$SLUG"
     echo "secret set: $name"
   else
     echo "skip (not in .env): $name"
