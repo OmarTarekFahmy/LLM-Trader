@@ -61,10 +61,14 @@ export class OpenRouterProvider implements LlmProvider {
         });
         const body = (await res.json()) as OpenRouterResponse;
 
+        const rawMeta = JSON.stringify(body.error ?? {});
         const errMsg = body.error?.message ?? body.choices?.[0]?.error?.message;
         if (!res.ok || errMsg) {
           const msg = errMsg ?? `HTTP ${res.status}`;
-          if ((res.status === 429 || res.status >= 500) && attempt < 2) {
+          // A saturated free/shared upstream pool won't clear in seconds — fail
+          // fast so the provider chain can move on to Gemini/Groq.
+          const sharedPoolExhausted = /shared[_ ]pool|rate-limited upstream/i.test(rawMeta + msg);
+          if (!sharedPoolExhausted && (res.status === 429 || res.status >= 500) && attempt < 2) {
             await new Promise((r) => setTimeout(r, 6_000 * (attempt + 1)));
             lastErr = new Error(msg);
             continue;
