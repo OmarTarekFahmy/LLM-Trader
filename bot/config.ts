@@ -1,7 +1,13 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import type { Policy, StrategyDef, StrategyRegistry, Universe } from "./types.js";
+import type {
+  Policy,
+  ShariaRulings,
+  StrategyDef,
+  StrategyRegistry,
+  Universe,
+} from "./types.js";
 
 const here = dirname(fileURLToPath(import.meta.url));
 export const REPO_ROOT = join(here, "..");
@@ -84,4 +90,20 @@ export function loadUniverse(name: string): Universe {
     readFileSync(join(STATE_DIR, "universes", `${name}.json`), "utf8"),
   ) as Universe;
   return raw;
+}
+
+export function loadShariaRulings(): ShariaRulings {
+  try {
+    return JSON.parse(readFileSync(join(STATE_DIR, "sharia.json"), "utf8")) as ShariaRulings;
+  } catch {
+    return { source: "", asOf: "", updatedAt: "", rulings: {} };
+  }
+}
+
+/** Compliant-only view of a universe, for strategies with shariaFilter. */
+export function shariaCompliantUniverse(universe: Universe, rulings: ShariaRulings): Universe {
+  return {
+    ...universe,
+    constituents: universe.constituents.filter((c) => rulings.rulings[c.ticker]?.compliant === true),
+  };
 }

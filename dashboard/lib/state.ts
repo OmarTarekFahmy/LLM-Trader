@@ -5,9 +5,11 @@ import type {
   EquityPoint,
   Portfolio,
   PriceSnapshot,
+  ShariaRulings,
   StrategyData,
   StrategyRegistry,
   Universe,
+  UniverseEntry,
 } from "./types";
 
 const BASE = process.env.STATE_BASE_URL?.replace(/\/$/, "");
@@ -51,19 +53,32 @@ export async function getRegistry(): Promise<StrategyRegistry> {
   return loadJson<StrategyRegistry>("strategies.json", { cadenceMinutes: 10, strategies: [] });
 }
 
-export async function getStrategyData(id: string, universe: string): Promise<Omit<StrategyData, "def">> {
-  const [portfolio, tradesW, decisionsW, equityW, prices, uni] = await Promise.all([
+export async function getSharia(): Promise<ShariaRulings> {
+  return loadJson<ShariaRulings>("sharia.json", {
+    source: "",
+    asOf: "",
+    updatedAt: "",
+    rulings: {},
+  });
+}
+
+export async function getUniverse(name: string): Promise<UniverseEntry[]> {
+  const u = await loadJson<Universe>(`universes/${name}.json`, {
+    source: "",
+    asOf: "",
+    indexSymbol: "EGX30",
+    constituents: [],
+  });
+  return u.constituents;
+}
+
+export async function getStrategyData(id: string): Promise<Omit<StrategyData, "def" | "universeCount">> {
+  const [portfolio, tradesW, decisionsW, equityW, prices] = await Promise.all([
     loadJson<Portfolio>(`${id}/portfolio.json`, EMPTY_PORTFOLIO),
     loadJson<{ trades: unknown[] }>(`${id}/trades.json`, { trades: [] }),
     loadJson<{ decisions: unknown[] }>(`${id}/decisions.json`, { decisions: [] }),
     loadJson<{ points: unknown[] }>(`${id}/equity_curve.json`, { points: [] }),
     loadJson<PriceSnapshot>(`${id}/prices.json`, EMPTY_PRICES),
-    loadJson<Universe>(`universes/${universe}.json`, {
-      source: "",
-      asOf: "",
-      indexSymbol: "EGX30",
-      constituents: [],
-    }),
   ]);
   return {
     portfolio,
@@ -71,16 +86,27 @@ export async function getStrategyData(id: string, universe: string): Promise<Omi
     decisions: decisionsW.decisions as DecisionEntry[],
     equity: equityW.points as EquityPoint[],
     prices,
-    universeCount: uni.constituents.length,
   };
 }
 
 export async function getAllStrategyData(): Promise<StrategyData[]> {
-  const registry = await getRegistry();
+  const [registry, sharia] = await Promise.all([getRegistry(), getSharia()]);
+  const universeCache = new Map<string, Promise<UniverseEntry[]>>();
+  const universeOf = (name: string) => {
+    if (!universeCache.has(name)) universeCache.set(name, getUniverse(name));
+    return universeCache.get(name)!;
+  };
+
   return Promise.all(
     registry.strategies.map(async (def) => {
-      const data = await getStrategyData(def.id, def.universe);
-      return { def, ...data };
+      const [data, constituents] = await Promise.all([
+        getStrategyData(def.id),
+        universeOf(def.universe),
+      ]);
+      const count = def.shariaFilter
+        ? constituents.filter((c) => sharia.rulings[c.ticker]?.compliant === true).length
+        : constituents.length;
+      return { def, ...data, universeCount: count };
     }),
   );
 }

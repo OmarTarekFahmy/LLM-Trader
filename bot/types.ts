@@ -38,9 +38,24 @@ export interface StrategyDef {
   label: string;
   blurb: string;
   universe: string;
+  /** if true, narrow `universe` to tickers marked compliant in state/sharia.json */
+  shariaFilter?: boolean;
   profile: StrategyProfile;
   startingCashEgp: number;
   policy: Omit<Policy, "startingCashEgp">;
+}
+
+export interface ShariaRuling {
+  compliant: boolean;
+  basis: string;
+}
+
+export interface ShariaRulings {
+  source: string;
+  asOf: string;
+  updatedAt: string;
+  updatedBy?: string;
+  rulings: Record<string, ShariaRuling>;
 }
 
 export interface StrategyRegistry {

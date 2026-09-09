@@ -1,5 +1,13 @@
 import { DateTime } from "luxon";
-import { config, loadStrategies, loadUniverse, policyFor, strategyDir } from "./config.js";
+import {
+  config,
+  loadShariaRulings,
+  loadStrategies,
+  loadUniverse,
+  policyFor,
+  shariaCompliantUniverse,
+  strategyDir,
+} from "./config.js";
 import { filterSnapshot, gatherMarketData } from "./marketData.js";
 import { applyGuardrails } from "./policy.js";
 import { computeNav, type PriceLookup } from "./ledger.js";
@@ -73,12 +81,18 @@ async function main(): Promise<void> {
   }
 
   // ---- one shared market snapshot for the union of all strategy universes ----
-  const universes = new Map(registry.strategies.map((s) => [s.universe, loadUniverse(s.universe)]));
+  const rulings = loadShariaRulings();
+  const stratUniverse = new Map<string, ReturnType<typeof loadUniverse>>();
+  for (const s of registry.strategies) {
+    let u = loadUniverse(s.universe);
+    if (s.shariaFilter) u = shariaCompliantUniverse(u, rulings);
+    stratUniverse.set(s.id, u);
+  }
   const unionByTicker = new Map<string, UniverseEntry>();
-  for (const u of universes.values()) {
+  for (const u of stratUniverse.values()) {
     for (const c of u.constituents) if (!unionByTicker.has(c.ticker)) unionByTicker.set(c.ticker, c);
   }
-  const indexSymbol = [...universes.values()][0]?.indexSymbol ?? "EGX30";
+  const indexSymbol = [...stratUniverse.values()][0]?.indexSymbol ?? "EGX30";
 
   const marketChain = getMarketProviderChain();
   log(
@@ -98,7 +112,8 @@ async function main(): Promise<void> {
   );
 
   for (const def of registry.strategies) {
-    const uni = universes.get(def.universe)!;
+    const uni = stratUniverse.get(def.id)!;
+    log(`[${def.id}] universe: ${uni.constituents.length} names${def.shariaFilter ? " (sharia-filtered)" : ""}`);
     try {
       if (effectiveMode === "eod") {
         await runEod(def, uni.constituents, unionSnapshot, nowCairo, dataErrors);

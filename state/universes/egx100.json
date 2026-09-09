@@ -45,7 +45,7 @@
     { "ticker": "ASCM", "name": "ASEC Company for Mining (ASCOM)", "sector": "Basic Materials" },
     { "ticker": "COSG", "name": "Cairo Oils & Soap", "sector": "Consumer Staples" },
     { "ticker": "CSAG", "name": "Canal Shipping Agencies", "sector": "Industrials" },
-    { "ticker": "DAPH", "name": "Cairo Pharmaceuticals & Chemical Industries", "sector": "Health Care" },
+    { "ticker": "DAPH", "name": "Development & Engineering Consultants (DEC)", "sector": "Industrials" },
     { "ticker": "EHDR", "name": "Egyptians Housing Development & Reconstruction", "sector": "Real Estate" },
     { "ticker": "ELSH", "name": "El Shams Housing & Urbanization", "sector": "Real Estate" },
     { "ticker": "ENGC", "name": "Industrial Engineering Company (IEC)", "sector": "Industrials" },

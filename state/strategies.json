@@ -35,6 +35,25 @@
         "targetGainPct": 0.025,
         "softStopPct": 0.035
       }
+    },
+    {
+      "id": "sharia",
+      "label": "Sharia",
+      "blurb": "Same active rules as Swing, restricted to the Sharia-compliant names inside EGX100. The compliant set is the official EGX 33 Shariah Index and is editable in Settings.",
+      "universe": "egx100",
+      "shariaFilter": true,
+      "profile": "swing",
+      "startingCashEgp": 100000,
+      "policy": {
+        "maxPositionPct": 0.15,
+        "maxSectorPct": 0.40,
+        "minHoldingDays": 0,
+        "maxTradesPerCycle": 3,
+        "minCashBufferPct": 0.05,
+        "costs": { "commissionPct": 0.0005, "levyPct": 0.0005 },
+        "targetGainPct": 0.025,
+        "softStopPct": 0.035
+      }
     }
   ]
 }

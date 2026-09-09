@@ -106,9 +106,23 @@ export interface StrategyDef {
   label: string;
   blurb: string;
   universe: string;
+  shariaFilter?: boolean;
   profile: "core" | "swing";
   startingCashEgp: number;
   policy: Record<string, unknown>;
+}
+
+export interface ShariaRuling {
+  compliant: boolean;
+  basis: string;
+}
+
+export interface ShariaRulings {
+  source: string;
+  asOf: string;
+  updatedAt: string;
+  updatedBy?: string;
+  rulings: Record<string, ShariaRuling>;
 }
 
 export interface StrategyRegistry {

@@ -1,0 +1,373 @@
+{
+  "_comment": "Sharia-compliance ruling per EGX100 ticker. Used to build the \"sharia\" strategy universe (egx100 filtered to compliant:true) and shown in the dashboard Settings section. Seed: compliant:true == constituent of the official EGX 33 Shariah Index (screened by its Sharia supervisory board). Everything else is false, either a clear business-activity prohibition or \"not individually screened\". Edit via the dashboard Settings section, or here directly; the next bot cycle picks it up.",
+  "source": "EGX 33 Shariah Compliant Index (investing.com components)",
+  "asOf": "2026-09-09",
+  "updatedAt": "2026-09-09T13:52:36.175Z",
+  "updatedBy": "seed",
+  "rulings": {
+    "COMI": {
+      "compliant": false,
+      "basis": "Conventional bank (interest-based)"
+    },
+    "TMGH": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ETEL": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "EGAL": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "MFPC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ABUK": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EAST": {
+      "compliant": false,
+      "basis": "Prohibited activity: tobacco"
+    },
+    "ORAS": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ALCN": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EFIH": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "HRHO": {
+      "compliant": false,
+      "basis": "Conventional financial services (brokerage, lending, leasing)"
+    },
+    "SKPC": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "GBCO": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "CCAP": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "PHDC": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "HELI": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "RAYA": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MCQE": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "AMOC": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "BTFH": {
+      "compliant": false,
+      "basis": "Conventional financial services (investment bank / brokerage)"
+    },
+    "JUFO": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ORHD": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ADIB": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "EMFD": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "CLHO": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EFID": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ISPH": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "FWRY": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "RMDA": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "SWDY": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EGTS": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ELEC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ELKA": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MPRC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "OCDI": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ASPI": {
+      "compliant": false,
+      "basis": "Conventional financial-investments holding"
+    },
+    "SVCE": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "UEGC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ASCM": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "COSG": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "CSAG": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "DAPH": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EHDR": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ELSH": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ENGC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ETRS": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "HDBK": {
+      "compliant": false,
+      "basis": "Conventional bank (interest-based)"
+    },
+    "ISMA": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "KABO": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "LCSW": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "MASR": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "MPCO": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "NCCW": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ORWE": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "POUL": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "PRCL": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "UNIP": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ZEOT": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ZMID": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MBSC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "CIEB": {
+      "compliant": false,
+      "basis": "Conventional bank (interest-based)"
+    },
+    "NIPH": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "PHAR": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EGCH": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "SCEM": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "EXPA": {
+      "compliant": false,
+      "basis": "Conventional bank (interest-based)"
+    },
+    "AIFI": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "AMER": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "AMIA": {
+      "compliant": false,
+      "basis": "Conventional investment company"
+    },
+    "ATQA": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "DSCW": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "IDRE": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MEPA": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MPCI": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "OBRI": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "OIH": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "SDTI": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ARCC": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "IEEC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ARAB": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "SIPC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MTIE": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "ICFC": {
+      "compliant": true,
+      "basis": "EGX 33 Shariah Index constituent"
+    },
+    "MOED": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "ATLC": {
+      "compliant": false,
+      "basis": "Conventional leasing / finance"
+    },
+    "CNFN": {
+      "compliant": false,
+      "basis": "Conventional consumer finance (interest-based lending)"
+    },
+    "OFH": {
+      "compliant": false,
+      "basis": "Conventional financial holding"
+    },
+    "ISMQ": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "GDWA": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "PRDC": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    },
+    "MCRO": {
+      "compliant": false,
+      "basis": "Not in the EGX 33 Shariah Index; not individually screened. Review candidate."
+    }
+  }
+}
