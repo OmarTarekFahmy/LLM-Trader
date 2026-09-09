@@ -7,3 +7,5 @@ dashboard/node_modules/
 dashboard/out/
 .DS_Store
 .vercel
+.agents/
+skills-lock.json
