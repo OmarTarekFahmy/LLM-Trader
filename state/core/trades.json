@@ -25,6 +25,32 @@
       "resultingCash": 71051.08,
       "resultingNav": 99971.08,
       "cycleId": "20260909T1856-core-trade"
+    },
+    {
+      "timestamp": "2026-09-09T19:15:38.031+03:00",
+      "ticker": "MFPC",
+      "action": "buy",
+      "qty": 210,
+      "price": 47,
+      "fees": 9.87,
+      "grossValue": 9870,
+      "netCashDelta": -9879.87,
+      "resultingCash": 61171.21,
+      "resultingNav": 99961.21,
+      "cycleId": "20260909T1915-core-trade"
+    },
+    {
+      "timestamp": "2026-09-09T19:15:38.031+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 120,
+      "price": 120.12000274658203,
+      "fees": 14.41,
+      "grossValue": 14414.4,
+      "netCashDelta": -14428.81,
+      "resultingCash": 46742.4,
+      "resultingNav": 99946.8,
+      "cycleId": "20260909T1915-core-trade"
     }
   ]
 }

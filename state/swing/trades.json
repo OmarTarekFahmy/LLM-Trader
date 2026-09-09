@@ -51,6 +51,19 @@
       "resultingCash": 41435.08,
       "resultingNav": 99941.49,
       "cycleId": "20260909T1856-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-09T19:15:38.031+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 124,
+      "price": 120.12000274658203,
+      "fees": 14.89,
+      "grossValue": 14894.88,
+      "netCashDelta": -14909.77,
+      "resultingCash": 26525.31,
+      "resultingNav": 99926.6,
+      "cycleId": "20260909T1915-swing-trade"
     }
   ]
 }

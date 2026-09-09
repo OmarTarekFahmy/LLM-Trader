@@ -1,5 +1,5 @@
 {
-  "cash": 41435.08,
+  "cash": 26525.31,
   "holdings": [
     {
       "ticker": "AMOC",
@@ -24,10 +24,16 @@
       "qty": 194,
       "avgCost": 75.78,
       "openedAt": "2026-09-09T18:56:46.967+03:00"
+    },
+    {
+      "ticker": "ETEL",
+      "qty": 124,
+      "avgCost": 120.24,
+      "openedAt": "2026-09-09T19:15:38.031+03:00"
     }
   ],
-  "nav": 99941.49,
+  "nav": 99926.6,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-09T18:56:46.967+03:00"
+  "lastUpdated": "2026-09-09T19:15:38.031+03:00"
 }

@@ -145,6 +145,69 @@
       "navAfter": 99958.07,
       "cash": 58023.19,
       "error": null
+    },
+    {
+      "cycleId": "20260909T1915-sharia-trade",
+      "timestamp": "2026-09-09T19:15:38.031+03:00",
+      "mode": "trade",
+      "session": "market closed (after hours)",
+      "marketSummary": "25 quoted; 20/25 up over 5d; EGX30 56501 (5d 3.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "google/gemma-4-26b-a4b-it",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 maintains strong bullish momentum (+10.5% over 20d). Energy (AMOC) and Health Care (RMDA) are exhibiting powerful breakout characteristics, while Communications (ETEL) is testing recent highs. The portfolio is currently positioned in high-momentum names that align with the prevailing market trend.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 maintains strong bullish momentum (+10.5% over 20d). Energy (AMOC) and Health Care (RMDA) are exhibiting powerful breakout characteristics, while Communications (ETEL) is testing recent highs. The portfolio is currently positioned in high-momentum names that align with the prevailing market trend.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Strong momentum play; price is at 20d high (+0.0% vs Hi) with high volatility. Holding to capture further extension in the Energy sector.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Trading at 20d high; momentum is positive (+4.5% over 3d). Holding to see if it breaks out further.\"\n    },\n    {\n      \"ticker\": \"RMDA\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Strong price action (+5.2% today); momentum is accelerating. Holding for a swing target.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong momentum play; price is at 20d high (+0.0% vs Hi) with high volatility. Holding to capture further extension in the Energy sector."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Trading at 20d high; momentum is positive (+4.5% over 3d). Holding to see if it breaks out further."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong price action (+5.2% today); momentum is accelerating. Holding for a swing target."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99958.07,
+      "navAfter": 99958.07,
+      "cash": 58023.19,
+      "error": null
     }
   ]
 }
