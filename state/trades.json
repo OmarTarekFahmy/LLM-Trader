@@ -1,1 +1,17 @@
-{ "trades": [] }
+{
+  "trades": [
+    {
+      "timestamp": "2026-09-09T15:07:08.398+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 14.199999809265137,
+      "fees": 14.2,
+      "grossValue": 14200,
+      "netCashDelta": -14214.2,
+      "resultingCash": 85785.8,
+      "resultingNav": 99985.8,
+      "cycleId": "20260909T1507-trade"
+    }
+  ]
+}

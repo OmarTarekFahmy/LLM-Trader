@@ -1,1 +1,46 @@
-{ "decisions": [] }
+{
+  "decisions": [
+    {
+      "cycleId": "20260909T1507-trade",
+      "timestamp": "2026-09-09T15:07:08.398+03:00",
+      "mode": "trade",
+      "session": "end-of-day window",
+      "marketSummary": "30 quoted; 24/30 up over 5d; EGX30 56501 (5d 3.8%)",
+      "llmProvider": "gemini",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is displaying strong upward momentum, driven by stellar performance in the Basic Materials and Energy sectors over the past 20 days. Given our semi-long-term philosophy and starting capital, we are initiating a position in AMOC to capture high momentum in the Energy sector while maintaining a prudent cash buffer and respecting concentration limits.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 is displaying strong upward momentum, driven by stellar performance in the Basic Materials and Energy sectors over the past 20 days. Given our semi-long-term philosophy and starting capital, we are initiating a position in AMOC to capture high momentum in the Energy sector while maintaining a prudent cash buffer and respecting concentration limits.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"buy\",\n      \"quantity\": 1000,\n      \"rationale\": \"Initiating a high-conviction position to capture strong short and medium-term momentum in the Energy sector, well within our single position size limit.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Initiating a high-conviction position to capture strong short and medium-term momentum in the Energy sector, well within our single position size limit."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 14.199999809265137,
+          "fees": 14.2
+        }
+      ],
+      "navBefore": 100000,
+      "navAfter": 99985.8,
+      "cash": 85785.8,
+      "error": null
+    }
+  ]
+}

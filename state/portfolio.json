@@ -1,8 +1,15 @@
 {
-  "cash": 100000,
-  "holdings": [],
-  "nav": 100000,
-  "inceptionDate": null,
-  "inceptionBenchmarkIndexLevel": null,
-  "lastUpdated": null
+  "cash": 85785.8,
+  "holdings": [
+    {
+      "ticker": "AMOC",
+      "qty": 1000,
+      "avgCost": 14.21,
+      "openedAt": "2026-09-09T15:07:08.398+03:00"
+    }
+  ],
+  "nav": 99985.8,
+  "inceptionDate": "2026-09-09T15:07:08.398+03:00",
+  "inceptionBenchmarkIndexLevel": 56500.69921875,
+  "lastUpdated": "2026-09-09T15:07:08.398+03:00"
 }
