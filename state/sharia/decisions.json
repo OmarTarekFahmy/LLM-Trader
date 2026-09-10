@@ -353,6 +353,98 @@
       "navAfter": 99958.07,
       "cash": 58023.19,
       "error": null
+    },
+    {
+      "cycleId": "20260910T1228-sharia-trade",
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 20/25 up over 5d; EGX30 56313 (5d 3.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains trend-positive (+10.5% over 20d), but Energy and Basic Materials are crowded and stretched. I am rotating out of the exhausted AMOC breakout into a less-extended EGX100 setup while preserving a large cash buffer.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains trend-positive (+10.5% over 20d), but Energy and Basic Materials are crowded and stretched. I am rotating out of the exhausted AMOC breakout into a less-extended EGX100 setup while preserving a large cash buffer.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"sell\",\"quantity\":1000,\"rationale\":\"Lock in the roughly +5.2% gain after a 56.0% 20-day run, a 4.9% one-day jump, and a close at the 20-day high; volatility of 3.3% makes further upside less attractive for a 2-3% swing target.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position is near break-even after one day, with +10.2% 20-day momentum and a close at the 20-day high; retain it for possible follow-through and reassess if that momentum fails.\"},{\"ticker\":\"RMDA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position is near break-even and recent +5.2% one-day and +8.6% three-day gains support continuation, but the 20-day gain is only 1.7% and price is near its high, so holding is preferable to adding.\"},{\"ticker\":\"EFIH\",\"action\":\"buy\",\"quantity\":600,\"rationale\":\"A 10-day decline of 0.8% and 20-day gain of 1.3% indicate controlled consolidation, while price remains only 3.9% above its 20-day low with 1.5% volatility. The 14,280 EGP order is about 14.3% of NAV, supporting a 2-3% swing objective while preserving cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "quantity": 1000,
+          "rationale": "Lock in the roughly +5.2% gain after a 56.0% 20-day run, a 4.9% one-day jump, and a close at the 20-day high; volatility of 3.3% makes further upside less attractive for a 2-3% swing target."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position is near break-even after one day, with +10.2% 20-day momentum and a close at the 20-day high; retain it for possible follow-through and reassess if that momentum fails."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position is near break-even and recent +5.2% one-day and +8.6% three-day gains support continuation, but the 20-day gain is only 1.7% and price is near its high, so holding is preferable to adding."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "quantity": 600,
+          "rationale": "A 10-day decline of 0.8% and 20-day gain of 1.3% indicate controlled consolidation, while price remains only 3.9% above its 20-day low with 1.5% volatility. The 14,280 EGP order is about 14.3% of NAV, supporting a 2-3% swing objective while preserving cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "proposedQty": 600,
+          "finalQty": 600,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "qty": 1000,
+          "price": 14.199999809265137,
+          "fees": 14.2
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "qty": 600,
+          "price": 23.799999237060547,
+          "fees": 14.28
+        }
+      ],
+      "navBefore": 99958.07,
+      "navAfter": 99929.59,
+      "cash": 57914.71,
+      "error": null
     }
   ]
 }

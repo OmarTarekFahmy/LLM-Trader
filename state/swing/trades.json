@@ -64,6 +64,32 @@
       "resultingCash": 26525.31,
       "resultingNav": 99926.6,
       "cycleId": "20260909T1915-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "ticker": "ABUK",
+      "action": "sell",
+      "qty": 163,
+      "price": 92,
+      "fees": 15,
+      "grossValue": 14996,
+      "netCashDelta": 14981,
+      "resultingCash": 41506.31,
+      "resultingNav": 99911.6,
+      "cycleId": "20260910T1228-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "ticker": "CCAP",
+      "action": "buy",
+      "qty": 2000,
+      "price": 6.170000076293945,
+      "fees": 12.34,
+      "grossValue": 12340,
+      "netCashDelta": -12352.34,
+      "resultingCash": 29153.97,
+      "resultingNav": 99899.26,
+      "cycleId": "20260910T1228-swing-trade"
     }
   ]
 }

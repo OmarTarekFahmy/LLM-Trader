@@ -38,6 +38,32 @@
       "resultingCash": 58023.19,
       "resultingNav": 99958.07,
       "cycleId": "20260909T1711-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "ticker": "AMOC",
+      "action": "sell",
+      "qty": 1000,
+      "price": 14.199999809265137,
+      "fees": 14.2,
+      "grossValue": 14200,
+      "netCashDelta": 14185.8,
+      "resultingCash": 72208.99,
+      "resultingNav": 99943.87,
+      "cycleId": "20260910T1228-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "ticker": "EFIH",
+      "action": "buy",
+      "qty": 600,
+      "price": 23.799999237060547,
+      "fees": 14.28,
+      "grossValue": 14280,
+      "netCashDelta": -14294.28,
+      "resultingCash": 57914.71,
+      "resultingNav": 99929.59,
+      "cycleId": "20260910T1228-sharia-trade"
     }
   ]
 }

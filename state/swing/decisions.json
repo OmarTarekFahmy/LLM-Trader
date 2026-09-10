@@ -529,6 +529,126 @@
       "navAfter": 99926.6,
       "cash": 26525.31,
       "error": null
+    },
+    {
+      "cycleId": "20260910T1228-swing-trade",
+      "timestamp": "2026-09-10T12:28:08.199+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 62/91 up over 5d; EGX30 56313 (5d 2.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains bullish (+2.7% over 5d), but Energy and Basic Materials leaders are extended and near 20-day highs. Rotate from high-volatility ABUK into CCAP to diversify into Industrials while retaining cash and letting the remaining momentum positions run.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains bullish (+2.7% over 5d), but Energy and Basic Materials leaders are extended and near 20-day highs. Rotate from high-volatility ABUK into CCAP to diversify into Industrials while retaining cash and letting the remaining momentum positions run.\",\"actions\":[{\"ticker\":\"ABUK\",\"action\":\"sell\",\"quantity\":163,\"rationale\":\"ABUK has the weakest risk/reward in the book: 4.0% 10-day volatility, +24.0% over 20 days, and a near-20-day-high price after a +4.5% one-day rebound. Sell the full position to reduce crowded Basic Materials exposure and fund diversification.\"},{\"ticker\":\"EGAL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"EGAL retains positive 10-day and 20-day momentum (+9.3% and +25.5%) with lower volatility than ABUK; hold after rotating the higher-risk Basic Materials name.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"ETEL is at its 20-day high with +10.2% over 20 days and +1.6% today; retain it while momentum is intact and no stop condition is triggered.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"SDTI is at its 20-day high after +7.4% today and +13.2% over 20 days; hold the full position to capture continuation rather than exit a still-strong setup.\"},{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"AMOC remains the strongest momentum name (+56.0% over 20 days) and is at its 20-day high; no stop or thesis break is present, so hold pending a pullback or target.\"},{\"ticker\":\"CCAP\",\"action\":\"buy\",\"quantity\":2000,\"rationale\":\"CCAP offers cleaner industrial momentum: +16.9% over 20 days, 1.8% volatility, and a close at its 20-day high. Buy 2,000 shares, approximately 12.4% of NAV, below the single-position cap and with ample cash retained.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ABUK",
+          "action": "sell",
+          "quantity": 163,
+          "rationale": "ABUK has the weakest risk/reward in the book: 4.0% 10-day volatility, +24.0% over 20 days, and a near-20-day-high price after a +4.5% one-day rebound. Sell the full position to reduce crowded Basic Materials exposure and fund diversification."
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "EGAL retains positive 10-day and 20-day momentum (+9.3% and +25.5%) with lower volatility than ABUK; hold after rotating the higher-risk Basic Materials name."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "ETEL is at its 20-day high with +10.2% over 20 days and +1.6% today; retain it while momentum is intact and no stop condition is triggered."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "SDTI is at its 20-day high after +7.4% today and +13.2% over 20 days; hold the full position to capture continuation rather than exit a still-strong setup."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "AMOC remains the strongest momentum name (+56.0% over 20 days) and is at its 20-day high; no stop or thesis break is present, so hold pending a pullback or target."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "quantity": 2000,
+          "rationale": "CCAP offers cleaner industrial momentum: +16.9% over 20 days, 1.8% volatility, and a close at its 20-day high. Buy 2,000 shares, approximately 12.4% of NAV, below the single-position cap and with ample cash retained."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ABUK",
+          "action": "sell",
+          "proposedQty": 163,
+          "finalQty": 163,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "proposedQty": 2000,
+          "finalQty": 2000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ABUK",
+          "action": "sell",
+          "qty": 163,
+          "price": 92,
+          "fees": 15
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "qty": 2000,
+          "price": 6.170000076293945,
+          "fees": 12.34
+        }
+      ],
+      "navBefore": 99926.6,
+      "navAfter": 99899.26,
+      "cash": 29153.97,
+      "error": null
     }
   ]
 }

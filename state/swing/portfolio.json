@@ -1,16 +1,10 @@
 {
-  "cash": 26525.31,
+  "cash": 29153.97,
   "holdings": [
     {
       "ticker": "AMOC",
       "qty": 1000,
       "avgCost": 14.21,
-      "openedAt": "2026-09-09T15:58:08.799+03:00"
-    },
-    {
-      "ticker": "ABUK",
-      "qty": 163,
-      "avgCost": 92.09,
       "openedAt": "2026-09-09T15:58:08.799+03:00"
     },
     {
@@ -30,10 +24,16 @@
       "qty": 124,
       "avgCost": 120.24,
       "openedAt": "2026-09-09T19:15:38.031+03:00"
+    },
+    {
+      "ticker": "CCAP",
+      "qty": 2000,
+      "avgCost": 6.18,
+      "openedAt": "2026-09-10T12:28:08.199+03:00"
     }
   ],
-  "nav": 99926.6,
+  "nav": 99899.26,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-09T19:46:25.794+03:00"
+  "lastUpdated": "2026-09-10T12:28:08.199+03:00"
 }
