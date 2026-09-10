@@ -90,6 +90,45 @@
       "resultingCash": 29153.97,
       "resultingNav": 99899.26,
       "cycleId": "20260910T1228-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "ticker": "SDTI",
+      "action": "sell",
+      "qty": 194,
+      "price": 72.95999908447266,
+      "fees": 14.15,
+      "grossValue": 14154.24,
+      "netCashDelta": 14140.09,
+      "resultingCash": 43294.06,
+      "resultingNav": 99957.1,
+      "cycleId": "20260910T1318-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 124,
+      "price": 125.98999786376953,
+      "fees": 15.62,
+      "grossValue": 15622.76,
+      "netCashDelta": 15607.14,
+      "resultingCash": 58901.2,
+      "resultingNav": 99941.48,
+      "cycleId": "20260910T1318-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "ticker": "ATLC",
+      "action": "buy",
+      "qty": 2000,
+      "price": 7.110000133514404,
+      "fees": 14.22,
+      "grossValue": 14220,
+      "netCashDelta": -14234.22,
+      "resultingCash": 44666.98,
+      "resultingNav": 99927.26,
+      "cycleId": "20260910T1318-swing-trade"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 29153.97,
+  "cash": 44666.98,
   "holdings": [
     {
       "ticker": "AMOC",
@@ -14,26 +14,20 @@
       "openedAt": "2026-09-09T15:58:08.799+03:00"
     },
     {
-      "ticker": "SDTI",
-      "qty": 194,
-      "avgCost": 75.78,
-      "openedAt": "2026-09-09T18:56:46.967+03:00"
-    },
-    {
-      "ticker": "ETEL",
-      "qty": 124,
-      "avgCost": 120.24,
-      "openedAt": "2026-09-09T19:15:38.031+03:00"
-    },
-    {
       "ticker": "CCAP",
       "qty": 2000,
       "avgCost": 6.18,
       "openedAt": "2026-09-10T12:28:08.199+03:00"
+    },
+    {
+      "ticker": "ATLC",
+      "qty": 2000,
+      "avgCost": 7.12,
+      "openedAt": "2026-09-10T13:18:23.520+03:00"
     }
   ],
-  "nav": 99899.26,
+  "nav": 99927.26,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-10T12:28:08.199+03:00"
+  "lastUpdated": "2026-09-10T13:18:23.520+03:00"
 }

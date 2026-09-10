@@ -443,6 +443,83 @@
       "navAfter": 99946.8,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260910T1318-core-trade",
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 21/30 up over 5d; EGX30 56290 (5d 2.3%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains bullish, led by strong momentum in Basic Materials, Energy, and Communications, although several leaders are technically extended. The portfolio is conservatively diversified, concentrated within policy limits, and holds substantial cash; with all positions newly acquired and no thesis changes, trading would add avoidable costs and churn.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains bullish, led by strong momentum in Basic Materials, Energy, and Communications, although several leaders are technically extended. The portfolio is conservatively diversified, concentrated within policy limits, and holds substantial cash; with all positions newly acquired and no thesis changes, trading would add avoidable costs and churn.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":1000,\"rationale\":\"Energy momentum remains strong, but the 53.1% 20-day gain is extended and the position is near the single-name limit; retain it without adding.\"},{\"ticker\":\"ABUK\",\"action\":\"hold\",\"quantity\":160,\"rationale\":\"Basic Materials momentum is favorable, but the sharp 20-day advance and recent entry do not justify adding or selling solely on price.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":210,\"rationale\":\"The position benefits from strong sector momentum, yet its 26.7% 20-day gain is extended; maintain the position while preserving cash.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":120,\"rationale\":\"Communications is the strongest current momentum sector, but ETEL is also extended and near the position limit; hold rather than chase.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 1000,
+          "rationale": "Energy momentum remains strong, but the 53.1% 20-day gain is extended and the position is near the single-name limit; retain it without adding."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 160,
+          "rationale": "Basic Materials momentum is favorable, but the sharp 20-day advance and recent entry do not justify adding or selling solely on price."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 210,
+          "rationale": "The position benefits from strong sector momentum, yet its 26.7% 20-day gain is extended; maintain the position while preserving cash."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 120,
+          "rationale": "Communications is the strongest current momentum sector, but ETEL is also extended and near the position limit; hold rather than chase."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 1000,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 160,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 210,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 120,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 101400.8,
+      "navAfter": 101400.8,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

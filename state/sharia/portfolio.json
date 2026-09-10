@@ -1,12 +1,6 @@
 {
-  "cash": 57914.71,
+  "cash": 64247.58,
   "holdings": [
-    {
-      "ticker": "ETEL",
-      "qty": 124,
-      "avgCost": 120.24,
-      "openedAt": "2026-09-09T17:11:57.910+03:00"
-    },
     {
       "ticker": "RMDA",
       "qty": 2000,
@@ -18,10 +12,16 @@
       "qty": 600,
       "avgCost": 23.82,
       "openedAt": "2026-09-10T12:28:08.199+03:00"
+    },
+    {
+      "ticker": "SKPC",
+      "qty": 500,
+      "avgCost": 18.55,
+      "openedAt": "2026-09-10T13:18:23.520+03:00"
     }
   ],
-  "nav": 99929.59,
+  "nav": 100500.58,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-10T12:28:08.199+03:00"
+  "lastUpdated": "2026-09-10T13:18:23.520+03:00"
 }

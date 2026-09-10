@@ -445,6 +445,98 @@
       "navAfter": 99929.59,
       "cash": 57914.71,
       "error": null
+    },
+    {
+      "cycleId": "20260910T1318-sharia-trade",
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 16/25 up over 5d; EGX30 56290 (5d 2.0%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 trend remains positive, but momentum names are becoming crowded near 20-day highs. Rotate ETEL profits into SKPC's controlled pullback while retaining the smaller EFIH position and monitoring RMDA; cash remains ample.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 trend remains positive, but momentum names are becoming crowded near 20-day highs. Rotate ETEL profits into SKPC's controlled pullback while retaining the smaller EFIH position and monitoring RMDA; cash remains ample.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"sell\",\"quantity\":124,\"rationale\":\"Lock the +4.8% swing gain after a sharp multi-day run and a touch of the 20-day high; the breakout is extended and vulnerable to a short pullback.\"},{\"ticker\":\"SKPC\",\"action\":\"buy\",\"quantity\":500,\"rationale\":\"Enter a 500-share pullback in a positive 20-day trend: price is only 2.3% below its 20-day high, volatility is elevated enough for a swing, and the recent low near 17.33 provides support.\"},{\"ticker\":\"RMDA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The -2.0% loss remains above the soft -3.5% cut level, and the recent rebound suggests support, but the weak 20-day trend warrants close review.\"},{\"ticker\":\"EFIH\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position is modestly profitable with constructive short-term momentum and remains 4.0% below its 20-day high, leaving room for another swing move.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 124,
+          "rationale": "Lock the +4.8% swing gain after a sharp multi-day run and a touch of the 20-day high; the breakout is extended and vulnerable to a short pullback."
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "quantity": 500,
+          "rationale": "Enter a 500-share pullback in a positive 20-day trend: price is only 2.3% below its 20-day high, volatility is elevated enough for a swing, and the recent low near 17.33 provides support."
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The -2.0% loss remains above the soft -3.5% cut level, and the recent rebound suggests support, but the weak 20-day trend warrants close review."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position is modestly profitable with constructive short-term momentum and remains 4.0% below its 20-day high, leaving room for another swing move."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 124,
+          "finalQty": 124,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 124,
+          "price": 125.98999786376953,
+          "fees": 15.62
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "qty": 500,
+          "price": 18.530000686645508,
+          "fees": 9.27
+        }
+      ],
+      "navBefore": 100525.47,
+      "navAfter": 100500.58,
+      "cash": 64247.58,
+      "error": null
     }
   ]
 }

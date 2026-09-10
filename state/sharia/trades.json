@@ -64,6 +64,32 @@
       "resultingCash": 57914.71,
       "resultingNav": 99929.59,
       "cycleId": "20260910T1228-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 124,
+      "price": 125.98999786376953,
+      "fees": 15.62,
+      "grossValue": 15622.76,
+      "netCashDelta": 15607.14,
+      "resultingCash": 73521.85,
+      "resultingNav": 100509.85,
+      "cycleId": "20260910T1318-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-10T13:18:23.520+03:00",
+      "ticker": "SKPC",
+      "action": "buy",
+      "qty": 500,
+      "price": 18.530000686645508,
+      "fees": 9.27,
+      "grossValue": 9265,
+      "netCashDelta": -9274.27,
+      "resultingCash": 64247.58,
+      "resultingNav": 100500.58,
+      "cycleId": "20260910T1318-sharia-trade"
     }
   ]
 }
