@@ -1,5 +1,5 @@
 {
-  "cash": 64247.58,
+  "cash": 58692.03,
   "holdings": [
     {
       "ticker": "RMDA",
@@ -15,13 +15,13 @@
     },
     {
       "ticker": "SKPC",
-      "qty": 500,
-      "avgCost": 18.55,
+      "qty": 800,
+      "avgCost": 18.54,
       "openedAt": "2026-09-10T13:18:23.520+03:00"
     }
   ],
-  "nav": 100500.58,
+  "nav": 100446.03,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-10T19:32:53.301+03:00"
+  "lastUpdated": "2026-09-13T12:55:21.557+03:00"
 }

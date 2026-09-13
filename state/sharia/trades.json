@@ -90,6 +90,19 @@
       "resultingCash": 64247.58,
       "resultingNav": 100500.58,
       "cycleId": "20260910T1318-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-13T12:55:21.557+03:00",
+      "ticker": "SKPC",
+      "action": "buy",
+      "qty": 300,
+      "price": 18.5,
+      "fees": 5.55,
+      "grossValue": 5550,
+      "netCashDelta": -5555.55,
+      "resultingCash": 58692.03,
+      "resultingNav": 100446.03,
+      "cycleId": "20260913T1255-sharia-trade"
     }
   ]
 }

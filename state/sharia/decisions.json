@@ -556,6 +556,77 @@
       "navAfter": 100500.58,
       "cash": 64247.58,
       "error": null
+    },
+    {
+      "cycleId": "20260913T1255-sharia-trade",
+      "timestamp": "2026-09-13T12:55:21.557+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 15/25 up over 5d; EGX30 55767 (5d 2.3%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains trend-positive, but several leaders are extended and crowded. I favor one controlled pullback add in SKPC while retaining a large cash buffer and avoiding chase buys.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains trend-positive, but several leaders are extended and crowded. I favor one controlled pullback add in SKPC while retaining a large cash buffer and avoiding chase buys.\",\"actions\":[{\"ticker\":\"RMDA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The loss is only -2.3% versus cost and remains above the -3.5% soft stop; positive 3d and 10d returns support holding the bounce while the 20d trend remains weak.\"},{\"ticker\":\"EFIH\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"EFIH is +0.7% versus cost with constructive 3d and 20d momentum and room below its 20d high; the position is already near the single-name limit, so no add is warranted.\"},{\"ticker\":\"SKPC\",\"action\":\"buy\",\"quantity\":300,\"rationale\":\"SKPC retains a strong 10.4% 20d trend while trading just 2.5% below its high, presenting a controlled pullback rather than a new breakout chase; 300 shares keep post-trade exposure near the 15% limit and preserve cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The loss is only -2.3% versus cost and remains above the -3.5% soft stop; positive 3d and 10d returns support holding the bounce while the 20d trend remains weak."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "EFIH is +0.7% versus cost with constructive 3d and 20d momentum and room below its 20d high; the position is already near the single-name limit, so no add is warranted."
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "quantity": 300,
+          "rationale": "SKPC retains a strong 10.4% 20d trend while trading just 2.5% below its high, presenting a controlled pullback rather than a new breakout chase; 300 shares keep post-trade exposure near the 15% limit and preserve cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "proposedQty": 300,
+          "finalQty": 300,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "RMDA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "qty": 300,
+          "price": 18.5,
+          "fees": 5.55
+        }
+      ],
+      "navBefore": 100451.58,
+      "navAfter": 100446.03,
+      "cash": 58692.03,
+      "error": null
     }
   ]
 }

@@ -1,12 +1,6 @@
 {
-  "cash": 44666.98,
+  "cash": 58529.88,
   "holdings": [
-    {
-      "ticker": "AMOC",
-      "qty": 1000,
-      "avgCost": 14.21,
-      "openedAt": "2026-09-09T15:58:08.799+03:00"
-    },
     {
       "ticker": "EGAL",
       "qty": 39,
@@ -20,14 +14,14 @@
       "openedAt": "2026-09-10T12:28:08.199+03:00"
     },
     {
-      "ticker": "ATLC",
-      "qty": 2000,
-      "avgCost": 7.12,
-      "openedAt": "2026-09-10T13:18:23.520+03:00"
+      "ticker": "ORWE",
+      "qty": 500,
+      "avgCost": 28.22,
+      "openedAt": "2026-09-13T12:55:21.557+03:00"
     }
   ],
-  "nav": 99927.26,
+  "nav": 99786.49,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-10T19:32:53.301+03:00"
+  "lastUpdated": "2026-09-13T12:55:21.557+03:00"
 }

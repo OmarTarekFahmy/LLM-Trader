@@ -129,6 +129,45 @@
       "resultingCash": 44666.98,
       "resultingNav": 99927.26,
       "cycleId": "20260910T1318-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-13T12:55:21.557+03:00",
+      "ticker": "AMOC",
+      "action": "sell",
+      "qty": 1000,
+      "price": 13.600000381469727,
+      "fees": 13.6,
+      "grossValue": 13600,
+      "netCashDelta": 13586.4,
+      "resultingCash": 58253.38,
+      "resultingNav": 99814.99,
+      "cycleId": "20260913T1255-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-13T12:55:21.557+03:00",
+      "ticker": "ATLC",
+      "action": "sell",
+      "qty": 2000,
+      "price": 7.199999809265137,
+      "fees": 14.4,
+      "grossValue": 14400,
+      "netCashDelta": 14385.6,
+      "resultingCash": 72638.98,
+      "resultingNav": 99800.59,
+      "cycleId": "20260913T1255-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-13T12:55:21.557+03:00",
+      "ticker": "ORWE",
+      "action": "buy",
+      "qty": 500,
+      "price": 28.190000534057617,
+      "fees": 14.1,
+      "grossValue": 14095,
+      "netCashDelta": -14109.1,
+      "resultingCash": 58529.88,
+      "resultingNav": 99786.49,
+      "cycleId": "20260913T1255-swing-trade"
     }
   ]
 }
