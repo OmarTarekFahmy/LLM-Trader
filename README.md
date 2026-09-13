@@ -14,7 +14,7 @@ It now runs **two independent simulations side by side**, switchable in the dash
 | **Swing** | ~EGX100 (91 liquid names) | Active. No minimum hold, ≤3 trades/cycle. Aims for ~+2–3% per position over 1–2 weeks, cuts losers around −3–4%. All exits are the model's call. |
 
 Each has its own cash, ledger, decision log and equity curve under `state/<id>/`. Both are polled
-every ~10 minutes during the session.
+every ~15 minutes during the session (GitHub's scheduler cannot reliably honor 10-min cron cadences).
 
 **No brokerage, no execution, no real funds, ever.** See [the spec](./egx-llm-paper-trader-spec.md).
 
@@ -33,7 +33,7 @@ dashboard to Vercel (Root Directory `dashboard`, env var
 | Deterministic guardrail + ledger layer | ✅ `bot/policy.ts`, `bot/ledger.ts` (unit-tested) |
 | LLM: OpenRouter primary, Gemini + Groq fallback | ✅ chain, per-provider fallback |
 | Market data: Yahoo Finance (no key) | ✅ `bot/providers/market/yahoo.ts` |
-| GitHub Actions cron every 10 min + EOD wrap-up | ✅ `.github/workflows/trade-cycle.yml` |
+| GitHub Actions cron every 15 min + EOD wrap-up | ✅ `.github/workflows/trade-cycle.yml` |
 | Dashboard with a strategy switcher | ✅ `dashboard/` |
 | Full cycle end to end & committing | ✅ verified live for both strategies |
 
@@ -78,9 +78,16 @@ backtest mode, a second market-data provider.
 10. **End-of-day cycle** (spec §5): the `30 12 * * *` cron runs `MODE=eod` — a mark-to-market
     snapshot + LLM-free wrap-up per strategy.
 11. **Offline mock providers** (`MOCK_LLM`, `MOCK_MARKET`) for keyless end-to-end testing.
+12. **Cron cadence 10 min → 15 min (2026-09-13).** GitHub's `schedule` trigger doesn't reliably
+    honor sub-15-minute cadences — it's documented best-effort and was observed dropping/delaying
+    almost all of the `*/10` fires (only ~3-4 of the ~40 expected showed up on a trading day, some
+    hours late), so the market sat open with no cycles running. `*/15` is meaningfully more
+    consistent in GitHub's own community reports. A true 10-minute cadence would need an external
+    scheduler hitting the GitHub API instead of `schedule:` — not set up, since it adds a
+    third-party dependency outside the free GitHub+Vercel footprint; ask if you want it.
 
 Spec §1–§2 hard constraints not touched *except* where the user directed it: the swing strategy's
-universe (EGX100) and cadence (10 min) were explicit requests; the 100,000 EGP start, paper-only
+universe (EGX100) and the polling cadence (originally 10 min, now 15 -- see decision below) were explicit requests; the 100,000 EGP start, paper-only
 and free-tier-only rules are unchanged, and Core still tracks EGX30.
 
 ---
@@ -118,7 +125,7 @@ scripts/bootstrap-github.sh
    the primary LLM. `GEMINI_API_KEY` ([aistudio.google.com/apikey](https://aistudio.google.com/apikey))
    and `GROQ_API_KEY` ([console.groq.com/keys](https://console.groq.com/keys)) are optional
    fallbacks (worth keeping — OpenRouter caps `:free` models around 50 requests/day under $10 of
-   lifetime credit, and three strategies on a 10-min cadence run ~80/day). Market data needs no key.
+   lifetime credit, and three strategies on a 15-min cadence run ~55/day). Market data needs no key.
 3. **Repo secrets:** Settings → Secrets and variables → Actions. Optional variables
    `OPENROUTER_MODEL` (default `google/gemma-4-26b-a4b-it:free`), `GEMINI_MODEL`, `GROQ_MODEL`.
 4. **Settings → Actions → General → Workflow permissions → Read and write.**

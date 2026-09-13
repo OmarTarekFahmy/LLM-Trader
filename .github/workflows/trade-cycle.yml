@@ -2,11 +2,20 @@ name: trade-cycle
 
 on:
   schedule:
-    # Every 10 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
+    # Every 15 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
     # session (Sun-Thu 10:00-14:15 Cairo) under either GMT+2 or GMT+3. The bot
     # script itself decides whether the market is actually open and runs every
     # strategy in state/strategies.json each fire.
-    - cron: "*/10 6-12 * * *"
+    #
+    # NOTE: this was */10 (every 10 min) but GitHub's schedule trigger does not
+    # reliably honor sub-15-minute cadences — it's documented as best-effort and
+    # can silently skip or delay runs under load (2026-09-13: only ~3-4 of the
+    # ~40 expected */10 fires/day were actually executing, some hours late).
+    # */15 is meaningfully more consistent in practice. For a truly reliable
+    # 10-minute cadence, GitHub's own guidance is to drive it from an external
+    # scheduler that calls the GitHub API to dispatch this workflow, instead of
+    # relying on `schedule:` — ask if you want that set up.
+    - cron: "*/15 6-12 * * *"
     # One extra fire ~14:30 Cairo for the end-of-day mark-to-market wrap-up.
     - cron: "30 12 * * *"
   workflow_dispatch:

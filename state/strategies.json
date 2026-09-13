@@ -1,6 +1,6 @@
 {
   "_comment": "Registry of independent paper-trading simulations. Each runs its own portfolio/ledger/decision history under state/<id>/. The bot runs every strategy each cycle against one shared market snapshot. cadenceMinutes is documentation of the workflow cron.",
-  "cadenceMinutes": 10,
+  "cadenceMinutes": 15,
   "strategies": [
     {
       "id": "core",

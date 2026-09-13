@@ -95,7 +95,7 @@ export default function Settings({
       }
       setStatus({
         kind: "ok",
-        msg: `Saved (${data.compliant} compliant). The next bot cycle, within ~10 min, will use it.`,
+        msg: `Saved (${data.compliant} compliant). The next bot cycle, within ~15 min, will use it.`,
       });
       // fold the changes into the baseline so "changed" clears
       const merged: Record<string, boolean> = {};
