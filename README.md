@@ -78,13 +78,20 @@ backtest mode, a second market-data provider.
 10. **End-of-day cycle** (spec §5): the `30 12 * * *` cron runs `MODE=eod` — a mark-to-market
     snapshot + LLM-free wrap-up per strategy.
 11. **Offline mock providers** (`MOCK_LLM`, `MOCK_MARKET`) for keyless end-to-end testing.
-12. **Cron cadence 10 min → 15 min (2026-09-13).** GitHub's `schedule` trigger doesn't reliably
-    honor sub-15-minute cadences — it's documented best-effort and was observed dropping/delaying
-    almost all of the `*/10` fires (only ~3-4 of the ~40 expected showed up on a trading day, some
-    hours late), so the market sat open with no cycles running. `*/15` is meaningfully more
-    consistent in GitHub's own community reports. A true 10-minute cadence would need an external
-    scheduler hitting the GitHub API instead of `schedule:` — not set up, since it adds a
-    third-party dependency outside the free GitHub+Vercel footprint; ask if you want it.
+12. **Cron cadence 10 min → 15 min, then an external-scheduler relay (2026-09-13/14).** GitHub's
+    `schedule` trigger doesn't reliably honor short cadences — it's documented best-effort, and on
+    this repo `*/10` only fired ~3-4 times/day instead of ~40, some hours late. Backing it off to
+    `*/15` barely helped (2/day the next day; GitHub's scheduler is unreliable near-independent of
+    the interval chosen for a low-traffic repo). GitHub itself has no fix for this from inside a
+    workflow file.
+13. **`dashboard/app/api/trigger`: an external-scheduler relay (2026-09-14).** A tiny Vercel route,
+    gated by `CRON_SECRET`, that calls the GitHub API to dispatch `trade-cycle.yml` using a
+    `GH_DISPATCH_TOKEN` PAT (server-side only, never sent to the pinger or the browser). A free
+    external pinger (cron-job.org) hits it on a real schedule, which is far more reliable than
+    GitHub's own `schedule:` trigger — verified live: both the raw dispatch call and the route
+    itself correctly created queued/running Actions runs. The GH `schedule:` crons stay too, as a
+    free backup; the workflow's `concurrency` group and the bot's own session gate make
+    overlapping/duplicate triggers harmless.
 
 Spec §1–§2 hard constraints not touched *except* where the user directed it: the swing strategy's
 universe (EGX100) and the polling cadence (originally 10 min, now 15 -- see decision below) were explicit requests; the 100,000 EGP start, paper-only
@@ -111,7 +118,9 @@ state/
   universes/             egx30.json, egx100.json
   core/  swing/           portfolio / trades / decisions / equity_curve / prices  (per strategy)
 .github/workflows/trade-cycle.yml
-dashboard/               Next.js App Router app for Vercel (strategy switcher)
+dashboard/               Next.js App Router app for Vercel (strategy switcher, Settings)
+  app/api/sharia/        commits state/sharia.json edits from the Settings UI
+  app/api/trigger/       external-scheduler relay -> dispatches trade-cycle.yml
 scripts/bootstrap-github.sh
 ```
 
@@ -132,6 +141,15 @@ scripts/bootstrap-github.sh
 5. **First run:** Actions → trade-cycle → Run workflow, `force_session: true`.
 6. **Vercel:** import repo, Root Directory `dashboard`, env var
    `STATE_BASE_URL=https://raw.githubusercontent.com/<user>/LLM-Trader/main/state`, deploy.
+7. **Reliable scheduling (recommended — see decision below):** GitHub's own `schedule:` cron is
+   unreliable at short intervals, so a free external pinger drives cycles instead:
+   - Add two more Vercel env vars: `GH_DISPATCH_TOKEN` (a GitHub PAT — classic with `public_repo`
+     scope, or fine-grained with Actions: Read and write on this repo) and `CRON_SECRET` (make one
+     up, e.g. `node -e "console.log(require('crypto').randomBytes(24).toString('base64url'))"`).
+   - At a free pinger (e.g. [cron-job.org](https://cron-job.org)), schedule a GET every 10 minutes,
+     06:00-12:59 UTC, to `https://<your-vercel-app>.vercel.app/api/trigger?secret=<CRON_SECRET>`.
+     It calls the GitHub API to dispatch `trade-cycle.yml`; the bot's own session gate still decides
+     whether to actually trade. The GitHub `schedule:` crons stay in place too, as a free backup.
 
 `scripts/bootstrap-github.sh` does 1–5 from your `.env`.
 
