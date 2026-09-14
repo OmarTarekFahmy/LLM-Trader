@@ -577,6 +577,25 @@
       "navAfter": 100359.9,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260914T1358-core-trade",
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 10/30 up over 5d; EGX30 54709 (5d -1.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Market momentum is mixed and slightly defensive: the EGX30 is down 1.1% over five days but still up 3.2% over twenty days. Communications and Energy remain extended, while Basic Materials is showing near-term weakness despite positive medium-term momentum. Existing holdings lack a fresh sell thesis, and the portfolio already maintains a substantial cash buffer, so no trade is warranted this cycle.",
+      "llmRaw": "{\"marketRead\":\"Market momentum is mixed and slightly defensive: the EGX30 is down 1.1% over five days but still up 3.2% over twenty days. Communications and Energy remain extended, while Basic Materials is showing near-term weakness despite positive medium-term momentum. Existing holdings lack a fresh sell thesis, and the portfolio already maintains a substantial cash buffer, so no trade is warranted this cycle.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 99739.7,
+      "navAfter": 99739.7,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

@@ -168,6 +168,32 @@
       "resultingCash": 58529.88,
       "resultingNav": 99786.49,
       "cycleId": "20260913T1255-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "ticker": "ORWE",
+      "action": "sell",
+      "qty": 500,
+      "price": 27.6299991607666,
+      "fees": 13.82,
+      "grossValue": 13815,
+      "netCashDelta": 13801.18,
+      "resultingCash": 72331.06,
+      "resultingNav": 99402.01,
+      "cycleId": "20260914T1358-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "ticker": "EMFD",
+      "action": "buy",
+      "qty": 800,
+      "price": 14.800000190734863,
+      "fees": 11.84,
+      "grossValue": 11840,
+      "netCashDelta": -11851.84,
+      "resultingCash": 60479.22,
+      "resultingNav": 99390.17,
+      "cycleId": "20260914T1358-swing-trade"
     }
   ]
 }

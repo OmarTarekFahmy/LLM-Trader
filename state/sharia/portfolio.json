@@ -1,12 +1,6 @@
 {
-  "cash": 58692.03,
+  "cash": 58206.57,
   "holdings": [
-    {
-      "ticker": "RMDA",
-      "qty": 2000,
-      "avgCost": 6.43,
-      "openedAt": "2026-09-09T17:11:57.910+03:00"
-    },
     {
       "ticker": "EFIH",
       "qty": 600,
@@ -18,10 +12,16 @@
       "qty": 800,
       "avgCost": 18.54,
       "openedAt": "2026-09-10T13:18:23.520+03:00"
+    },
+    {
+      "ticker": "ATQA",
+      "qty": 1000,
+      "avgCost": 12.97,
+      "openedAt": "2026-09-14T13:58:11.585+03:00"
     }
   ],
-  "nav": 100446.03,
+  "nav": 99976.57,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-13T19:28:52.342+03:00"
+  "lastUpdated": "2026-09-14T13:58:11.585+03:00"
 }

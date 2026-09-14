@@ -927,6 +927,98 @@
       "navAfter": 99786.49,
       "cash": 58529.88,
       "error": null
+    },
+    {
+      "cycleId": "20260914T1358-swing-trade",
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 28/91 up over 5d; EGX30 54709 (5d -0.8%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is mildly soft over 5d (-0.8%) despite a +3.7% 20d gain, indicating constructive medium-term momentum but mixed near-term tape. Rotate out of weakening ORWE and into EMFD, which retains a strong 20d uptrend while pulling back only 0.7% from its high; preserve the cash buffer and avoid adding to EGAL near its position cap.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 is mildly soft over 5d (-0.8%) despite a +3.7% 20d gain, indicating constructive medium-term momentum but mixed near-term tape. Rotate out of weakening ORWE and into EMFD, which retains a strong 20d uptrend while pulling back only 0.7% from its high; preserve the cash buffer and avoid adding to EGAL near its position cap.\",\"actions\":[{\"ticker\":\"EGAL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Down 1.1% after three days with no stop breach, but the holding is already about 14.6% of NAV, so adding would leave little room before the 15% limit.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Up 1.9% after two days, below the roughly 2.5% soft target; strong 10d and 20d momentum support holding rather than exiting early.\"},{\"ticker\":\"ORWE\",\"action\":\"sell\",\"quantity\":500,\"rationale\":\"Down 2.1% after only one day, with a 4.8% pullback from the 20d high and no fresh catalyst; rotate out before the loss approaches the 3.5% stop zone.\"},{\"ticker\":\"EMFD\",\"action\":\"buy\",\"quantity\":800,\"rationale\":\"A strong 20d gain of 26.1% and 10d gain of 21.6% are offset by only a 0.7% pullback from the high, creating a cleaner momentum-pullback setup. The fill sizes the position to about 11.9% of NAV and preserves ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 1.1% after three days with no stop breach, but the holding is already about 14.6% of NAV, so adding would leave little room before the 15% limit."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Up 1.9% after two days, below the roughly 2.5% soft target; strong 10d and 20d momentum support holding rather than exiting early."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "sell",
+          "quantity": 500,
+          "rationale": "Down 2.1% after only one day, with a 4.8% pullback from the 20d high and no fresh catalyst; rotate out before the loss approaches the 3.5% stop zone."
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "quantity": 800,
+          "rationale": "A strong 20d gain of 26.1% and 10d gain of 21.6% are offset by only a 0.7% pullback from the high, creating a cleaner momentum-pullback setup. The fill sizes the position to about 11.9% of NAV and preserves ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ORWE",
+          "action": "sell",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "proposedQty": 800,
+          "finalQty": 800,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ORWE",
+          "action": "sell",
+          "qty": 500,
+          "price": 27.6299991607666,
+          "fees": 13.82
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "qty": 800,
+          "price": 14.800000190734863,
+          "fees": 11.84
+        }
+      ],
+      "navBefore": 99415.83,
+      "navAfter": 99390.17,
+      "cash": 60479.22,
+      "error": null
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 58529.88,
+  "cash": 60479.22,
   "holdings": [
     {
       "ticker": "EGAL",
@@ -14,14 +14,14 @@
       "openedAt": "2026-09-10T12:28:08.199+03:00"
     },
     {
-      "ticker": "ORWE",
-      "qty": 500,
-      "avgCost": 28.22,
-      "openedAt": "2026-09-13T12:55:21.557+03:00"
+      "ticker": "EMFD",
+      "qty": 800,
+      "avgCost": 14.81,
+      "openedAt": "2026-09-14T13:58:11.585+03:00"
     }
   ],
-  "nav": 99786.49,
+  "nav": 99390.17,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-13T19:28:52.342+03:00"
+  "lastUpdated": "2026-09-14T13:58:11.585+03:00"
 }

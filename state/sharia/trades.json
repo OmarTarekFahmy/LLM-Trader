@@ -103,6 +103,32 @@
       "resultingCash": 58692.03,
       "resultingNav": 100446.03,
       "cycleId": "20260913T1255-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "ticker": "RMDA",
+      "action": "sell",
+      "qty": 2000,
+      "price": 6.25,
+      "fees": 12.5,
+      "grossValue": 12500,
+      "netCashDelta": 12487.5,
+      "resultingCash": 71179.53,
+      "resultingNav": 99989.53,
+      "cycleId": "20260914T1358-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "ticker": "ATQA",
+      "action": "buy",
+      "qty": 1000,
+      "price": 12.960000038146973,
+      "fees": 12.96,
+      "grossValue": 12960,
+      "netCashDelta": -12972.96,
+      "resultingCash": 58206.57,
+      "resultingNav": 99976.57,
+      "cycleId": "20260914T1358-sharia-trade"
     }
   ]
 }

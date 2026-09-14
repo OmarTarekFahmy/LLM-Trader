@@ -646,6 +646,70 @@
       "navAfter": 100446.03,
       "cash": 58692.03,
       "error": null
+    },
+    {
+      "cycleId": "20260914T1358-sharia-trade",
+      "timestamp": "2026-09-14T13:58:11.585+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 9/25 up over 5d; EGX30 54709 (5d 0.3%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is only mildly positive over 20 days (+3.9%) with weak 5-day momentum (+0.3%), so leadership is narrow rather than broad. I am exiting the fading RMDA near its swing-loss threshold and rotating into ATQA, which remains in a strong 10-day/20-day uptrend but is only 0.9% below its 20-day high, while retaining a large cash buffer.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 is only mildly positive over 20 days (+3.9%) with weak 5-day momentum (+0.3%), so leadership is narrow rather than broad. I am exiting the fading RMDA near its swing-loss threshold and rotating into ATQA, which remains in a strong 10-day/20-day uptrend but is only 0.9% below its 20-day high, while retaining a large cash buffer.\",\"actions\":[{\"ticker\":\"RMDA\",\"action\":\"sell\",\"quantity\":2000,\"rationale\":\"RMDA is down 2.8% from average cost, has weakened over three sessions, and is close to the -3.5% swing-loss guideline; exit to fund a better setup.\"},{\"ticker\":\"ATQA\",\"action\":\"buy\",\"quantity\":1000,\"rationale\":\"ATQA shows +11.7% over 10 days and +19.0% over 20 days with a modest pullback from the 20-day high, offering a controlled momentum entry. 1,000 shares keep the position and Basic Materials exposure within policy while preserving cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "RMDA",
+          "action": "sell",
+          "quantity": 2000,
+          "rationale": "RMDA is down 2.8% from average cost, has weakened over three sessions, and is close to the -3.5% swing-loss guideline; exit to fund a better setup."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "ATQA shows +11.7% over 10 days and +19.0% over 20 days with a modest pullback from the 20-day high, offering a controlled momentum entry. 1,000 shares keep the position and Basic Materials exposure within policy while preserving cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "RMDA",
+          "action": "sell",
+          "proposedQty": 2000,
+          "finalQty": 2000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "RMDA",
+          "action": "sell",
+          "qty": 2000,
+          "price": 6.25,
+          "fees": 12.5
+        },
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "qty": 1000,
+          "price": 12.960000038146973,
+          "fees": 12.96
+        }
+      ],
+      "navBefore": 100002.03,
+      "navAfter": 99976.57,
+      "cash": 58206.57,
+      "error": null
     }
   ]
 }
