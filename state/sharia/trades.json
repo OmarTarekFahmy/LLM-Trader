@@ -129,6 +129,45 @@
       "resultingCash": 58206.57,
       "resultingNav": 99976.57,
       "cycleId": "20260914T1358-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "EFIH",
+      "action": "sell",
+      "qty": 600,
+      "price": 23,
+      "fees": 13.8,
+      "grossValue": 13800,
+      "netCashDelta": 13786.2,
+      "resultingCash": 71992.77,
+      "resultingNav": 98668.77,
+      "cycleId": "20260915T1414-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "SKPC",
+      "action": "sell",
+      "qty": 800,
+      "price": 17.719999313354492,
+      "fees": 14.18,
+      "grossValue": 14176,
+      "netCashDelta": 14161.82,
+      "resultingCash": 86154.59,
+      "resultingNav": 98654.59,
+      "cycleId": "20260915T1414-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "ATQA",
+      "action": "sell",
+      "qty": 1000,
+      "price": 12.5,
+      "fees": 12.5,
+      "grossValue": 12500,
+      "netCashDelta": 12487.5,
+      "resultingCash": 98642.09,
+      "resultingNav": 98642.09,
+      "cycleId": "20260915T1414-sharia-trade"
     }
   ]
 }

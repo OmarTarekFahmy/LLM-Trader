@@ -1,27 +1,8 @@
 {
-  "cash": 58206.57,
-  "holdings": [
-    {
-      "ticker": "EFIH",
-      "qty": 600,
-      "avgCost": 23.82,
-      "openedAt": "2026-09-10T12:28:08.199+03:00"
-    },
-    {
-      "ticker": "SKPC",
-      "qty": 800,
-      "avgCost": 18.54,
-      "openedAt": "2026-09-10T13:18:23.520+03:00"
-    },
-    {
-      "ticker": "ATQA",
-      "qty": 1000,
-      "avgCost": 12.97,
-      "openedAt": "2026-09-14T13:58:11.585+03:00"
-    }
-  ],
-  "nav": 99976.57,
+  "cash": 98642.09,
+  "holdings": [],
+  "nav": 98642.09,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-14T21:06:27.866+03:00"
+  "lastUpdated": "2026-09-15T14:14:54.613+03:00"
 }

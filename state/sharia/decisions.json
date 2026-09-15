@@ -748,6 +748,91 @@
       "navAfter": 99976.57,
       "cash": 58206.57,
       "error": null
+    },
+    {
+      "cycleId": "20260915T1414-sharia-trade",
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 3/25 up over 5d; EGX30 54981 (5d -3.3%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader EGX is experiencing weakness with the EGX30 down 3.3% over 5 days, and most tracked sectors seeing selling pressure. Our current positions in EFIH, SKPC, and ATQA are near or below our soft stop-loss thresholds of around -3.5%. Accordingly, I will cut these positions to protect capital and preserve cash while waiting for stabilization.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader EGX is experiencing weakness with the EGX30 down 3.3% over 5 days, and most tracked sectors seeing selling pressure. Our current positions in EFIH, SKPC, and ATQA are near or below our soft stop-loss thresholds of around -3.5%. Accordingly, I will cut these positions to protect capital and preserve cash while waiting for stabilization.\",\n  \"actions\": [\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"sell\",\n      \"quantity\": 600,\n      \"rationale\": \"Cutting losing position down -3.4% as momentum fades and it nears stop-loss thresholds.\"\n    },\n    {\n      \"ticker\": \"SKPC\",\n      \"action\": \"sell\",\n      \"quantity\": 800,\n      \"rationale\": \"Cutting losing position down -4.4%, breaching our soft stop-loss limit in a weak market.\"\n    },\n    {\n      \"ticker\": \"ATQA\",\n      \"action\": \"sell\",\n      \"quantity\": 1000,\n      \"rationale\": \"Cutting position down -3.6% to honor stop-loss discipline amidst broader market weakness.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "EFIH",
+          "action": "sell",
+          "quantity": 600,
+          "rationale": "Cutting losing position down -3.4% as momentum fades and it nears stop-loss thresholds."
+        },
+        {
+          "ticker": "SKPC",
+          "action": "sell",
+          "quantity": 800,
+          "rationale": "Cutting losing position down -4.4%, breaching our soft stop-loss limit in a weak market."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "quantity": 1000,
+          "rationale": "Cutting position down -3.6% to honor stop-loss discipline amidst broader market weakness."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EFIH",
+          "action": "sell",
+          "proposedQty": 600,
+          "finalQty": 600,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "SKPC",
+          "action": "sell",
+          "proposedQty": 800,
+          "finalQty": 800,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "EFIH",
+          "action": "sell",
+          "qty": 600,
+          "price": 23,
+          "fees": 13.8
+        },
+        {
+          "ticker": "SKPC",
+          "action": "sell",
+          "qty": 800,
+          "price": 17.719999313354492,
+          "fees": 14.18
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "qty": 1000,
+          "price": 12.5,
+          "fees": 12.5
+        }
+      ],
+      "navBefore": 98682.57,
+      "navAfter": 98642.09,
+      "cash": 98642.09,
+      "error": "openrouter: openrouter: Provider returned error"
     }
   ]
 }

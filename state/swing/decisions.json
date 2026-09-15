@@ -1057,6 +1057,91 @@
       "navAfter": 99390.17,
       "cash": 60479.22,
       "error": null
+    },
+    {
+      "cycleId": "20260915T1414-swing-trade",
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 11/91 up over 5d; EGX30 54981 (5d -4.2%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX is experiencing broad-based distribution with the EGX30 down 4.2% over the last 5 days and sharp pullbacks across Financials, Real Estate, and Basic Materials. In this risk-off climate, the priority is disciplined risk management: preserving capital by cutting breached stops and securing windfalls. Clearing underperforming positions and locking in gains resets the book into high cash while waiting for clear reversal setups.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX is experiencing broad-based distribution with the EGX30 down 4.2% over the last 5 days and sharp pullbacks across Financials, Real Estate, and Basic Materials. In this risk-off climate, the priority is disciplined risk management: preserving capital by cutting breached stops and securing windfalls. Clearing underperforming positions and locking in gains resets the book into high cash while waiting for clear reversal setups.\",\n  \"actions\": [\n    {\n      \"ticker\": \"CCAP\",\n      \"action\": \"sell\",\n      \"quantity\": 2000,\n      \"rationale\": \"Unrealized gain has reached +10.8%, well past the +2.5% swing profit target. Locking in substantial gains as the stock hits its 20-day high amid a declining broader tape.\"\n    },\n    {\n      \"ticker\": \"EGAL\",\n      \"action\": \"sell\",\n      \"quantity\": 39,\n      \"rationale\": \"Unrealized loss is at -3.8%, hitting the soft stop-loss threshold (-3.5%) and showing consecutive down days with no immediate bounce.\"\n    },\n    {\n      \"ticker\": \"EMFD\",\n      \"action\": \"sell\",\n      \"quantity\": 800,\n      \"rationale\": \"Position breached the -3.5% stop threshold at -3.8% unrealized loss amid broad real estate weakness (-6.5% sector 5d average). Cutting fast to preserve capital.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "quantity": 2000,
+          "rationale": "Unrealized gain has reached +10.8%, well past the +2.5% swing profit target. Locking in substantial gains as the stock hits its 20-day high amid a declining broader tape."
+        },
+        {
+          "ticker": "EGAL",
+          "action": "sell",
+          "quantity": 39,
+          "rationale": "Unrealized loss is at -3.8%, hitting the soft stop-loss threshold (-3.5%) and showing consecutive down days with no immediate bounce."
+        },
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "quantity": 800,
+          "rationale": "Position breached the -3.5% stop threshold at -3.8% unrealized loss amid broad real estate weakness (-6.5% sector 5d average). Cutting fast to preserve capital."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "proposedQty": 2000,
+          "finalQty": 2000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EGAL",
+          "action": "sell",
+          "proposedQty": 39,
+          "finalQty": 39,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "proposedQty": 800,
+          "finalQty": 800,
+          "kind": "accepted",
+          "reason": "sell booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "qty": 2000,
+          "price": 6.849999904632568,
+          "fees": 13.7
+        },
+        {
+          "ticker": "EGAL",
+          "action": "sell",
+          "qty": 39,
+          "price": 361,
+          "fees": 14.08
+        },
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "qty": 800,
+          "price": 14.25,
+          "fees": 11.4
+        }
+      ],
+      "navBefore": 99658.22,
+      "navAfter": 99619.04,
+      "cash": 99619.04,
+      "error": "openrouter: The operation was aborted due to timeout"
     }
   ]
 }

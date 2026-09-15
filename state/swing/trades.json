@@ -194,6 +194,45 @@
       "resultingCash": 60479.22,
       "resultingNav": 99390.17,
       "cycleId": "20260914T1358-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "CCAP",
+      "action": "sell",
+      "qty": 2000,
+      "price": 6.849999904632568,
+      "fees": 13.7,
+      "grossValue": 13700,
+      "netCashDelta": 13686.3,
+      "resultingCash": 74165.52,
+      "resultingNav": 99644.52,
+      "cycleId": "20260915T1414-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "EGAL",
+      "action": "sell",
+      "qty": 39,
+      "price": 361,
+      "fees": 14.08,
+      "grossValue": 14079,
+      "netCashDelta": 14064.92,
+      "resultingCash": 88230.44,
+      "resultingNav": 99630.44,
+      "cycleId": "20260915T1414-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-15T14:14:54.613+03:00",
+      "ticker": "EMFD",
+      "action": "sell",
+      "qty": 800,
+      "price": 14.25,
+      "fees": 11.4,
+      "grossValue": 11400,
+      "netCashDelta": 11388.6,
+      "resultingCash": 99619.04,
+      "resultingNav": 99619.04,
+      "cycleId": "20260915T1414-swing-trade"
     }
   ]
 }

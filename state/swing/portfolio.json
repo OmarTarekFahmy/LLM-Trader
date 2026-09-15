@@ -1,27 +1,8 @@
 {
-  "cash": 60479.22,
-  "holdings": [
-    {
-      "ticker": "EGAL",
-      "qty": 39,
-      "avgCost": 375.36,
-      "openedAt": "2026-09-09T15:58:08.799+03:00"
-    },
-    {
-      "ticker": "CCAP",
-      "qty": 2000,
-      "avgCost": 6.18,
-      "openedAt": "2026-09-10T12:28:08.199+03:00"
-    },
-    {
-      "ticker": "EMFD",
-      "qty": 800,
-      "avgCost": 14.81,
-      "openedAt": "2026-09-14T13:58:11.585+03:00"
-    }
-  ],
-  "nav": 99390.17,
+  "cash": 99619.04,
+  "holdings": [],
+  "nav": 99619.04,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-14T21:06:27.866+03:00"
+  "lastUpdated": "2026-09-15T14:14:54.613+03:00"
 }
