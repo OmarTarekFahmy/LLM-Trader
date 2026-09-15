@@ -1142,6 +1142,25 @@
       "navAfter": 99619.04,
       "cash": 99619.04,
       "error": "openrouter: The operation was aborted due to timeout"
+    },
+    {
+      "cycleId": "20260915T2009-swing-eod",
+      "timestamp": "2026-09-15T20:09:22.292+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "91 quoted; 11/91 up over 5d; EGX30 54909 (5d -4.2%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 99619 EGP (-0.38% since inception), cash 99619, 0 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 99619.04,
+      "navAfter": 99619.04,
+      "cash": 99619.04,
+      "error": null
     }
   ]
 }

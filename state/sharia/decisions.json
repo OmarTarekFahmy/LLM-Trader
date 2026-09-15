@@ -833,6 +833,25 @@
       "navAfter": 98642.09,
       "cash": 98642.09,
       "error": "openrouter: openrouter: Provider returned error"
+    },
+    {
+      "cycleId": "20260915T2009-sharia-eod",
+      "timestamp": "2026-09-15T20:09:22.292+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "25 quoted; 3/25 up over 5d; EGX30 54909 (5d -3.3%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 98642 EGP (-1.36% since inception), cash 98642, 0 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 98642.09,
+      "navAfter": 98642.09,
+      "cash": 98642.09,
+      "error": null
     }
   ]
 }
