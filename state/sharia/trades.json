@@ -220,6 +220,32 @@
       "resultingCash": 73964.25,
       "resultingNav": 98604.25,
       "cycleId": "20260916T1355-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-16T14:08:32.023+03:00",
+      "ticker": "SKPC",
+      "action": "sell",
+      "qty": 400,
+      "price": 18.100000381469727,
+      "fees": 7.24,
+      "grossValue": 7240,
+      "netCashDelta": 7232.76,
+      "resultingCash": 81197.01,
+      "resultingNav": 98597.01,
+      "cycleId": "20260916T1408-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-16T14:08:32.023+03:00",
+      "ticker": "JUFO",
+      "action": "buy",
+      "qty": 100,
+      "price": 27,
+      "fees": 2.7,
+      "grossValue": 2700,
+      "netCashDelta": -2702.7,
+      "resultingCash": 78494.31,
+      "resultingNav": 98594.31,
+      "cycleId": "20260916T1408-sharia-trade"
     }
   ]
 }

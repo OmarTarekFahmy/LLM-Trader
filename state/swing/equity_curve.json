@@ -151,6 +151,14 @@
       "cash": 61092.35,
       "benchmarkNav": 96735.62,
       "indexLevel": 54656.30078125
+    },
+    {
+      "timestamp": "2026-09-16T14:08:32.023+03:00",
+      "cycleId": "20260916T1408-swing-trade",
+      "nav": 99580.55,
+      "cash": 61092.35,
+      "benchmarkNav": 96877.38,
+      "indexLevel": 54736.3984375
     }
   ]
 }
