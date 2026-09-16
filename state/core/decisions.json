@@ -730,6 +730,25 @@
       "navAfter": 99174.2,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260916T1337-core-trade",
+      "timestamp": "2026-09-16T13:37:41.936+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 4/30 up over 5d; EGX30 54688 (5d -2.5%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains in a short-term pullback, down 2.5% over five days while retaining a modest 20-day gain. Breadth is weak, particularly in Basic Materials, Energy, and several defensive sectors; ETEL is strong but extended, making chasing unattractive. With cash at roughly 47% of NAV and no position or sector near its limit, there is no need to force a trade; maintain the existing four-position core and wait for clearer momentum or valuation evidence.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains in a short-term pullback, down 2.5% over five days while retaining a modest 20-day gain. Breadth is weak, particularly in Basic Materials, Energy, and several defensive sectors; ETEL is strong but extended, making chasing unattractive. With cash at roughly 47% of NAV and no position or sector near its limit, there is no need to force a trade; maintain the existing four-position core and wait for clearer momentum or valuation evidence.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 99491.4,
+      "navAfter": 99491.4,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

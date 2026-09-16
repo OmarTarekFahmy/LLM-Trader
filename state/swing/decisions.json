@@ -1161,6 +1161,25 @@
       "navAfter": 99619.04,
       "cash": 99619.04,
       "error": null
+    },
+    {
+      "cycleId": "20260916T1337-swing-trade",
+      "timestamp": "2026-09-16T13:37:41.936+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 12/91 up over 5d; EGX30 54688 (5d -3.0%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 index continues to exhibit near-term weakness, down 3.0% over the last 5 days following recent broad-based distribution. While certain names in communications and select small-caps are showing idiosyncratic strength, overall market breadth remains cautious, making it an opportune time to remain largely in cash and selectively hunt for strong multi-day momentum or high-volume breakouts.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 index continues to exhibit near-term weakness, down 3.0% over the last 5 days following recent broad-based distribution. While certain names in communications and select small-caps are showing idiosyncratic strength, overall market breadth remains cautious, making it an opportune time to remain largely in cash and selectively hunt for strong multi-day momentum or high-volume breakouts.\",\n  \"actions\": []\n}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 99619.04,
+      "navAfter": 99619.04,
+      "cash": 99619.04,
+      "error": "openrouter: The operation was aborted due to timeout"
     }
   ]
 }

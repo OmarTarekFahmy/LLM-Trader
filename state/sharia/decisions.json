@@ -852,6 +852,70 @@
       "navAfter": 98642.09,
       "cash": 98642.09,
       "error": null
+    },
+    {
+      "cycleId": "20260916T1337-sharia-trade",
+      "timestamp": "2026-09-16T13:37:41.936+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 5/25 up over 5d; EGX30 54688 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is mixed but fragile: +1.7% over 20 days versus -2.1% over five days, with leadership narrow in communications and staples while real estate, energy, healthcare, and basic materials remain weak. With the book fully cash, I will initiate two small swing positions rather than chase the broad index.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 is mixed but fragile: +1.7% over 20 days versus -2.1% over five days, with leadership narrow in communications and staples while real estate, energy, healthcare, and basic materials remain weak. With the book fully cash, I will initiate two small swing positions rather than chase the broad index.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"ETEL is at its 20-day high and up 13.8% over 20 days, providing the clearest confirmed momentum in the snapshot. The 100-share order keeps market value near 13.4% of NAV and preserves ample cash; the paper exit should be swift if the breakout fails to hold.\"},{\"ticker\":\"SKPC\",\"action\":\"buy\",\"quantity\":400,\"rationale\":\"SKPC has rebounded 2.1% in one day and remains 7.7% above its 20-day low while still 4.6% below its recent high, offering a bounce setup without chasing a new high. The 400-share order keeps single-name exposure near 7.3% of NAV and retains the required cash buffer; exit if it cannot reclaim the 18.50-18.83 resistance area.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "ETEL is at its 20-day high and up 13.8% over 20 days, providing the clearest confirmed momentum in the snapshot. The 100-share order keeps market value near 13.4% of NAV and preserves ample cash; the paper exit should be swift if the breakout fails to hold."
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "quantity": 400,
+          "rationale": "SKPC has rebounded 2.1% in one day and remains 7.7% above its 20-day low while still 4.6% below its recent high, offering a bounce setup without chasing a new high. The 400-share order keeps single-name exposure near 7.3% of NAV and retains the required cash buffer; exit if it cannot reclaim the 18.50-18.83 resistance area."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "proposedQty": 400,
+          "finalQty": 400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 100,
+          "price": 132,
+          "fees": 13.2
+        },
+        {
+          "ticker": "SKPC",
+          "action": "buy",
+          "qty": 400,
+          "price": 18.100000381469727,
+          "fees": 7.24
+        }
+      ],
+      "navBefore": 98642.09,
+      "navAfter": 98621.65,
+      "cash": 78181.65,
+      "error": null
     }
   ]
 }

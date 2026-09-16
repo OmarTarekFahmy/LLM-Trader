@@ -1,8 +1,21 @@
 {
-  "cash": 98642.09,
-  "holdings": [],
-  "nav": 98642.09,
+  "cash": 78181.65,
+  "holdings": [
+    {
+      "ticker": "ETEL",
+      "qty": 100,
+      "avgCost": 132.13,
+      "openedAt": "2026-09-16T13:37:41.936+03:00"
+    },
+    {
+      "ticker": "SKPC",
+      "qty": 400,
+      "avgCost": 18.12,
+      "openedAt": "2026-09-16T13:37:41.936+03:00"
+    }
+  ],
+  "nav": 98621.65,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-15T20:09:22.292+03:00"
+  "lastUpdated": "2026-09-16T13:37:41.936+03:00"
 }
