@@ -194,6 +194,32 @@
       "resultingCash": 78181.65,
       "resultingNav": 98621.65,
       "cycleId": "20260916T1337-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 50,
+      "price": 132,
+      "fees": 6.6,
+      "grossValue": 6600,
+      "netCashDelta": 6593.4,
+      "resultingCash": 84775.05,
+      "resultingNav": 98615.05,
+      "cycleId": "20260916T1355-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "ticker": "JUFO",
+      "action": "buy",
+      "qty": 400,
+      "price": 27,
+      "fees": 10.8,
+      "grossValue": 10800,
+      "netCashDelta": -10810.8,
+      "resultingCash": 73964.25,
+      "resultingNav": 98604.25,
+      "cycleId": "20260916T1355-sharia-trade"
     }
   ]
 }

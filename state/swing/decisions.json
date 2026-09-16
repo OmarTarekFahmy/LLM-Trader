@@ -1180,6 +1180,91 @@
       "navAfter": 99619.04,
       "cash": 99619.04,
       "error": "openrouter: The operation was aborted due to timeout"
+    },
+    {
+      "cycleId": "20260916T1355-swing-trade",
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 12/91 up over 5d; EGX30 54656 (5d -3.0%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains under pressure, down 3.0% over five days, with broad weakness in Financials, Real Estate, and Basic Materials. Communications is the clearest relative-strength area, while a few high-beta names are testing fresh highs. I will take modest, diversified momentum entries and retain substantial cash given the delayed prices and weak index backdrop.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains under pressure, down 3.0% over five days, with broad weakness in Financials, Real Estate, and Basic Materials. Communications is the clearest relative-strength area, while a few high-beta names are testing fresh highs. I will take modest, diversified momentum entries and retain substantial cash given the delayed prices and weak index backdrop.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Breakout at the 20-day high with a 3.9% daily gain and 13.8% 20-day advance; relatively contained volatility supports a modest momentum entry.\"},{\"ticker\":\"SDTI\",\"action\":\"buy\",\"quantity\":180,\"rationale\":\"Constructive trend with a 7.2% 10-day gain, a 1.4% daily rise, and price only 2.3% below its 20-day high despite sector weakness.\"},{\"ticker\":\"NCCW\",\"action\":\"buy\",\"quantity\":1400,\"rationale\":\"Very strong high-beta momentum, up 9.5% in one day and 45.7% over 10 days while testing the 20-day high; the quantity is deliberately capped because volatility and extension create pullback risk.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Breakout at the 20-day high with a 3.9% daily gain and 13.8% 20-day advance; relatively contained volatility supports a modest momentum entry."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "quantity": 180,
+          "rationale": "Constructive trend with a 7.2% 10-day gain, a 1.4% daily rise, and price only 2.3% below its 20-day high despite sector weakness."
+        },
+        {
+          "ticker": "NCCW",
+          "action": "buy",
+          "quantity": 1400,
+          "rationale": "Very strong high-beta momentum, up 9.5% in one day and 45.7% over 10 days while testing the 20-day high; the quantity is deliberately capped because volatility and extension create pullback risk."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "proposedQty": 180,
+          "finalQty": 180,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "NCCW",
+          "action": "buy",
+          "proposedQty": 1400,
+          "finalQty": 1400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 100,
+          "price": 132,
+          "fees": 13.2
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "qty": 180,
+          "price": 73.98999786376953,
+          "fees": 13.32
+        },
+        {
+          "ticker": "NCCW",
+          "action": "buy",
+          "qty": 1400,
+          "price": 8.550000190734863,
+          "fees": 11.97
+        }
+      ],
+      "navBefore": 99619.04,
+      "navAfter": 99580.55,
+      "cash": 61092.35,
+      "error": null
     }
   ]
 }

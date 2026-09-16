@@ -135,6 +135,14 @@
       "cash": 78181.65,
       "benchmarkNav": 96790.84,
       "indexLevel": 54687.5
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "cycleId": "20260916T1355-sharia-trade",
+      "nav": 98604.25,
+      "cash": 73964.25,
+      "benchmarkNav": 96735.62,
+      "indexLevel": 54656.30078125
     }
   ]
 }

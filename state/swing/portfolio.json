@@ -1,8 +1,27 @@
 {
-  "cash": 99619.04,
-  "holdings": [],
-  "nav": 99619.04,
+  "cash": 61092.35,
+  "holdings": [
+    {
+      "ticker": "ETEL",
+      "qty": 100,
+      "avgCost": 132.13,
+      "openedAt": "2026-09-16T13:55:19.855+03:00"
+    },
+    {
+      "ticker": "SDTI",
+      "qty": 180,
+      "avgCost": 74.06,
+      "openedAt": "2026-09-16T13:55:19.855+03:00"
+    },
+    {
+      "ticker": "NCCW",
+      "qty": 1400,
+      "avgCost": 8.56,
+      "openedAt": "2026-09-16T13:55:19.855+03:00"
+    }
+  ],
+  "nav": 99580.55,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-16T13:37:41.936+03:00"
+  "lastUpdated": "2026-09-16T13:55:19.855+03:00"
 }

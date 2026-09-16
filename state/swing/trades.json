@@ -233,6 +233,45 @@
       "resultingCash": 99619.04,
       "resultingNav": 99619.04,
       "cycleId": "20260915T1414-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 100,
+      "price": 132,
+      "fees": 13.2,
+      "grossValue": 13200,
+      "netCashDelta": -13213.2,
+      "resultingCash": 86405.84,
+      "resultingNav": 99605.84,
+      "cycleId": "20260916T1355-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "ticker": "SDTI",
+      "action": "buy",
+      "qty": 180,
+      "price": 73.98999786376953,
+      "fees": 13.32,
+      "grossValue": 13318.2,
+      "netCashDelta": -13331.52,
+      "resultingCash": 73074.32,
+      "resultingNav": 99592.52,
+      "cycleId": "20260916T1355-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "ticker": "NCCW",
+      "action": "buy",
+      "qty": 1400,
+      "price": 8.550000190734863,
+      "fees": 11.97,
+      "grossValue": 11970,
+      "netCashDelta": -11981.97,
+      "resultingCash": 61092.35,
+      "resultingNav": 99580.55,
+      "cycleId": "20260916T1355-swing-trade"
     }
   ]
 }

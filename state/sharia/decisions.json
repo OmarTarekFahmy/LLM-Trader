@@ -916,6 +916,84 @@
       "navAfter": 98621.65,
       "cash": 78181.65,
       "error": null
+    },
+    {
+      "cycleId": "20260916T1355-sharia-trade",
+      "timestamp": "2026-09-16T13:55:19.855+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 5/25 up over 5d; EGX30 54656 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Leadership is narrow and market breadth remains fragile: the EGX30 is down 2.1% over five days despite a 1.7% 20-day gain. Communications and staples lead, while basic materials, real estate, energy, healthcare, and industrials are weak. Favor trimming an extended breakout and diversifying into steadier sector leadership.",
+      "llmRaw": "{\"marketRead\":\"Leadership is narrow and market breadth remains fragile: the EGX30 is down 2.1% over five days despite a 1.7% 20-day gain. Communications and staples lead, while basic materials, real estate, energy, healthcare, and industrials are weak. Favor trimming an extended breakout and diversifying into steadier sector leadership.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"sell\",\"quantity\":50,\"rationale\":\"Momentum is strong and price is at its 20-day high, but the 13.8% 20-day advance makes chasing risk unfavorable. Trim half to bank gains while retaining a core swing position.\"},{\"ticker\":\"SKPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The +2.1% daily rebound from the 20-day low supports holding, with the 20-day gain still positive. Avoid adding until price confirms above its recent high despite weak sector breadth.\"},{\"ticker\":\"JUFO\",\"action\":\"buy\",\"quantity\":400,\"rationale\":\"Consumer staples show broad relative strength, while JUFO has modest daily gains, low volatility, and remains only 1.6% below its 20-day high. This diversifies exposure away from stretched ETEL and weak sectors.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 50,
+          "rationale": "Momentum is strong and price is at its 20-day high, but the 13.8% 20-day advance makes chasing risk unfavorable. Trim half to bank gains while retaining a core swing position."
+        },
+        {
+          "ticker": "SKPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The +2.1% daily rebound from the 20-day low supports holding, with the 20-day gain still positive. Avoid adding until price confirms above its recent high despite weak sector breadth."
+        },
+        {
+          "ticker": "JUFO",
+          "action": "buy",
+          "quantity": 400,
+          "rationale": "Consumer staples show broad relative strength, while JUFO has modest daily gains, low volatility, and remains only 1.6% below its 20-day high. This diversifies exposure away from stretched ETEL and weak sectors."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 50,
+          "finalQty": 50,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "JUFO",
+          "action": "buy",
+          "proposedQty": 400,
+          "finalQty": 400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "SKPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 50,
+          "price": 132,
+          "fees": 6.6
+        },
+        {
+          "ticker": "JUFO",
+          "action": "buy",
+          "qty": 400,
+          "price": 27,
+          "fees": 10.8
+        }
+      ],
+      "navBefore": 98621.65,
+      "navAfter": 98604.25,
+      "cash": 73964.25,
+      "error": null
     }
   ]
 }

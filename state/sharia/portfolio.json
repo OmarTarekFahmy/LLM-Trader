@@ -1,9 +1,9 @@
 {
-  "cash": 78181.65,
+  "cash": 73964.25,
   "holdings": [
     {
       "ticker": "ETEL",
-      "qty": 100,
+      "qty": 50,
       "avgCost": 132.13,
       "openedAt": "2026-09-16T13:37:41.936+03:00"
     },
@@ -12,10 +12,16 @@
       "qty": 400,
       "avgCost": 18.12,
       "openedAt": "2026-09-16T13:37:41.936+03:00"
+    },
+    {
+      "ticker": "JUFO",
+      "qty": 400,
+      "avgCost": 27.03,
+      "openedAt": "2026-09-16T13:55:19.855+03:00"
     }
   ],
-  "nav": 98621.65,
+  "nav": 98604.25,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-16T13:37:41.936+03:00"
+  "lastUpdated": "2026-09-16T13:55:19.855+03:00"
 }
