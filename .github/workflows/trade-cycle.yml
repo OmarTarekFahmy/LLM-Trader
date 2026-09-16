@@ -2,36 +2,39 @@ name: trade-cycle
 
 on:
   schedule:
-    # Every 15 min, 06:00-12:59 UTC, every day. Wide enough to contain the EGX
-    # session (Sun-Thu 10:00-14:15 Cairo) under either GMT+2 or GMT+3. The bot
-    # script itself decides whether the market is actually open and runs every
-    # strategy in state/strategies.json each fire.
+    # Several kickoff attempts spread across 06:00-12:59 UTC (covers the EGX
+    # session, Sun-Thu 10:00-14:15 Cairo, under either GMT+2 or GMT+3).
     #
-    # NOTE: this was */10 (every 10 min) but GitHub's schedule trigger does not
-    # reliably honor sub-15-minute cadences — it's documented as best-effort and
-    # can silently skip or delay runs under load (2026-09-13: only ~3-4 of the
-    # ~40 expected */10 fires/day were actually executing, some hours late).
-    # */15 is meaningfully more consistent in practice. For a truly reliable
-    # 10-minute cadence, GitHub's own guidance is to drive it from an external
-    # scheduler that calls the GitHub API to dispatch this workflow, instead of
-    # relying on `schedule:` — ask if you want that set up.
-    - cron: "*/15 6-12 * * *"
-    # One extra fire ~14:30 Cairo for the end-of-day mark-to-market wrap-up.
-    - cron: "30 12 * * *"
+    # GitHub's schedule trigger is documented best-effort and does not reliably
+    # fire on time or at all (observed: only 2-4 of the ~13 slots below actually
+    # executed on a given day, some hours late) — that's a platform limitation,
+    # not something a workflow file can force. So instead of depending on every
+    # slot firing, we only need ONE of them to land: once a scheduled run
+    # actually starts, the "Loop through the session" step below keeps that
+    # single job alive, calling the bot every ~10 minutes on its own via a
+    # plain sleep loop, all the way through the session and the end-of-day
+    # window. Extra kickoffs that fire later the same day just queue behind
+    # the running loop (see concurrency below) and no-op quickly once their
+    # turn comes, since the session is over by then.
+    - cron: "0,30 6-12 * * *"
   workflow_dispatch:
     inputs:
       mode:
-        description: "trade | eod"
+        description: "trade | eod (single run only, see `loop`)"
         required: false
         default: "trade"
       force_session:
-        description: "bypass the Cairo session-hours gate (for testing)"
+        description: "bypass the Cairo session-hours gate (single run only)"
         required: false
         default: "false"
       strategy:
         description: "run only this strategy id (e.g. core, swing). blank = all"
         required: false
         default: ""
+      loop:
+        description: "loop through the session like a scheduled run, instead of a single cycle"
+        required: false
+        default: "false"
 
 concurrency:
   group: trade-cycle
@@ -43,7 +46,19 @@ permissions:
 jobs:
   cycle:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    # A scheduled run's loop budget (below) is capped well under this so the
+    # final commit/push always has time to finish before the hard job limit.
+    timeout-minutes: 340
+    env:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+      # Optional: only used if you upgrade Twelve Data to a paid plan (free
+      # tier does not serve EGX). Yahoo Finance is the primary and needs no key.
+      TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -54,33 +69,25 @@ jobs:
 
       - run: npm ci
 
-      - name: Run trade cycle
+      - name: Configure git identity
+        run: |
+          git config user.name  "llm-trader-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Run one cycle (manual dispatch)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.loop != 'true'
         env:
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
-          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ vars.GROQ_MODEL }}
-          # Optional: only used if you upgrade Twelve Data to a paid plan (free
-          # tier does not serve EGX). Yahoo Finance is the primary and needs no key.
-          TWELVEDATA_API_KEY: ${{ secrets.TWELVEDATA_API_KEY }}
-          # The 12:30-UTC cron ('30 12 * * *') is the end-of-day wrap-up; every
-          # other schedule is a normal trade cycle (the bot no-ops itself outside
-          # session hours). workflow_dispatch can override via the `mode` input.
-          MODE: ${{ github.event.inputs.mode || (github.event.schedule == '30 12 * * *' && 'eod' || 'trade') }}
+          MODE: ${{ github.event.inputs.mode }}
           FORCE_SESSION: ${{ github.event.inputs.force_session == 'true' && '1' || '' }}
           STRATEGY: ${{ github.event.inputs.strategy }}
         run: npm run cycle
 
-      - name: Commit updated state
+      - name: Commit updated state (manual dispatch)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.loop != 'true'
         run: |
-          git config user.name  "llm-trader-bot"
-          git config user.email "actions@users.noreply.github.com"
           if [ -n "$(git status --porcelain state/)" ]; then
             git add state/
             git commit -m "cycle: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
-            # Rebase-safe push in case another run committed meanwhile.
             for i in 1 2 3; do
               git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
               echo "push retry $i"; sleep 5
@@ -88,3 +95,50 @@ jobs:
           else
             echo "no state changes this cycle"
           fi
+
+      - name: Loop through the session (scheduled runs, or workflow_dispatch with loop=true)
+        if: github.event_name == 'schedule' || github.event.inputs.loop == 'true'
+        env:
+          STRATEGY: ${{ github.event.inputs.strategy }}
+          FORCE_SESSION: ${{ github.event.inputs.force_session == 'true' && '1' || '' }}
+        run: |
+          set -uo pipefail
+
+          cairo_dow=$(TZ="Africa/Cairo" date +%u)   # 1=Mon .. 7=Sun
+          if { [ "$cairo_dow" = "5" ] || [ "$cairo_dow" = "6" ]; } && [ -z "${FORCE_SESSION:-}" ]; then
+            echo "weekend in Cairo (isoweekday $cairo_dow) - market closed, skipping the loop entirely"
+            exit 0
+          fi
+
+          start_epoch=$(date +%s)
+          max_seconds=$((320 * 60))   # hard cap, leaves headroom under the 340-min job timeout
+          sleep_seconds=$((10 * 60))  # target cadence between cycles
+
+          while true; do
+            elapsed=$(( $(date +%s) - start_epoch ))
+            if [ "$elapsed" -ge "$max_seconds" ]; then
+              echo "loop budget exhausted after ${elapsed}s, stopping for this job"
+              break
+            fi
+            cairo_hhmm=$(TZ="Africa/Cairo" date +%H%M)
+            if [ $((10#$cairo_hhmm)) -ge 1535 ]; then
+              echo "past 15:35 Cairo, session + EOD window are over, stopping the loop"
+              break
+            fi
+
+            echo "=== cycle at $(date -u +%FT%TZ) UTC / $(TZ='Africa/Cairo' date +%H:%M) Cairo ==="
+            npm run cycle || echo "::warning::trade cycle failed this iteration, will retry next loop"
+
+            if [ -n "$(git status --porcelain state/)" ]; then
+              git add state/
+              git commit -m "cycle: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+              for i in 1 2 3; do
+                git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push && break
+                echo "push retry $i"; sleep 5
+              done
+            else
+              echo "no state changes this cycle"
+            fi
+
+            sleep "$sleep_seconds"
+          done

@@ -75,23 +75,27 @@ backtest mode, a second market-data provider.
 9. **EGX30 index level:** Yahoo `^CASE30`; a synthetic equal-weight proxy (flagged
    `synthetic: true`) if it's ever unavailable. The buy-and-hold benchmark uses whatever series
    is available, consistently, from each strategy's inception.
-10. **End-of-day cycle** (spec §5): the `30 12 * * *` cron runs `MODE=eod` — a mark-to-market
-    snapshot + LLM-free wrap-up per strategy.
+10. **End-of-day cycle** (spec §5): no longer a separate cron/mode. The self-looping job (below)
+    just keeps calling the bot in `trade` mode; the bot's own session gate already turns that into
+    an EOD mark-to-market + LLM-free wrap-up automatically once Cairo time is past close but still
+    inside the 14:20-15:30 window.
 11. **Offline mock providers** (`MOCK_LLM`, `MOCK_MARKET`) for keyless end-to-end testing.
-12. **Cron cadence 10 min → 15 min, then an external-scheduler relay (2026-09-13/14).** GitHub's
-    `schedule` trigger doesn't reliably honor short cadences — it's documented best-effort, and on
-    this repo `*/10` only fired ~3-4 times/day instead of ~40, some hours late. Backing it off to
-    `*/15` barely helped (2/day the next day; GitHub's scheduler is unreliable near-independent of
-    the interval chosen for a low-traffic repo). GitHub itself has no fix for this from inside a
-    workflow file.
-13. **`dashboard/app/api/trigger`: an external-scheduler relay (2026-09-14).** A tiny Vercel route,
-    gated by `CRON_SECRET`, that calls the GitHub API to dispatch `trade-cycle.yml` using a
-    `GH_DISPATCH_TOKEN` PAT (server-side only, never sent to the pinger or the browser). A free
-    external pinger (cron-job.org) hits it on a real schedule, which is far more reliable than
-    GitHub's own `schedule:` trigger — verified live: both the raw dispatch call and the route
-    itself correctly created queued/running Actions runs. The GH `schedule:` crons stay too, as a
-    free backup; the workflow's `concurrency` group and the bot's own session gate make
-    overlapping/duplicate triggers harmless.
+12. **Cron reliability: a self-looping job, not an external scheduler (2026-09-13/14).** GitHub's
+    `schedule` trigger doesn't reliably honor short cadences or even fire consistently at all — it's
+    documented best-effort, and on this repo `*/10` only fired ~3-4 times/day instead of ~40 (some
+    hours late), and backing off to `*/15` barely helped (2/day the next day). An external pinger
+    calling the GitHub API would fix that, but the user explicitly wanted to stay inside plain
+    GitHub Actions, no third-party service. So instead: `schedule:` still fires several wide, cheap
+    "kickoff attempts" across the session window (same unreliable trigger as before), but the job
+    itself no longer does one cycle and exits — once *any* one of those kickoffs actually lands, that
+    single job loops internally (plain `sleep` between `npm run cycle` calls) for the rest of the
+    session and the EOD window, so real ~10-minute cadence no longer depends on GitHub's scheduler
+    firing repeatedly. A GitHub-hosted job caps at 6h, so the loop bails after 320 minutes or once
+    Cairo local time passes 15:35, whichever comes first. `concurrency: cancel-in-progress: false`
+    means a later kickoff that fires the same day just queues behind the running loop and, once its
+    turn comes, sees the session is over and exits in seconds — harmless. Verified the loop's control
+    flow locally (weekday gate, the day-of-week/time-of-day math, the stop conditions) before
+    shipping; a live scheduled firing is still needed to confirm end to end.
 
 Spec §1–§2 hard constraints not touched *except* where the user directed it: the swing strategy's
 universe (EGX100) and the polling cadence (originally 10 min, now 15 -- see decision below) were explicit requests; the 100,000 EGP start, paper-only
@@ -120,7 +124,6 @@ state/
 .github/workflows/trade-cycle.yml
 dashboard/               Next.js App Router app for Vercel (strategy switcher, Settings)
   app/api/sharia/        commits state/sharia.json edits from the Settings UI
-  app/api/trigger/       external-scheduler relay -> dispatches trade-cycle.yml
 scripts/bootstrap-github.sh
 ```
 
@@ -141,15 +144,9 @@ scripts/bootstrap-github.sh
 5. **First run:** Actions → trade-cycle → Run workflow, `force_session: true`.
 6. **Vercel:** import repo, Root Directory `dashboard`, env var
    `STATE_BASE_URL=https://raw.githubusercontent.com/<user>/LLM-Trader/main/state`, deploy.
-7. **Reliable scheduling (recommended — see decision below):** GitHub's own `schedule:` cron is
-   unreliable at short intervals, so a free external pinger drives cycles instead:
-   - Add two more Vercel env vars: `GH_DISPATCH_TOKEN` (a GitHub PAT — classic with `public_repo`
-     scope, or fine-grained with Actions: Read and write on this repo) and `CRON_SECRET` (make one
-     up, e.g. `node -e "console.log(require('crypto').randomBytes(24).toString('base64url'))"`).
-   - At a free pinger (e.g. [cron-job.org](https://cron-job.org)), schedule a GET every 10 minutes,
-     06:00-12:59 UTC, to `https://<your-vercel-app>.vercel.app/api/trigger?secret=<CRON_SECRET>`.
-     It calls the GitHub API to dispatch `trade-cycle.yml`; the bot's own session gate still decides
-     whether to actually trade. The GitHub `schedule:` crons stay in place too, as a free backup.
+Nothing else to configure for scheduling — `schedule:` fires several kickoff attempts across the
+session window, and whichever one actually lands loops through the rest of the day on its own (see
+the decisions list below). No external services, no extra secrets.
 
 `scripts/bootstrap-github.sh` does 1–5 from your `.env`.
 
