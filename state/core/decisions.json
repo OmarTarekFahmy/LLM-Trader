@@ -959,6 +959,25 @@
       "navAfter": 99491.4,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1346-core-trade",
+      "timestamp": "2026-09-17T13:46:08.732+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 7/30 up over 5d; EGX30 55378 (5d -1.9%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Market tone is mixed but fragile: the EGX30 is down 1.9% over five days, led by weakness in cyclicals, energy, and basic materials, while communications and industrials are comparatively firmer. With 46.5% of NAV in cash and no position approaching a policy limit, delayed-price volatility does not justify churn; the existing positions remain within their original semi-long-term theses.",
+      "llmRaw": "{\"marketRead\":\"Market tone is mixed but fragile: the EGX30 is down 1.9% over five days, led by weakness in cyclicals, energy, and basic materials, while communications and industrials are comparatively firmer. With 46.5% of NAV in cash and no position approaching a policy limit, delayed-price volatility does not justify churn; the existing positions remain within their original semi-long-term theses.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 100413.3,
+      "navAfter": 100413.3,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

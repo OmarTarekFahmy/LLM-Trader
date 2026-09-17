@@ -1,5 +1,5 @@
 {
-  "cash": 78494.31,
+  "cash": 67433.26,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -12,10 +12,16 @@
       "qty": 500,
       "avgCost": 27.03,
       "openedAt": "2026-09-16T13:55:19.855+03:00"
+    },
+    {
+      "ticker": "MCQE",
+      "qty": 50,
+      "avgCost": 221.22,
+      "openedAt": "2026-09-17T13:46:08.732+03:00"
     }
   ],
-  "nav": 98594.31,
+  "nav": 98588.26,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-16T15:25:21.440+03:00"
+  "lastUpdated": "2026-09-17T13:46:08.732+03:00"
 }

@@ -272,6 +272,32 @@
       "resultingCash": 61092.35,
       "resultingNav": 99580.55,
       "cycleId": "20260916T1355-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-17T13:46:08.732+03:00",
+      "ticker": "NCCW",
+      "action": "sell",
+      "qty": 1400,
+      "price": 8.25,
+      "fees": 11.55,
+      "grossValue": 11550,
+      "netCashDelta": 11538.45,
+      "resultingCash": 72630.8,
+      "resultingNav": 99169,
+      "cycleId": "20260917T1346-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-17T13:46:08.732+03:00",
+      "ticker": "CCAP",
+      "action": "buy",
+      "qty": 1700,
+      "price": 6.889999866485596,
+      "fees": 11.71,
+      "grossValue": 11713,
+      "netCashDelta": -11724.71,
+      "resultingCash": 60906.09,
+      "resultingNav": 99157.29,
+      "cycleId": "20260917T1346-swing-trade"
     }
   ]
 }

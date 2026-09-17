@@ -1442,6 +1442,98 @@
       "navAfter": 99580.55,
       "cash": 61092.35,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1346-swing-trade",
+      "timestamp": "2026-09-17T13:46:08.732+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55378 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Risk-off/rotational: the EGX30 is down 2.6% over five days and most sector baskets are weak, so keep cash dominant and trade only exceptional relative strength; enforce NCCW's stop while buying the CCAP breakout.",
+      "llmRaw": "{\"marketRead\":\"Risk-off/rotational: the EGX30 is down 2.6% over five days and most sector baskets are weak, so keep cash dominant and trade only exceptional relative strength; enforce NCCW's stop while buying the CCAP breakout.\",\"actions\":[{\"ticker\":\"NCCW\",\"action\":\"sell\",\"quantity\":1400,\"rationale\":\"The -3.6% loss is at the stated soft stop and price is 3.5% below its 20-day high after a -3.5% day; preserve capital rather than re-risk a one-day swing.\"},{\"ticker\":\"CCAP\",\"action\":\"buy\",\"quantity\":1700,\"rationale\":\"Strongest sustained setup: +2.4% today, +9.4% over 3d, +16.2% over 10d and +24.6% over 20d, at its 20-day high with 2.8% volatility. The size is about 11.8% of NAV and leaves ample cash; target +2-3% and reassess on a failed breakout.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 10d +14.2% trend remains intact and price is only 0.5% below its 20-day high; keep the small loss while waiting for a +2.5% swing target or breakout failure.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"A 3d +3.5% and 10d +8.5% move, with price only 1.6% below its 20-day high, supports continuation; the +0.6% gain and one-day hold do not justify an early exit.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "NCCW",
+          "action": "sell",
+          "quantity": 1400,
+          "rationale": "The -3.6% loss is at the stated soft stop and price is 3.5% below its 20-day high after a -3.5% day; preserve capital rather than re-risk a one-day swing."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "quantity": 1700,
+          "rationale": "Strongest sustained setup: +2.4% today, +9.4% over 3d, +16.2% over 10d and +24.6% over 20d, at its 20-day high with 2.8% volatility. The size is about 11.8% of NAV and leaves ample cash; target +2-3% and reassess on a failed breakout."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 10d +14.2% trend remains intact and price is only 0.5% below its 20-day high; keep the small loss while waiting for a +2.5% swing target or breakout failure."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "A 3d +3.5% and 10d +8.5% move, with price only 1.6% below its 20-day high, supports continuation; the +0.6% gain and one-day hold do not justify an early exit."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "NCCW",
+          "action": "sell",
+          "proposedQty": 1400,
+          "finalQty": 1400,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "proposedQty": 1700,
+          "finalQty": 1700,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "NCCW",
+          "action": "sell",
+          "qty": 1400,
+          "price": 8.25,
+          "fees": 11.55
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "qty": 1700,
+          "price": 6.889999866485596,
+          "fees": 11.71
+        }
+      ],
+      "navBefore": 99180.55,
+      "navAfter": 99157.29,
+      "cash": 60906.09,
+      "error": null
     }
   ]
 }
