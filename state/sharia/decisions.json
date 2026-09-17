@@ -1257,6 +1257,70 @@
       "navAfter": 98588.26,
       "cash": 67433.26,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1357-sharia-trade",
+      "timestamp": "2026-09-17T13:57:14.385+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 55413 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but defensive: the EGX30 is positive over 20 days but down 2.1% over five days, favoring liquid momentum pullbacks. Hold ETEL and MCQE; sell low-momentum JUFO and rotate into ICFC, which has strong 20-day momentum, recent strength, and remains near its recent high.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but defensive: the EGX30 is positive over 20 days but down 2.1% over five days, favoring liquid momentum pullbacks. Hold ETEL and MCQE; sell low-momentum JUFO and rotate into ICFC, which has strong 20-day momentum, recent strength, and remains near its recent high.\",\"actions\":[{\"ticker\":\"JUFO\",\"action\":\"sell\",\"quantity\":500,\"rationale\":\"Low volatility and weak 3-day/10-day momentum provide no swing edge; exiting frees capital for a stronger setup.\"},{\"ticker\":\"ICFC\",\"action\":\"buy\",\"quantity\":500,\"rationale\":\"Strong 20-day trend (+34.3%) with recent 1-day and 3-day strength, 3.2% volatility, and a pullback near the recent high supports a short-term momentum entry.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "JUFO",
+          "action": "sell",
+          "quantity": 500,
+          "rationale": "Low volatility and weak 3-day/10-day momentum provide no swing edge; exiting frees capital for a stronger setup."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "quantity": 500,
+          "rationale": "Strong 20-day trend (+34.3%) with recent 1-day and 3-day strength, 3.2% volatility, and a pullback near the recent high supports a short-term momentum entry."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "JUFO",
+          "action": "sell",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "JUFO",
+          "action": "sell",
+          "qty": 500,
+          "price": 27.079999923706055,
+          "fees": 13.54
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "qty": 500,
+          "price": 23.3799991607666,
+          "fees": 11.69
+        }
+      ],
+      "navBefore": 98588.26,
+      "navAfter": 98563.03,
+      "cash": 69258.03,
+      "error": null
     }
   ]
 }

@@ -298,6 +298,19 @@
       "resultingCash": 60906.09,
       "resultingNav": 99157.29,
       "cycleId": "20260917T1346-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-17T13:57:14.385+03:00",
+      "ticker": "HDBK",
+      "action": "buy",
+      "qty": 100,
+      "price": 116.5,
+      "fees": 11.65,
+      "grossValue": 11650,
+      "netCashDelta": -11661.65,
+      "resultingCash": 49244.44,
+      "resultingNav": 99145.64,
+      "cycleId": "20260917T1357-swing-trade"
     }
   ]
 }

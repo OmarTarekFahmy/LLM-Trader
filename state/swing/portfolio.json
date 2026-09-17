@@ -1,5 +1,5 @@
 {
-  "cash": 60906.09,
+  "cash": 49244.44,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -18,10 +18,16 @@
       "qty": 1700,
       "avgCost": 6.9,
       "openedAt": "2026-09-17T13:46:08.732+03:00"
+    },
+    {
+      "ticker": "HDBK",
+      "qty": 100,
+      "avgCost": 116.62,
+      "openedAt": "2026-09-17T13:57:14.385+03:00"
     }
   ],
-  "nav": 99157.29,
+  "nav": 99145.64,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-17T13:46:08.732+03:00"
+  "lastUpdated": "2026-09-17T13:57:14.385+03:00"
 }

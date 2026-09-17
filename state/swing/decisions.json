@@ -1534,6 +1534,91 @@
       "navAfter": 99157.29,
       "cash": 60906.09,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1357-swing-trade",
+      "timestamp": "2026-09-17T13:57:14.385+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55413 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautious and rotational: the EGX30 is down 2.6% over five days and most sectors are weak, so maintain a large cash buffer and trade only names with strong relative momentum.",
+      "llmRaw": "{\"marketRead\":\"Cautious and rotational: the EGX30 is down 2.6% over five days and most sectors are weak, so maintain a large cash buffer and trade only names with strong relative momentum.\",\"actions\":[{\"ticker\":\"HDBK\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Strong 1-day (+6.9%), 3-day (+6.6%) and 20-day (+25.7%) performance, with price only 3.7% below its 20-day high, supports a pullback-in-an-uptrend swing setup. A 100-share position is about 11.8% of NAV and preserves ample cash.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock remains in a strong 10-day (+14.2%) and 20-day (+10.4%) uptrend and is only 0.5% below its 20-day high. The -0.6% unrealized loss is above the -3.5% stop guideline and below the profit target.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 3-day (+3.5%) and 10-day (+8.5%) momentum with price just 1.6% below its 20-day high supports continuation. The +0.6% unrealized gain has neither a loss nor profit-target trigger.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The recent 10-day (+16.2%) and 20-day (+24.6%) surge shows exceptional momentum, and price is at its 20-day high. The position is only slightly below cost, so no stop or target has been reached.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Strong 1-day (+6.9%), 3-day (+6.6%) and 20-day (+25.7%) performance, with price only 3.7% below its 20-day high, supports a pullback-in-an-uptrend swing setup. A 100-share position is about 11.8% of NAV and preserves ample cash."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock remains in a strong 10-day (+14.2%) and 20-day (+10.4%) uptrend and is only 0.5% below its 20-day high. The -0.6% unrealized loss is above the -3.5% stop guideline and below the profit target."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 3-day (+3.5%) and 10-day (+8.5%) momentum with price just 1.6% below its 20-day high supports continuation. The +0.6% unrealized gain has neither a loss nor profit-target trigger."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The recent 10-day (+16.2%) and 20-day (+24.6%) surge shows exceptional momentum, and price is at its 20-day high. The position is only slightly below cost, so no stop or target has been reached."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "qty": 100,
+          "price": 116.5,
+          "fees": 11.65
+        }
+      ],
+      "navBefore": 99157.29,
+      "navAfter": 99145.64,
+      "cash": 49244.44,
+      "error": null
     }
   ]
 }

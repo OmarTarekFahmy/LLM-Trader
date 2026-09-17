@@ -259,6 +259,32 @@
       "resultingCash": 67433.26,
       "resultingNav": 98588.26,
       "cycleId": "20260917T1346-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-17T13:57:14.385+03:00",
+      "ticker": "JUFO",
+      "action": "sell",
+      "qty": 500,
+      "price": 27.079999923706055,
+      "fees": 13.54,
+      "grossValue": 13540,
+      "netCashDelta": 13526.46,
+      "resultingCash": 80959.72,
+      "resultingNav": 98574.72,
+      "cycleId": "20260917T1357-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-17T13:57:14.385+03:00",
+      "ticker": "ICFC",
+      "action": "buy",
+      "qty": 500,
+      "price": 23.3799991607666,
+      "fees": 11.69,
+      "grossValue": 11690,
+      "netCashDelta": -11701.69,
+      "resultingCash": 69258.03,
+      "resultingNav": 98563.03,
+      "cycleId": "20260917T1357-sharia-trade"
     }
   ]
 }
