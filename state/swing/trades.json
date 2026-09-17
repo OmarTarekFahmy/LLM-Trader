@@ -311,6 +311,19 @@
       "resultingCash": 49244.44,
       "resultingNav": 99145.64,
       "cycleId": "20260917T1357-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-17T14:08:17.767+03:00",
+      "ticker": "MFPC",
+      "action": "buy",
+      "qty": 100,
+      "price": 48.689998626708984,
+      "fees": 4.87,
+      "grossValue": 4869,
+      "netCashDelta": -4873.87,
+      "resultingCash": 44370.57,
+      "resultingNav": 99140.77,
+      "cycleId": "20260917T1408-swing-trade"
     }
   ]
 }

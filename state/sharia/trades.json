@@ -285,6 +285,32 @@
       "resultingCash": 69258.03,
       "resultingNav": 98563.03,
       "cycleId": "20260917T1357-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-17T14:08:17.767+03:00",
+      "ticker": "MCQE",
+      "action": "sell",
+      "qty": 50,
+      "price": 221,
+      "fees": 11.05,
+      "grossValue": 11050,
+      "netCashDelta": 11038.95,
+      "resultingCash": 80296.98,
+      "resultingNav": 98551.98,
+      "cycleId": "20260917T1408-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-17T14:08:17.767+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 13.449999809265137,
+      "fees": 13.45,
+      "grossValue": 13450,
+      "netCashDelta": -13463.45,
+      "resultingCash": 66833.53,
+      "resultingNav": 98538.53,
+      "cycleId": "20260917T1408-sharia-trade"
     }
   ]
 }

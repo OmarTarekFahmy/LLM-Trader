@@ -1321,6 +1321,98 @@
       "navAfter": 98563.03,
       "cash": 69258.03,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1408-sharia-trade",
+      "timestamp": "2026-09-17T14:08:17.767+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 55449 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and defensive: the EGX30 is down 2.1% over five days despite a positive 20-day trend. Favor selective momentum pullbacks, keep cash high, and rotate from weaker relative momentum into AMOC.",
+      "llmRaw": "{\"marketRead\":\"Mixed and defensive: the EGX30 is down 2.1% over five days despite a positive 20-day trend. Favor selective momentum pullbacks, keep cash high, and rotate from weaker relative momentum into AMOC.\",\"actions\":[{\"ticker\":\"MCQE\",\"action\":\"sell\",\"quantity\":50,\"rationale\":\"Weak 10-day (-9.8%) and 20-day (-0.2%) performance, with only a one-day rebound, makes it inferior to AMOC; rotate while near breakeven.\"},{\"ticker\":\"AMOC\",\"action\":\"buy\",\"quantity\":1000,\"rationale\":\"Strong 20-day momentum (+13.5%), a 2.8% daily bounce, and a 6.5% pullback from the 20-day high suggest a liquid continuation setup. The intent remains within position and sector limits.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 3-day, 10-day, and 20-day momentum supports continuation, but the price is near its 20-day high and only slightly below cost; avoid adding into the move.\"},{\"ticker\":\"ICFC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Recent 3-day (+3.4%) and 20-day (+34.3%) momentum remains supportive, but the recent entry and pullback from the high favor holding rather than adding.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "MCQE",
+          "action": "sell",
+          "quantity": 50,
+          "rationale": "Weak 10-day (-9.8%) and 20-day (-0.2%) performance, with only a one-day rebound, makes it inferior to AMOC; rotate while near breakeven."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Strong 20-day momentum (+13.5%), a 2.8% daily bounce, and a 6.5% pullback from the 20-day high suggest a liquid continuation setup. The intent remains within position and sector limits."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 3-day, 10-day, and 20-day momentum supports continuation, but the price is near its 20-day high and only slightly below cost; avoid adding into the move."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recent 3-day (+3.4%) and 20-day (+34.3%) momentum remains supportive, but the recent entry and pullback from the high favor holding rather than adding."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "MCQE",
+          "action": "sell",
+          "proposedQty": 50,
+          "finalQty": 50,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "MCQE",
+          "action": "sell",
+          "qty": 50,
+          "price": 221,
+          "fees": 11.05
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 13.449999809265137,
+          "fees": 13.45
+        }
+      ],
+      "navBefore": 98563.03,
+      "navAfter": 98538.53,
+      "cash": 66833.53,
+      "error": null
     }
   ]
 }

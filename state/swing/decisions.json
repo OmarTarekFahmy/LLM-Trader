@@ -1619,6 +1619,49 @@
       "navAfter": 99145.64,
       "cash": 49244.44,
       "error": null
+    },
+    {
+      "cycleId": "20260917T1408-swing-trade",
+      "timestamp": "2026-09-17T14:08:17.767+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55449 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautious and rotational: the EGX30 is down 2.6% over five days, but MFPC shows exceptional relative momentum (+4.7% today and +23.4% over 20d) while testing its 20-day high. Maintain a large cash buffer and take only a small starter position.",
+      "llmRaw": "{\"marketRead\":\"Cautious and rotational: the EGX30 is down 2.6% over five days, but MFPC shows exceptional relative momentum (+4.7% today and +23.4% over 20d) while testing its 20-day high. Maintain a large cash buffer and take only a small starter position.\",\"actions\":[{\"ticker\":\"MFPC\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Strong 10-day and 20-day momentum with a fresh 20-day-high close; starter size limits chase risk in the otherwise weak Basic Materials sector.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Strong 10-day and 20-day momentum with a fresh 20-day-high close; starter size limits chase risk in the otherwise weak Basic Materials sector."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "qty": 100,
+          "price": 48.689998626708984,
+          "fees": 4.87
+        }
+      ],
+      "navBefore": 99145.64,
+      "navAfter": 99140.77,
+      "cash": 44370.57,
+      "error": null
     }
   ]
 }

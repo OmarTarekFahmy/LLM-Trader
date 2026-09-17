@@ -1,5 +1,5 @@
 {
-  "cash": 49244.44,
+  "cash": 44370.57,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -24,10 +24,16 @@
       "qty": 100,
       "avgCost": 116.62,
       "openedAt": "2026-09-17T13:57:14.385+03:00"
+    },
+    {
+      "ticker": "MFPC",
+      "qty": 100,
+      "avgCost": 48.74,
+      "openedAt": "2026-09-17T14:08:17.767+03:00"
     }
   ],
-  "nav": 99145.64,
+  "nav": 99140.77,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-17T13:57:14.385+03:00"
+  "lastUpdated": "2026-09-17T14:08:17.767+03:00"
 }
