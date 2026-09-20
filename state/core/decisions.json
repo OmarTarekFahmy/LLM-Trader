@@ -1130,6 +1130,83 @@
       "navAfter": 100413.3,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1323-core-trade",
+      "timestamp": "2026-09-20T13:23:17.386+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 7/30 up over 5d; EGX30 55414 (5d -1.9%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and fragile: the EGX30 is up 3.3% over 20 days but down 1.9% over five days, with narrow leadership and broad weakness in cyclicals and consumer staples. With 46.5% of NAV in cash and no fundamental catalyst supplied, preserve dry powder and avoid chasing delayed-price momentum.",
+      "llmRaw": "{\"marketRead\":\"Mixed and fragile: the EGX30 is up 3.3% over 20 days but down 1.9% over five days, with narrow leadership and broad weakness in cyclicals and consumer staples. With 46.5% of NAV in cash and no fundamental catalyst supplied, preserve dry powder and avoid chasing delayed-price momentum.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 5-day decline conflicts with a strong 20-day trend, but there is no fundamental sell thesis; avoid panic selling after a short-term drop.\"},{\"ticker\":\"ABUK\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Recent weakness appears consistent with sector pressure, while the 20-day trend remains positive; no basis for a semi-long-term exit.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 20-day momentum supports retaining the position, but the delayed price and attractive run-up argue against adding now.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock has the portfolio's strongest momentum, but no fresh thesis supports a buy; its roughly 15.7% NAV weight also argues against concentration.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 5-day decline conflicts with a strong 20-day trend, but there is no fundamental sell thesis; avoid panic selling after a short-term drop."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recent weakness appears consistent with sector pressure, while the 20-day trend remains positive; no basis for a semi-long-term exit."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 20-day momentum supports retaining the position, but the delayed price and attractive run-up argue against adding now."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock has the portfolio's strongest momentum, but no fresh thesis supports a buy; its roughly 15.7% NAV weight also argues against concentration."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 100413.3,
+      "navAfter": 100413.3,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

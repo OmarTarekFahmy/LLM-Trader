@@ -1527,6 +1527,84 @@
       "navAfter": 98538.53,
       "cash": 66833.53,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1323-sharia-trade",
+      "timestamp": "2026-09-20T13:23:17.386+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 55414 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed but constructive: communications and energy remain in 20-day uptrends, while basic-materials momentum has accelerated despite a soft EGX30 over five days. Favor controlled additions to liquid momentum names and retain ample cash.",
+      "llmRaw": "{\"marketRead\":\"Mixed but constructive: communications and energy remain in 20-day uptrends, while basic-materials momentum has accelerated despite a soft EGX30 over five days. Favor controlled additions to liquid momentum names and retain ample cash.\",\"actions\":[{\"ticker\":\"ICFC\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Strong 3-day and 20-day momentum with high volatility and a 1-day rebound; the addition keeps the position near the 15% NAV limit.\"},{\"ticker\":\"AMOC\",\"action\":\"buy\",\"quantity\":50,\"rationale\":\"Positive 20-day trend and a strong latest-day rebound after a pullback from its 20-day high; the trade remains within the position limit.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 10-day and 20-day uptrend remains intact, with the stock only slightly below its 20-day high and no stop or profit target triggered.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Strong 3-day and 20-day momentum with high volatility and a 1-day rebound; the addition keeps the position near the 15% NAV limit."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 50,
+          "rationale": "Positive 20-day trend and a strong latest-day rebound after a pullback from its 20-day high; the trade remains within the position limit."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 10-day and 20-day uptrend remains intact, with the stock only slightly below its 20-day high and no stop or profit target triggered."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 50,
+          "finalQty": 50,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "qty": 100,
+          "price": 23.3799991607666,
+          "fees": 2.34
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 50,
+          "price": 13.449999809265137,
+          "fees": 0.67
+        }
+      ],
+      "navBefore": 98538.53,
+      "navAfter": 98535.52,
+      "cash": 63820.02,
+      "error": null
     }
   ]
 }

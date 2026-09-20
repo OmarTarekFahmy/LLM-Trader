@@ -1,5 +1,5 @@
 {
-  "cash": 44370.57,
+  "cash": 41312.51,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -30,10 +30,16 @@
       "qty": 100,
       "avgCost": 48.74,
       "openedAt": "2026-09-17T14:08:17.767+03:00"
+    },
+    {
+      "ticker": "GBCO",
+      "qty": 100,
+      "avgCost": 30.58,
+      "openedAt": "2026-09-20T13:23:17.386+03:00"
     }
   ],
-  "nav": 99140.77,
+  "nav": 99137.71,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-17T15:22:31.672+03:00"
+  "lastUpdated": "2026-09-20T13:23:17.386+03:00"
 }

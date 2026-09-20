@@ -324,6 +324,19 @@
       "resultingCash": 44370.57,
       "resultingNav": 99140.77,
       "cycleId": "20260917T1408-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:23:17.386+03:00",
+      "ticker": "GBCO",
+      "action": "buy",
+      "qty": 100,
+      "price": 30.549999237060547,
+      "fees": 3.06,
+      "grossValue": 3055,
+      "netCashDelta": -3058.06,
+      "resultingCash": 41312.51,
+      "resultingNav": 99137.71,
+      "cycleId": "20260920T1323-swing-trade"
     }
   ]
 }

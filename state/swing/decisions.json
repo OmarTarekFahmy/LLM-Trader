@@ -1776,6 +1776,119 @@
       "navAfter": 99140.77,
       "cash": 44370.57,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1323-swing-trade",
+      "timestamp": "2026-09-20T13:23:17.386+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55414 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but index-led weakness remains: the EGX30 is down 2.6% over five days despite a positive 20-day trend, and most sectors are soft. Favor selective continuation in liquid relative-strength names while preserving substantial cash.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but index-led weakness remains: the EGX30 is down 2.6% over five days despite a positive 20-day trend, and most sectors are soft. Favor selective continuation in liquid relative-strength names while preserving substantial cash.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 10-day and 20-day momentum remain intact, with price only 0.5% below its 20-day high; retain rather than chase or exit before the profit target.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 10-day and 20-day trends continue, and the stock is near its recent high; no loss or target exit is triggered.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Exceptional momentum and a new 20-day high support continuation, but the extended move warrants holding without adding.\"},{\"ticker\":\"HDBK\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The sharp daily breakout and strong 20-day trend remain active; high volatility argues for retaining the position while monitoring the breakout.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock is at its 20-day high with strong short-term momentum and modest unrealized gain; the original swing thesis remains intact.\"},{\"ticker\":\"GBCO\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Positive 10-day momentum, a 1.2% daily gain, and proximity to the recent high indicate relative strength; the small allocation diversifies the book while leaving ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 10-day and 20-day momentum remain intact, with price only 0.5% below its 20-day high; retain rather than chase or exit before the profit target."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 10-day and 20-day trends continue, and the stock is near its recent high; no loss or target exit is triggered."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Exceptional momentum and a new 20-day high support continuation, but the extended move warrants holding without adding."
+        },
+        {
+          "ticker": "HDBK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The sharp daily breakout and strong 20-day trend remain active; high volatility argues for retaining the position while monitoring the breakout."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock is at its 20-day high with strong short-term momentum and modest unrealized gain; the original swing thesis remains intact."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Positive 10-day momentum, a 1.2% daily gain, and proximity to the recent high indicate relative strength; the small allocation diversifies the book while leaving ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "HDBK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "qty": 100,
+          "price": 30.549999237060547,
+          "fees": 3.06
+        }
+      ],
+      "navBefore": 99140.77,
+      "navAfter": 99137.71,
+      "cash": 41312.51,
+      "error": null
     }
   ]
 }
