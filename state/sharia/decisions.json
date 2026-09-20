@@ -1605,6 +1605,77 @@
       "navAfter": 98535.52,
       "cash": 63820.02,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1334-sharia-trade",
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 55366 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed but constructive: the EGX30 remains soft over five days, while communications and selected basic-materials names retain strong 20-day momentum. Favor a limited add to ETEL while preserving substantial cash and position-limit headroom.",
+      "llmRaw": "{\"marketRead\":\"Mixed but constructive: the EGX30 remains soft over five days, while communications and selected basic-materials names retain strong 20-day momentum. Favor a limited add to ETEL while preserving substantial cash and position-limit headroom.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"buy\",\"quantity\":60,\"rationale\":\"Strong 10-day and 20-day uptrend with elevated volatility; the near-20-day-high pullback offers controlled swing upside. Size keeps total ETEL exposure below 15% of NAV.\"},{\"ticker\":\"ICFC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"High-volatility 20-day uptrend and recent 3-day strength remain intact. The position is only slightly above cost and held one day, so neither the profit target nor loss cut is justified yet.\"},{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Recent rebound and strong 20-day trend support continuation, but the position remains near cost and has only been held one day. Preserve it pending either profit or a -3.5% downside trigger.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 60,
+          "rationale": "Strong 10-day and 20-day uptrend with elevated volatility; the near-20-day-high pullback offers controlled swing upside. Size keeps total ETEL exposure below 15% of NAV."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "High-volatility 20-day uptrend and recent 3-day strength remain intact. The position is only slightly above cost and held one day, so neither the profit target nor loss cut is justified yet."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recent rebound and strong 20-day trend support continuation, but the position remains near cost and has only been held one day. Preserve it pending either profit or a -3.5% downside trigger."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 60,
+          "finalQty": 60,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 60,
+          "price": 131.3000030517578,
+          "fees": 7.88
+        }
+      ],
+      "navBefore": 98535.52,
+      "navAfter": 98527.64,
+      "cash": 55934.14,
+      "error": null
     }
   ]
 }

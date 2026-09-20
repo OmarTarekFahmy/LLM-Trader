@@ -337,6 +337,19 @@
       "resultingCash": 63820.02,
       "resultingNav": 98535.52,
       "cycleId": "20260920T1323-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 60,
+      "price": 131.3000030517578,
+      "fees": 7.88,
+      "grossValue": 7878,
+      "netCashDelta": -7885.88,
+      "resultingCash": 55934.14,
+      "resultingNav": 98527.64,
+      "cycleId": "20260920T1334-sharia-trade"
     }
   ]
 }

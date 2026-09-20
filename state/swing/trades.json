@@ -337,6 +337,45 @@
       "resultingCash": 41312.51,
       "resultingNav": 99137.71,
       "cycleId": "20260920T1323-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "ticker": "CCAP",
+      "action": "buy",
+      "qty": 400,
+      "price": 6.889999866485596,
+      "fees": 2.76,
+      "grossValue": 2756,
+      "netCashDelta": -2758.76,
+      "resultingCash": 38553.75,
+      "resultingNav": 99134.95,
+      "cycleId": "20260920T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "ticker": "HDBK",
+      "action": "buy",
+      "qty": 20,
+      "price": 116.5,
+      "fees": 2.33,
+      "grossValue": 2330,
+      "netCashDelta": -2332.33,
+      "resultingCash": 36221.42,
+      "resultingNav": 99132.62,
+      "cycleId": "20260920T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "ticker": "ICFC",
+      "action": "buy",
+      "qty": 100,
+      "price": 23.3799991607666,
+      "fees": 2.34,
+      "grossValue": 2338,
+      "netCashDelta": -2340.34,
+      "resultingCash": 33881.08,
+      "resultingNav": 99130.28,
+      "cycleId": "20260920T1334-swing-trade"
     }
   ]
 }

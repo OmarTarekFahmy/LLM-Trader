@@ -1889,6 +1889,147 @@
       "navAfter": 99137.71,
       "cash": 41312.51,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1334-swing-trade",
+      "timestamp": "2026-09-20T13:34:31.111+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55366 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but fragile: the EGX30 is down 2.6% over five days and most sectors are soft, while stock-specific momentum remains strong in communications, industrials, financials, and basic materials. Use the large cash buffer for small continuation trades in confirmed leaders while retaining broad cash protection.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but fragile: the EGX30 is down 2.6% over five days and most sectors are soft, while stock-specific momentum remains strong in communications, industrials, financials, and basic materials. Use the large cash buffer for small continuation trades in confirmed leaders while retaining broad cash protection.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 10-day +14.2% and 20-day +13.7% trend remains intact, and price is only 0.5% below its 20-day high; no target or stop has been reached.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 3-day +3.5% and 20-day +8.7% momentum remains intact, with price only 1.6% below the 20-day high and no exit trigger.\"},{\"ticker\":\"CCAP\",\"action\":\"buy\",\"quantity\":400,\"rationale\":\"A 400-share continuation intent targets the confirmed breakout: +9.4% over 3 days, +26.0% over 20 days, 2.9% volatility, and a close at the 20-day high; the size stays within the position cap.\"},{\"ticker\":\"HDBK\",\"action\":\"buy\",\"quantity\":20,\"rationale\":\"The +6.9% daily and +30.2% 20-day move on 4.9% volatility confirms active leadership; a 20-share starter remains below the single-name cap and limits chase risk.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Price is at its 20-day high after +4.7% over both 3 days and 10 days and +23.9% over 20 days; momentum supports holding without an exit trigger.\"},{\"ticker\":\"GBCO\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The fresh position is only 0.8% below its 20-day high and has gained +1.2% today and +5.4% over 10 days, so the breakout setup remains intact.\"},{\"ticker\":\"ICFC\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"A 100-share pullback entry exploits +3.4% over 3 days and +21.8% over 20 days after rebounding from 22.01; the size stays within policy and adds sector diversification.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 10-day +14.2% and 20-day +13.7% trend remains intact, and price is only 0.5% below its 20-day high; no target or stop has been reached."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 3-day +3.5% and 20-day +8.7% momentum remains intact, with price only 1.6% below the 20-day high and no exit trigger."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "quantity": 400,
+          "rationale": "A 400-share continuation intent targets the confirmed breakout: +9.4% over 3 days, +26.0% over 20 days, 2.9% volatility, and a close at the 20-day high; the size stays within the position cap."
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "quantity": 20,
+          "rationale": "The +6.9% daily and +30.2% 20-day move on 4.9% volatility confirms active leadership; a 20-share starter remains below the single-name cap and limits chase risk."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Price is at its 20-day high after +4.7% over both 3 days and 10 days and +23.9% over 20 days; momentum supports holding without an exit trigger."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The fresh position is only 0.8% below its 20-day high and has gained +1.2% today and +5.4% over 10 days, so the breakout setup remains intact."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "A 100-share pullback entry exploits +3.4% over 3 days and +21.8% over 20 days after rebounding from 22.01; the size stays within policy and adds sector diversification."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "proposedQty": 400,
+          "finalQty": 400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "proposedQty": 20,
+          "finalQty": 20,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "qty": 400,
+          "price": 6.889999866485596,
+          "fees": 2.76
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "qty": 20,
+          "price": 116.5,
+          "fees": 2.33
+        },
+        {
+          "ticker": "ICFC",
+          "action": "buy",
+          "qty": 100,
+          "price": 23.3799991607666,
+          "fees": 2.34
+        }
+      ],
+      "navBefore": 99137.71,
+      "navAfter": 99130.28,
+      "cash": 33881.08,
+      "error": null
     }
   ]
 }

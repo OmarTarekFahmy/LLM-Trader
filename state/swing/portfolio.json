@@ -1,5 +1,5 @@
 {
-  "cash": 41312.51,
+  "cash": 33881.08,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -15,13 +15,13 @@
     },
     {
       "ticker": "CCAP",
-      "qty": 1700,
+      "qty": 2100,
       "avgCost": 6.9,
       "openedAt": "2026-09-17T13:46:08.732+03:00"
     },
     {
       "ticker": "HDBK",
-      "qty": 100,
+      "qty": 120,
       "avgCost": 116.62,
       "openedAt": "2026-09-17T13:57:14.385+03:00"
     },
@@ -36,10 +36,16 @@
       "qty": 100,
       "avgCost": 30.58,
       "openedAt": "2026-09-20T13:23:17.386+03:00"
+    },
+    {
+      "ticker": "ICFC",
+      "qty": 100,
+      "avgCost": 23.4,
+      "openedAt": "2026-09-20T13:34:31.111+03:00"
     }
   ],
-  "nav": 99137.71,
+  "nav": 99130.28,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-20T13:23:17.386+03:00"
+  "lastUpdated": "2026-09-20T13:34:31.111+03:00"
 }
