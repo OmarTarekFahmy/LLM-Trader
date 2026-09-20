@@ -1245,6 +1245,25 @@
       "navAfter": 100413.3,
       "cash": 46742.4,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1359-core-trade",
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 7/30 up over 5d; EGX30 55400 (5d -1.9%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and fragile: the EGX30 remains 3.3% higher over 20 days but is down 1.9% over five days, with narrow momentum leadership and broad cyclicals and consumer weakness. Cash is ample at 46.5% of NAV, positions remain within concentration limits, and the recent no-trade stance is unchanged; no sufficiently strong thesis justifies trading now.",
+      "llmRaw": "{\"marketRead\":\"Mixed and fragile: the EGX30 remains 3.3% higher over 20 days but is down 1.9% over five days, with narrow momentum leadership and broad cyclicals and consumer weakness. Cash is ample at 46.5% of NAV, positions remain within concentration limits, and the recent no-trade stance is unchanged; no sufficiently strong thesis justifies trading now.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 100413.3,
+      "navAfter": 100413.3,
+      "cash": 46742.4,
+      "error": null
     }
   ]
 }

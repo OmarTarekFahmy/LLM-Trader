@@ -1768,6 +1768,91 @@
       "navAfter": 98500.94,
       "cash": 57449.94,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1359-sharia-trade",
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 55400 (5d -2.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed but constructive: the EGX30 is soft over five days but remains positive over 20 days. Communications and staples are leading, while basic materials, real estate, and health care are weaker; favor a controlled sector-relative bounce without overcommitting cash.",
+      "llmRaw": "{\"marketRead\":\"Mixed but constructive: the EGX30 is soft over five days but remains positive over 20 days. Communications and staples are leading, while basic materials, real estate, and health care are weaker; favor a controlled sector-relative bounce without overcommitting cash.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 10-day and 20-day uptrend remains intact and price is near its 20-day high. With only a 0.3% unrealized loss and exposure below the 15% limit, neither the stop nor profit target has been reached.\"},{\"ticker\":\"ICFC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"ICFC retains strong 20-day momentum and has rebounded over the last one and three days despite elevated volatility. It is nearly at cost and below the position limit, so continuation risk still warrants holding.\"},{\"ticker\":\"ATQA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"ATQA's 20-day trend remains positive despite the recent three-day pullback. At roughly breakeven and below the position cap, waiting for a bounce is preferable to realizing a small loss.\"},{\"ticker\":\"EFID\",\"action\":\"buy\",\"quantity\":400,\"rationale\":\"EFID is near its 20-day low after recent weakness but has posted a 1.0% daily rebound in a constructive staples sector. Four hundred shares keep the position near 12.5% of NAV and preserve ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 10-day and 20-day uptrend remains intact and price is near its 20-day high. With only a 0.3% unrealized loss and exposure below the 15% limit, neither the stop nor profit target has been reached."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "ICFC retains strong 20-day momentum and has rebounded over the last one and three days despite elevated volatility. It is nearly at cost and below the position limit, so continuation risk still warrants holding."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "ATQA's 20-day trend remains positive despite the recent three-day pullback. At roughly breakeven and below the position cap, waiting for a bounce is preferable to realizing a small loss."
+        },
+        {
+          "ticker": "EFID",
+          "action": "buy",
+          "quantity": 400,
+          "rationale": "EFID is near its 20-day low after recent weakness but has posted a 1.0% daily rebound in a constructive staples sector. Four hundred shares keep the position near 12.5% of NAV and preserve ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EFID",
+          "action": "buy",
+          "proposedQty": 400,
+          "finalQty": 400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "EFID",
+          "action": "buy",
+          "qty": 400,
+          "price": 30.799999237060547,
+          "fees": 12.32
+        }
+      ],
+      "navBefore": 98500.94,
+      "navAfter": 98488.62,
+      "cash": 45117.62,
+      "error": null
     }
   ]
 }

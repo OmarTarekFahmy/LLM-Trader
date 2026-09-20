@@ -402,6 +402,45 @@
       "resultingCash": 31116.35,
       "resultingNav": 99113.55,
       "cycleId": "20260920T1345-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "ticker": "CCAP",
+      "action": "sell",
+      "qty": 1000,
+      "price": 6.889999866485596,
+      "fees": 6.89,
+      "grossValue": 6890,
+      "netCashDelta": 6883.11,
+      "resultingCash": 37999.46,
+      "resultingNav": 99106.66,
+      "cycleId": "20260920T1359-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "ticker": "HDBK",
+      "action": "sell",
+      "qty": 60,
+      "price": 116.5,
+      "fees": 6.99,
+      "grossValue": 6990,
+      "netCashDelta": 6983.01,
+      "resultingCash": 44982.47,
+      "resultingNav": 99099.67,
+      "cycleId": "20260920T1359-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "ticker": "EMFD",
+      "action": "buy",
+      "qty": 100,
+      "price": 14.1899995803833,
+      "fees": 1.42,
+      "grossValue": 1419,
+      "netCashDelta": -1420.42,
+      "resultingCash": 43562.05,
+      "resultingNav": 99098.25,
+      "cycleId": "20260920T1359-swing-trade"
     }
   ]
 }

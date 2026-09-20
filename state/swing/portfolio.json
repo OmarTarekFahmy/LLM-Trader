@@ -1,5 +1,5 @@
 {
-  "cash": 31116.35,
+  "cash": 43562.05,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -15,15 +15,9 @@
     },
     {
       "ticker": "CCAP",
-      "qty": 2100,
+      "qty": 1100,
       "avgCost": 6.9,
       "openedAt": "2026-09-17T13:46:08.732+03:00"
-    },
-    {
-      "ticker": "HDBK",
-      "qty": 60,
-      "avgCost": 116.62,
-      "openedAt": "2026-09-17T13:57:14.385+03:00"
     },
     {
       "ticker": "MFPC",
@@ -42,10 +36,16 @@
       "qty": 100,
       "avgCost": 23.4,
       "openedAt": "2026-09-20T13:34:31.111+03:00"
+    },
+    {
+      "ticker": "EMFD",
+      "qty": 100,
+      "avgCost": 14.2,
+      "openedAt": "2026-09-20T13:59:09.128+03:00"
     }
   ],
-  "nav": 99113.55,
+  "nav": 99098.25,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-20T13:45:52.354+03:00"
+  "lastUpdated": "2026-09-20T13:59:09.128+03:00"
 }

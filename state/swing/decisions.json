@@ -2094,6 +2094,161 @@
       "navAfter": 99113.55,
       "cash": 31116.35,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1359-swing-trade",
+      "timestamp": "2026-09-20T13:59:09.128+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55400 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but fragile: the EGX30 is up 3.3% over 20 days but down 2.6% over five days, and most sectors are soft. Stock-specific momentum is preferable to broad exposure; trim the most extended names, keep the cash buffer, and make only small pullback entries.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but fragile: the EGX30 is up 3.3% over 20 days but down 2.6% over five days, and most sectors are soft. Stock-specific momentum is preferable to broad exposure; trim the most extended names, keep the cash buffer, and make only small pullback entries.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 10-day and 20-day momentum with price only 0.5% below the 20-day high; keep the position but avoid adding near the high.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 3-day, 10-day, and 20-day trend and only 1.6% below the 20-day high; momentum supports holding.\"},{\"ticker\":\"CCAP\",\"action\":\"sell\",\"quantity\":1000,\"rationale\":\"Extended 20-day gain of 26.0%, at the 20-day high, and 2.9% volatility; trim to lock in strength and reduce concentration.\"},{\"ticker\":\"HDBK\",\"action\":\"sell\",\"quantity\":60,\"rationale\":\"Very extended 20-day gain of 30.2% with 4.9% volatility and only 3.7% below the 20-day high; reduce exposure to a fragile momentum name.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 20-day momentum of 23.9% and price at the 20-day high; hold rather than add while the index remains weak.\"},{\"ticker\":\"GBCO\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Modest positive 10-day and 20-day performance with a small position and limited drawdown; no urgent exit signal.\"},{\"ticker\":\"ICFC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 20-day momentum of 21.8% with a pullback below the high and small position size; monitor volatility before adding.\"},{\"ticker\":\"EMFD\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"A small pullback candidate: up 22.3% over 20 days, only 4.8% below the 20-day high, and 2.2% volatility; keeps the new position size conservative.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 10-day and 20-day momentum with price only 0.5% below the 20-day high; keep the position but avoid adding near the high."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 3-day, 10-day, and 20-day trend and only 1.6% below the 20-day high; momentum supports holding."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "quantity": 1000,
+          "rationale": "Extended 20-day gain of 26.0%, at the 20-day high, and 2.9% volatility; trim to lock in strength and reduce concentration."
+        },
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "quantity": 60,
+          "rationale": "Very extended 20-day gain of 30.2% with 4.9% volatility and only 3.7% below the 20-day high; reduce exposure to a fragile momentum name."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 20-day momentum of 23.9% and price at the 20-day high; hold rather than add while the index remains weak."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Modest positive 10-day and 20-day performance with a small position and limited drawdown; no urgent exit signal."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 20-day momentum of 21.8% with a pullback below the high and small position size; monitor volatility before adding."
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "A small pullback candidate: up 22.3% over 20 days, only 4.8% below the 20-day high, and 2.2% volatility; keeps the new position size conservative."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "proposedQty": 60,
+          "finalQty": 60,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "qty": 1000,
+          "price": 6.889999866485596,
+          "fees": 6.89
+        },
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "qty": 60,
+          "price": 116.5,
+          "fees": 6.99
+        },
+        {
+          "ticker": "EMFD",
+          "action": "buy",
+          "qty": 100,
+          "price": 14.1899995803833,
+          "fees": 1.42
+        }
+      ],
+      "navBefore": 99113.55,
+      "navAfter": 99098.25,
+      "cash": 43562.05,
+      "error": null
     }
   ]
 }
