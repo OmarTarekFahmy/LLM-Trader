@@ -2249,6 +2249,91 @@
       "navAfter": 99098.25,
       "cash": 43562.05,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1413-swing-trade",
+      "timestamp": "2026-09-20T14:13:53.814+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55374 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but fragile: the EGX30 remains down 2.6% over 5 days despite a positive 20-day trend, so broad exposure is unattractive. Favor liquid, stock-specific momentum while keeping cash high; rotate out of a weakening real-estate swing and into stronger communications/healthcare momentum names.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but fragile: the EGX30 remains down 2.6% over 5 days despite a positive 20-day trend, so broad exposure is unattractive. Favor liquid, stock-specific momentum while keeping cash high; rotate out of a weakening real-estate swing and into stronger communications/healthcare momentum names.\",\"actions\":[{\"ticker\":\"EMFD\",\"action\":\"sell\",\"quantity\":100,\"rationale\":\"Real estate sector is soft (-3.4% over 5 days) and EMFD has weakened over 3 days (-4.1%) while sitting below its 20-day high; exit the flat/new position to limit further pullback risk.\"},{\"ticker\":\"OIH\",\"action\":\"buy\",\"quantity\":1000,\"rationale\":\"Communications is one of the stronger sectors, and OIH shows clean stock-specific momentum: +15.5% over 20 days, at its 20-day high, with relatively low 10-day volatility. Small position keeps risk controlled.\"},{\"ticker\":\"MCRO\",\"action\":\"buy\",\"quantity\":500,\"rationale\":\"MCRO has strong relative momentum despite a softer healthcare sector: +16.9% over 20 days, +3.0% over 3 days, and only -0.6% below its 20-day high. Size is small to manage volatility.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Real estate sector is soft (-3.4% over 5 days) and EMFD has weakened over 3 days (-4.1%) while sitting below its 20-day high; exit the flat/new position to limit further pullback risk."
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Communications is one of the stronger sectors, and OIH shows clean stock-specific momentum: +15.5% over 20 days, at its 20-day high, with relatively low 10-day volatility. Small position keeps risk controlled."
+        },
+        {
+          "ticker": "MCRO",
+          "action": "buy",
+          "quantity": 500,
+          "rationale": "MCRO has strong relative momentum despite a softer healthcare sector: +16.9% over 20 days, +3.0% over 3 days, and only -0.6% below its 20-day high. Size is small to manage volatility."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "MCRO",
+          "action": "buy",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "EMFD",
+          "action": "sell",
+          "qty": 100,
+          "price": 14.1899995803833,
+          "fees": 1.42
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "qty": 1000,
+          "price": 2.1600000858306885,
+          "fees": 2.16
+        },
+        {
+          "ticker": "MCRO",
+          "action": "buy",
+          "qty": 500,
+          "price": 1.7300000190734863,
+          "fees": 0.87
+        }
+      ],
+      "navBefore": 99098.25,
+      "navAfter": 99093.8,
+      "cash": 41951.6,
+      "error": null
     }
   ]
 }

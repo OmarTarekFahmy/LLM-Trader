@@ -441,6 +441,45 @@
       "resultingCash": 43562.05,
       "resultingNav": 99098.25,
       "cycleId": "20260920T1359-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T14:13:53.814+03:00",
+      "ticker": "EMFD",
+      "action": "sell",
+      "qty": 100,
+      "price": 14.1899995803833,
+      "fees": 1.42,
+      "grossValue": 1419,
+      "netCashDelta": 1417.58,
+      "resultingCash": 44979.63,
+      "resultingNav": 99096.83,
+      "cycleId": "20260920T1413-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T14:13:53.814+03:00",
+      "ticker": "OIH",
+      "action": "buy",
+      "qty": 1000,
+      "price": 2.1600000858306885,
+      "fees": 2.16,
+      "grossValue": 2160,
+      "netCashDelta": -2162.16,
+      "resultingCash": 42817.47,
+      "resultingNav": 99094.67,
+      "cycleId": "20260920T1413-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T14:13:53.814+03:00",
+      "ticker": "MCRO",
+      "action": "buy",
+      "qty": 500,
+      "price": 1.7300000190734863,
+      "fees": 0.87,
+      "grossValue": 865,
+      "netCashDelta": -865.87,
+      "resultingCash": 41951.6,
+      "resultingNav": 99093.8,
+      "cycleId": "20260920T1413-swing-trade"
     }
   ]
 }

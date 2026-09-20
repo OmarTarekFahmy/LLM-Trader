@@ -389,6 +389,19 @@
       "resultingCash": 45117.62,
       "resultingNav": 98488.62,
       "cycleId": "20260920T1359-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-20T14:13:53.814+03:00",
+      "ticker": "EFID",
+      "action": "sell",
+      "qty": 400,
+      "price": 30.799999237060547,
+      "fees": 12.32,
+      "grossValue": 12320,
+      "netCashDelta": 12307.68,
+      "resultingCash": 57425.3,
+      "resultingNav": 98476.3,
+      "cycleId": "20260920T1413-sharia-trade"
     }
   ]
 }

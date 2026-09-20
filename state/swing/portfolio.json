@@ -1,5 +1,5 @@
 {
-  "cash": 43562.05,
+  "cash": 41951.6,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -38,14 +38,20 @@
       "openedAt": "2026-09-20T13:34:31.111+03:00"
     },
     {
-      "ticker": "EMFD",
-      "qty": 100,
-      "avgCost": 14.2,
-      "openedAt": "2026-09-20T13:59:09.128+03:00"
+      "ticker": "OIH",
+      "qty": 1000,
+      "avgCost": 2.16,
+      "openedAt": "2026-09-20T14:13:53.814+03:00"
+    },
+    {
+      "ticker": "MCRO",
+      "qty": 500,
+      "avgCost": 1.73,
+      "openedAt": "2026-09-20T14:13:53.814+03:00"
     }
   ],
-  "nav": 99098.25,
+  "nav": 99093.8,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-20T13:59:09.128+03:00"
+  "lastUpdated": "2026-09-20T14:13:53.814+03:00"
 }
