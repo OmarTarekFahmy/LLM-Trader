@@ -2030,6 +2030,70 @@
       "navAfter": 99130.28,
       "cash": 33881.08,
       "error": null
+    },
+    {
+      "cycleId": "20260920T1345-swing-trade",
+      "timestamp": "2026-09-20T13:45:52.354+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 17/91 up over 5d; EGX30 55423 (5d -2.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautiously constructive but fragile: the EGX30 is down 2.6% over five days and most sectors are soft, so stock-specific momentum is preferable to broad exposure. HDBK is extended after a sharp run; rotate part of that gain into stronger, less volatile MFPC momentum while preserving ample cash.",
+      "llmRaw": "{\"marketRead\":\"Cautiously constructive but fragile: the EGX30 is down 2.6% over five days and most sectors are soft, so stock-specific momentum is preferable to broad exposure. HDBK is extended after a sharp run; rotate part of that gain into stronger, less volatile MFPC momentum while preserving ample cash.\",\"actions\":[{\"ticker\":\"HDBK\",\"action\":\"sell\",\"quantity\":60,\"rationale\":\"Trim half of the position after a +6.6% three-day move and +30.2% 20-day advance; 4.9% volatility and the 20-day high make near-term risk/reward less attractive. Retain 60 shares for possible continuation.\"},{\"ticker\":\"MFPC\",\"action\":\"buy\",\"quantity\":200,\"rationale\":\"Add to a momentum leader with +4.7% three-day and +23.9% 20-day returns, 2.1% volatility, and a test of the 20-day high. The 200-share fill keeps the position near 15% of NAV.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "quantity": 60,
+          "rationale": "Trim half of the position after a +6.6% three-day move and +30.2% 20-day advance; 4.9% volatility and the 20-day high make near-term risk/reward less attractive. Retain 60 shares for possible continuation."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "quantity": 200,
+          "rationale": "Add to a momentum leader with +4.7% three-day and +23.9% 20-day returns, 2.1% volatility, and a test of the 20-day high. The 200-share fill keeps the position near 15% of NAV."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "proposedQty": 60,
+          "finalQty": 60,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "proposedQty": 200,
+          "finalQty": 200,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "qty": 60,
+          "price": 116.5,
+          "fees": 6.99
+        },
+        {
+          "ticker": "MFPC",
+          "action": "buy",
+          "qty": 200,
+          "price": 48.689998626708984,
+          "fees": 9.74
+        }
+      ],
+      "navBefore": 99130.28,
+      "navAfter": 99113.55,
+      "cash": 31116.35,
+      "error": null
     }
   ]
 }

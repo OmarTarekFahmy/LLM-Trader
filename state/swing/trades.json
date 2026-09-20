@@ -376,6 +376,32 @@
       "resultingCash": 33881.08,
       "resultingNav": 99130.28,
       "cycleId": "20260920T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:45:52.354+03:00",
+      "ticker": "HDBK",
+      "action": "sell",
+      "qty": 60,
+      "price": 116.5,
+      "fees": 6.99,
+      "grossValue": 6990,
+      "netCashDelta": 6983.01,
+      "resultingCash": 40864.09,
+      "resultingNav": 99123.29,
+      "cycleId": "20260920T1345-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:45:52.354+03:00",
+      "ticker": "MFPC",
+      "action": "buy",
+      "qty": 200,
+      "price": 48.689998626708984,
+      "fees": 9.74,
+      "grossValue": 9738,
+      "netCashDelta": -9747.74,
+      "resultingCash": 31116.35,
+      "resultingNav": 99113.55,
+      "cycleId": "20260920T1345-swing-trade"
     }
   ]
 }

@@ -350,6 +350,32 @@
       "resultingCash": 55934.14,
       "resultingNav": 98527.64,
       "cycleId": "20260920T1334-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:45:52.354+03:00",
+      "ticker": "AMOC",
+      "action": "sell",
+      "qty": 1050,
+      "price": 13.449999809265137,
+      "fees": 14.12,
+      "grossValue": 14122.5,
+      "netCashDelta": 14108.38,
+      "resultingCash": 70042.52,
+      "resultingNav": 98513.52,
+      "cycleId": "20260920T1345-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-20T13:45:52.354+03:00",
+      "ticker": "ATQA",
+      "action": "buy",
+      "qty": 1000,
+      "price": 12.579999923706055,
+      "fees": 12.58,
+      "grossValue": 12580,
+      "netCashDelta": -12592.58,
+      "resultingCash": 57449.94,
+      "resultingNav": 98500.94,
+      "cycleId": "20260920T1345-sharia-trade"
     }
   ]
 }
