@@ -2661,6 +2661,91 @@
       "navAfter": 100390.39,
       "cash": 64546.39,
       "error": null
+    },
+    {
+      "cycleId": "20260922T1354-swing-trade",
+      "timestamp": "2026-09-22T13:54:32.230+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 36/91 up over 5d; EGX30 55062 (5d -0.4%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed but constructive for confirmed momentum. The EGX30 is slightly soft over five days, while Financials lead with +2.3% over five days; Health Care and Real Estate remain weak. Favor breakout names and exit stagnant or weakening positions while retaining ample cash.",
+      "llmRaw": "{\"marketRead\":\"Mixed but constructive for confirmed momentum. The EGX30 is slightly soft over five days, while Financials lead with +2.3% over five days; Health Care and Real Estate remain weak. Favor breakout names and exit stagnant or weakening positions while retaining ample cash.\",\"actions\":[{\"ticker\":\"OIH\",\"action\":\"sell\",\"quantity\":1000,\"rationale\":\"Flat over three sessions despite being near its 20-day high, with low 0.9% volatility and no near-term catalyst. Exit to fund stronger momentum.\"},{\"ticker\":\"ICFC\",\"action\":\"sell\",\"quantity\":100,\"rationale\":\"One-day -3.1% and three-day -1.6% momentum weaken the short-term setup despite the positive 20-day trend. Take the modest loss before further deterioration.\"},{\"ticker\":\"EXPA\",\"action\":\"buy\",\"quantity\":600,\"rationale\":\"Financial leadership supports a +2.9% daily and +5.6% three-day breakout near the 20-day high. The 600-share fill remains below the single-position limit and preserves substantial cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "OIH",
+          "action": "sell",
+          "quantity": 1000,
+          "rationale": "Flat over three sessions despite being near its 20-day high, with low 0.9% volatility and no near-term catalyst. Exit to fund stronger momentum."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "One-day -3.1% and three-day -1.6% momentum weaken the short-term setup despite the positive 20-day trend. Take the modest loss before further deterioration."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "buy",
+          "quantity": 600,
+          "rationale": "Financial leadership supports a +2.9% daily and +5.6% three-day breakout near the 20-day high. The 600-share fill remains below the single-position limit and preserves substantial cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "OIH",
+          "action": "sell",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "buy",
+          "proposedQty": 600,
+          "finalQty": 600,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "OIH",
+          "action": "sell",
+          "qty": 1000,
+          "price": 2.1600000858306885,
+          "fees": 2.16
+        },
+        {
+          "ticker": "ICFC",
+          "action": "sell",
+          "qty": 100,
+          "price": 23,
+          "fees": 2.3
+        },
+        {
+          "ticker": "EXPA",
+          "action": "buy",
+          "qty": 600,
+          "price": 21.969999313354492,
+          "fees": 13.18
+        }
+      ],
+      "navBefore": 100390.39,
+      "navAfter": 100372.75,
+      "cash": 55806.75,
+      "error": null
     }
   ]
 }
