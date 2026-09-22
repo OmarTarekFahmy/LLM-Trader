@@ -2949,6 +2949,25 @@
       "navAfter": 100354.44,
       "cash": 43614.44,
       "error": null
+    },
+    {
+      "cycleId": "20260922T1511-swing-eod",
+      "timestamp": "2026-09-22T15:11:40.606+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "91 quoted; 36/91 up over 5d; EGX30 54931 (5d -0.4%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 100354 EGP (+0.35% since inception), cash 43614, 5 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 100354.44,
+      "navAfter": 100354.44,
+      "cash": 43614.44,
+      "error": null
     }
   ]
 }
