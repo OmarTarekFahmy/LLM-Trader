@@ -558,6 +558,45 @@
       "resultingCash": 55806.75,
       "resultingNav": 100372.75,
       "cycleId": "20260922T1354-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-22T14:07:12.289+03:00",
+      "ticker": "GBCO",
+      "action": "sell",
+      "qty": 100,
+      "price": 30.739999771118164,
+      "fees": 3.07,
+      "grossValue": 3074,
+      "netCashDelta": 3070.93,
+      "resultingCash": 58877.68,
+      "resultingNav": 100369.68,
+      "cycleId": "20260922T1407-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-22T14:07:12.289+03:00",
+      "ticker": "HDBK",
+      "action": "buy",
+      "qty": 100,
+      "price": 118.54000091552734,
+      "fees": 11.85,
+      "grossValue": 11854,
+      "netCashDelta": -11865.85,
+      "resultingCash": 47011.83,
+      "resultingNav": 100357.83,
+      "cycleId": "20260922T1407-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-22T14:07:12.289+03:00",
+      "ticker": "ALCN",
+      "action": "buy",
+      "qty": 100,
+      "price": 33.939998626708984,
+      "fees": 3.39,
+      "grossValue": 3394,
+      "netCashDelta": -3397.39,
+      "resultingCash": 43614.44,
+      "resultingNav": 100354.44,
+      "cycleId": "20260922T1407-swing-trade"
     }
   ]
 }

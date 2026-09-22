@@ -1,5 +1,5 @@
 {
-  "cash": 55806.75,
+  "cash": 43614.44,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -14,20 +14,26 @@
       "openedAt": "2026-09-17T14:08:17.767+03:00"
     },
     {
-      "ticker": "GBCO",
-      "qty": 100,
-      "avgCost": 30.58,
-      "openedAt": "2026-09-20T13:23:17.386+03:00"
-    },
-    {
       "ticker": "EXPA",
       "qty": 600,
       "avgCost": 21.99,
       "openedAt": "2026-09-22T13:54:32.230+03:00"
+    },
+    {
+      "ticker": "HDBK",
+      "qty": 100,
+      "avgCost": 118.66,
+      "openedAt": "2026-09-22T14:07:12.289+03:00"
+    },
+    {
+      "ticker": "ALCN",
+      "qty": 100,
+      "avgCost": 33.97,
+      "openedAt": "2026-09-22T14:07:12.289+03:00"
     }
   ],
-  "nav": 100372.75,
+  "nav": 100354.44,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-22T13:54:32.230+03:00"
+  "lastUpdated": "2026-09-22T14:07:12.289+03:00"
 }

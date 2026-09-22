@@ -2746,6 +2746,133 @@
       "navAfter": 100372.75,
       "cash": 55806.75,
       "error": null
+    },
+    {
+      "cycleId": "20260922T1407-swing-trade",
+      "timestamp": "2026-09-22T14:07:12.289+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 36/91 up over 5d; EGX30 55116 (5d -0.4%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and slightly soft: the EGX30 is -0.4% over 5d but +0.6% over 20d. Leadership is selective, with Financials and Communications outperforming while Healthcare and Real Estate remain weak. Rotate out of lagging GBCO into HDBK's pullback-in-uptrend setup and ALCN's confirmed momentum breakout, while retaining the other near-high winners.",
+      "llmRaw": "{\"marketRead\":\"Mixed and slightly soft: the EGX30 is -0.4% over 5d but +0.6% over 20d. Leadership is selective, with Financials and Communications outperforming while Healthcare and Real Estate remain weak. Rotate out of lagging GBCO into HDBK's pullback-in-uptrend setup and ALCN's confirmed momentum breakout, while retaining the other near-high winners.\",\"actions\":[{\"ticker\":\"GBCO\",\"action\":\"sell\",\"quantity\":100,\"rationale\":\"Rotate out after weak follow-through: -2.1% today, -0.2% over 10d, and a soft discretionary sector; realize the small gain and redeploy into stronger leadership.\"},{\"ticker\":\"HDBK\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Financials are the strongest 5d sector at +2.3%, while HDBK remains only about 2% below its 20d high and is +10.7% over 10d and +30.6% over 20d. This is a pullback-in-uptrend setup; 100 shares is about 11.8% of NAV.\"},{\"ticker\":\"ALCN\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Industrial momentum is confirmed with +4.9% today and +9.5% over 3d, 10d, and 20d at the 20d high. Volatility is elevated, but 100 shares limits exposure to about 3.4% of NAV.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The +11.2% 10d and +15.3% 20d trend remains intact at the 20d high; the +1.6% gain is below the +2.5% soft target, so there is no exit signal yet.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong +23.7% 20d performance and only -0.8% from the 20d high support continuation. The +1.8% gain remains below target, and the position is already near the single-name limit.\"},{\"ticker\":\"EXPA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The +2.9% 1d, +5.6% 3d, and +9.9% 20d moves confirm the recent breakout near the 20d high. The entry thesis is still developing, so avoid exiting immediately.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Rotate out after weak follow-through: -2.1% today, -0.2% over 10d, and a soft discretionary sector; realize the small gain and redeploy into stronger leadership."
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Financials are the strongest 5d sector at +2.3%, while HDBK remains only about 2% below its 20d high and is +10.7% over 10d and +30.6% over 20d. This is a pullback-in-uptrend setup; 100 shares is about 11.8% of NAV."
+        },
+        {
+          "ticker": "ALCN",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Industrial momentum is confirmed with +4.9% today and +9.5% over 3d, 10d, and 20d at the 20d high. Volatility is elevated, but 100 shares limits exposure to about 3.4% of NAV."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The +11.2% 10d and +15.3% 20d trend remains intact at the 20d high; the +1.6% gain is below the +2.5% soft target, so there is no exit signal yet."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong +23.7% 20d performance and only -0.8% from the 20d high support continuation. The +1.8% gain remains below target, and the position is already near the single-name limit."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The +2.9% 1d, +5.6% 3d, and +9.9% 20d moves confirm the recent breakout near the 20d high. The entry thesis is still developing, so avoid exiting immediately."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ALCN",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "qty": 100,
+          "price": 30.739999771118164,
+          "fees": 3.07
+        },
+        {
+          "ticker": "HDBK",
+          "action": "buy",
+          "qty": 100,
+          "price": 118.54000091552734,
+          "fees": 11.85
+        },
+        {
+          "ticker": "ALCN",
+          "action": "buy",
+          "qty": 100,
+          "price": 33.939998626708984,
+          "fees": 3.39
+        }
+      ],
+      "navBefore": 100372.75,
+      "navAfter": 100354.44,
+      "cash": 43614.44,
+      "error": null
     }
   ]
 }
