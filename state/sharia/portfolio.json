@@ -1,5 +1,5 @@
 {
-  "cash": 57425.3,
+  "cash": 73764.94,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -8,20 +8,14 @@
       "openedAt": "2026-09-16T13:37:41.936+03:00"
     },
     {
-      "ticker": "ICFC",
-      "qty": 600,
-      "avgCost": 23.4,
-      "openedAt": "2026-09-17T13:57:14.385+03:00"
-    },
-    {
-      "ticker": "ATQA",
-      "qty": 1000,
-      "avgCost": 12.59,
-      "openedAt": "2026-09-20T13:45:52.354+03:00"
+      "ticker": "AMOC",
+      "qty": 800,
+      "avgCost": 13.75,
+      "openedAt": "2026-09-22T13:43:03.680+03:00"
     }
   ],
-  "nav": 99309.4,
+  "nav": 99529.94,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-21T15:21:02.084+03:00"
+  "lastUpdated": "2026-09-22T13:43:03.680+03:00"
 }

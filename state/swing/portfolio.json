@@ -1,23 +1,11 @@
 {
-  "cash": 41951.6,
+  "cash": 64546.39,
   "holdings": [
     {
       "ticker": "ETEL",
       "qty": 100,
       "avgCost": 132.13,
       "openedAt": "2026-09-16T13:55:19.855+03:00"
-    },
-    {
-      "ticker": "SDTI",
-      "qty": 180,
-      "avgCost": 74.06,
-      "openedAt": "2026-09-16T13:55:19.855+03:00"
-    },
-    {
-      "ticker": "CCAP",
-      "qty": 1100,
-      "avgCost": 6.9,
-      "openedAt": "2026-09-17T13:46:08.732+03:00"
     },
     {
       "ticker": "MFPC",
@@ -42,16 +30,10 @@
       "qty": 1000,
       "avgCost": 2.16,
       "openedAt": "2026-09-20T14:13:53.814+03:00"
-    },
-    {
-      "ticker": "MCRO",
-      "qty": 500,
-      "avgCost": 1.73,
-      "openedAt": "2026-09-20T14:13:53.814+03:00"
     }
   ],
-  "nav": 100592,
+  "nav": 100390.39,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-21T15:21:02.084+03:00"
+  "lastUpdated": "2026-09-22T13:43:03.680+03:00"
 }
