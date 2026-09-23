@@ -597,6 +597,45 @@
       "resultingCash": 43614.44,
       "resultingNav": 100354.44,
       "cycleId": "20260922T1407-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "ticker": "HDBK",
+      "action": "sell",
+      "qty": 100,
+      "price": 118.54000091552734,
+      "fees": 11.85,
+      "grossValue": 11854,
+      "netCashDelta": 11842.15,
+      "resultingCash": 55456.59,
+      "resultingNav": 100300.59,
+      "cycleId": "20260923T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "ticker": "CCAP",
+      "action": "buy",
+      "qty": 1400,
+      "price": 7.130000114440918,
+      "fees": 9.98,
+      "grossValue": 9982,
+      "netCashDelta": -9991.98,
+      "resultingCash": 45464.61,
+      "resultingNav": 100290.61,
+      "cycleId": "20260923T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "ticker": "SDTI",
+      "action": "buy",
+      "qty": 120,
+      "price": 77.58000183105469,
+      "fees": 9.31,
+      "grossValue": 9309.6,
+      "netCashDelta": -9318.91,
+      "resultingCash": 36145.7,
+      "resultingNav": 100281.3,
+      "cycleId": "20260923T1334-swing-trade"
     }
   ]
 }

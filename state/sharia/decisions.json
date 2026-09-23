@@ -2506,6 +2506,77 @@
       "navAfter": 99504.04,
       "cash": 69817.61,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1334-sharia-trade",
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 11/25 up over 5d; EGX30 54561 (5d 0.6%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 is mildly positive over 5 and 20 days, but leadership is narrow: Communications and Basic Materials are strong while Real Estate, Health Care, and Technology lag. ETEL and ATQA are extended at 20-day highs with strong momentum, so hold rather than add. AMOC offers a controlled pullback setup in an established uptrend.",
+      "llmRaw": "{\"marketRead\":\"EGX30 is mildly positive over 5 and 20 days, but leadership is narrow: Communications and Basic Materials are strong while Real Estate, Health Care, and Technology lag. ETEL and ATQA are extended at 20-day highs with strong momentum, so hold rather than add. AMOC offers a controlled pullback setup in an established uptrend.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong +2.1% daily and +15.3% 20-day move at a 20-day high; the +1.9% unrealized gain remains below the +2.5% soft target, so retain the position without adding.\"},{\"ticker\":\"ATQA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Up +3.0% today and +22.6% over 20 days, currently at a 20-day high. Hold the fresh momentum position and avoid adding near the single-position limit.\"},{\"ticker\":\"AMOC\",\"action\":\"buy\",\"quantity\":1000,\"rationale\":\"A -2.5% pullback after a +23.8% 20-day rise creates a swing entry near the prior 14.09 close, with a ~+2.5% target near 14.09 and a -3.5% risk reference near 13.26. 1,000 shares cost about 13.7k EGP, approximately 13.8% of NAV, preserving ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong +2.1% daily and +15.3% 20-day move at a 20-day high; the +1.9% unrealized gain remains below the +2.5% soft target, so retain the position without adding."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Up +3.0% today and +22.6% over 20 days, currently at a 20-day high. Hold the fresh momentum position and avoid adding near the single-position limit."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "A -2.5% pullback after a +23.8% 20-day rise creates a swing entry near the prior 14.09 close, with a ~+2.5% target near 14.09 and a -3.5% risk reference near 13.26. 1,000 shares cost about 13.7k EGP, approximately 13.8% of NAV, preserving ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 13.739999771118164,
+          "fees": 13.74
+        }
+      ],
+      "navBefore": 99504.04,
+      "navAfter": 99490.3,
+      "cash": 56063.87,
+      "error": null
     }
   ]
 }

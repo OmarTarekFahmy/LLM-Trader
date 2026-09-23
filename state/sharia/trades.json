@@ -467,6 +467,19 @@
       "resultingCash": 69817.61,
       "resultingNav": 99504.04,
       "cycleId": "20260922T1354-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 13.739999771118164,
+      "fees": 13.74,
+      "grossValue": 13740,
+      "netCashDelta": -13753.74,
+      "resultingCash": 56063.87,
+      "resultingNav": 99490.3,
+      "cycleId": "20260923T1334-sharia-trade"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 43614.44,
+  "cash": 36145.7,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -20,20 +20,26 @@
       "openedAt": "2026-09-22T13:54:32.230+03:00"
     },
     {
-      "ticker": "HDBK",
-      "qty": 100,
-      "avgCost": 118.66,
-      "openedAt": "2026-09-22T14:07:12.289+03:00"
-    },
-    {
       "ticker": "ALCN",
       "qty": 100,
       "avgCost": 33.97,
       "openedAt": "2026-09-22T14:07:12.289+03:00"
+    },
+    {
+      "ticker": "CCAP",
+      "qty": 1400,
+      "avgCost": 7.14,
+      "openedAt": "2026-09-23T13:34:20.986+03:00"
+    },
+    {
+      "ticker": "SDTI",
+      "qty": 120,
+      "avgCost": 77.66,
+      "openedAt": "2026-09-23T13:34:20.986+03:00"
     }
   ],
-  "nav": 100354.44,
+  "nav": 100281.3,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-22T15:22:14.331+03:00"
+  "lastUpdated": "2026-09-23T13:34:20.986+03:00"
 }

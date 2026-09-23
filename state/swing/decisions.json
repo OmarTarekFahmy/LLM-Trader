@@ -2987,6 +2987,91 @@
       "navAfter": 100354.44,
       "cash": 43614.44,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1334-swing-trade",
+      "timestamp": "2026-09-23T13:34:20.986+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 36/91 up over 5d; EGX30 54561 (5d -0.4%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and slightly soft: the EGX30 is down 0.4% over five days, while leadership is concentrated rather than broad. Several recent runners are extended, so rotate a mature, flat holding into two liquid continuation setups while keeping cash well above the 5% minimum.",
+      "llmRaw": "{\"marketRead\":\"Mixed and slightly soft: the EGX30 is down 0.4% over five days, while leadership is concentrated rather than broad. Several recent runners are extended, so rotate a mature, flat holding into two liquid continuation setups while keeping cash well above the 5% minimum.\",\"actions\":[{\"ticker\":\"HDBK\",\"action\":\"sell\",\"quantity\":100,\"rationale\":\"Exit at roughly breakeven after a 30.6% 20-day run and 3.5% volatility; price is 2.0% below its 20-day high after two declining sessions, increasing exhaustion risk.\"},{\"ticker\":\"CCAP\",\"action\":\"buy\",\"quantity\":1400,\"rationale\":\"A liquid momentum continuation: up 19.4% over 10 days and 24.9% over 20 days, with 3.0% volatility and only a 1.5% pullback from the 20-day high.\"},{\"ticker\":\"SDTI\",\"action\":\"buy\",\"quantity\":120,\"rationale\":\"Price remains within 0.5% of its 20-day high after constructive 10-day and 20-day gains of 6.0% and 11.2%; the modest share intent stays diversified and leaves ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Exit at roughly breakeven after a 30.6% 20-day run and 3.5% volatility; price is 2.0% below its 20-day high after two declining sessions, increasing exhaustion risk."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "quantity": 1400,
+          "rationale": "A liquid momentum continuation: up 19.4% over 10 days and 24.9% over 20 days, with 3.0% volatility and only a 1.5% pullback from the 20-day high."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "quantity": 120,
+          "rationale": "Price remains within 0.5% of its 20-day high after constructive 10-day and 20-day gains of 6.0% and 11.2%; the modest share intent stays diversified and leaves ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "proposedQty": 1400,
+          "finalQty": 1400,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "proposedQty": 120,
+          "finalQty": 120,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "HDBK",
+          "action": "sell",
+          "qty": 100,
+          "price": 118.54000091552734,
+          "fees": 11.85
+        },
+        {
+          "ticker": "CCAP",
+          "action": "buy",
+          "qty": 1400,
+          "price": 7.130000114440918,
+          "fees": 9.98
+        },
+        {
+          "ticker": "SDTI",
+          "action": "buy",
+          "qty": 120,
+          "price": 77.58000183105469,
+          "fees": 9.31
+        }
+      ],
+      "navBefore": 100312.44,
+      "navAfter": 100281.3,
+      "cash": 36145.7,
+      "error": null
     }
   ]
 }
