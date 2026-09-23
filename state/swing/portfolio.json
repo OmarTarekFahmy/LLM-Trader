@@ -1,5 +1,5 @@
 {
-  "cash": 34496.92,
+  "cash": 7693.14,
   "holdings": [
     {
       "ticker": "MFPC",
@@ -36,10 +36,22 @@
       "qty": 480,
       "avgCost": 31.14,
       "openedAt": "2026-09-23T13:59:00.283+03:00"
+    },
+    {
+      "ticker": "EGTS",
+      "qty": 700,
+      "avgCost": 18.73,
+      "openedAt": "2026-09-23T14:10:38.399+03:00"
+    },
+    {
+      "ticker": "NIPH",
+      "qty": 40,
+      "avgCost": 342.34,
+      "openedAt": "2026-09-23T14:10:38.399+03:00"
     }
   ],
-  "nav": 100131.12,
+  "nav": 100104.34,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-23T13:59:00.283+03:00"
+  "lastUpdated": "2026-09-23T14:10:38.399+03:00"
 }

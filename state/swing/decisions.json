@@ -3284,6 +3284,154 @@
       "navAfter": 100131.12,
       "cash": 34496.92,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1410-swing-trade",
+      "timestamp": "2026-09-23T14:10:38.399+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 31/91 up over 5d; EGX30 54495 (5d -0.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and slightly soft: the EGX30 is down 0.7% over five days, with weak real estate and health care but concentrated momentum. I favor two high-volatility breakout buys in EGTS and NIPH, while retaining existing near-high positions and preserving cash.",
+      "llmRaw": "{\"marketRead\":\"Mixed and slightly soft: the EGX30 is down 0.7% over five days, with weak real estate and health care but concentrated momentum. I favor two high-volatility breakout buys in EGTS and NIPH, while retaining existing near-high positions and preserving cash.\",\"actions\":[{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Held 4 days at +0.5%; 20-day performance is +24.3% and the stock is only 2% below its 20-day high, so the swing thesis remains intact.\"},{\"ticker\":\"EXPA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Near its 20-day high with +9.6% over 20 days; the small unrealized loss is not an invalidation signal.\"},{\"ticker\":\"ALCN\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"High volatility at 4%, with +6.3% over 10 days and +11.1% over 20 days; holding for a breakout continuation.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"+1.0% unrealized gain, 3% volatility, +16.9% over 10 days, and near the 20-day high; hold rather than take profit before the +2.5% target.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"+0.5% gain and at the 20-day high, with +16.5% over 20 days; continuation potential remains.\"},{\"ticker\":\"GBCO\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Near the 20-day high with +9.5% over 20 days; the small unrealized loss does not yet break the setup.\"},{\"ticker\":\"EGTS\",\"action\":\"buy\",\"quantity\":700,\"rationale\":\"A 10.7% one-day gain, 8.5% 10-day gain, and breakout at the 20-day high show strong momentum; the position remains below the 15% NAV limit.\"},{\"ticker\":\"NIPH\",\"action\":\"buy\",\"quantity\":40,\"rationale\":\"An 11.4% one-day rebound and 7.2% three-day gain, with volatility at 4% and price at the 20-day high, support a momentum continuation while keeping the position below the NAV limit.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Held 4 days at +0.5%; 20-day performance is +24.3% and the stock is only 2% below its 20-day high, so the swing thesis remains intact."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Near its 20-day high with +9.6% over 20 days; the small unrealized loss is not an invalidation signal."
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "High volatility at 4%, with +6.3% over 10 days and +11.1% over 20 days; holding for a breakout continuation."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "+1.0% unrealized gain, 3% volatility, +16.9% over 10 days, and near the 20-day high; hold rather than take profit before the +2.5% target."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "+0.5% gain and at the 20-day high, with +16.5% over 20 days; continuation potential remains."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Near the 20-day high with +9.5% over 20 days; the small unrealized loss does not yet break the setup."
+        },
+        {
+          "ticker": "EGTS",
+          "action": "buy",
+          "quantity": 700,
+          "rationale": "A 10.7% one-day gain, 8.5% 10-day gain, and breakout at the 20-day high show strong momentum; the position remains below the 15% NAV limit."
+        },
+        {
+          "ticker": "NIPH",
+          "action": "buy",
+          "quantity": 40,
+          "rationale": "An 11.4% one-day rebound and 7.2% three-day gain, with volatility at 4% and price at the 20-day high, support a momentum continuation while keeping the position below the NAV limit."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EGTS",
+          "action": "buy",
+          "proposedQty": 700,
+          "finalQty": 700,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "NIPH",
+          "action": "buy",
+          "proposedQty": 40,
+          "finalQty": 40,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "EGTS",
+          "action": "buy",
+          "qty": 700,
+          "price": 18.709999084472656,
+          "fees": 13.1
+        },
+        {
+          "ticker": "NIPH",
+          "action": "buy",
+          "qty": 40,
+          "price": 342,
+          "fees": 13.68
+        }
+      ],
+      "navBefore": 100131.12,
+      "navAfter": 100104.34,
+      "cash": 7693.14,
+      "error": null
     }
   ]
 }
