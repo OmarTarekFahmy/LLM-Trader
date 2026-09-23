@@ -649,6 +649,45 @@
       "resultingCash": 25278.84,
       "resultingNav": 100270.44,
       "cycleId": "20260923T1347-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 100,
+      "price": 137.5,
+      "fees": 13.75,
+      "grossValue": 13750,
+      "netCashDelta": 13736.25,
+      "resultingCash": 39015.09,
+      "resultingNav": 100156.49,
+      "cycleId": "20260923T1359-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "ATQA",
+      "action": "sell",
+      "qty": 800,
+      "price": 13.050000190734863,
+      "fees": 10.44,
+      "grossValue": 10440,
+      "netCashDelta": 10429.56,
+      "resultingCash": 49444.65,
+      "resultingNav": 100146.05,
+      "cycleId": "20260923T1359-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "GBCO",
+      "action": "buy",
+      "qty": 480,
+      "price": 31.110000610351562,
+      "fees": 14.93,
+      "grossValue": 14932.8,
+      "netCashDelta": -14947.73,
+      "resultingCash": 34496.92,
+      "resultingNav": 100131.12,
+      "cycleId": "20260923T1359-swing-trade"
     }
   ]
 }

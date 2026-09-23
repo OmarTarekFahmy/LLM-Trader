@@ -2640,6 +2640,105 @@
       "navAfter": 99490.3,
       "cash": 56063.87,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1359-sharia-trade",
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 8/25 up over 5d; EGX30 54575 (5d -0.4%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 is mildly negative over 5 days (-0.4%) but positive over 20 days (+1.1%), with uneven breadth and concentrated leadership. ETEL is extended at its 20-day high, ATQA has broken down and is beyond the loss threshold, while AMOC retains a strong 20-day trend but remains volatile. I will bank ETEL's gain, cut ATQA, hold AMOC, and rotate cash into ORWE's rebound setup.",
+      "llmRaw": "{\"marketRead\":\"EGX30 is mildly negative over 5 days (-0.4%) but positive over 20 days (+1.1%), with uneven breadth and concentrated leadership. ETEL is extended at its 20-day high, ATQA has broken down and is beyond the loss threshold, while AMOC retains a strong 20-day trend but remains volatile. I will bank ETEL's gain, cut ATQA, hold AMOC, and rotate cash into ORWE's rebound setup.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"sell\",\"quantity\":110,\"rationale\":\"Sell the full position to bank the +4.4% gain; ETEL is at its 20-day high after gaining 18.4% over 20 days, so the swing target is exceeded and upside is stretched.\"},{\"ticker\":\"ATQA\",\"action\":\"sell\",\"quantity\":1099,\"rationale\":\"Sell all 1,099 shares to enforce the approximately -3.5% loss discipline; ATQA is -3.9% versus cost and fell 3.8% today, so the prior momentum thesis is no longer intact.\"},{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Hold the existing position rather than average down; AMOC remains +23.9% over 20 days and has not lost its breakout structure, but it is volatile and already sizeable, so wait for confirmation before adding.\"},{\"ticker\":\"ORWE\",\"action\":\"buy\",\"quantity\":533,\"rationale\":\"Buy 533 shares, about 14.95% of NAV and within the 15% limit; ORWE gained 2.1% today, remains +6.8% over 20 days, and is only 4.3% below its 20-day high, offering a rebound setup with moderate volatility.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 110,
+          "rationale": "Sell the full position to bank the +4.4% gain; ETEL is at its 20-day high after gaining 18.4% over 20 days, so the swing target is exceeded and upside is stretched."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "quantity": 1099,
+          "rationale": "Sell all 1,099 shares to enforce the approximately -3.5% loss discipline; ATQA is -3.9% versus cost and fell 3.8% today, so the prior momentum thesis is no longer intact."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Hold the existing position rather than average down; AMOC remains +23.9% over 20 days and has not lost its breakout structure, but it is volatile and already sizeable, so wait for confirmation before adding."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "quantity": 533,
+          "rationale": "Buy 533 shares, about 14.95% of NAV and within the 15% limit; ORWE gained 2.1% today, remains +6.8% over 20 days, and is only 4.3% below its 20-day high, offering a rebound setup with moderate volatility."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 110,
+          "finalQty": 110,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "proposedQty": 1099,
+          "finalQty": 1099,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "proposedQty": 533,
+          "finalQty": 533,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 110,
+          "price": 137.5,
+          "fees": 15.13
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "qty": 1099,
+          "price": 13.050000190734863,
+          "fees": 14.34
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "qty": 533,
+          "price": 27.780000686645508,
+          "fees": 14.81
+        }
+      ],
+      "navBefore": 99030.82,
+      "navAfter": 98986.54,
+      "cash": 70679.8,
+      "error": null
     }
   ]
 }

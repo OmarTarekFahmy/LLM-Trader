@@ -1,27 +1,21 @@
 {
-  "cash": 56063.87,
+  "cash": 70679.8,
   "holdings": [
-    {
-      "ticker": "ETEL",
-      "qty": 110,
-      "avgCost": 131.75,
-      "openedAt": "2026-09-16T13:37:41.936+03:00"
-    },
-    {
-      "ticker": "ATQA",
-      "qty": 1099,
-      "avgCost": 13.58,
-      "openedAt": "2026-09-22T13:54:32.230+03:00"
-    },
     {
       "ticker": "AMOC",
       "qty": 1000,
       "avgCost": 13.75,
       "openedAt": "2026-09-23T13:34:20.986+03:00"
+    },
+    {
+      "ticker": "ORWE",
+      "qty": 533,
+      "avgCost": 27.81,
+      "openedAt": "2026-09-23T13:59:00.283+03:00"
     }
   ],
-  "nav": 99490.3,
+  "nav": 98986.54,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-23T13:47:48.583+03:00"
+  "lastUpdated": "2026-09-23T13:59:00.283+03:00"
 }

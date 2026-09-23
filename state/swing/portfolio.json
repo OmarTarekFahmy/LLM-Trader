@@ -1,12 +1,6 @@
 {
-  "cash": 25278.84,
+  "cash": 34496.92,
   "holdings": [
-    {
-      "ticker": "ETEL",
-      "qty": 100,
-      "avgCost": 132.13,
-      "openedAt": "2026-09-16T13:55:19.855+03:00"
-    },
     {
       "ticker": "MFPC",
       "qty": 300,
@@ -38,14 +32,14 @@
       "openedAt": "2026-09-23T13:34:20.986+03:00"
     },
     {
-      "ticker": "ATQA",
-      "qty": 800,
-      "avgCost": 13.58,
-      "openedAt": "2026-09-23T13:47:48.583+03:00"
+      "ticker": "GBCO",
+      "qty": 480,
+      "avgCost": 31.14,
+      "openedAt": "2026-09-23T13:59:00.283+03:00"
     }
   ],
-  "nav": 100270.44,
+  "nav": 100131.12,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-23T13:47:48.583+03:00"
+  "lastUpdated": "2026-09-23T13:59:00.283+03:00"
 }

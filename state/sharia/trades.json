@@ -480,6 +480,45 @@
       "resultingCash": 56063.87,
       "resultingNav": 99490.3,
       "cycleId": "20260923T1334-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 110,
+      "price": 137.5,
+      "fees": 15.13,
+      "grossValue": 15125,
+      "netCashDelta": 15109.87,
+      "resultingCash": 71173.74,
+      "resultingNav": 99015.69,
+      "cycleId": "20260923T1359-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "ATQA",
+      "action": "sell",
+      "qty": 1099,
+      "price": 13.050000190734863,
+      "fees": 14.34,
+      "grossValue": 14341.95,
+      "netCashDelta": 14327.61,
+      "resultingCash": 85501.35,
+      "resultingNav": 99001.35,
+      "cycleId": "20260923T1359-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "ticker": "ORWE",
+      "action": "buy",
+      "qty": 533,
+      "price": 27.780000686645508,
+      "fees": 14.81,
+      "grossValue": 14806.74,
+      "netCashDelta": -14821.55,
+      "resultingCash": 70679.8,
+      "resultingNav": 98986.54,
+      "cycleId": "20260923T1359-sharia-trade"
     }
   ]
 }

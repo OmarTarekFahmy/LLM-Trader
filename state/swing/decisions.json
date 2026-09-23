@@ -3199,6 +3199,91 @@
       "navAfter": 100270.44,
       "cash": 25278.84,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1359-swing-trade",
+      "timestamp": "2026-09-23T13:59:00.283+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 31/91 up over 5d; EGX30 54575 (5d -0.7%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 remains slightly soft over five days, with momentum concentrated rather than broad. Rotate out of stretched ETEL after a 4.1% gain and ATQA after breaching the stop, while preserving substantial cash and adding to GBCO's lower-volatility breakout trend.",
+      "llmRaw": "{\"marketRead\":\"EGX30 remains slightly soft over five days, with momentum concentrated rather than broad. Rotate out of stretched ETEL after a 4.1% gain and ATQA after breaching the stop, while preserving substantial cash and adding to GBCO's lower-volatility breakout trend.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"sell\",\"quantity\":100,\"rationale\":\"Five-day gain is 4.1%, above the 2.5% soft target; the stock is extended 19.6% above its 20-day low and exactly at its 20-day high, so lock in gains.\"},{\"ticker\":\"ATQA\",\"action\":\"sell\",\"quantity\":800,\"rationale\":\"The -3.9% loss exceeds the -3.5% stop threshold; the latest -3.8% daily decline also invalidates the original entry thesis.\"},{\"ticker\":\"GBCO\",\"action\":\"buy\",\"quantity\":480,\"rationale\":\"Positive 20-day trend of 9.5%, 1.2% daily gain, and only 0.9% below the 20-day high provide a cleaner momentum setup than the exited names, with lower volatility.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Five-day gain is 4.1%, above the 2.5% soft target; the stock is extended 19.6% above its 20-day low and exactly at its 20-day high, so lock in gains."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "quantity": 800,
+          "rationale": "The -3.9% loss exceeds the -3.5% stop threshold; the latest -3.8% daily decline also invalidates the original entry thesis."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "quantity": 480,
+          "rationale": "Positive 20-day trend of 9.5%, 1.2% daily gain, and only 0.9% below the 20-day high provide a cleaner momentum setup than the exited names, with lower volatility."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "proposedQty": 800,
+          "finalQty": 800,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "proposedQty": 480,
+          "finalQty": 480,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 100,
+          "price": 137.5,
+          "fees": 13.75
+        },
+        {
+          "ticker": "ATQA",
+          "action": "sell",
+          "qty": 800,
+          "price": 13.050000190734863,
+          "fees": 10.44
+        },
+        {
+          "ticker": "GBCO",
+          "action": "buy",
+          "qty": 480,
+          "price": 31.110000610351562,
+          "fees": 14.93
+        }
+      ],
+      "navBefore": 100170.24,
+      "navAfter": 100131.12,
+      "cash": 34496.92,
+      "error": null
     }
   ]
 }
