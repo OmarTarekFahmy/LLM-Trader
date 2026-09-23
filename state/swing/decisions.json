@@ -3072,6 +3072,133 @@
       "navAfter": 100281.3,
       "cash": 36145.7,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1347-swing-trade",
+      "timestamp": "2026-09-23T13:47:48.583+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 36/91 up over 5d; EGX30 54601 (5d -0.4%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Mixed and slightly soft: the EGX30 is down 0.4% over five days, with weak real estate and health care but concentrated momentum leadership. Existing holdings remain near recent highs rather than triggering exits, while cash permits a size-limited breakout entry.",
+      "llmRaw": "{\"marketRead\":\"Mixed and slightly soft: the EGX30 is down 0.4% over five days, with weak real estate and health care but concentrated momentum leadership. Existing holdings remain near recent highs rather than triggering exits, while cash permits a size-limited breakout entry.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Momentum remains strong at the 20-day high (+2.1% 1d, +15.3% 20d); retain with trailing risk discipline.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"A small daily pullback does not impair the broader advance; price remains close to its 20-day high with +23.7% 20d performance.\"},{\"ticker\":\"EXPA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position is near its 20-day high and has regained short-term momentum (+2.4% over 3d) without a loss signal.\"},{\"ticker\":\"ALCN\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong +4.9% daily and +9.5% three-day momentum supports continuation, though elevated 4% volatility warrants tight management.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The recent runner remains near its 20-day high after a 1.5% daily dip; the original momentum thesis is intact.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Price remains close to its 20-day high with positive 3d, 10d, and 20d trends; no stop or profit target has been reached.\"},{\"ticker\":\"ATQA\",\"action\":\"buy\",\"quantity\":800,\"rationale\":\"Fresh breakout at the 20-day high with +3.0% 1d, +7.9% 3d, and +22.6% 20d momentum. An 800-share order keeps the position near 10.8% of NAV and total basic-materials exposure near 25.7%, preserving ample cash.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Momentum remains strong at the 20-day high (+2.1% 1d, +15.3% 20d); retain with trailing risk discipline."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "A small daily pullback does not impair the broader advance; price remains close to its 20-day high with +23.7% 20d performance."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position is near its 20-day high and has regained short-term momentum (+2.4% over 3d) without a loss signal."
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong +4.9% daily and +9.5% three-day momentum supports continuation, though elevated 4% volatility warrants tight management."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The recent runner remains near its 20-day high after a 1.5% daily dip; the original momentum thesis is intact."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Price remains close to its 20-day high with positive 3d, 10d, and 20d trends; no stop or profit target has been reached."
+        },
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "quantity": 800,
+          "rationale": "Fresh breakout at the 20-day high with +3.0% 1d, +7.9% 3d, and +22.6% 20d momentum. An 800-share order keeps the position near 10.8% of NAV and total basic-materials exposure near 25.7%, preserving ample cash."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "proposedQty": 800,
+          "finalQty": 800,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ATQA",
+          "action": "buy",
+          "qty": 800,
+          "price": 13.569999694824219,
+          "fees": 10.86
+        }
+      ],
+      "navBefore": 100281.3,
+      "navAfter": 100270.44,
+      "cash": 25278.84,
+      "error": null
     }
   ]
 }

@@ -1825,6 +1825,25 @@
       "navAfter": 102040.97,
       "cash": 60158.97,
       "error": null
+    },
+    {
+      "cycleId": "20260923T1347-core-trade",
+      "timestamp": "2026-09-23T13:47:48.583+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 14/30 up over 5d; EGX30 54601 (5d 0.8%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is mildly positive over 5d and 20d, with leadership concentrated in basic materials, communications, energy, and industrials. Existing basic-materials exposure is already near the 35% sector limit, while cash remains about 59%; without fresh fundamentals or a clear thesis, frequent buying would add momentum risk. Stand pat and preserve capital.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 is mildly positive over 5d and 20d, with leadership concentrated in basic materials, communications, energy, and industrials. Existing basic-materials exposure is already near the 35% sector limit, while cash remains about 59%; without fresh fundamentals or a clear thesis, frequent buying would add momentum risk. Stand pat and preserve capital.\",\"actions\":[]}",
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 102040.97,
+      "navAfter": 102040.97,
+      "cash": 60158.97,
+      "error": null
     }
   ]
 }

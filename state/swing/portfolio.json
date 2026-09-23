@@ -1,5 +1,5 @@
 {
-  "cash": 36145.7,
+  "cash": 25278.84,
   "holdings": [
     {
       "ticker": "ETEL",
@@ -36,10 +36,16 @@
       "qty": 120,
       "avgCost": 77.66,
       "openedAt": "2026-09-23T13:34:20.986+03:00"
+    },
+    {
+      "ticker": "ATQA",
+      "qty": 800,
+      "avgCost": 13.58,
+      "openedAt": "2026-09-23T13:47:48.583+03:00"
     }
   ],
-  "nav": 100281.3,
+  "nav": 100270.44,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-23T13:34:20.986+03:00"
+  "lastUpdated": "2026-09-23T13:47:48.583+03:00"
 }

@@ -636,6 +636,19 @@
       "resultingCash": 36145.7,
       "resultingNav": 100281.3,
       "cycleId": "20260923T1334-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-23T13:47:48.583+03:00",
+      "ticker": "ATQA",
+      "action": "buy",
+      "qty": 800,
+      "price": 13.569999694824219,
+      "fees": 10.86,
+      "grossValue": 10856,
+      "netCashDelta": -10866.86,
+      "resultingCash": 25278.84,
+      "resultingNav": 100270.44,
+      "cycleId": "20260923T1347-swing-trade"
     }
   ]
 }
