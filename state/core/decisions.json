@@ -2034,6 +2034,83 @@
       "navAfter": 101155.97,
       "cash": 60158.97,
       "error": null
+    },
+    {
+      "cycleId": "20260924T1404-core-trade",
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 7/30 up over 5d; EGX30 53244 (5d -1.1%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 is mixed and slightly softer over five days despite a positive 20-day trend, with narrow sector leadership and recent weakness in basic materials. The portfolio is diversified within policy limits and holds about 59.5% cash, far above the 5% minimum, so there is no policy-driven need to trade or add to near-limit positions.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 is mixed and slightly softer over five days despite a positive 20-day trend, with narrow sector leadership and recent weakness in basic materials. The portfolio is diversified within policy limits and holds about 59.5% cash, far above the 5% minimum, so there is no policy-driven need to trade or add to near-limit positions.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 20-day gain remains strong, while the recent pullback is modest; the position is already near the 15% NAV concentration limit.\"},{\"ticker\":\"ABUK\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Positive 5-day and 20-day momentum supports retaining the position, but it is already close to the single-position limit.\"},{\"ticker\":\"MFPC\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The 20-day trend remains positive despite recent weakness; the position has adequate room under both concentration limits.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong momentum supports retention, while the small position size offers limited downside concentration risk.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 20-day gain remains strong, while the recent pullback is modest; the position is already near the 15% NAV concentration limit."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Positive 5-day and 20-day momentum supports retaining the position, but it is already close to the single-position limit."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The 20-day trend remains positive despite recent weakness; the position has adequate room under both concentration limits."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong momentum supports retention, while the small position size offers limited downside concentration risk."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 101155.97,
+      "navAfter": 101155.97,
+      "cash": 60158.97,
+      "error": null
     }
   ]
 }

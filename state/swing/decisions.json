@@ -3650,6 +3650,161 @@
       "navAfter": 98666.56,
       "cash": 21416.16,
       "error": null
+    },
+    {
+      "cycleId": "20260924T1404-swing-trade",
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 23/91 up over 5d; EGX30 53244 (5d -2.3%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautious: the EGX30 remains under pressure over five days, while Real Estate, Health Care, and Basic Materials are weakest. Communications shows the best relative strength. Consumer Discretionary exposure is near its sector limit, and GBCO is slightly above the single-position cap, so trim those risks and rotate into OIH while retaining ample cash.",
+      "llmRaw": "{\"marketRead\":\"Cautious: the EGX30 remains under pressure over five days, while Real Estate, Health Care, and Basic Materials are weakest. Communications shows the best relative strength. Consumer Discretionary exposure is near its sector limit, and GBCO is slightly above the single-position cap, so trim those risks and rotate into OIH while retaining ample cash.\",\"actions\":[{\"ticker\":\"EGTS\",\"action\":\"sell\",\"quantity\":700,\"rationale\":\"The +7.9% three-day surge failed to hold, with a -2.3% latest session and price now -2.4% versus cost. Exit before the -3.5% loss guideline and reduce Consumer Discretionary concentration.\"},{\"ticker\":\"GBCO\",\"action\":\"sell\",\"quantity\":10,\"rationale\":\"Trim 10 shares to restore clear headroom below the 15% single-position limit; the underlying trend remains positive with only a 0.9% decline from its 20-day high.\"},{\"ticker\":\"OIH\",\"action\":\"buy\",\"quantity\":6000,\"rationale\":\"Communications is the strongest sector, and OIH is at its 20-day high after a 8.5% advance with positive one-day momentum. Size the position near 13.2% of NAV, preserving over 20% cash.\"},{\"ticker\":\"EXPA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock remains 9.1% above its 20-day starting level, is only 1.0% below its 20-day high, and the small cost loss does not invalidate the uptrend.\"},{\"ticker\":\"ALCN\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Strong 20-day momentum of 13.0%, a new 20-day high, and elevated 4.0% volatility support continuation; profits remain modest and no reversal signal is present.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The stock remains 23.1% above its 20-day reference despite a mild pullback and is only 0.8% below cost. Hold through the volatility while the broader uptrend remains intact.\"},{\"ticker\":\"SDTI\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"A 10.8% 20-day gain and proximity to the 20-day high support the trend; the position remains essentially at cost.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The Communications leader is at a 20-day high, up 19.0% over 20 days, and showed positive latest-session momentum without an exhaustion signal.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "EGTS",
+          "action": "sell",
+          "quantity": 700,
+          "rationale": "The +7.9% three-day surge failed to hold, with a -2.3% latest session and price now -2.4% versus cost. Exit before the -3.5% loss guideline and reduce Consumer Discretionary concentration."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "quantity": 10,
+          "rationale": "Trim 10 shares to restore clear headroom below the 15% single-position limit; the underlying trend remains positive with only a 0.9% decline from its 20-day high."
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "quantity": 6000,
+          "rationale": "Communications is the strongest sector, and OIH is at its 20-day high after a 8.5% advance with positive one-day momentum. Size the position near 13.2% of NAV, preserving over 20% cash."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock remains 9.1% above its 20-day starting level, is only 1.0% below its 20-day high, and the small cost loss does not invalidate the uptrend."
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 20-day momentum of 13.0%, a new 20-day high, and elevated 4.0% volatility support continuation; profits remain modest and no reversal signal is present."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The stock remains 23.1% above its 20-day reference despite a mild pullback and is only 0.8% below cost. Hold through the volatility while the broader uptrend remains intact."
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "A 10.8% 20-day gain and proximity to the 20-day high support the trend; the position remains essentially at cost."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The Communications leader is at a 20-day high, up 19.0% over 20 days, and showed positive latest-session momentum without an exhaustion signal."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EGTS",
+          "action": "sell",
+          "proposedQty": 700,
+          "finalQty": 700,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "proposedQty": 10,
+          "finalQty": 10,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "proposedQty": 6000,
+          "finalQty": 6000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "SDTI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "EGTS",
+          "action": "sell",
+          "qty": 700,
+          "price": 18.280000686645508,
+          "fees": 12.8
+        },
+        {
+          "ticker": "GBCO",
+          "action": "sell",
+          "qty": 10,
+          "price": 31.110000610351562,
+          "fees": 0.31
+        },
+        {
+          "ticker": "OIH",
+          "action": "buy",
+          "qty": 6000,
+          "price": 2.1700000762939453,
+          "fees": 13.02
+        }
+      ],
+      "navBefore": 98666.56,
+      "navAfter": 98640.43,
+      "cash": 21477.13,
+      "error": null
     }
   ]
 }

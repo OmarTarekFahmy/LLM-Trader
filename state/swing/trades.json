@@ -753,6 +753,45 @@
       "resultingCash": 21416.16,
       "resultingNav": 98666.56,
       "cycleId": "20260924T1353-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "ticker": "EGTS",
+      "action": "sell",
+      "qty": 700,
+      "price": 18.280000686645508,
+      "fees": 12.8,
+      "grossValue": 12796,
+      "netCashDelta": 12783.2,
+      "resultingCash": 34199.36,
+      "resultingNav": 98653.76,
+      "cycleId": "20260924T1404-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "ticker": "GBCO",
+      "action": "sell",
+      "qty": 10,
+      "price": 31.110000610351562,
+      "fees": 0.31,
+      "grossValue": 311.1,
+      "netCashDelta": 310.79,
+      "resultingCash": 34510.15,
+      "resultingNav": 98653.45,
+      "cycleId": "20260924T1404-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "ticker": "OIH",
+      "action": "buy",
+      "qty": 6000,
+      "price": 2.1700000762939453,
+      "fees": 13.02,
+      "grossValue": 13020,
+      "netCashDelta": -13033.02,
+      "resultingCash": 21477.13,
+      "resultingNav": 98640.43,
+      "cycleId": "20260924T1404-swing-trade"
     }
   ]
 }

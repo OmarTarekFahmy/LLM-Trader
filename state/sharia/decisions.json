@@ -2999,6 +2999,55 @@
       "navAfter": 98736.74,
       "cash": 70246.59,
       "error": null
+    },
+    {
+      "cycleId": "20260924T1404-sharia-trade",
+      "timestamp": "2026-09-24T14:04:28.263+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 53244 (5d -2.0%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 remains soft, with a 2.0% five-day decline and broad sector weakness. ETEL is the clear exception, showing strong momentum and holding at its 20-day high, while ORWE is consolidating after a recent advance. With cash already far above the minimum buffer and no confirmed reversal setup elsewhere, there is no compelling new entry this cycle.",
+      "llmRaw": "{\"marketRead\":\"EGX30 remains soft, with a 2.0% five-day decline and broad sector weakness. ETEL is the clear exception, showing strong momentum and holding at its 20-day high, while ORWE is consolidating after a recent advance. With cash already far above the minimum buffer and no confirmed reversal setup elsewhere, there is no compelling new entry this cycle.\",\"actions\":[{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Momentum remains intact with a 5.0% three-day and 19.0% 20-day gain; hold for the swing target while monitoring for a momentum break.\"},{\"ticker\":\"ORWE\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"The position is only mildly underwater and remains above its 20-day low after a recent advance; hold pending either a confirmed bounce or a stop-level break.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Momentum remains intact with a 5.0% three-day and 19.0% 20-day gain; hold for the swing target while monitoring for a momentum break."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "The position is only mildly underwater and remains above its 20-day low after a recent advance; hold pending either a confirmed bounce or a stop-level break."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 98736.74,
+      "navAfter": 98736.74,
+      "cash": 70246.59,
+      "error": null
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 21416.16,
+  "cash": 21477.13,
   "holdings": [
     {
       "ticker": "EXPA",
@@ -27,25 +27,25 @@
     },
     {
       "ticker": "GBCO",
-      "qty": 480,
+      "qty": 470,
       "avgCost": 31.14,
       "openedAt": "2026-09-23T13:59:00.283+03:00"
-    },
-    {
-      "ticker": "EGTS",
-      "qty": 700,
-      "avgCost": 18.73,
-      "openedAt": "2026-09-23T14:10:38.399+03:00"
     },
     {
       "ticker": "ETEL",
       "qty": 100,
       "avgCost": 138.2,
       "openedAt": "2026-09-24T13:53:08.528+03:00"
+    },
+    {
+      "ticker": "OIH",
+      "qty": 6000,
+      "avgCost": 2.17,
+      "openedAt": "2026-09-24T14:04:28.263+03:00"
     }
   ],
-  "nav": 98666.56,
+  "nav": 98640.43,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-24T13:53:08.528+03:00"
+  "lastUpdated": "2026-09-24T14:04:28.263+03:00"
 }
