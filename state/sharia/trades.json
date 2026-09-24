@@ -519,6 +519,32 @@
       "resultingCash": 70679.8,
       "resultingNav": 98986.54,
       "cycleId": "20260923T1359-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "ticker": "AMOC",
+      "action": "sell",
+      "qty": 1000,
+      "price": 13.399999618530273,
+      "fees": 13.4,
+      "grossValue": 13400,
+      "netCashDelta": 13386.6,
+      "resultingCash": 84066.4,
+      "resultingNav": 98750.55,
+      "cycleId": "20260924T1353-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 100,
+      "price": 138.05999755859375,
+      "fees": 13.81,
+      "grossValue": 13806,
+      "netCashDelta": -13819.81,
+      "resultingCash": 70246.59,
+      "resultingNav": 98736.74,
+      "cycleId": "20260924T1353-sharia-trade"
     }
   ]
 }

@@ -2921,6 +2921,84 @@
       "navAfter": 98986.54,
       "cash": 70679.8,
       "error": null
+    },
+    {
+      "cycleId": "20260924T1353-sharia-trade",
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 4/25 up over 5d; EGX30 53178 (5d -2.0%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains soft, with a 5-day decline of 2% and broad sector weakness. Communications is the clear exception, led by ETEL at a 20-day high with strong momentum. I will cut the weakening AMOC swing, hold ORWE through a modest pullback, and take a small ETEL position while preserving substantial cash.",
+      "llmRaw": "{\"marketRead\":\"The EGX30 remains soft, with a 5-day decline of 2% and broad sector weakness. Communications is the clear exception, led by ETEL at a 20-day high with strong momentum. I will cut the weakening AMOC swing, hold ORWE through a modest pullback, and take a small ETEL position while preserving substantial cash.\",\"actions\":[{\"ticker\":\"AMOC\",\"action\":\"sell\",\"quantity\":1000,\"rationale\":\"Exit after a failed advance: AMOC is down 6.9% from its 20-day high, has rolled over recently, and carries elevated volatility. The -2.5% unrealized loss is approaching the loss-control zone.\"},{\"ticker\":\"ORWE\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Hold with a small unrealized loss; the pullback remains within an otherwise positive 20-day trend, and the stock is still above its 20-day low.\"},{\"ticker\":\"ETEL\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Initiate a small momentum position in the strongest trend: ETEL is at its 20-day high, up 19% over 20 days and 5% over 3 days. The position is sized below the 15% NAV limit.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "quantity": 1000,
+          "rationale": "Exit after a failed advance: AMOC is down 6.9% from its 20-day high, has rolled over recently, and carries elevated volatility. The -2.5% unrealized loss is approaching the loss-control zone."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Hold with a small unrealized loss; the pullback remains within an otherwise positive 20-day trend, and the stock is still above its 20-day low."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Initiate a small momentum position in the strongest trend: ETEL is at its 20-day high, up 19% over 20 days and 5% over 3 days. The position is sized below the 15% NAV limit."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "sell",
+          "qty": 1000,
+          "price": 13.399999618530273,
+          "fees": 13.4
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 100,
+          "price": 138.05999755859375,
+          "fees": 13.81
+        }
+      ],
+      "navBefore": 98763.95,
+      "navAfter": 98736.74,
+      "cash": 70246.59,
+      "error": null
     }
   ]
 }

@@ -3565,6 +3565,91 @@
       "navAfter": 100104.34,
       "cash": 7693.14,
       "error": null
+    },
+    {
+      "cycleId": "20260924T1353-swing-trade",
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 23/91 up over 5d; EGX30 53178 (5d -2.3%)",
+      "llmProvider": "openrouter",
+      "llmModel": "nex-agi/nex-n2.5-mini:free",
+      "dataProvider": "yahoo",
+      "marketRead": "Cautious, with weak EGX30 momentum and pressure in Real Estate, Healthcare, and Basic Materials. Communications is the strongest relative sector; ETEL is extending a +19% 20-day move at a 20-day high on manageable volatility. Rotate from deteriorating MFPC and a failed NIPH bounce into ETEL while retaining ample cash.",
+      "llmRaw": "{\"marketRead\":\"Cautious, with weak EGX30 momentum and pressure in Real Estate, Healthcare, and Basic Materials. Communications is the strongest relative sector; ETEL is extending a +19% 20-day move at a 20-day high on manageable volatility. Rotate from deteriorating MFPC and a failed NIPH bounce into ETEL while retaining ample cash.\",\"actions\":[{\"ticker\":\"MFPC\",\"action\":\"sell\",\"quantity\":300,\"rationale\":\"The prior uptrend is deteriorating: -3% today, -4.8% over three days, and a move back toward recent lows. Exit before the loss reaches the -3.5% trading stop.\"},{\"ticker\":\"NIPH\",\"action\":\"sell\",\"quantity\":40,\"rationale\":\"The sharp three-day bounce has failed to hold, while Healthcare remains weak and the stock is still 10.6% below its 20-day level. Cut the unconfirmed rebound setup.\"},{\"ticker\":\"ETEL\",\"action\":\"buy\",\"quantity\":100,\"rationale\":\"Best relative momentum in the snapshot, with +5% over three days, +9.6% over ten days, and +19% over twenty days. The pullback-resistant move above the 20-day high offers a defined swing setup targeting roughly 2.5% upside.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "MFPC",
+          "action": "sell",
+          "quantity": 300,
+          "rationale": "The prior uptrend is deteriorating: -3% today, -4.8% over three days, and a move back toward recent lows. Exit before the loss reaches the -3.5% trading stop."
+        },
+        {
+          "ticker": "NIPH",
+          "action": "sell",
+          "quantity": 40,
+          "rationale": "The sharp three-day bounce has failed to hold, while Healthcare remains weak and the stock is still 10.6% below its 20-day level. Cut the unconfirmed rebound setup."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "quantity": 100,
+          "rationale": "Best relative momentum in the snapshot, with +5% over three days, +9.6% over ten days, and +19% over twenty days. The pullback-resistant move above the 20-day high offers a defined swing setup targeting roughly 2.5% upside."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "MFPC",
+          "action": "sell",
+          "proposedQty": 300,
+          "finalQty": 300,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "NIPH",
+          "action": "sell",
+          "proposedQty": 40,
+          "finalQty": 40,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "buy booked"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "MFPC",
+          "action": "sell",
+          "qty": 300,
+          "price": 47.5,
+          "fees": 14.25
+        },
+        {
+          "ticker": "NIPH",
+          "action": "sell",
+          "qty": 40,
+          "price": 333.010009765625,
+          "fees": 13.32
+        },
+        {
+          "ticker": "ETEL",
+          "action": "buy",
+          "qty": 100,
+          "price": 138.05999755859375,
+          "fees": 13.81
+        }
+      ],
+      "navBefore": 98707.94,
+      "navAfter": 98666.56,
+      "cash": 21416.16,
+      "error": null
     }
   ]
 }

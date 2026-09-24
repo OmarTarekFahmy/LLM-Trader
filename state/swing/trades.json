@@ -714,6 +714,45 @@
       "resultingCash": 7693.14,
       "resultingNav": 100104.34,
       "cycleId": "20260923T1410-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "ticker": "MFPC",
+      "action": "sell",
+      "qty": 300,
+      "price": 47.5,
+      "fees": 14.25,
+      "grossValue": 14250,
+      "netCashDelta": 14235.75,
+      "resultingCash": 21928.89,
+      "resultingNav": 98693.69,
+      "cycleId": "20260924T1353-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "ticker": "NIPH",
+      "action": "sell",
+      "qty": 40,
+      "price": 333.010009765625,
+      "fees": 13.32,
+      "grossValue": 13320.4,
+      "netCashDelta": 13307.08,
+      "resultingCash": 35235.97,
+      "resultingNav": 98680.37,
+      "cycleId": "20260924T1353-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-24T13:53:08.528+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 100,
+      "price": 138.05999755859375,
+      "fees": 13.81,
+      "grossValue": 13806,
+      "netCashDelta": -13819.81,
+      "resultingCash": 21416.16,
+      "resultingNav": 98666.56,
+      "cycleId": "20260924T1353-swing-trade"
     }
   ]
 }
