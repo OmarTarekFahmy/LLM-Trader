@@ -545,6 +545,19 @@
       "resultingCash": 70246.59,
       "resultingNav": 98736.74,
       "cycleId": "20260924T1353-sharia-trade"
+    },
+    {
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "ticker": "PHDC",
+      "action": "buy",
+      "qty": 1000,
+      "price": 13.5,
+      "fees": 13.5,
+      "grossValue": 13500,
+      "netCashDelta": -13513.5,
+      "resultingCash": 56733.09,
+      "resultingNav": 98217.76,
+      "cycleId": "20260927T1408-sharia-trade"
     }
   ]
 }

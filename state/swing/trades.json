@@ -792,6 +792,32 @@
       "resultingCash": 21477.13,
       "resultingNav": 98640.43,
       "cycleId": "20260924T1404-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "ticker": "SDTI",
+      "action": "sell",
+      "qty": 120,
+      "price": 79.98999786376953,
+      "fees": 9.6,
+      "grossValue": 9598.8,
+      "netCashDelta": 9589.2,
+      "resultingCash": 31066.33,
+      "resultingNav": 97944.03,
+      "cycleId": "20260927T1408-swing-trade"
+    },
+    {
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "ticker": "EGCH",
+      "action": "buy",
+      "qty": 700,
+      "price": 14.199999809265137,
+      "fees": 9.94,
+      "grossValue": 9940,
+      "netCashDelta": -9949.94,
+      "resultingCash": 21116.39,
+      "resultingNav": 97934.09,
+      "cycleId": "20260927T1408-swing-trade"
     }
   ]
 }

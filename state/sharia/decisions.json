@@ -3181,6 +3181,77 @@
       "navAfter": 98736.74,
       "cash": 70246.59,
       "error": null
+    },
+    {
+      "cycleId": "20260927T1408-sharia-trade",
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 53087 (5d -4.6%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX continues to face broad-based selling pressure with the EGX30 down 4.6% over five sessions and numerous benchmark components sliding to fresh 20-day lows. Defensive posture is warranted, though isolated pockets of relative strength are diverging positively from the index. We maintain tight risk limits on existing positions while deploying modest capital into names displaying clear resilient price action.",
+      "llmRaw": "{\n  \"marketRead\": \"EGX continues to face broad-based selling pressure with the EGX30 down 4.6% over five sessions and numerous benchmark components sliding to fresh 20-day lows. Defensive posture is warranted, though isolated pockets of relative strength are diverging positively from the index. We maintain tight risk limits on existing positions while deploying modest capital into names displaying clear resilient price action.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ORWE\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Unrealized loss stands at -2.9%, approaching our -3.5% soft cutoff. Holding to see if the 26.80 EGP swing support zone holds, but prepared to cut quickly if breakdown continues.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Retreating 1.5% today represents a mild pullback within an intact broader uptrend (+17.2% over 20 days). Unrealized loss of -1.6% remains well within standard swing risk tolerance.\"\n    },\n    {\n      \"ticker\": \"PHDC\",\n      \"action\": \"buy\",\n      \"quantity\": 1000,\n      \"rationale\": \"Demonstrating clear relative strength with four consecutive higher closes (bouncing from 13.20 to 13.50 EGP) despite severe broad-market weakness. Position size of 13,500 EGP represents ~13.7% of NAV, safely below policy ceilings.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Unrealized loss stands at -2.9%, approaching our -3.5% soft cutoff. Holding to see if the 26.80 EGP swing support zone holds, but prepared to cut quickly if breakdown continues."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Retreating 1.5% today represents a mild pullback within an intact broader uptrend (+17.2% over 20 days). Unrealized loss of -1.6% remains well within standard swing risk tolerance."
+        },
+        {
+          "ticker": "PHDC",
+          "action": "buy",
+          "quantity": 1000,
+          "rationale": "Demonstrating clear relative strength with four consecutive higher closes (bouncing from 13.20 to 13.50 EGP) despite severe broad-market weakness. Position size of 13,500 EGP represents ~13.7% of NAV, safely below policy ceilings."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "PHDC",
+          "action": "buy",
+          "proposedQty": 1000,
+          "finalQty": 1000,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "PHDC",
+          "action": "buy",
+          "qty": 1000,
+          "price": 13.5,
+          "fees": 13.5
+        }
+      ],
+      "navBefore": 98231.26,
+      "navAfter": 98217.76,
+      "cash": 56733.09,
+      "error": "openrouter: openrouter: No endpoints found for nex-agi/nex-n2.5-mini:free."
     }
   ]
 }

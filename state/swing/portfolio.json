@@ -1,5 +1,5 @@
 {
-  "cash": 21477.13,
+  "cash": 21116.39,
   "holdings": [
     {
       "ticker": "EXPA",
@@ -20,12 +20,6 @@
       "openedAt": "2026-09-23T13:34:20.986+03:00"
     },
     {
-      "ticker": "SDTI",
-      "qty": 120,
-      "avgCost": 77.66,
-      "openedAt": "2026-09-23T13:34:20.986+03:00"
-    },
-    {
       "ticker": "GBCO",
       "qty": 470,
       "avgCost": 31.14,
@@ -42,10 +36,16 @@
       "qty": 6000,
       "avgCost": 2.17,
       "openedAt": "2026-09-24T14:04:28.263+03:00"
+    },
+    {
+      "ticker": "EGCH",
+      "qty": 700,
+      "avgCost": 14.21,
+      "openedAt": "2026-09-27T14:08:39.695+03:00"
     }
   ],
-  "nav": 98640.43,
+  "nav": 97934.09,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-09-24T15:29:38.937+03:00"
+  "lastUpdated": "2026-09-27T14:08:39.695+03:00"
 }

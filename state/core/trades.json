@@ -64,6 +64,32 @@
       "resultingCash": 60158.97,
       "resultingNav": 102040.97,
       "cycleId": "20260922T1354-core-trade"
+    },
+    {
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "ticker": "ETEL",
+      "action": "buy",
+      "qty": 55,
+      "price": 135.99000549316406,
+      "fees": 7.48,
+      "grossValue": 7479.45,
+      "netCashDelta": -7486.93,
+      "resultingCash": 52672.04,
+      "resultingNav": 100621.29,
+      "cycleId": "20260927T1408-core-trade"
+    },
+    {
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "ticker": "COMI",
+      "action": "buy",
+      "qty": 70,
+      "price": 128.1999969482422,
+      "fees": 8.97,
+      "grossValue": 8974,
+      "netCashDelta": -8982.97,
+      "resultingCash": 43689.07,
+      "resultingNav": 100612.32,
+      "cycleId": "20260927T1408-core-trade"
     }
   ]
 }

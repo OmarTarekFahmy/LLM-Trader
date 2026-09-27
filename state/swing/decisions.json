@@ -3938,6 +3938,154 @@
       "navAfter": 98640.43,
       "cash": 21477.13,
       "error": null
+    },
+    {
+      "cycleId": "20260927T1408-swing-trade",
+      "timestamp": "2026-09-27T14:08:39.695+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 9/91 up over 5d; EGX30 53087 (5d -5.4%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX continues to face broad-based selling pressure with the EGX30 down 5.4% over 5 days, led lower by real estate and basic materials. Amid widespread weakness, selective pockets of momentum and relative strength remain resilient. We capitalize on reaching our +3.0% swing profit target on SDTI to bank gains and rotate partially into EGCH which is bucking the market trend.",
+      "llmRaw": "{\"marketRead\":\"The EGX continues to face broad-based selling pressure with the EGX30 down 5.4% over 5 days, led lower by real estate and basic materials. Amid widespread weakness, selective pockets of momentum and relative strength remain resilient. We capitalize on reaching our +3.0% swing profit target on SDTI to bank gains and rotate partially into EGCH which is bucking the market trend.\",\"actions\":[{\"ticker\":\"SDTI\",\"action\":\"sell\",\"quantity\":120,\"rationale\":\"Hits swing target at +3.0% unrealized gain and trading at 20-day highs while broader market softens; taking profits.\"},{\"ticker\":\"EGCH\",\"action\":\"buy\",\"quantity\":700,\"rationale\":\"Demonstrates clear relative strength against a down tape, up +2.2% on the session and +5.1% over 20 days with consolidating upside momentum.\"},{\"ticker\":\"EXPA\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Holding near breakeven (-1.1%), resilient versus broader financial sector drawdown.\"},{\"ticker\":\"ALCN\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Loss is minor (-1.4%) and still in multi-week consolidation (+10.7% over 20 days); holding within risk parameters.\"},{\"ticker\":\"CCAP\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Flattish (-0.7%) and maintaining strong medium-term gains (+23.3% 20d); letting the swing develop.\"},{\"ticker\":\"GBCO\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Down -2.3%, still within tolerable swing boundaries (-3.5% stop threshold); watching closely.\"},{\"ticker\":\"ETEL\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Mild pullback (-1.6%) after entering on fresh momentum; holding above primary support.\"},{\"ticker\":\"OIH\",\"action\":\"hold\",\"quantity\":0,\"rationale\":\"Retraced -2.8% towards entry level; holding just above the -3.5% stop limit.\"}]}",
+      "proposedActions": [
+        {
+          "ticker": "SDTI",
+          "action": "sell",
+          "quantity": 120,
+          "rationale": "Hits swing target at +3.0% unrealized gain and trading at 20-day highs while broader market softens; taking profits."
+        },
+        {
+          "ticker": "EGCH",
+          "action": "buy",
+          "quantity": 700,
+          "rationale": "Demonstrates clear relative strength against a down tape, up +2.2% on the session and +5.1% over 20 days with consolidating upside momentum."
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding near breakeven (-1.1%), resilient versus broader financial sector drawdown."
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Loss is minor (-1.4%) and still in multi-week consolidation (+10.7% over 20 days); holding within risk parameters."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Flattish (-0.7%) and maintaining strong medium-term gains (+23.3% 20d); letting the swing develop."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down -2.3%, still within tolerable swing boundaries (-3.5% stop threshold); watching closely."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Mild pullback (-1.6%) after entering on fresh momentum; holding above primary support."
+        },
+        {
+          "ticker": "OIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Retraced -2.8% towards entry level; holding just above the -3.5% stop limit."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "SDTI",
+          "action": "sell",
+          "proposedQty": 120,
+          "finalQty": 120,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EGCH",
+          "action": "buy",
+          "proposedQty": 700,
+          "finalQty": 700,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "EXPA",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ALCN",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "OIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "SDTI",
+          "action": "sell",
+          "qty": 120,
+          "price": 79.98999786376953,
+          "fees": 9.6
+        },
+        {
+          "ticker": "EGCH",
+          "action": "buy",
+          "qty": 700,
+          "price": 14.199999809265137,
+          "fees": 9.94
+        }
+      ],
+      "navBefore": 97953.63,
+      "navAfter": 97934.09,
+      "cash": 21116.39,
+      "error": "openrouter: openrouter: No endpoints found for nex-agi/nex-n2.5-mini:free."
     }
   ]
 }
