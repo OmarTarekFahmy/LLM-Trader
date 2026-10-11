@@ -3784,6 +3784,25 @@
       "navAfter": 98928.71,
       "cash": 56733.09,
       "error": null
+    },
+    {
+      "cycleId": "20261011T1526-sharia-eod",
+      "timestamp": "2026-10-11T15:26:27.561+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "25 quoted; 21/25 up over 5d; EGX30 52207 (5d 4.7%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 98929 EGP (-1.07% since inception), cash 56733, 3 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 98928.71,
+      "navAfter": 98928.71,
+      "cash": 56733.09,
+      "error": null
     }
   ]
 }
