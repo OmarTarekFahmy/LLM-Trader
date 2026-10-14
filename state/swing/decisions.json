@@ -4778,6 +4778,98 @@
       "navAfter": 89647.58,
       "cash": 48897.58,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261014T1412-swing-trade",
+      "timestamp": "2026-10-14T14:12:24.379+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 2/91 up over 5d; EGX30 51532 (5d -8.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 continues to show severe weakness, down 8.8% over 5 days and 14.2% over 20 days, with broad-based selling across all key sectors. In this highly defensive and volatile environment, we are holding our profitable position in ETEL, retaining our resilient holdings, and cutting positions that are approaching or exceeding our stop-loss thresholds.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 continues to show severe weakness, down 8.8% over 5 days and 14.2% over 20 days, with broad-based selling across all key sectors. In this highly defensive and volatile environment, we are holding our profitable position in ETEL, retaining our resilient holdings, and cutting positions that are approaching or exceeding our stop-loss thresholds.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ALCN\",\n      \"action\": \"sell\",\n      \"quantity\": 100,\n      \"rationale\": \"Cutting position as unrealized loss reaches -2.9% and downward momentum persists in industrials.\"\n    },\n    {\n      \"ticker\": \"CCAP\",\n      \"action\": \"sell\",\n      \"quantity\": 1400,\n      \"rationale\": \"Cutting loser rapidly as unrealized loss has deepened to -12.3%, breaching risk management limits.\"\n    },\n    {\n      \"ticker\": \"GBCO\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Unrealized loss is at -4.3%; holding to give it a chance to stabilize near support before taking a stop.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Strong relative strength with +6.2% unrealized gain and positive 20d momentum. Holding for further upside.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ALCN",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Cutting position as unrealized loss reaches -2.9% and downward momentum persists in industrials."
+        },
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "quantity": 1400,
+          "rationale": "Cutting loser rapidly as unrealized loss has deepened to -12.3%, breaching risk management limits."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Unrealized loss is at -4.3%; holding to give it a chance to stabilize near support before taking a stop."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong relative strength with +6.2% unrealized gain and positive 20d momentum. Holding for further upside."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ALCN",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "proposedQty": 1400,
+          "finalQty": 1400,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ALCN",
+          "action": "sell",
+          "qty": 100,
+          "price": 33,
+          "fees": 3.3
+        },
+        {
+          "ticker": "CCAP",
+          "action": "sell",
+          "qty": 1400,
+          "price": 6.260000228881836,
+          "fees": 8.76
+        }
+      ],
+      "navBefore": 89647.58,
+      "navAfter": 89635.52,
+      "cash": 60949.52,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

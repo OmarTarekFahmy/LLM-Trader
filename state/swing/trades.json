@@ -857,6 +857,32 @@
       "resultingCash": 48897.58,
       "resultingNav": 89647.58,
       "cycleId": "20261014T1358-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-14T14:12:24.379+03:00",
+      "ticker": "ALCN",
+      "action": "sell",
+      "qty": 100,
+      "price": 33,
+      "fees": 3.3,
+      "grossValue": 3300,
+      "netCashDelta": 3296.7,
+      "resultingCash": 52194.28,
+      "resultingNav": 89644.28,
+      "cycleId": "20261014T1412-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-14T14:12:24.379+03:00",
+      "ticker": "CCAP",
+      "action": "sell",
+      "qty": 1400,
+      "price": 6.260000228881836,
+      "fees": 8.76,
+      "grossValue": 8764,
+      "netCashDelta": 8755.24,
+      "resultingCash": 60949.52,
+      "resultingNav": 89635.52,
+      "cycleId": "20261014T1412-swing-trade"
     }
   ]
 }
