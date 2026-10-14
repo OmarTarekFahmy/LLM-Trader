@@ -1,12 +1,6 @@
 {
-  "cash": 21116.39,
+  "cash": 48897.58,
   "holdings": [
-    {
-      "ticker": "EXPA",
-      "qty": 600,
-      "avgCost": 21.99,
-      "openedAt": "2026-09-22T13:54:32.230+03:00"
-    },
     {
       "ticker": "ALCN",
       "qty": 100,
@@ -30,22 +24,10 @@
       "qty": 100,
       "avgCost": 138.2,
       "openedAt": "2026-09-24T13:53:08.528+03:00"
-    },
-    {
-      "ticker": "OIH",
-      "qty": 6000,
-      "avgCost": 2.17,
-      "openedAt": "2026-09-24T14:04:28.263+03:00"
-    },
-    {
-      "ticker": "EGCH",
-      "qty": 700,
-      "avgCost": 14.21,
-      "openedAt": "2026-09-27T14:08:39.695+03:00"
     }
   ],
-  "nav": 93238.09,
+  "nav": 89647.58,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-11T15:26:27.561+03:00"
+  "lastUpdated": "2026-10-14T13:58:15.170+03:00"
 }

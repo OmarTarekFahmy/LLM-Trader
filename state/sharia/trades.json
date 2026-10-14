@@ -558,6 +558,32 @@
       "resultingCash": 56733.09,
       "resultingNav": 98217.76,
       "cycleId": "20260927T1408-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-14T13:58:15.170+03:00",
+      "ticker": "ORWE",
+      "action": "sell",
+      "qty": 533,
+      "price": 26.700000762939453,
+      "fees": 14.23,
+      "grossValue": 14231.1,
+      "netCashDelta": 14216.87,
+      "resultingCash": 70949.96,
+      "resultingNav": 98419.96,
+      "cycleId": "20261014T1358-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-14T13:58:15.170+03:00",
+      "ticker": "PHDC",
+      "action": "sell",
+      "qty": 1000,
+      "price": 12.789999961853027,
+      "fees": 12.79,
+      "grossValue": 12790,
+      "netCashDelta": 12777.21,
+      "resultingCash": 83727.17,
+      "resultingNav": 98407.17,
+      "cycleId": "20261014T1358-sharia-trade"
     }
   ]
 }

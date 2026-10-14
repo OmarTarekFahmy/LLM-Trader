@@ -818,6 +818,45 @@
       "resultingCash": 21116.39,
       "resultingNav": 97934.09,
       "cycleId": "20260927T1408-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-14T13:58:15.170+03:00",
+      "ticker": "EXPA",
+      "action": "sell",
+      "qty": 600,
+      "price": 14.390000343322754,
+      "fees": 8.63,
+      "grossValue": 8634,
+      "netCashDelta": 8625.37,
+      "resultingCash": 29741.76,
+      "resultingNav": 89666.76,
+      "cycleId": "20261014T1358-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-14T13:58:15.170+03:00",
+      "ticker": "OIH",
+      "action": "sell",
+      "qty": 6000,
+      "price": 1.7899999618530273,
+      "fees": 10.74,
+      "grossValue": 10740,
+      "netCashDelta": 10729.26,
+      "resultingCash": 40471.02,
+      "resultingNav": 89656.02,
+      "cycleId": "20261014T1358-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-14T13:58:15.170+03:00",
+      "ticker": "EGCH",
+      "action": "sell",
+      "qty": 700,
+      "price": 12.050000190734863,
+      "fees": 8.44,
+      "grossValue": 8435,
+      "netCashDelta": 8426.56,
+      "resultingCash": 48897.58,
+      "resultingNav": 89647.58,
+      "cycleId": "20261014T1358-swing-trade"
     }
   ]
 }
