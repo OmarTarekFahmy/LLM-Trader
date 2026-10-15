@@ -1,15 +1,21 @@
 {
-  "cash": 83727.17,
+  "cash": 74365.82,
   "holdings": [
     {
       "ticker": "ETEL",
       "qty": 100,
       "avgCost": 138.2,
       "openedAt": "2026-09-24T13:53:08.528+03:00"
+    },
+    {
+      "ticker": "ADIB",
+      "qty": 200,
+      "avgCost": 46.81,
+      "openedAt": "2026-10-15T13:39:28.474+03:00"
     }
   ],
-  "nav": 98407.17,
+  "nav": 98217.82,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-14T15:29:41.240+03:00"
+  "lastUpdated": "2026-10-15T13:39:28.474+03:00"
 }

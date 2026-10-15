@@ -4049,6 +4049,63 @@
       "navAfter": 98407.17,
       "cash": 83727.17,
       "error": null
+    },
+    {
+      "cycleId": "20261015T1339-sharia-trade",
+      "timestamp": "2026-10-15T13:39:28.474+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 51972 (5d -4.5%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader Egyptian market remains under pressure with the EGX30 down significantly over 5 and 20 days. However, select names show short-term intraday strength and bounce potential after recent pullbacks, offering selective swing opportunities.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader Egyptian market remains under pressure with the EGX30 down significantly over 5 and 20 days. However, select names show short-term intraday strength and bounce potential after recent pullbacks, offering selective swing opportunities.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up nearly 5% and approaching our soft take-profit target, but holding as momentum remains stable and it is our best performer.\"\n    },\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"buy\",\n      \"quantity\": 200,\n      \"rationale\": \"Showing strong intraday momentum with a 5.1% gain on the day, recovering from recent pullbacks, and presenting a solid swing setup.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up nearly 5% and approaching our soft take-profit target, but holding as momentum remains stable and it is our best performer."
+        },
+        {
+          "ticker": "ADIB",
+          "action": "buy",
+          "quantity": 200,
+          "rationale": "Showing strong intraday momentum with a 5.1% gain on the day, recovering from recent pullbacks, and presenting a solid swing setup."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ADIB",
+          "action": "buy",
+          "proposedQty": 200,
+          "finalQty": 200,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ADIB",
+          "action": "buy",
+          "qty": 200,
+          "price": 46.7599983215332,
+          "fees": 9.35
+        }
+      ],
+      "navBefore": 98227.17,
+      "navAfter": 98217.82,
+      "cash": 74365.82,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
