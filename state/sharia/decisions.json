@@ -4155,6 +4155,55 @@
       "navAfter": 98217.82,
       "cash": 74365.82,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261015T1407-sharia-trade",
+      "timestamp": "2026-10-15T14:07:28.503+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 52111 (5d -4.5%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader Egyptian market continues to experience a downtrend, with the EGX30 down significantly over 5 and 20 days. Despite the weak macro backdrop, we are managing our existing positions actively, holding our strong performer ETEL as it nears our take-profit target, and holding our newly opened ADIB position to let it develop.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader Egyptian market continues to experience a downtrend, with the EGX30 down significantly over 5 and 20 days. Despite the weak macro backdrop, we are managing our existing positions actively, holding our strong performer ETEL as it nears our take-profit target, and holding our newly opened ADIB position to let it develop.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up +4.9%, approaching our soft target of +2.5% to +3% profit taking. Holding for now to let momentum run a bit further.\"\n    },\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Newly opened position showing slight intraday stability following a bounce off recent lows. Holding to give the swing trade time to work.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up +4.9%, approaching our soft target of +2.5% to +3% profit taking. Holding for now to let momentum run a bit further."
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Newly opened position showing slight intraday stability following a bounce off recent lows. Holding to give the swing trade time to work."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 98217.82,
+      "navAfter": 98217.82,
+      "cash": 74365.82,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
