@@ -636,6 +636,32 @@
       "resultingCash": 64227.14,
       "resultingNav": 98270.64,
       "cycleId": "20261018T1311-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:22:26.848+03:00",
+      "ticker": "LCSW",
+      "action": "buy",
+      "qty": 350,
+      "price": 34,
+      "fees": 11.9,
+      "grossValue": 11900,
+      "netCashDelta": -11911.9,
+      "resultingCash": 52315.24,
+      "resultingNav": 98258.74,
+      "cycleId": "20261018T1322-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:22:26.848+03:00",
+      "ticker": "OCDI",
+      "action": "buy",
+      "qty": 450,
+      "price": 25.899999618530273,
+      "fees": 11.66,
+      "grossValue": 11655,
+      "netCashDelta": -11666.66,
+      "resultingCash": 40648.58,
+      "resultingNav": 98247.08,
+      "cycleId": "20261018T1322-sharia-trade"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "cash": 64227.14,
+  "cash": 40648.58,
   "holdings": [
     {
       "ticker": "ADIB",
@@ -18,10 +18,22 @@
       "qty": 500,
       "avgCost": 24.36,
       "openedAt": "2026-10-18T13:11:03.865+03:00"
+    },
+    {
+      "ticker": "LCSW",
+      "qty": 350,
+      "avgCost": 34.03,
+      "openedAt": "2026-10-18T13:22:26.848+03:00"
+    },
+    {
+      "ticker": "OCDI",
+      "qty": 450,
+      "avgCost": 25.93,
+      "openedAt": "2026-10-18T13:22:26.848+03:00"
     }
   ],
-  "nav": 98270.64,
+  "nav": 98247.08,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-18T13:11:03.865+03:00"
+  "lastUpdated": "2026-10-18T13:22:26.848+03:00"
 }

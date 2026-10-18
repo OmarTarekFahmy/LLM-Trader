@@ -922,6 +922,32 @@
       "resultingCash": 49111.64,
       "resultingNav": 89924.64,
       "cycleId": "20261018T1311-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:22:26.848+03:00",
+      "ticker": "COMI",
+      "action": "buy",
+      "qty": 100,
+      "price": 125,
+      "fees": 12.5,
+      "grossValue": 12500,
+      "netCashDelta": -12512.5,
+      "resultingCash": 36599.14,
+      "resultingNav": 89912.14,
+      "cycleId": "20261018T1322-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:22:26.848+03:00",
+      "ticker": "EFIH",
+      "action": "buy",
+      "qty": 500,
+      "price": 24.34000015258789,
+      "fees": 12.17,
+      "grossValue": 12170,
+      "netCashDelta": -12182.17,
+      "resultingCash": 24416.97,
+      "resultingNav": 89899.97,
+      "cycleId": "20261018T1322-swing-trade"
     }
   ]
 }

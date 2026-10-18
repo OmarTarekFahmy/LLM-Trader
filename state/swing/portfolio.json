@@ -1,5 +1,5 @@
 {
-  "cash": 49111.64,
+  "cash": 24416.97,
   "holdings": [
     {
       "ticker": "GBCO",
@@ -18,10 +18,22 @@
       "qty": 150,
       "avgCost": 87.77,
       "openedAt": "2026-10-18T13:11:03.865+03:00"
+    },
+    {
+      "ticker": "COMI",
+      "qty": 100,
+      "avgCost": 125.13,
+      "openedAt": "2026-10-18T13:22:26.848+03:00"
+    },
+    {
+      "ticker": "EFIH",
+      "qty": 500,
+      "avgCost": 24.36,
+      "openedAt": "2026-10-18T13:22:26.848+03:00"
     }
   ],
-  "nav": 89924.64,
+  "nav": 89899.97,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-18T13:11:03.865+03:00"
+  "lastUpdated": "2026-10-18T13:22:26.848+03:00"
 }

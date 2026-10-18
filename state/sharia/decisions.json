@@ -4436,6 +4436,112 @@
       "navAfter": 98270.64,
       "cash": 64227.14,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261018T1322-sharia-trade",
+      "timestamp": "2026-10-18T13:22:26.848+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 51181 (5d -4.6%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 remains under pressure (-4.6% over 5 days), yet individual stocks exhibiting distinct relative strength and technical reversal patterns continue to present viable swing opportunities. Capital flows are favoring selective Industrials and bouncing Real Estate names while Basic Materials remain weak. We deploy surplus cash into strong momentum and reversal candidates while holding existing positions to mature.",
+      "llmRaw": "{\n  \"marketRead\": \"EGX30 remains under pressure (-4.6% over 5 days), yet individual stocks exhibiting distinct relative strength and technical reversal patterns continue to present viable swing opportunities. Capital flows are favoring selective Industrials and bouncing Real Estate names while Basic Materials remain weak. We deploy surplus cash into strong momentum and reversal candidates while holding existing positions to mature.\",\n  \"actions\": [\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"buy\",\n      \"quantity\": 350,\n      \"rationale\": \"Strong relative strength against a down market, gaining +6.3% over 3 days following a bounce from 31.98 with rising closing momentum.\"\n    },\n    {\n      \"ticker\": \"OCDI\",\n      \"action\": \"buy\",\n      \"quantity\": 450,\n      \"rationale\": \"Sharp rebound off the key 25.00 support level (+3.0% on the day) setting up a classic swing reversal toward previous resistance.\"\n    },\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is slightly positive (+0.4%) and consolidating constructively after bouncing off 44.50; giving the swing room toward the +2.5% target.\"\n    },\n    {\n      \"ticker\": \"ORWE\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position entered recently; displaying steady multi-day upside (+3.6% 3d) near 20-day highs. Holding for target.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Recently initiated position near flat; tech sector relative strength remains solid (+9.5% 10d). Holding to capture expected continuation.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "LCSW",
+          "action": "buy",
+          "quantity": 350,
+          "rationale": "Strong relative strength against a down market, gaining +6.3% over 3 days following a bounce from 31.98 with rising closing momentum."
+        },
+        {
+          "ticker": "OCDI",
+          "action": "buy",
+          "quantity": 450,
+          "rationale": "Sharp rebound off the key 25.00 support level (+3.0% on the day) setting up a classic swing reversal toward previous resistance."
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is slightly positive (+0.4%) and consolidating constructively after bouncing off 44.50; giving the swing room toward the +2.5% target."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position entered recently; displaying steady multi-day upside (+3.6% 3d) near 20-day highs. Holding for target."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recently initiated position near flat; tech sector relative strength remains solid (+9.5% 10d). Holding to capture expected continuation."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "LCSW",
+          "action": "buy",
+          "proposedQty": 350,
+          "finalQty": 350,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "OCDI",
+          "action": "buy",
+          "proposedQty": 450,
+          "finalQty": 450,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "LCSW",
+          "action": "buy",
+          "qty": 350,
+          "price": 34,
+          "fees": 11.9
+        },
+        {
+          "ticker": "OCDI",
+          "action": "buy",
+          "qty": 450,
+          "price": 25.899999618530273,
+          "fees": 11.66
+        }
+      ],
+      "navBefore": 98270.64,
+      "navAfter": 98247.08,
+      "cash": 40648.58,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
