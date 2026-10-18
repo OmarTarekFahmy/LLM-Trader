@@ -662,6 +662,19 @@
       "resultingCash": 40648.58,
       "resultingNav": 98247.08,
       "cycleId": "20261018T1322-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:35:32.430+03:00",
+      "ticker": "ETRS",
+      "action": "buy",
+      "qty": 1000,
+      "price": 10.609999656677246,
+      "fees": 10.61,
+      "grossValue": 10610,
+      "netCashDelta": -10620.61,
+      "resultingCash": 30027.97,
+      "resultingNav": 98236.47,
+      "cycleId": "20261018T1335-sharia-trade"
     }
   ]
 }

@@ -5488,6 +5488,97 @@
       "navAfter": 89899.97,
       "cash": 24416.97,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261018T1335-swing-trade",
+      "timestamp": "2026-10-18T13:35:32.430+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 6/91 up over 5d; EGX30 51060 (5d -5.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader EGX market continues to exhibit weakness and choppy consolidation on a 20-day horizon, but short-term momentum is improving in select liquid bellwethers and defensive plays. We have deployed our cash buffer into strong recent bounce candidates while strictly monitoring our existing positions for potential take-profit or stop-loss events.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader EGX market continues to exhibit weakness and choppy consolidation on a 20-day horizon, but short-term momentum is improving in select liquid bellwethers and defensive plays. We have deployed our cash buffer into strong recent bounce candidates while strictly monitoring our existing positions for potential take-profit or stop-loss events.\",\n  \"actions\": [\n    {\n      \"ticker\": \"GBCO\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is down a modest 1.1% after 17 trading days. Holding steady as it consolidates above recent lows with no immediate exit trigger breached.\"\n    },\n    {\n      \"ticker\": \"EAST\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Recently opened position showing strong immediate momentum (+5.5% 1-day). Holding to let the short-term swing run closer to the soft profit target.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Fresh position showing strong 1-day strength (+4.0%). Holding to capture further upside momentum off recent support.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Newly initiated bank heavyweight position showing positive short-term reversal signals. Retaining to capture financial sector rebound.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding recently acquired technology position which is exhibiting strong 10-day relative strength and positive momentum.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is down a modest 1.1% after 17 trading days. Holding steady as it consolidates above recent lows with no immediate exit trigger breached."
+        },
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recently opened position showing strong immediate momentum (+5.5% 1-day). Holding to let the short-term swing run closer to the soft profit target."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Fresh position showing strong 1-day strength (+4.0%). Holding to capture further upside momentum off recent support."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Newly initiated bank heavyweight position showing positive short-term reversal signals. Retaining to capture financial sector rebound."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding recently acquired technology position which is exhibiting strong 10-day relative strength and positive momentum."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 89899.97,
+      "navAfter": 89899.97,
+      "cash": 24416.97,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

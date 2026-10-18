@@ -1,8 +1,8 @@
 {
-  "asOf": "2026-10-18T10:22:58.773Z",
+  "asOf": "2026-10-18T10:36:04.359Z",
   "provider": "yahoo",
   "index": {
-    "level": 51181.30078125,
+    "level": 51060,
     "synthetic": false
   },
   "indexChange5dPct": -5.7654305222646105,
