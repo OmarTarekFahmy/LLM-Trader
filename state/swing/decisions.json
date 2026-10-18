@@ -5579,6 +5579,97 @@
       "navAfter": 89899.97,
       "cash": 24416.97,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261018T1348-swing-trade",
+      "timestamp": "2026-10-18T13:48:18.463+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 6/91 up over 5d; EGX30 50843 (5d -5.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 remains in an overall intermediate-term consolidation (-12.7% over 20d), but market internals are exhibiting resilient selective rebounds across heavyweight bellwethers. Having aggressively deployed capital into high-conviction swing reversals across diverse sectors (EAST, ABUK, COMI, EFIH) alongside holding GBCO through its recent bottoming bounce, the portfolio is well-positioned with 27% cash in reserve. We hold all current positions to allow these newly established swings room to mature toward profit targets.",
+      "llmRaw": "{\n  \"marketRead\": \"EGX30 remains in an overall intermediate-term consolidation (-12.7% over 20d), but market internals are exhibiting resilient selective rebounds across heavyweight bellwethers. Having aggressively deployed capital into high-conviction swing reversals across diverse sectors (EAST, ABUK, COMI, EFIH) alongside holding GBCO through its recent bottoming bounce, the portfolio is well-positioned with 27% cash in reserve. We hold all current positions to allow these newly established swings room to mature toward profit targets.\",\n  \"actions\": [\n    {\n      \"ticker\": \"GBCO\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"GBCO is rebounding well off recent support at 29.80, up +3.5% over 3 days to 30.80 and nearing cost basis (31.14). Holding to target a test of the 31.50-32.00 resistance zone.\"\n    },\n    {\n      \"ticker\": \"EAST\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position entered recently; showing strong momentum (+5.5% 1d, +7.2% 3d) breaking off multi-week lows. Holding for upside continuation toward the 30.00-30.50 target.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Fresh position holding firm after bouncing +4.0% off the 84.33 low. Fertilizer sector stabilizing nicely; giving the swing room to push toward 90.00+.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Key market bellwether recently initiated following a decisive turn (+2.5% 1d) off the 121.00 base. Holding for a target run toward 127.00-128.00.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Fintech leader showing consistent relative strength (+9.5% over 10d). Position just opened; holding to target resistance near the 25.00-25.50 recent highs.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "GBCO is rebounding well off recent support at 29.80, up +3.5% over 3 days to 30.80 and nearing cost basis (31.14). Holding to target a test of the 31.50-32.00 resistance zone."
+        },
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position entered recently; showing strong momentum (+5.5% 1d, +7.2% 3d) breaking off multi-week lows. Holding for upside continuation toward the 30.00-30.50 target."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Fresh position holding firm after bouncing +4.0% off the 84.33 low. Fertilizer sector stabilizing nicely; giving the swing room to push toward 90.00+."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Key market bellwether recently initiated following a decisive turn (+2.5% 1d) off the 121.00 base. Holding for a target run toward 127.00-128.00."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Fintech leader showing consistent relative strength (+9.5% over 10d). Position just opened; holding to target resistance near the 25.00-25.50 recent highs."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 89899.97,
+      "navAfter": 89899.97,
+      "cash": 24416.97,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
