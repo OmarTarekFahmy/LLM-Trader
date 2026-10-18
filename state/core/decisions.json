@@ -4077,6 +4077,97 @@
       "navAfter": 100073.97,
       "cash": 43689.07,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261018T1414-core-trade",
+      "timestamp": "2026-10-18T14:14:27.490+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 3/30 up over 5d; EGX30 50553 (5d -3.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 remains under consolidation and broad pressure, down 3.8% over the past five days and 10.4% over twenty days. While several heavy cyclical and materials names show short-term weakness, banking and defensive communications remain resilient. Maintaining substantial cash reserves provides flexibility until clear technical stabilization occurs.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 remains under consolidation and broad pressure, down 3.8% over the past five days and 10.4% over twenty days. While several heavy cyclical and materials names show short-term weakness, banking and defensive communications remain resilient. Maintaining substantial cash reserves provides flexibility until clear technical stabilization occurs.\",\n  \"actions\": [\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding position as Commercial International Bank demonstrates relative resilience and remains a foundational blue-chip banking core.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding Telecom Egypt to let gains compound, backed by steady telecom demand and solid multi-week relative outperformance.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding Abu Qir Fertilizers through broader basic materials volatility, supported by strong dollarized cash flow fundamentals.\"\n    },\n    {\n      \"ticker\": \"MFPC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding MOPCO as fertilizer demand remains structurally sound despite recent industry-wide cyclical pullback.\"\n    },\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding Alexandria Mineral Oils as prices base around recent lows; maintaining patient semi-long-term exposure.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding position as Commercial International Bank demonstrates relative resilience and remains a foundational blue-chip banking core."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding Telecom Egypt to let gains compound, backed by steady telecom demand and solid multi-week relative outperformance."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding Abu Qir Fertilizers through broader basic materials volatility, supported by strong dollarized cash flow fundamentals."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding MOPCO as fertilizer demand remains structurally sound despite recent industry-wide cyclical pullback."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding Alexandria Mineral Oils as prices base around recent lows; maintaining patient semi-long-term exposure."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 100073.97,
+      "navAfter": 100073.97,
+      "cash": 43689.07,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

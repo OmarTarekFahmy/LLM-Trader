@@ -4865,6 +4865,111 @@
       "navAfter": 98236.47,
       "cash": 30027.97,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261018T1414-sharia-trade",
+      "timestamp": "2026-10-18T14:14:27.490+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 50553 (5d -4.6%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader EGX30 index remains under corrective pressure, down 4.6% over 5 days and 11.3% over 20 days. Despite the weak macro backdrop, our recently opened swing positions are holding up well near their entry prices with minimal drawdown, demonstrating good relative strength. We will hold our current positions as they develop towards our profit targets.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader EGX30 index remains under corrective pressure, down 4.6% over 5 days and 11.3% over 20 days. Despite the weak macro backdrop, our recently opened swing positions are holding up well near their entry prices with minimal drawdown, demonstrating good relative strength. We will hold our current positions as they develop towards our profit targets.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up slightly (+0.4%) after 1 trading day. Holding to capture further upside toward target.\"\n    },\n    {\n      \"ticker\": \"ORWE\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding steady near cost with minor unrealized loss (-0.1%). Showing relative strength against the weak broader market.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Consolidating nicely right around entry price. Technology sector shows relative resilience.\"\n    },\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Upward momentum in industrials supports holding this recent breakout setup.\"\n    },\n    {\n      \"ticker\": \"OCDI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Real estate name showing good intraday bounce characteristics. Holding for swing continuation.\"\n    },\n    {\n      \"ticker\": \"ETRS\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Recently initiated position with strong 3d momentum (+5.5%). Maintaining exposure.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up slightly (+0.4%) after 1 trading day. Holding to capture further upside toward target."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding steady near cost with minor unrealized loss (-0.1%). Showing relative strength against the weak broader market."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Consolidating nicely right around entry price. Technology sector shows relative resilience."
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Upward momentum in industrials supports holding this recent breakout setup."
+        },
+        {
+          "ticker": "OCDI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Real estate name showing good intraday bounce characteristics. Holding for swing continuation."
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recently initiated position with strong 3d momentum (+5.5%). Maintaining exposure."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "OCDI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 98236.47,
+      "navAfter": 98236.47,
+      "cash": 30027.97,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
