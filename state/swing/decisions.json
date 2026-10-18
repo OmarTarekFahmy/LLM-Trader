@@ -5283,6 +5283,105 @@
       "navAfter": 89667.02,
       "cash": 60949.52,
       "error": null
+    },
+    {
+      "cycleId": "20261018T1311-swing-trade",
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 6/91 up over 5d; EGX30 51289 (5d -5.8%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "EGX30 remains under pressure on a multi-week basis (-12.7% over 20d), but selective names are carving out sharp technical bounces off short-term support. With several high-momentum turnaround setups emerging, we lock in solid profits on extended holdings and reallocate into fresh reversal opportunities while keeping ample cash reserves.",
+      "llmRaw": "{\n  \"marketRead\": \"EGX30 remains under pressure on a multi-week basis (-12.7% over 20d), but selective names are carving out sharp technical bounces off short-term support. With several high-momentum turnaround setups emerging, we lock in solid profits on extended holdings and reallocate into fresh reversal opportunities while keeping ample cash reserves.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"sell\",\n      \"quantity\": 100,\n      \"rationale\": \"Take profit on reaching +5.2% unrealized gain over a 16-day holding period, comfortably above our swing target of +2-3%.\"\n    },\n    {\n      \"ticker\": \"GBCO\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is recovering well (+3.5% over 3 days) towards entry cost; holding to target positive profit zone.\"\n    },\n    {\n      \"ticker\": \"EAST\",\n      \"action\": \"buy\",\n      \"quantity\": 450,\n      \"rationale\": \"Strong multi-day reversal off the 27.34 low (+7.2% 3d, +5.5% 1d) showing clear accumulation in Consumer Staples.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"buy\",\n      \"quantity\": 150,\n      \"rationale\": \"Clear bounce off recent 84.33 support with strong 1-day momentum (+4.0%), presenting an attractive swing setup back towards 90.00.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Take profit on reaching +5.2% unrealized gain over a 16-day holding period, comfortably above our swing target of +2-3%."
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is recovering well (+3.5% over 3 days) towards entry cost; holding to target positive profit zone."
+        },
+        {
+          "ticker": "EAST",
+          "action": "buy",
+          "quantity": 450,
+          "rationale": "Strong multi-day reversal off the 27.34 low (+7.2% 3d, +5.5% 1d) showing clear accumulation in Consumer Staples."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "quantity": 150,
+          "rationale": "Clear bounce off recent 84.33 support with strong 1-day momentum (+4.0%), presenting an attractive swing setup back towards 90.00."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "EAST",
+          "action": "buy",
+          "proposedQty": 450,
+          "finalQty": 450,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "proposedQty": 150,
+          "finalQty": 150,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "GBCO",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 100,
+          "price": 145.39999389648438,
+          "fees": 14.54
+        },
+        {
+          "ticker": "EAST",
+          "action": "buy",
+          "qty": 450,
+          "price": 29.299999237060547,
+          "fees": 13.19
+        },
+        {
+          "ticker": "ABUK",
+          "action": "buy",
+          "qty": 150,
+          "price": 87.68000030517578,
+          "fees": 13.15
+        }
+      ],
+      "navBefore": 89965.52,
+      "navAfter": 89924.64,
+      "cash": 49111.64,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

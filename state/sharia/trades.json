@@ -597,6 +597,45 @@
       "resultingCash": 74365.82,
       "resultingNav": 98217.82,
       "cycleId": "20261015T1339-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 100,
+      "price": 145.39999389648438,
+      "fees": 14.54,
+      "grossValue": 14540,
+      "netCashDelta": 14525.46,
+      "resultingCash": 88891.28,
+      "resultingNav": 98295.28,
+      "cycleId": "20261018T1311-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "ORWE",
+      "action": "buy",
+      "qty": 450,
+      "price": 27.709999084472656,
+      "fees": 12.47,
+      "grossValue": 12469.5,
+      "netCashDelta": -12481.97,
+      "resultingCash": 76409.31,
+      "resultingNav": 98282.81,
+      "cycleId": "20261018T1311-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "EFIH",
+      "action": "buy",
+      "qty": 500,
+      "price": 24.34000015258789,
+      "fees": 12.17,
+      "grossValue": 12170,
+      "netCashDelta": -12182.17,
+      "resultingCash": 64227.14,
+      "resultingNav": 98270.64,
+      "cycleId": "20261018T1311-sharia-trade"
     }
   ]
 }

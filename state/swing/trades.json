@@ -883,6 +883,45 @@
       "resultingCash": 60949.52,
       "resultingNav": 89635.52,
       "cycleId": "20261014T1412-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "ETEL",
+      "action": "sell",
+      "qty": 100,
+      "price": 145.39999389648438,
+      "fees": 14.54,
+      "grossValue": 14540,
+      "netCashDelta": 14525.46,
+      "resultingCash": 75474.98,
+      "resultingNav": 89950.98,
+      "cycleId": "20261018T1311-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "EAST",
+      "action": "buy",
+      "qty": 450,
+      "price": 29.299999237060547,
+      "fees": 13.19,
+      "grossValue": 13185,
+      "netCashDelta": -13198.19,
+      "resultingCash": 62276.79,
+      "resultingNav": 89937.79,
+      "cycleId": "20261018T1311-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "ticker": "ABUK",
+      "action": "buy",
+      "qty": 150,
+      "price": 87.68000030517578,
+      "fees": 13.15,
+      "grossValue": 13152,
+      "netCashDelta": -13165.15,
+      "resultingCash": 49111.64,
+      "resultingNav": 89924.64,
+      "cycleId": "20261018T1311-swing-trade"
     }
   ]
 }

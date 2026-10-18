@@ -1,5 +1,5 @@
 {
-  "cash": 60949.52,
+  "cash": 49111.64,
   "holdings": [
     {
       "ticker": "GBCO",
@@ -8,14 +8,20 @@
       "openedAt": "2026-09-23T13:59:00.283+03:00"
     },
     {
-      "ticker": "ETEL",
-      "qty": 100,
-      "avgCost": 138.2,
-      "openedAt": "2026-09-24T13:53:08.528+03:00"
+      "ticker": "EAST",
+      "qty": 450,
+      "avgCost": 29.33,
+      "openedAt": "2026-10-18T13:11:03.865+03:00"
+    },
+    {
+      "ticker": "ABUK",
+      "qty": 150,
+      "avgCost": 87.77,
+      "openedAt": "2026-10-18T13:11:03.865+03:00"
     }
   ],
-  "nav": 89667.02,
+  "nav": 89924.64,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-15T15:24:08.838+03:00"
+  "lastUpdated": "2026-10-18T13:11:03.865+03:00"
 }

@@ -4337,6 +4337,105 @@
       "navAfter": 98217.82,
       "cash": 74365.82,
       "error": null
+    },
+    {
+      "cycleId": "20261018T1311-sharia-trade",
+      "timestamp": "2026-10-18T13:11:03.865+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 1/25 up over 5d; EGX30 51289 (5d -4.6%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader EGX30 remains in a corrective phase (-4.6% over 5d), but distinct sector divergence is presenting attractive swing setups. Resilient names like ORWE and EFIH continue to demonstrate strong relative strength and upward momentum against the benchmark. We lock in solid gains on ETEL after achieving our target holding window and reallocate into fresh reversal leaders while preserving substantial cash reserves.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader EGX30 remains in a corrective phase (-4.6% over 5d), but distinct sector divergence is presenting attractive swing setups. Resilient names like ORWE and EFIH continue to demonstrate strong relative strength and upward momentum against the benchmark. We lock in solid gains on ETEL after achieving our target holding window and reallocate into fresh reversal leaders while preserving substantial cash reserves.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"sell\",\n      \"quantity\": 100,\n      \"rationale\": \"Take profit: Position is up +5.2%, surpassing the soft profit target (+2.5%) and held for 16 trading days. Securing gains as price consolidates below the 150 EGP resistance.\"\n    },\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding initial position entered last cycle; up +0.4% with a constructive 3-day recovery pattern (+2.4%) off recent support.\"\n    },\n    {\n      \"ticker\": \"ORWE\",\n      \"action\": \"buy\",\n      \"quantity\": 450,\n      \"rationale\": \"Exceptional relative strength in a weak tape, printing higher closes over the last 3 sessions (+3.6% 3d, +3.8% 10d) and pushing near 20-day highs.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"buy\",\n      \"quantity\": 500,\n      \"rationale\": \"Strong multi-day momentum (+9.5% 10d) rebounding cleanly off the 23.60 support level with solid daily follow-through (+2.1% 1d).\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "quantity": 100,
+          "rationale": "Take profit: Position is up +5.2%, surpassing the soft profit target (+2.5%) and held for 16 trading days. Securing gains as price consolidates below the 150 EGP resistance."
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding initial position entered last cycle; up +0.4% with a constructive 3-day recovery pattern (+2.4%) off recent support."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "quantity": 450,
+          "rationale": "Exceptional relative strength in a weak tape, printing higher closes over the last 3 sessions (+3.6% 3d, +3.8% 10d) and pushing near 20-day highs."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "quantity": 500,
+          "rationale": "Strong multi-day momentum (+9.5% 10d) rebounding cleanly off the 23.60 support level with solid daily follow-through (+2.1% 1d)."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "proposedQty": 100,
+          "finalQty": 100,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "proposedQty": 450,
+          "finalQty": 450,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "proposedQty": 500,
+          "finalQty": 500,
+          "kind": "accepted",
+          "reason": "buy booked"
+        },
+        {
+          "ticker": "ADIB",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ETEL",
+          "action": "sell",
+          "qty": 100,
+          "price": 145.39999389648438,
+          "fees": 14.54
+        },
+        {
+          "ticker": "ORWE",
+          "action": "buy",
+          "qty": 450,
+          "price": 27.709999084472656,
+          "fees": 12.47
+        },
+        {
+          "ticker": "EFIH",
+          "action": "buy",
+          "qty": 500,
+          "price": 24.34000015258789,
+          "fees": 12.17
+        }
+      ],
+      "navBefore": 98309.82,
+      "navAfter": 98270.64,
+      "cash": 64227.14,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
