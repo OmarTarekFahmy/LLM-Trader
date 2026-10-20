@@ -1191,6 +1191,14 @@
       "cash": 30027.97,
       "benchmarkNav": 91654.09,
       "indexLevel": 51785.19921875
+    },
+    {
+      "timestamp": "2026-10-20T14:26:22.655+03:00",
+      "cycleId": "20261020T1426-sharia-eod",
+      "nav": 94890.47,
+      "cash": 30027.97,
+      "benchmarkNav": 91942.93,
+      "indexLevel": 51948.3984375
     }
   ]
 }
