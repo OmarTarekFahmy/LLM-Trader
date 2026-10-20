@@ -1,5 +1,5 @@
 {
-  "cash": 38221.15,
+  "cash": 49789.57,
   "holdings": [
     {
       "ticker": "EAST",
@@ -18,16 +18,10 @@
       "qty": 100,
       "avgCost": 125.13,
       "openedAt": "2026-10-18T13:22:26.848+03:00"
-    },
-    {
-      "ticker": "EFIH",
-      "qty": 500,
-      "avgCost": 24.36,
-      "openedAt": "2026-10-18T13:22:26.848+03:00"
     }
   ],
-  "nav": 88459.65,
+  "nav": 88448.07,
   "inceptionDate": "2026-09-09T15:58:08.799+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-20T13:45:46.581+03:00"
+  "lastUpdated": "2026-10-20T14:01:06.624+03:00"
 }

@@ -961,6 +961,19 @@
       "resultingCash": 38221.15,
       "resultingNav": 88459.65,
       "cycleId": "20261020T1345-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-20T14:01:06.624+03:00",
+      "ticker": "EFIH",
+      "action": "sell",
+      "qty": 500,
+      "price": 23.15999984741211,
+      "fees": 11.58,
+      "grossValue": 11580,
+      "netCashDelta": 11568.42,
+      "resultingCash": 49789.57,
+      "resultingNav": 88448.07,
+      "cycleId": "20261020T1401-swing-trade"
     }
   ]
 }

@@ -4487,6 +4487,97 @@
       "navAfter": 99306.07,
       "cash": 43689.07,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261020T1401-core-trade",
+      "timestamp": "2026-10-20T14:01:06.624+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 5/30 up over 5d; EGX30 51785 (5d -2.9%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 continues to experience broad downward pressure, notably reflected in a 20-day decline of 13.0%, with basic materials and real estate lagging. Our portfolio maintains a solid cash buffer and our current positions are either meeting our semi-long-term thesis or are restricted by holding period limits, so we maintain our disciplined stance and hold all positions.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 continues to experience broad downward pressure, notably reflected in a 20-day decline of 13.0%, with basic materials and real estate lagging. Our portfolio maintains a solid cash buffer and our current positions are either meeting our semi-long-term thesis or are restricted by holding period limits, so we maintain our disciplined stance and hold all positions.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is within the minimum holding period and fits our semi-long-term thesis despite recent pullback.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding steady within the basic materials sector while waiting for stabilization.\"\n    },\n    {\n      \"ticker\": \"MFPC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Recent price action is consolidating; maintaining position for the long-term outlook.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Outperforming relative to other holdings with positive gains; holding to let winners run.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Within the minimum holding period restriction and serves as a core financial holding.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is within the minimum holding period and fits our semi-long-term thesis despite recent pullback."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding steady within the basic materials sector while waiting for stabilization."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Recent price action is consolidating; maintaining position for the long-term outlook."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Outperforming relative to other holdings with positive gains; holding to let winners run."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Within the minimum holding period restriction and serves as a core financial holding."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 99306.07,
+      "navAfter": 99306.07,
+      "cash": 43689.07,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
