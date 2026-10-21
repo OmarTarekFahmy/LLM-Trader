@@ -1,12 +1,6 @@
 {
-  "cash": 30027.97,
+  "cash": 50961.02,
   "holdings": [
-    {
-      "ticker": "ADIB",
-      "qty": 200,
-      "avgCost": 46.81,
-      "openedAt": "2026-10-15T13:39:28.474+03:00"
-    },
     {
       "ticker": "ORWE",
       "qty": 450,
@@ -26,20 +20,14 @@
       "openedAt": "2026-10-18T13:22:26.848+03:00"
     },
     {
-      "ticker": "OCDI",
-      "qty": 450,
-      "avgCost": 25.93,
-      "openedAt": "2026-10-18T13:22:26.848+03:00"
-    },
-    {
       "ticker": "ETRS",
       "qty": 1000,
       "avgCost": 10.62,
       "openedAt": "2026-10-18T13:35:32.430+03:00"
     }
   ],
-  "nav": 94890.47,
+  "nav": 97341.02,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-20T15:29:45.686+03:00"
+  "lastUpdated": "2026-10-21T13:57:21.134+03:00"
 }

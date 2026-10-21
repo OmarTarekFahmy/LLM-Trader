@@ -5541,6 +5541,126 @@
       "navAfter": 94890.47,
       "cash": 30027.97,
       "error": null
+    },
+    {
+      "cycleId": "20261021T1357-sharia-trade",
+      "timestamp": "2026-10-21T13:57:21.134+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 13/25 up over 5d; EGX30 52726 (5d 0.4%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX shows pockets of buying strength today, led by real estate and select basic materials. Our portfolio is stabilizing with OCDI and ETRS posting small gains while ADIB approaches our stop-loss threshold. We will cut ADIB to lock in risk control and take a small profit on OCDI while holding the remaining positions.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX shows pockets of buying strength today, led by real estate and select basic materials. Our portfolio is stabilizing with OCDI and ETRS posting small gains while ADIB approaches our stop-loss threshold. We will cut ADIB to lock in risk control and take a small profit on OCDI while holding the remaining positions.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ADIB\",\n      \"action\": \"sell\",\n      \"quantity\": 200,\n      \"rationale\": \"Unrealized loss has reached -3.1% after 4 days, hitting our stop-loss discipline to cut losers fast.\"\n    },\n    {\n      \"ticker\": \"OCDI\",\n      \"action\": \"sell\",\n      \"quantity\": 450,\n      \"rationale\": \"Taking profit near +1.8% after a solid bounce, close to our soft profit target.\"\n    },\n    {\n      \"ticker\": \"ORWE\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Down 4.9% but holding for now to see if it bounces off recent support.\"\n    },\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Flat position with minimal movement; holding as part of tech sector exposure.\"\n    },\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Small drawdown of -1.6%, well within normal swing trading fluctuation.\"\n    },\n    {\n      \"ticker\": \"ETRS\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Up +0.7% with positive momentum today; holding to capture further upside.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ADIB",
+          "action": "sell",
+          "quantity": 200,
+          "rationale": "Unrealized loss has reached -3.1% after 4 days, hitting our stop-loss discipline to cut losers fast."
+        },
+        {
+          "ticker": "OCDI",
+          "action": "sell",
+          "quantity": 450,
+          "rationale": "Taking profit near +1.8% after a solid bounce, close to our soft profit target."
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 4.9% but holding for now to see if it bounces off recent support."
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Flat position with minimal movement; holding as part of tech sector exposure."
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Small drawdown of -1.6%, well within normal swing trading fluctuation."
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Up +0.7% with positive momentum today; holding to capture further upside."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ADIB",
+          "action": "sell",
+          "proposedQty": 200,
+          "finalQty": 200,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "OCDI",
+          "action": "sell",
+          "proposedQty": 450,
+          "finalQty": 450,
+          "kind": "accepted",
+          "reason": "sell booked"
+        },
+        {
+          "ticker": "ORWE",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [
+        {
+          "ticker": "ADIB",
+          "action": "sell",
+          "qty": 200,
+          "price": 45.369998931884766,
+          "fees": 9.07
+        },
+        {
+          "ticker": "OCDI",
+          "action": "sell",
+          "qty": 450,
+          "price": 26.399999618530273,
+          "fees": 11.88
+        }
+      ],
+      "navBefore": 97361.97,
+      "navAfter": 97341.02,
+      "cash": 50961.02,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

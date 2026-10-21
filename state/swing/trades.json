@@ -974,6 +974,19 @@
       "resultingCash": 49789.57,
       "resultingNav": 88448.07,
       "cycleId": "20261020T1401-swing-trade"
+    },
+    {
+      "timestamp": "2026-10-21T13:57:21.134+03:00",
+      "ticker": "ABUK",
+      "action": "sell",
+      "qty": 150,
+      "price": 93.5,
+      "fees": 14.03,
+      "grossValue": 14025,
+      "netCashDelta": 14010.97,
+      "resultingCash": 63800.54,
+      "resultingNav": 89305.54,
+      "cycleId": "20261021T1357-swing-trade"
     }
   ]
 }

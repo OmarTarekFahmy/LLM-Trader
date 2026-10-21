@@ -675,6 +675,32 @@
       "resultingCash": 30027.97,
       "resultingNav": 98236.47,
       "cycleId": "20261018T1335-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-21T13:57:21.134+03:00",
+      "ticker": "ADIB",
+      "action": "sell",
+      "qty": 200,
+      "price": 45.369998931884766,
+      "fees": 9.07,
+      "grossValue": 9074,
+      "netCashDelta": 9064.93,
+      "resultingCash": 39092.9,
+      "resultingNav": 97352.9,
+      "cycleId": "20261021T1357-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-21T13:57:21.134+03:00",
+      "ticker": "OCDI",
+      "action": "sell",
+      "qty": 450,
+      "price": 26.399999618530273,
+      "fees": 11.88,
+      "grossValue": 11880,
+      "netCashDelta": 11868.12,
+      "resultingCash": 50961.02,
+      "resultingNav": 97341.02,
+      "cycleId": "20261021T1357-sharia-trade"
     }
   ]
 }
