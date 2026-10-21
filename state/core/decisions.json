@@ -4802,6 +4802,97 @@
       "navAfter": 101510.27,
       "cash": 43689.07,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261021T1410-core-trade",
+      "timestamp": "2026-10-21T14:10:38.036+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 14/30 up over 5d; EGX30 52685 (5d 0.4%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 continues to consolidate near 52,685 after a multi-week pullback, with short-term strength led by basic materials exporters and large-cap financials. With market breadth still stabilizing and key holdings rebounding, existing positions remain sound without immediate need for rebalancing.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 continues to consolidate near 52,685 after a multi-week pullback, with short-term strength led by basic materials exporters and large-cap financials. With market breadth still stabilizing and key holdings rebounding, existing positions remain sound without immediate need for rebalancing.\",\n  \"actions\": [\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Strong 5-day rebound (+10.9%) puts the position close to the 15% single-stock ceiling (~14.7% NAV); letting profits run while respecting concentration limits.\"\n    },\n    {\n      \"ticker\": \"MFPC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding as fertilizer fundamentals remain supportive and the stock has rebounded +5.5% over the past 5 sessions.\"\n    },\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding as energy play forms a base above 13.00 EGP, maintaining steady sector exposure.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Telecommunications leader remains profitable (+7.7% unrealized) and acts as a solid defensive anchor.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Core banking holding is recovering well (+4.0% over 5 days); position size is healthy at 8.7% of NAV.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Strong 5-day rebound (+10.9%) puts the position close to the 15% single-stock ceiling (~14.7% NAV); letting profits run while respecting concentration limits."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding as fertilizer fundamentals remain supportive and the stock has rebounded +5.5% over the past 5 sessions."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding as energy play forms a base above 13.00 EGP, maintaining steady sector exposure."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Telecommunications leader remains profitable (+7.7% unrealized) and acts as a solid defensive anchor."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Core banking holding is recovering well (+4.0% over 5 days); position size is healthy at 8.7% of NAV."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 101510.27,
+      "navAfter": 101510.27,
+      "cash": 43689.07,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

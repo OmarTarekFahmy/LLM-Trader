@@ -701,6 +701,45 @@
       "resultingCash": 50961.02,
       "resultingNav": 97341.02,
       "cycleId": "20261021T1357-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-21T14:10:38.036+03:00",
+      "ticker": "ORWE",
+      "action": "sell",
+      "qty": 450,
+      "price": 26.389999389648438,
+      "fees": 11.88,
+      "grossValue": 11875.5,
+      "netCashDelta": 11863.62,
+      "resultingCash": 62824.64,
+      "resultingNav": 97329.14,
+      "cycleId": "20261021T1410-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-21T14:10:38.036+03:00",
+      "ticker": "ICFC",
+      "action": "buy",
+      "qty": 550,
+      "price": 22.559999465942383,
+      "fees": 12.41,
+      "grossValue": 12408,
+      "netCashDelta": -12420.41,
+      "resultingCash": 50404.23,
+      "resultingNav": 97316.73,
+      "cycleId": "20261021T1410-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-21T14:10:38.036+03:00",
+      "ticker": "AMOC",
+      "action": "buy",
+      "qty": 850,
+      "price": 13.649999618530273,
+      "fees": 11.6,
+      "grossValue": 11602.5,
+      "netCashDelta": -11614.1,
+      "resultingCash": 38790.13,
+      "resultingNav": 97305.13,
+      "cycleId": "20261021T1410-sharia-trade"
     }
   ]
 }
