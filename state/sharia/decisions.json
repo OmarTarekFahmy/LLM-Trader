@@ -6012,6 +6012,97 @@
       "navAfter": 96893.13,
       "cash": 38790.13,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261022T1411-sharia-trade",
+      "timestamp": "2026-10-22T14:11:26.323+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 10/25 up over 5d; EGX30 51323 (5d -1.1%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX continues to trade with an overarching downward medium-term bias, but select sectors like Real Estate and Industrials show localized strength. We are holding our existing positions as they remain within acceptable swing thresholds, while selectively adding exposure to names showing relative strength and momentum.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX continues to trade with an overarching downward medium-term bias, but select sectors like Real Estate and Industrials show localized strength. We are holding our existing positions as they remain within acceptable swing thresholds, while selectively adding exposure to names showing relative strength and momentum.\",\n  \"actions\": [\n    {\n      \"ticker\": \"EFIH\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is down 1.9% after 4 days, holding above our -3.5% stop target as tech sector maintains relative resilience.\"\n    },\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Down 2.1% after 4 days; holding within normal swing drawdown limits as industrials remain stable.\"\n    },\n    {\n      \"ticker\": \"ETRS\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Slightly up by +0.6% after 4 days, maintaining position as industrial momentum holds up.\"\n    },\n    {\n      \"ticker\": \"ICFC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Down 1.6% after 1 day; recent multi-day bounce supports giving this setup more time to work.\"\n    },\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Nearly flat at -0.1% after 1 day in the energy sector; holding for a continuation of the recent bounce.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is down 1.9% after 4 days, holding above our -3.5% stop target as tech sector maintains relative resilience."
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 2.1% after 4 days; holding within normal swing drawdown limits as industrials remain stable."
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Slightly up by +0.6% after 4 days, maintaining position as industrial momentum holds up."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 1.6% after 1 day; recent multi-day bounce supports giving this setup more time to work."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Nearly flat at -0.1% after 1 day in the energy sector; holding for a continuation of the recent bounce."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EFIH",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 96893.13,
+      "navAfter": 96893.13,
+      "cash": 38790.13,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
