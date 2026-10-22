@@ -6650,6 +6650,55 @@
       "navAfter": 89305.54,
       "cash": 63800.54,
       "error": null
+    },
+    {
+      "cycleId": "20261022T1356-swing-trade",
+      "timestamp": "2026-10-22T13:56:45.723+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 24/91 up over 5d; EGX30 51456 (5d -2.2%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader EGX remains under mild downward pressure over the 20-day horizon, though select names show strong short-term momentum and bounce signals. Our two existing positions (EAST and COMI) are both in profitable territory, hovering near our soft take-profit targets. We will hold both positions to capture further upside while monitoring closely.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader EGX remains under mild downward pressure over the 20-day horizon, though select names show strong short-term momentum and bounce signals. Our two existing positions (EAST and COMI) are both in profitable territory, hovering near our soft take-profit targets. We will hold both positions to capture further upside while monitoring closely.\",\n  \"actions\": [\n    {\n      \"ticker\": \"EAST\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up 2.3% after 4 trading days, holding steady near our soft take-profit target of 2.5%.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up 3.1% after 4 trading days, successfully hitting our swing profit target. We will maintain the hold to let it run slightly further.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up 2.3% after 4 trading days, holding steady near our soft take-profit target of 2.5%."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up 3.1% after 4 trading days, successfully hitting our swing profit target. We will maintain the hold to let it run slightly further."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 90200.54,
+      "navAfter": 90200.54,
+      "cash": 63800.54,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
