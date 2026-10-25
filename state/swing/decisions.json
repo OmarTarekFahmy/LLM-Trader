@@ -6979,6 +6979,55 @@
       "navAfter": 90031.54,
       "cash": 63800.54,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261025T1400-swing-trade",
+      "timestamp": "2026-10-25T14:00:11.414+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "91 quoted; 8/91 up over 5d; EGX30 48712 (5d -6.1%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX remains under intense broad selling pressure, with the EGX30 down 6.1% over the last 5 days and 15.7% over 20 days. Our holdings are demonstrating resilience relative to the broader market, with EAST up +3.9% and COMI flat, so we will maintain both positions as they hover near our take-profit and break-even levels.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX remains under intense broad selling pressure, with the EGX30 down 6.1% over the last 5 days and 15.7% over 20 days. Our holdings are demonstrating resilience relative to the broader market, with EAST up +3.9% and COMI flat, so we will maintain both positions as they hover near our take-profit and break-even levels.\",\n  \"actions\": [\n    {\n      \"ticker\": \"EAST\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is up +3.9% after 5 days, approaching our target exit zone. Holding to capture further gains in relative strength.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Flat performance on the week amidst a severe market downturn. Holding steady as it defends support near its 20-day lows.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is up +3.9% after 5 days, approaching our target exit zone. Holding to capture further gains in relative strength."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Flat performance on the week amidst a severe market downturn. Holding steady as it defends support near its 20-day lows."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "EAST",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 90031.54,
+      "navAfter": 90031.54,
+      "cash": 63800.54,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }

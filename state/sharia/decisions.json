@@ -6412,6 +6412,83 @@
       "navAfter": 95171.13,
       "cash": 49279.63,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261025T1400-sharia-trade",
+      "timestamp": "2026-10-25T14:00:11.414+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 3/25 up over 5d; EGX30 48712 (5d -4.9%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The broader Egyptian market remains under severe pressure, with the EGX30 index extending its 5-day and 20-day losses amid broad-based sector declines. Defensive positioning and capital preservation are paramount while most names trade near recent lows.",
+      "llmRaw": "{\n  \"marketRead\": \"The broader Egyptian market remains under severe pressure, with the EGX30 index extending its 5-day and 20-day losses amid broad-based sector declines. Defensive positioning and capital preservation are paramount while most names trade near recent lows.\",\n  \"actions\": [\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is down a modest 1.6% after 5 days, showing relative resilience compared to the broader market drop. Holding for a potential rebound.\"\n    },\n    {\n      \"ticker\": \"ETRS\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Down 2.7% after 5 days, approaching our soft stop threshold of -3.5%. Will monitor closely for stabilization before taking action.\"\n    },\n    {\n      \"ticker\": \"ICFC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Minor unrealized loss of 0.5% after 2 days. The name shows strong 3-day momentum and merits further time to develop.\"\n    },\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Down 1.1% over 2 days in the energy sector, which is holding up relatively better than the rest of the market. Retaining position.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is down a modest 1.6% after 5 days, showing relative resilience compared to the broader market drop. Holding for a potential rebound."
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 2.7% after 5 days, approaching our soft stop threshold of -3.5%. Will monitor closely for stabilization before taking action."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Minor unrealized loss of 0.5% after 2 days. The name shows strong 3-day momentum and merits further time to develop."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Down 1.1% over 2 days in the energy sector, which is holding up relatively better than the rest of the market. Retaining position."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 95171.13,
+      "navAfter": 95171.13,
+      "cash": 49279.63,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
