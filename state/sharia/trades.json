@@ -740,6 +740,19 @@
       "resultingCash": 38790.13,
       "resultingNav": 97305.13,
       "cycleId": "20261021T1410-sharia-trade"
+    },
+    {
+      "timestamp": "2026-10-25T13:29:51.693+03:00",
+      "ticker": "EFIH",
+      "action": "sell",
+      "qty": 500,
+      "price": 21,
+      "fees": 10.5,
+      "grossValue": 10500,
+      "netCashDelta": 10489.5,
+      "resultingCash": 49279.63,
+      "resultingNav": 95171.13,
+      "cycleId": "20261025T1329-sharia-trade"
     }
   ]
 }

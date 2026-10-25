@@ -1,12 +1,6 @@
 {
-  "cash": 38790.13,
+  "cash": 49279.63,
   "holdings": [
-    {
-      "ticker": "EFIH",
-      "qty": 500,
-      "avgCost": 24.36,
-      "openedAt": "2026-10-18T13:11:03.865+03:00"
-    },
     {
       "ticker": "LCSW",
       "qty": 350,
@@ -32,8 +26,8 @@
       "openedAt": "2026-10-21T14:10:38.036+03:00"
     }
   ],
-  "nav": 96893.13,
+  "nav": 95171.13,
   "inceptionDate": "2026-09-09T17:11:57.910+03:00",
   "inceptionBenchmarkIndexLevel": 56500.69921875,
-  "lastUpdated": "2026-10-22T15:30:42.519+03:00"
+  "lastUpdated": "2026-10-25T13:29:51.693+03:00"
 }

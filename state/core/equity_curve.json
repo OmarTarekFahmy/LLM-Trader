@@ -1423,6 +1423,14 @@
       "cash": 43689.07,
       "benchmarkNav": 90356.94,
       "indexLevel": 51052.30078125
+    },
+    {
+      "timestamp": "2026-10-25T13:29:51.693+03:00",
+      "cycleId": "20261025T1329-core-trade",
+      "nav": 100381.17,
+      "cash": 43689.07,
+      "benchmarkNav": 85523.37,
+      "indexLevel": 48321.30078125
     }
   ]
 }
