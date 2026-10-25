@@ -6489,6 +6489,83 @@
       "navAfter": 95171.13,
       "cash": 49279.63,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261025T1415-sharia-trade",
+      "timestamp": "2026-10-25T14:15:22.935+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "25 quoted; 3/25 up over 5d; EGX30 49479 (5d -4.9%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 index continues to suffer from sustained downside pressure, dropping significantly over the 5-day and 20-day horizons. Broad sector weakness persists, keeping risk appetite low and favoring defensive or patient postures for existing holdings.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 index continues to suffer from sustained downside pressure, dropping significantly over the 5-day and 20-day horizons. Broad sector weakness persists, keeping risk appetite low and favoring defensive or patient postures for existing holdings.\",\n  \"actions\": [\n    {\n      \"ticker\": \"LCSW\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Holding steady despite slight unrealized loss of -1.6%, watching for recovery toward our profit target.\"\n    },\n    {\n      \"ticker\": \"ETRS\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Unrealized P&L is down -2.7%, approaching our stop-loss threshold, but holding for a potential rebound as short-term momentum stabilizes.\"\n    },\n    {\n      \"ticker\": \"ICFC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position is near break-even with a minimal -0.5% unrealized loss, holding to give the setup more room.\"\n    },\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Energy sector showing relative resilience compared to other segments; holding position with a modest -1.1% unrealized P&L.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Holding steady despite slight unrealized loss of -1.6%, watching for recovery toward our profit target."
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Unrealized P&L is down -2.7%, approaching our stop-loss threshold, but holding for a potential rebound as short-term momentum stabilizes."
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position is near break-even with a minimal -0.5% unrealized loss, holding to give the setup more room."
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Energy sector showing relative resilience compared to other segments; holding position with a modest -1.1% unrealized P&L."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "LCSW",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETRS",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ICFC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 95171.13,
+      "navAfter": 95171.13,
+      "cash": 49279.63,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
