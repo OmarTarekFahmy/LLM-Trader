@@ -5432,6 +5432,97 @@
       "navAfter": 100381.17,
       "cash": 43689.07,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261025T1344-core-trade",
+      "timestamp": "2026-10-25T13:44:49.146+03:00",
+      "mode": "trade",
+      "session": "market open",
+      "marketSummary": "30 quoted; 7/30 up over 5d; EGX30 48321 (5d -3.9%)",
+      "llmProvider": "gemini",
+      "llmModel": "gemini-flash-lite-latest",
+      "dataProvider": "yahoo",
+      "marketRead": "The EGX30 index remains under broad downward pressure, falling 3.9% over the past 5 days and 12.0% over the past 20 days. Given our semi-long-term mandate and a healthy cash buffer of over 43%, we choose to maintain our disciplined posture, holding our existing quality positions and avoiding new commitments until market stability returns.",
+      "llmRaw": "{\n  \"marketRead\": \"The EGX30 index remains under broad downward pressure, falling 3.9% over the past 5 days and 12.0% over the past 20 days. Given our semi-long-term mandate and a healthy cash buffer of over 43%, we choose to maintain our disciplined posture, holding our existing quality positions and avoiding new commitments until market stability returns.\",\n  \"actions\": [\n    {\n      \"ticker\": \"AMOC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position held for 32 days. Despite short-term weakness, energy fundamentals are resilient and we remain patient.\"\n    },\n    {\n      \"ticker\": \"ABUK\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position held for 32 days, showing positive relative strength and up 0.9%. Sticking to the semi-long-term thesis.\"\n    },\n    {\n      \"ticker\": \"MFPC\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position held for 32 days. Basic materials sector is experiencing pressure, but we see no structural reason to sell yet.\"\n    },\n    {\n      \"ticker\": \"ETEL\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position held for 32 days, maintaining a slight positive return despite broader market corrections.\"\n    },\n    {\n      \"ticker\": \"COMI\",\n      \"action\": \"hold\",\n      \"quantity\": 0,\n      \"rationale\": \"Position held for 20 days. Core banking exposure remains a solid long-term hold through macroeconomic dips.\"\n    }\n  ]\n}",
+      "proposedActions": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position held for 32 days. Despite short-term weakness, energy fundamentals are resilient and we remain patient."
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position held for 32 days, showing positive relative strength and up 0.9%. Sticking to the semi-long-term thesis."
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position held for 32 days. Basic materials sector is experiencing pressure, but we see no structural reason to sell yet."
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position held for 32 days, maintaining a slight positive return despite broader market corrections."
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "quantity": 0,
+          "rationale": "Position held for 20 days. Core banking exposure remains a solid long-term hold through macroeconomic dips."
+        }
+      ],
+      "guardrailAdjustments": [
+        {
+          "ticker": "AMOC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ABUK",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "MFPC",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "ETEL",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        },
+        {
+          "ticker": "COMI",
+          "action": "hold",
+          "proposedQty": 0,
+          "finalQty": 0,
+          "kind": "accepted",
+          "reason": "hold — no trade"
+        }
+      ],
+      "executedActions": [],
+      "navBefore": 100381.17,
+      "navAfter": 100381.17,
+      "cash": 43689.07,
+      "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
     }
   ]
 }
