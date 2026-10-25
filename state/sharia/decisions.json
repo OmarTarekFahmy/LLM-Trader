@@ -6566,6 +6566,25 @@
       "navAfter": 95171.13,
       "cash": 49279.63,
       "error": "openrouter: openrouter: This model is unavailable for free. The paid version is available now - use this slug instead: nex-agi/nex-n2.5-mini"
+    },
+    {
+      "cycleId": "20261025T1428-sharia-eod",
+      "timestamp": "2026-10-25T14:28:28.978+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "25 quoted; 3/25 up over 5d; EGX30 49252 (5d -4.9%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 95171 EGP (-4.83% since inception), cash 49280, 4 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 95171.13,
+      "navAfter": 95171.13,
+      "cash": 49279.63,
+      "error": null
     }
   ]
 }
