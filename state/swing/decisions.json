@@ -7229,6 +7229,25 @@
       "navAfter": 89494.54,
       "cash": 63800.54,
       "error": null
+    },
+    {
+      "cycleId": "20261026T1522-swing-eod",
+      "timestamp": "2026-10-26T15:22:38.812+03:00",
+      "mode": "eod",
+      "session": "end-of-day wrap-up",
+      "marketSummary": "91 quoted; 8/91 up over 5d; EGX30 48417 (5d -9.6%)",
+      "llmProvider": null,
+      "llmModel": null,
+      "dataProvider": "yahoo",
+      "marketRead": "End of day. NAV 89495 EGP (-10.51% since inception), cash 63801, 2 holding(s). No trade decision in the EOD cycle.",
+      "llmRaw": null,
+      "proposedActions": [],
+      "guardrailAdjustments": [],
+      "executedActions": [],
+      "navBefore": 89494.54,
+      "navAfter": 89494.54,
+      "cash": 63800.54,
+      "error": null
     }
   ]
 }
