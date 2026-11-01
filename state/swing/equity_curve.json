@@ -1623,6 +1623,14 @@
       "cash": 63800.54,
       "benchmarkNav": 86088.67,
       "indexLevel": 48640.69921875
+    },
+    {
+      "timestamp": "2026-11-01T14:38:43.031+02:00",
+      "cycleId": "20261101T1438-swing-eod",
+      "nav": 90445.54,
+      "cash": 63800.54,
+      "benchmarkNav": 86105.66,
+      "indexLevel": 48650.30078125
     }
   ]
 }
