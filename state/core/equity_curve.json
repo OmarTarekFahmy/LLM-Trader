@@ -1743,6 +1743,14 @@
       "cash": 43689.07,
       "benchmarkNav": 89931.81,
       "indexLevel": 50812.1015625
+    },
+    {
+      "timestamp": "2026-11-11T15:20:43.386+02:00",
+      "cycleId": "20261111T1520-core-eod",
+      "nav": 95876.67,
+      "cash": 43689.07,
+      "benchmarkNav": 92920.09,
+      "indexLevel": 52500.5
     }
   ]
 }
